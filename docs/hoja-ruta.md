@@ -14,7 +14,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Del modelo arquitectónico al modelo energético.
 - [x] Requisitos comunes de los motores de cálculo.
 - [x] IFC para análisis energético.
-- [ ] Espacios, zonas y límites espaciales.
+- [x] Espacios, zonas y límites espaciales.
 - [ ] Estrategia general de modelado en Revit.
 - [ ] Coordenadas, orientación y niveles.
 - [ ] Habitaciones, espacios y zonas térmicas.

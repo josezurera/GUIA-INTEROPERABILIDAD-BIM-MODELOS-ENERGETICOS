@@ -10,6 +10,7 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Desarrollo del capítulo "Del modelo arquitectónico al modelo energético".
 - Desarrollo del capítulo "Requisitos comunes de los motores de cálculo".
 - Desarrollo del capítulo "IFC aplicado al análisis energético".
+- Desarrollo del capítulo "Espacios, zonas y límites espaciales".
 - Vista previa HTML automática para cada solicitud de cambios.
 - Generación automática del PDF en las versiones publicadas.
 
