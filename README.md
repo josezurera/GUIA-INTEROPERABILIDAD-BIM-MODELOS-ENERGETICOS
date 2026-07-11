@@ -22,6 +22,13 @@ Versión `0.1.0` - estructura inicial en elaboración. Las páginas identifican 
 
 La fuente oficial es el contenido Markdown de `docs/`. La web y los PDF son productos derivados.
 
+## Lectura y revisión
+
+- La rama `main` se publica como web estable mediante GitHub Pages.
+- Cada solicitud de cambios genera una vista previa HTML en `pr-preview/pr-N/` y añade el enlace a la conversación de GitHub.
+- Cada etiqueta de versión con formato `v*` genera una GitHub Release con el manual completo en PDF.
+- Markdown continúa siendo la fuente editable y trazable.
+
 ## Contribuciones
 
 Consulta [CONTRIBUTING.md](CONTRIBUTING.md) antes de proponer cambios. Las modificaciones técnicas deben indicar su fuente, versión de software y estado de validación.
