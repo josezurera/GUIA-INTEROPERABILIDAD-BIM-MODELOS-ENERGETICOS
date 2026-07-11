@@ -40,3 +40,17 @@ fuentes:
     url: https://energyplus.net/assets/nrel_custom/pdfs/pdfs_v25.1.0/InputOutputReference.pdf
     fecha_consulta: 2026-07-11
     estado: revisada
+  - id: BUILDINGSMART-IFC4.3
+    titulo: IFC 4.3.2 Documentation
+    entidad: buildingSMART International
+    tipo: estandar_oficial
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: BUILDINGSMART-MVD
+    titulo: Model View Definitions
+    entidad: buildingSMART International
+    tipo: documentacion_oficial
+    url: https://technical.buildingsmart.org/standards/ifc/mvd/
+    fecha_consulta: 2026-07-11
+    estado: revisada

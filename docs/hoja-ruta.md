@@ -13,7 +13,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Arquitectura del repositorio.
 - [x] Del modelo arquitectónico al modelo energético.
 - [x] Requisitos comunes de los motores de cálculo.
-- [ ] IFC para análisis energético.
+- [x] IFC para análisis energético.
 - [ ] Espacios, zonas y límites espaciales.
 - [ ] Estrategia general de modelado en Revit.
 - [ ] Coordenadas, orientación y niveles.

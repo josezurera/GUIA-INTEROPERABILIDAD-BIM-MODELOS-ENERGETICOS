@@ -9,6 +9,7 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Hoja de ruta editorial para las versiones 0.2.0 a 1.0.0.
 - Desarrollo del capítulo "Del modelo arquitectónico al modelo energético".
 - Desarrollo del capítulo "Requisitos comunes de los motores de cálculo".
+- Desarrollo del capítulo "IFC aplicado al análisis energético".
 - Vista previa HTML automática para cada solicitud de cambios.
 - Generación automática del PDF en las versiones publicadas.
 
