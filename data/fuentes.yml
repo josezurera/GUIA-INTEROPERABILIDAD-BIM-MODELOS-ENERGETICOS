@@ -26,3 +26,17 @@ fuentes:
     url: https://www.imventa.com/modelo-analitico-tekton3d-desde-ifc
     fecha_consulta: 2026-07-11
     estado: revisada
+  - id: ENERGYPLUS-ESSENTIALS
+    titulo: EnergyPlus Essentials - Thermal Zones and Surfaces
+    entidad: EnergyPlus
+    tipo: documentacion_oficial
+    url: https://energyplus.readthedocs.io/en/stable/essentials/essentials.html
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: ENERGYPLUS-IOR-25.1
+    titulo: EnergyPlus 25.1 Input Output Reference
+    entidad: EnergyPlus
+    tipo: referencia_oficial
+    url: https://energyplus.net/assets/nrel_custom/pdfs/pdfs_v25.1.0/InputOutputReference.pdf
+    fecha_consulta: 2026-07-11
+    estado: revisada
