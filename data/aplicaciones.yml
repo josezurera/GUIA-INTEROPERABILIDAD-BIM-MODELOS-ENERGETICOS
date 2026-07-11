@@ -1,0 +1,17 @@
+aplicaciones:
+  - nombre: Autodesk Revit
+    version_base: "2026"
+    rol: modelo_fuente
+  - nombre: Open BIM Analytical Model
+    version_base: por_confirmar
+    rol: generador_modelo_analitico
+  - nombre: CYPETHERM HE Plus
+    version_base: por_confirmar
+    rol: motor_procedimiento_energetico
+  - nombre: TeKton3D TK-CEEP
+    version_base: por_confirmar
+    rol: interfaz_energyplus_certificacion
+  - nombre: DesignBuilder
+    version_base: pendiente
+    rol: ampliacion_futura
+

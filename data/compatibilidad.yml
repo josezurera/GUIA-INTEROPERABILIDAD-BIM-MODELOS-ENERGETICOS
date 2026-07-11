@@ -1,0 +1,21 @@
+ultima_revision: 2026-07-11
+flujos:
+  - origen: Autodesk Revit
+    version_origen: "2026+"
+    receptor: Open BIM Analytical Model
+    formato: IFC
+    esquema: "IFC4 por confirmar"
+    estado: en_validacion
+  - origen: Autodesk Revit
+    version_origen: "2026+"
+    receptor: TeKton3D TK-IFC
+    metodo: importacion
+    esquema: IFC2x3
+    estado: pendiente_ensayo
+  - origen: Autodesk Revit
+    version_origen: "2026+"
+    receptor: TeKton3D TK-IFC
+    metodo: vinculacion
+    esquema: "IFC2x3 o IFC4"
+    estado: pendiente_ensayo
+

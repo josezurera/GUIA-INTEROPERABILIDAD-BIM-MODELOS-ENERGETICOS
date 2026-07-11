@@ -1,0 +1,92 @@
+site_name: Guía BIM para análisis energético
+site_description: Preparación de modelos Revit e IFC para motores de análisis energético
+site_url: "https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/"
+repo_url: "https://github.com/josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS"
+repo_name: josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS
+copyright: "CC BY 4.0 - Versión 0.1.0 - Documento en elaboración"
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: blue grey
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      locale: es
+      fallback_to_build_date: true
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Inicio: index.md
+  - Fundamentos:
+      - Del modelo arquitectónico al energético: 01-fundamentos/modelos.md
+      - Requisitos de los motores: 01-fundamentos/requisitos-motores.md
+  - IFC:
+      - Función en el análisis energético: 02-ifc/index.md
+      - Espacios y límites: 02-ifc/espacios-limites.md
+  - Revit:
+      - Alcance y versiones: 03-revit/index.md
+      - Estrategia de modelado: 03-revit/estrategia-modelado.md
+      - Exportación IFC: 03-revit/exportacion-ifc.md
+  - Aplicaciones:
+      - Visión general: 04-aplicaciones/index.md
+      - CYPE:
+          - Open BIM Analytical Model: 04-aplicaciones/cype/open-bim-analytical-model.md
+          - CYPETHERM HE Plus: 04-aplicaciones/cype/cypetherm-he-plus.md
+      - TeKton3D:
+          - TK-IFC y TK-CEEP: 04-aplicaciones/tekton3d/index.md
+          - Importación y vinculación: 04-aplicaciones/tekton3d/importacion-vinculacion.md
+      - DesignBuilder: 04-aplicaciones/designbuilder/index.md
+  - Validación:
+      - Estrategia QA/QC: 05-validacion/index.md
+      - Registro de incidencias: 05-validacion/incidencias.md
+  - Comparativas:
+      - Matriz de compatibilidad: 06-comparativas/compatibilidad.md
+  - Procedimiento:
+      - Flujo operativo: 07-procedimientos/flujo-operativo.md
+  - Anexos:
+      - Checklist Revit: anexos/checklist-revit.md
+      - Bibliografía: anexos/bibliografia.md
+      - Glosario: glosario.md
+  - Control de versiones: control-versiones.md

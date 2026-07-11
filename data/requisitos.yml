@@ -1,0 +1,15 @@
+estados:
+  - confirmado
+  - recomendado
+  - pendiente_validacion
+  - obsoleto
+categorias:
+  - estructura_espacial
+  - geometria
+  - envolvente
+  - huecos
+  - sombras
+  - propiedades
+  - actualizacion
+  - validacion
+

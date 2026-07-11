@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Guía de preparación de modelos BIM para análisis energético"
+message: "Si utiliza este manual, cite la versión concreta publicada en GitHub Releases."
+type: software
+version: 0.1.0
+date-released: 2026-07-11
+license: CC-BY-4.0
+authors:
+  - family-names: Zurera
+    given-names: Jose A.

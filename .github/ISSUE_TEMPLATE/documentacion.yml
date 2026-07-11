@@ -1,0 +1,31 @@
+name: Ampliación o corrección documental
+description: Proponer una fuente, aplicación, ensayo o corrección técnica
+title: "[DOC] "
+labels: [documentation]
+body:
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      description: Describe la ampliación o corrección.
+    validations:
+      required: true
+  - type: input
+    id: software
+    attributes:
+      label: Software y versión
+  - type: textarea
+    id: fuente
+    attributes:
+      label: Fuente o evidencia
+      description: Enlace oficial, manual o procedimiento de prueba.
+  - type: dropdown
+    id: estado
+    attributes:
+      label: Estado propuesto
+      options:
+        - Confirmado
+        - Recomendado
+        - Pendiente de validación
+        - Obsoleto
+

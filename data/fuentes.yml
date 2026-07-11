@@ -1,0 +1,29 @@
+fuentes:
+  - id: CYPE-OBAM-01
+    titulo: Open BIM Analytical Model - Manual de uso
+    entidad: CYPE
+    tipo: manual_oficial
+    ubicacion: "C:/Users/josez/OneDrive/Escritorio/ob_analytical_01.pdf"
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: CYPE-REVIT-20
+    titulo: Guia de interoperabilidad CYPE-Revit v2.0
+    entidad: CYPE
+    tipo: guia_oficial
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: IMVENTA-CEEP
+    titulo: Manual TK-CEEP
+    entidad: iMventa Ingenieros
+    tipo: manual_oficial
+    url: https://www.imventa.com/ayuda/tekton3d/Manual/ManualCEEP.htm
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: IMVENTA-IFC-ANALYTICAL
+    titulo: Crear modelo analitico del edificio en TeKton3D a partir de un IFC
+    entidad: iMventa Ingenieros
+    tipo: guia_oficial
+    url: https://www.imventa.com/modelo-analitico-tekton3d-desde-ifc
+    fecha_consulta: 2026-07-11
+    estado: revisada
+
