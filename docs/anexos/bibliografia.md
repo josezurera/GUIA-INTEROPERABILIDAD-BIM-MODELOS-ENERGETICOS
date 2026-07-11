@@ -12,4 +12,8 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - EnergyPlus 25.1. *Input Output Reference*.
 - buildingSMART International. *IFC 4.3.2 Documentation*.
 - buildingSMART International. *Model View Definitions (MVD)*.
+- Autodesk. *Export a Model to IFC*, Revit 2026.
+- Autodesk. *Customize the IFC Setup*, Revit 2026.
+- Autodesk. *How Room Volume is Computed*, Revit 2026.
+- Autodesk. *About Creating Energy Analytical Models from Architectural Elements*, Revit 2026.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.

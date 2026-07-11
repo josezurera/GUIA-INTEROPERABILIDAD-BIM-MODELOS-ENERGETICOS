@@ -15,7 +15,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Requisitos comunes de los motores de cálculo.
 - [x] IFC para análisis energético.
 - [x] Espacios, zonas y límites espaciales.
-- [ ] Estrategia general de modelado en Revit.
+- [x] Estrategia general de modelado en Revit.
 - [ ] Coordenadas, orientación y niveles.
 - [ ] Habitaciones, espacios y zonas térmicas.
 - [ ] Preparación de la envolvente.
