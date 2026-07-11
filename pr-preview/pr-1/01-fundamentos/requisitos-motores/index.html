@@ -24,7 +24,7 @@
     
     
       
-        <title>Requisitos de los motores - Guía BIM para análisis energético</title>
+        <title>Requisitos comunes de los motores de cálculo - Guía BIM para análisis energético</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#requisitos-de-los-motores-de-calculo" class="md-skip">
+        <a href="#requisitos-comunes-de-los-motores-de-calculo" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Requisitos de los motores
+              Requisitos comunes de los motores de cálculo
             
           </span>
         </div>
@@ -643,6 +643,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Requisitos de los motores
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -654,6 +667,277 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-requisitos-minimos-del-modelo-energetico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Requisitos mínimos del modelo energético
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-zonas-termicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Zonas térmicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Zonas térmicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-unidad-del-balance-energetico" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Unidad del balance energético
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-criterios-de-agrupacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Criterios de agrupación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-criterios-de-separacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Criterios de separación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-volumen-y-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Volumen y cierre
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-superficies-termicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Superficies térmicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Superficies térmicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Función
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-representacion-sin-espesor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Representación sin espesor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-una-construccion-por-superficie" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Una construcción por superficie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-complejidad-geometrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Complejidad geométrica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-condiciones-de-contorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Condiciones de contorno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-adyacencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Adyacencias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-huecos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Huecos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Huecos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-asociacion-con-una-superficie-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Asociación con una superficie base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-limites-geometricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Límites geométricos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-muros-cortina" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Muros cortina
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cerramientos-horizontales-y-contacto-con-terreno" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Cerramientos horizontales y contacto con terreno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-orientacion-inclinacion-y-coordenadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Orientación, inclinación y coordenadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sombras-y-obstrucciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Sombras y obstrucciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-soluciones-constructivas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Soluciones constructivas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-condiciones-operacionales-y-sistemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Condiciones operacionales y sistemas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-requisitos-de-calidad-antes-del-calculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Requisitos de calidad antes del cálculo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-matriz-de-responsabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Matriz de responsabilidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-consecuencia-para-la-preparacion-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Consecuencia para la preparación en Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Fuentes principales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1573,6 +1857,266 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-requisitos-minimos-del-modelo-energetico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Requisitos mínimos del modelo energético
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-zonas-termicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Zonas térmicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Zonas térmicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-unidad-del-balance-energetico" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Unidad del balance energético
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-criterios-de-agrupacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Criterios de agrupación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-criterios-de-separacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Criterios de separación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-volumen-y-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Volumen y cierre
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-superficies-termicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Superficies térmicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Superficies térmicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Función
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-representacion-sin-espesor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Representación sin espesor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-una-construccion-por-superficie" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Una construcción por superficie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-complejidad-geometrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Complejidad geométrica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-condiciones-de-contorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Condiciones de contorno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-adyacencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Adyacencias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-huecos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Huecos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Huecos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-asociacion-con-una-superficie-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Asociación con una superficie base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-limites-geometricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Límites geométricos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-muros-cortina" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Muros cortina
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cerramientos-horizontales-y-contacto-con-terreno" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Cerramientos horizontales y contacto con terreno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-orientacion-inclinacion-y-coordenadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Orientación, inclinación y coordenadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sombras-y-obstrucciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Sombras y obstrucciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-soluciones-constructivas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Soluciones constructivas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-condiciones-operacionales-y-sistemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Condiciones operacionales y sistemas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-requisitos-de-calidad-antes-del-calculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Requisitos de calidad antes del cálculo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-matriz-de-responsabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Matriz de responsabilidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-consecuencia-para-la-preparacion-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Consecuencia para la preparación en Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Fuentes principales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1590,8 +2134,310 @@
   
 
 
-<h1 id="requisitos-de-los-motores-de-calculo">Requisitos de los motores de cálculo<a class="headerlink" href="#requisitos-de-los-motores-de-calculo" title="Permanent link">&para;</a></h1>
-<p>Esta página reunirá los requisitos comunes de geometría, zonificación, envolvente, huecos, sombras, condiciones de contorno y sistemas, diferenciándolos de las restricciones específicas de cada motor.</p>
+<h1 id="requisitos-comunes-de-los-motores-de-calculo">Requisitos comunes de los motores de cálculo<a class="headerlink" href="#requisitos-comunes-de-los-motores-de-calculo" title="Permanent link">&para;</a></h1>
+<p>Los programas de análisis energético no calculan directamente el modelo arquitectónico. Sus interfaces transforman la información recibida en zonas, superficies, construcciones, cargas, condiciones operacionales y sistemas compatibles con el motor utilizado.</p>
+<p>Aunque CYPETHERM HE Plus y TK-CEEP emplean flujos y estructuras propias, comparten una necesidad fundamental: disponer de una representación cerrada, coherente y suficientemente sencilla del edificio. Este capítulo identifica esos requisitos comunes sin atribuir a todos los programas una limitación específica de uno de ellos.</p>
+<div class="admonition info">
+<p class="admonition-title">Alcance</p>
+<p>Se describen requisitos de entrada y calidad del modelo, no los algoritmos reglamentarios de cada procedimiento. Las restricciones particulares se documentarán en los módulos de cada aplicación.</p>
+</div>
+<h2 id="1-requisitos-minimos-del-modelo-energetico">1. Requisitos mínimos del modelo energético<a class="headerlink" href="#1-requisitos-minimos-del-modelo-energetico" title="Permanent link">&para;</a></h2>
+<p>Para calcular el comportamiento del edificio deben quedar definidos, de forma directa o mediante reglas del programa receptor:</p>
+<ol>
+<li>Ubicación y datos climáticos.</li>
+<li>Orientación del edificio.</li>
+<li>Zonas o volúmenes de cálculo.</li>
+<li>Superficies que delimitan cada zona.</li>
+<li>Condición situada al otro lado de cada superficie.</li>
+<li>Soluciones constructivas y propiedades térmicas.</li>
+<li>Huecos y elementos transparentes.</li>
+<li>Sombras relevantes.</li>
+<li>Condiciones operacionales y cargas internas.</li>
+<li>Ventilación e infiltración.</li>
+<li>Sistemas energéticos.</li>
+</ol>
+<p>La preparación geométrica en Revit afecta principalmente a los puntos 2 a 8. El resto se completa habitualmente en la aplicación energética.</p>
+<h2 id="2-zonas-termicas">2. Zonas térmicas<a class="headerlink" href="#2-zonas-termicas" title="Permanent link">&para;</a></h2>
+<h3 id="21-unidad-del-balance-energetico">2.1 Unidad del balance energético<a class="headerlink" href="#21-unidad-del-balance-energetico" title="Permanent link">&para;</a></h3>
+<p>El motor realiza balances sobre zonas térmicas. Una zona es una abstracción: puede coincidir con una habitación, contener varias o representar una fracción de un recinto cuando existen condiciones diferenciadas.</p>
+<p>En EnergyPlus una zona debe reunir áreas térmicamente similares respecto a transmisiones, ganancias internas y condiciones de control. La documentación oficial recomienda evitar una zonificación innecesariamente detallada cuando varias áreas pueden representarse como una única entidad térmica.</p>
+<h3 id="22-criterios-de-agrupacion">2.2 Criterios de agrupación<a class="headerlink" href="#22-criterios-de-agrupacion" title="Permanent link">&para;</a></h3>
+<p>Dos espacios son candidatos a pertenecer a la misma zona cuando comparten:</p>
+<ul>
+<li>Uso y horarios.</li>
+<li>Temperaturas de consigna.</li>
+<li>Condiciones de ocupación y cargas internas.</li>
+<li>Estrategia de ventilación.</li>
+<li>Sistema o forma de acondicionamiento.</li>
+<li>Unidad de uso compatible.</li>
+<li>Comportamiento de la envolvente suficientemente próximo.</li>
+</ul>
+<p>La coincidencia de estas condiciones debe justificarse. Compartir únicamente el nombre de una habitación o pertenecer a la misma planta no es suficiente.</p>
+<h3 id="23-criterios-de-separacion">2.3 Criterios de separación<a class="headerlink" href="#23-criterios-de-separacion" title="Permanent link">&para;</a></h3>
+<p>Conviene separar zonas cuando existen diferencias significativas en:</p>
+<ul>
+<li>Orientación o exposición solar.</li>
+<li>Proporción de fachada y huecos.</li>
+<li>Uso u horario.</li>
+<li>Consignas.</li>
+<li>Sistema que las atiende.</li>
+<li>Condición de habitabilidad.</li>
+<li>Necesidad reglamentaria de evaluación independiente.</li>
+</ul>
+<h3 id="24-volumen-y-cierre">2.4 Volumen y cierre<a class="headerlink" href="#24-volumen-y-cierre" title="Permanent link">&para;</a></h3>
+<p>Cada zona debe poseer un volumen calculable y una envolvente cerrada. Un espacio sin suelo, techo o cierre lateral puede impedir el cálculo o provocar resultados físicamente incoherentes.</p>
+<p>En Revit esto exige comprobar que las habitaciones o espacios tengan área y volumen, que sus límites superior e inferior sean correctos y que los elementos delimitadores formen una continuidad tridimensional.</p>
+<h2 id="3-superficies-termicas">3. Superficies térmicas<a class="headerlink" href="#3-superficies-termicas" title="Permanent link">&para;</a></h2>
+<h3 id="31-funcion">3.1 Función<a class="headerlink" href="#31-funcion" title="Permanent link">&para;</a></h3>
+<p>Las superficies describen la transferencia de energía entre una zona y su entorno. Para cada una deben poder determinarse:</p>
+<ul>
+<li>Zona a la que pertenece.</li>
+<li>Geometría y área.</li>
+<li>Orientación e inclinación.</li>
+<li>Tipo de elemento.</li>
+<li>Construcción asociada.</li>
+<li>Condición de contorno exterior.</li>
+<li>Superficie correspondiente cuando existe adyacencia con otra zona.</li>
+</ul>
+<h3 id="32-representacion-sin-espesor">3.2 Representación sin espesor<a class="headerlink" href="#32-representacion-sin-espesor" title="Permanent link">&para;</a></h3>
+<p>Los motores zonales representan normalmente cada cerramiento mediante una superficie matemática sin espesor. El espesor y la masa de los materiales se emplean en el cálculo de transmisión, pero no generan dos caras geométricas separadas en el modelo energético.</p>
+<p>Esta diferencia explica por qué un modelado arquitectónico con capas independientes, revestimientos duplicados o pequeños retranqueos puede producir superficies analíticas redundantes. El modelo de cálculo necesita un plano de intercambio coherente, no la reproducción literal de todas las caras del elemento constructivo.</p>
+<h3 id="33-una-construccion-por-superficie">3.3 Una construcción por superficie<a class="headerlink" href="#33-una-construccion-por-superficie" title="Permanent link">&para;</a></h3>
+<p>Una superficie energética debe tener una construcción inequívoca. Si distintas partes de un cerramiento poseen soluciones diferentes, deben representarse como superficies separadas o resolverse mediante el procedimiento admitido por la aplicación.</p>
+<p>Por tanto, un muro de Revit que cambia de composición dentro de una misma cara requiere una estrategia explícita: división geométrica, diferenciación por tipos o reconstrucción posterior.</p>
+<h3 id="34-complejidad-geometrica">3.4 Complejidad geométrica<a class="headerlink" href="#34-complejidad-geometrica" title="Permanent link">&para;</a></h3>
+<p>El número de vértices y superficies influye en la robustez y el tiempo de simulación. Deben evitarse:</p>
+<ul>
+<li>Segmentos de longitud despreciable.</li>
+<li>Superficies casi coplanares duplicadas.</li>
+<li>Entrantes y salientes sin influencia térmica apreciable.</li>
+<li>Contornos autointersecados.</li>
+<li>Superficies degeneradas o de área casi nula.</li>
+<li>Fragmentación causada únicamente por detalle constructivo.</li>
+</ul>
+<p>No se establece todavía una tolerancia numérica general porque depende de la aplicación intermediaria y del motor. Las tolerancias deberán documentarse mediante fuentes específicas o pruebas.</p>
+<h2 id="4-condiciones-de-contorno">4. Condiciones de contorno<a class="headerlink" href="#4-condiciones-de-contorno" title="Permanent link">&para;</a></h2>
+<p>Toda superficie debe relacionarse con el medio situado al otro lado. Las categorías habituales son:</p>
+<table>
+<thead>
+<tr>
+<th>Condición</th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exterior</td>
+<td>Intercambio con aire exterior y exposición climática.</td>
+</tr>
+<tr>
+<td>Terreno</td>
+<td>Intercambio con el suelo mediante el modelo admitido.</td>
+</tr>
+<tr>
+<td>Zona adyacente</td>
+<td>Separación entre dos zonas del modelo.</td>
+</tr>
+<tr>
+<td>Espacio no acondicionado</td>
+<td>Separación respecto a un volumen con condiciones diferentes.</td>
+</tr>
+<tr>
+<td>Adiabática o equivalente</td>
+<td>Ausencia de flujo térmico según una hipótesis justificada.</td>
+</tr>
+<tr>
+<td>Condición especial</td>
+<td>Coeficientes o modelos específicos definidos por el programa.</td>
+</tr>
+</tbody>
+</table>
+<p>Una clasificación interior/exterior incorrecta cambia el balance térmico aunque la superficie tenga el área y la construcción correctas.</p>
+<h2 id="5-adyacencias">5. Adyacencias<a class="headerlink" href="#5-adyacencias" title="Permanent link">&para;</a></h2>
+<p>Cuando dos zonas comparten un cerramiento, sus superficies deben ser geométricamente compatibles y estar relacionadas. El modelo receptor necesita reconocer que:</p>
+<ul>
+<li>Ambas superficies representan el mismo límite físico.</li>
+<li>Sus áreas son coherentes.</li>
+<li>Sus normales u orientaciones son opuestas.</li>
+<li>Cada una pertenece a la zona correspondiente.</li>
+<li>La transmisión se produce entre esas zonas y no con el exterior.</li>
+</ul>
+<p>Las duplicidades, solapes, desfases de altura o pequeños huecos pueden romper esta correspondencia. En Open BIM Analytical Model la colindancia se almacena explícitamente entre superficies y puede corregirse manualmente.</p>
+<h2 id="6-huecos">6. Huecos<a class="headerlink" href="#6-huecos" title="Permanent link">&para;</a></h2>
+<h3 id="61-asociacion-con-una-superficie-base">6.1 Asociación con una superficie base<a class="headerlink" href="#61-asociacion-con-una-superficie-base" title="Permanent link">&para;</a></h3>
+<p>Una ventana, puerta acristalada o lucernario debe estar contenido en una superficie que actúe como cerramiento base. El modelo debe conocer:</p>
+<ul>
+<li>Superficie que lo contiene.</li>
+<li>Zona a la que pertenece.</li>
+<li>Dimensiones y posición.</li>
+<li>Construcción o propiedades térmicas.</li>
+<li>Exposición y orientación.</li>
+</ul>
+<p>Una familia visible en Revit no garantiza que el hueco se interprete. Debe cortar realmente su elemento hospedante y exportarse mediante una categoría y clase reconocibles.</p>
+<h3 id="62-limites-geometricos">6.2 Límites geométricos<a class="headerlink" href="#62-limites-geometricos" title="Permanent link">&para;</a></h3>
+<p>La documentación de TK-CEEP, por condicionantes de su exportación a EnergyPlus, recomienda que cada hueco quede completamente contenido en una única zona, que no ocupe la totalidad de la superficie base y que no se sitúe exactamente en los vértices del espacio.</p>
+<p>Estas reglas se registran como requisitos específicos del flujo TeKton3D/EnergyPlus. No deben trasladarse automáticamente a todos los receptores, pero constituyen buenas precauciones cuando se busca un IFC común robusto.</p>
+<h3 id="63-muros-cortina">6.3 Muros cortina<a class="headerlink" href="#63-muros-cortina" title="Permanent link">&para;</a></h3>
+<p>Los muros cortina requieren una estrategia específica porque combinan paneles, montantes, huecos y, en ocasiones, puertas. El receptor puede interpretar sus paneles como superficies independientes o necesitar una simplificación equivalente. Se estudiarán por separado en las reglas de Revit y en cada aplicación.</p>
+<h2 id="7-cerramientos-horizontales-y-contacto-con-terreno">7. Cerramientos horizontales y contacto con terreno<a class="headerlink" href="#7-cerramientos-horizontales-y-contacto-con-terreno" title="Permanent link">&para;</a></h2>
+<p>El modelo debe diferenciar:</p>
+<ul>
+<li>Suelo entre zonas.</li>
+<li>Techo entre zonas.</li>
+<li>Cubierta exterior.</li>
+<li>Forjado sobre exterior.</li>
+<li>Solera o elemento en contacto con terreno.</li>
+<li>Separación respecto a espacio no habitable.</li>
+</ul>
+<p>La posición horizontal no determina por sí sola la función. La relación con los espacios y la condición situada al otro lado son las que permiten clasificar correctamente el elemento.</p>
+<p>Las superficies en contacto con terreno pueden requerir modelos o parámetros adicionales que no se deducen del IFC. El IFC debe, como mínimo, permitir identificarlas sin confundirlas con forjados interiores o superficies exteriores.</p>
+<h2 id="8-orientacion-inclinacion-y-coordenadas">8. Orientación, inclinación y coordenadas<a class="headerlink" href="#8-orientacion-inclinacion-y-coordenadas" title="Permanent link">&para;</a></h2>
+<p>La radiación solar y las condiciones exteriores dependen de la orientación e inclinación de cada superficie. Por ello deben mantenerse coherentes:</p>
+<ul>
+<li>Norte verdadero.</li>
+<li>Ubicación geográfica.</li>
+<li>Rotación entre norte de proyecto y norte real.</li>
+<li>Coordenadas y unidades.</li>
+<li>Cotas de las plantas.</li>
+</ul>
+<p>Un desplazamiento global del edificio puede ser irrelevante para algunos balances térmicos, pero una rotación incorrecta altera la exposición solar. Los cambios de origen también pueden afectar a sombras remotas, coordinación y precisión geométrica.</p>
+<h2 id="9-sombras-y-obstrucciones">9. Sombras y obstrucciones<a class="headerlink" href="#9-sombras-y-obstrucciones" title="Permanent link">&para;</a></h2>
+<p>Los motores necesitan distinguir las superficies que transmiten energía de aquellas que únicamente bloquean radiación. Los elementos de sombra pueden incluir:</p>
+<ul>
+<li>Aleros y vuelos.</li>
+<li>Lamas y protecciones fijas.</li>
+<li>Balcones.</li>
+<li>Retranqueos.</li>
+<li>Edificios próximos.</li>
+<li>Obstáculos remotos significativos.</li>
+</ul>
+<p>La simplificación debe conservar la proyección solar relevante. Elementos pequeños, ornamentales o excesivamente fragmentados pueden omitirse cuando su influencia sea despreciable y quede justificado.</p>
+<h2 id="10-soluciones-constructivas">10. Soluciones constructivas<a class="headerlink" href="#10-soluciones-constructivas" title="Permanent link">&para;</a></h2>
+<p>La geometría debe permitir asignar una solución constructiva única a cada superficie. El modelo energético necesita propiedades como:</p>
+<ul>
+<li>Resistencia y transmitancia térmica.</li>
+<li>Capacidad térmica y masa.</li>
+<li>Orden y espesor de capas cuando el motor lo requiere.</li>
+<li>Propiedades ópticas de los huecos.</li>
+<li>Permeabilidad o infiltración cuando proceda.</li>
+</ul>
+<p>No debe suponerse que todos los materiales de Revit se trasladarán y serán utilizados directamente por el motor. La práctica más robusta es conservar identificadores o tipos que permitan mapear cada elemento a una solución validada en el programa energético.</p>
+<h2 id="11-condiciones-operacionales-y-sistemas">11. Condiciones operacionales y sistemas<a class="headerlink" href="#11-condiciones-operacionales-y-sistemas" title="Permanent link">&para;</a></h2>
+<p>Las condiciones operacionales no se obtienen de la geometría. Deben asignarse de forma explícita y coherente con la zonificación:</p>
+<ul>
+<li>Ocupación.</li>
+<li>Iluminación y equipos.</li>
+<li>Horarios.</li>
+<li>Consignas.</li>
+<li>Ventilación.</li>
+<li>Infiltración.</li>
+<li>Producción de ACS.</li>
+<li>Sistemas de calefacción y refrigeración.</li>
+</ul>
+<p>Una zona geométricamente válida puede seguir siendo incalculable o producir resultados irreales si carece de estas condiciones.</p>
+<h2 id="12-requisitos-de-calidad-antes-del-calculo">12. Requisitos de calidad antes del cálculo<a class="headerlink" href="#12-requisitos-de-calidad-antes-del-calculo" title="Permanent link">&para;</a></h2>
+<p>El modelo debe superar, como mínimo, las siguientes comprobaciones:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Todas las zonas previstas existen y tienen volumen.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cada zona está completamente delimitada.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Todas las superficies poseen condición de contorno.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las adyacencias interiores son coherentes.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los huecos pertenecen a una superficie base.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No existen superficies duplicadas o de área nula.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La orientación y la inclinación son correctas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los contactos con terreno están identificados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las sombras relevantes están presentes.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cada superficie puede mapearse a una solución constructiva.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La zonificación permite asignar condiciones operacionales y sistemas.</li>
+</ul>
+<h2 id="13-matriz-de-responsabilidad">13. Matriz de responsabilidad<a class="headerlink" href="#13-matriz-de-responsabilidad" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Información</th>
+<th style="text-align: right;">Revit</th>
+<th style="text-align: right;">IFC</th>
+<th style="text-align: right;">Modelo analítico</th>
+<th style="text-align: right;">Modelo energético</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Geometría arquitectónica</td>
+<td style="text-align: right;">Principal</td>
+<td style="text-align: right;">Transporta</td>
+<td style="text-align: right;">Simplifica</td>
+<td style="text-align: right;">Consume</td>
+</tr>
+<tr>
+<td>Recintos</td>
+<td style="text-align: right;">Define</td>
+<td style="text-align: right;">Transporta</td>
+<td style="text-align: right;">Valida o reconstruye</td>
+<td style="text-align: right;">Agrupa en zonas</td>
+</tr>
+<tr>
+<td>Superficies</td>
+<td style="text-align: right;">Implícitas en elementos</td>
+<td style="text-align: right;">Representa geometría</td>
+<td style="text-align: right;">Genera y relaciona</td>
+<td style="text-align: right;">Asigna construcción</td>
+</tr>
+<tr>
+<td>Adyacencias</td>
+<td style="text-align: right;">Deben ser deducibles</td>
+<td style="text-align: right;">Puede transportarlas parcialmente</td>
+<td style="text-align: right;">Determina y corrige</td>
+<td style="text-align: right;">Consume</td>
+</tr>
+<tr>
+<td>Huecos</td>
+<td style="text-align: right;">Modela y hospeda</td>
+<td style="text-align: right;">Clasifica y transporta</td>
+<td style="text-align: right;">Asocia a superficies</td>
+<td style="text-align: right;">Asigna propiedades</td>
+</tr>
+<tr>
+<td>Sombras</td>
+<td style="text-align: right;">Modela las relevantes</td>
+<td style="text-align: right;">Transporta geometría</td>
+<td style="text-align: right;">Genera o simplifica</td>
+<td style="text-align: right;">Calcula efecto solar</td>
+</tr>
+<tr>
+<td>Condiciones operacionales</td>
+<td style="text-align: right;">Puede contener datos auxiliares</td>
+<td style="text-align: right;">Puede transportar referencias</td>
+<td style="text-align: right;">Puede agrupar</td>
+<td style="text-align: right;">Define y calcula</td>
+</tr>
+<tr>
+<td>Sistemas</td>
+<td style="text-align: right;">Modelo separado o datos auxiliares</td>
+<td style="text-align: right;">Puede transportar información</td>
+<td style="text-align: right;">No es su función principal</td>
+<td style="text-align: right;">Define y simula</td>
+</tr>
+</tbody>
+</table>
+<h2 id="14-consecuencia-para-la-preparacion-en-revit">14. Consecuencia para la preparación en Revit<a class="headerlink" href="#14-consecuencia-para-la-preparacion-en-revit" title="Permanent link">&para;</a></h2>
+<p>El modelo Revit no necesita contener todas las variables energéticas, pero sí debe proporcionar una base geométrica que permita:</p>
+<ol>
+<li>Identificar volúmenes cerrados.</li>
+<li>Deducir límites y contactos.</li>
+<li>Reconocer huecos y superficies exteriores.</li>
+<li>Mantener orientación y estructura vertical.</li>
+<li>Simplificar sin perder el efecto térmico relevante.</li>
+<li>Repetir la exportación y comparar versiones.</li>
+</ol>
+<p>Estas necesidades se convertirán en reglas concretas en los capítulos posteriores.</p>
+<h2 id="15-fuentes-principales">15. Fuentes principales<a class="headerlink" href="#15-fuentes-principales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>EnergyPlus, <em>EnergyPlus Essentials</em>, apartados “Zones Are Not the Same as Rooms”, “Thermal Zones and Surfaces” y “One Construction Per Surface”.</li>
+<li>EnergyPlus 25.1, <em>Input Output Reference</em>.</li>
+<li>CYPE, <em>Open BIM Analytical Model. Manual de uso</em> (<code>CYPE-OBAM-01</code>).</li>
+<li>iMventa Ingenieros, <em>Manual TK-CEEP</em> (<code>IMVENTA-CEEP</code>).</li>
+</ul>
 
 
 
@@ -1614,7 +2460,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:21:36 UTC">11 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:28:20 UTC">11 de julio de 2026</span>
   </span>
 
     
@@ -1624,7 +2470,7 @@
     <span class="md-icon" title="Creado">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:21:36 UTC">11 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:28:20 UTC">11 de julio de 2026</span>
   </span>
 
     
