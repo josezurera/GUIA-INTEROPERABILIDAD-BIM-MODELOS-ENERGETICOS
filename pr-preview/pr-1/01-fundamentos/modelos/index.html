@@ -1,0 +1,2334 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Preparación de modelos Revit e IFC para motores de análisis energético">
+      
+      
+      
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/01-fundamentos/modelos/">
+      
+      
+        <link rel="prev" href="../../hoja-ruta/">
+      
+      
+        <link rel="next" href="../requisitos-motores/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Del modelo arquitectónico al modelo energético - Guía BIM para análisis energético</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#del-modelo-arquitectonico-al-modelo-energetico" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía BIM para análisis energético
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Del modelo arquitectónico al modelo energético
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../hoja-ruta/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Hoja de ruta
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fundamentos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-ifc/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  IFC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-revit/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Revit
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-aplicaciones/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Aplicaciones
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-validacion/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Validación
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-comparativas/compatibilidad/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Comparativas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-procedimientos/flujo-operativo/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procedimiento
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../anexos/checklist-revit/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Anexos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../control-versiones/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Control de versiones
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guía BIM para análisis energético
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hoja-ruta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hoja de ruta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fundamentos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Del modelo arquitectónico al energético
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Del modelo arquitectónico al energético
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-los-modelos-que-intervienen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Los modelos que intervienen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Los modelos que intervienen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-modelo-arquitectonico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Modelo arquitectónico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-modelo-de-intercambio-ifc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Modelo de intercambio IFC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-modelo-analitico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Modelo analítico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-modelo-energetico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Modelo energético
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-resultados-y-documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Resultados y documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-relacion-entre-los-modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Relación entre los modelos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-espacio-arquitectonico-espacio-analitico-y-zona-termica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Espacio arquitectónico, espacio analítico y zona térmica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Espacio arquitectónico, espacio analítico y zona térmica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-espacio-arquitectonico" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Espacio arquitectónico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-espacio-analitico" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Espacio analítico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-zona-termica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Zona térmica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-superficies-y-condiciones-de-contorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Superficies y condiciones de contorno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-aristas-encuentros-y-puentes-termicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Aristas, encuentros y puentes térmicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-sombras" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Sombras
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-principio-de-modelo-minimo-suficiente-y-calculable" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Principio de modelo mínimo, suficiente y calculable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Principio de modelo mínimo, suficiente y calculable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mínimo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suficiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suficiente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-criterios-para-decidir-donde-corregir" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Criterios para decidir dónde corregir
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-requisitos-de-trazabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Requisitos de trazabilidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Fuentes principales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requisitos-motores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos de los motores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../02-ifc/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    IFC
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            IFC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-ifc/espacios-limites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Espacios y límites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../03-revit/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Revit
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Revit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-revit/estrategia-modelado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estrategia de modelado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-revit/exportacion-ifc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exportación IFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../04-aplicaciones/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Aplicaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CYPE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            CYPE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/cype/open-bim-analytical-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open BIM Analytical Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/cype/cypetherm-he-plus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CYPETHERM HE Plus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../04-aplicaciones/tekton3d/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    TeKton3D
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            TeKton3D
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/tekton3d/importacion-vinculacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Importación y vinculación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/designbuilder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DesignBuilder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../05-validacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Validación
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Validación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-validacion/incidencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registro de incidencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Comparativas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Comparativas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-comparativas/compatibilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Matriz de compatibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Procedimiento
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Procedimiento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-procedimientos/flujo-operativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flujo operativo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Anexos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Anexos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anexos/checklist-revit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checklist Revit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anexos/bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glosario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control-versiones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control de versiones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-los-modelos-que-intervienen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Los modelos que intervienen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Los modelos que intervienen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-modelo-arquitectonico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Modelo arquitectónico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-modelo-de-intercambio-ifc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Modelo de intercambio IFC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-modelo-analitico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Modelo analítico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-modelo-energetico" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Modelo energético
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-resultados-y-documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Resultados y documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-relacion-entre-los-modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Relación entre los modelos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-espacio-arquitectonico-espacio-analitico-y-zona-termica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Espacio arquitectónico, espacio analítico y zona térmica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Espacio arquitectónico, espacio analítico y zona térmica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-espacio-arquitectonico" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Espacio arquitectónico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-espacio-analitico" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Espacio analítico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-zona-termica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Zona térmica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-superficies-y-condiciones-de-contorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Superficies y condiciones de contorno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-aristas-encuentros-y-puentes-termicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Aristas, encuentros y puentes térmicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-sombras" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Sombras
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-principio-de-modelo-minimo-suficiente-y-calculable" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Principio de modelo mínimo, suficiente y calculable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Principio de modelo mínimo, suficiente y calculable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mínimo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suficiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suficiente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-criterios-para-decidir-donde-corregir" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Criterios para decidir dónde corregir
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-requisitos-de-trazabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Requisitos de trazabilidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Fuentes principales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="del-modelo-arquitectonico-al-modelo-energetico">Del modelo arquitectónico al modelo energético<a class="headerlink" href="#del-modelo-arquitectonico-al-modelo-energetico" title="Permanent link">&para;</a></h1>
+<p>Un modelo arquitectónico puede ser correcto para producir planos, mediciones o visualizaciones y, sin embargo, resultar inadecuado para una simulación energética. La diferencia no depende únicamente de la cantidad de información: depende de si la geometría y sus relaciones permiten reconocer de forma inequívoca los volúmenes de cálculo, la envolvente, los intercambios entre recintos y las condiciones de contorno.</p>
+<p>El objetivo de la preparación no es trasladar una copia completa de Revit al programa de cálculo. El objetivo es obtener un modelo <strong>geométricamente continuo, térmicamente interpretable, suficientemente sencillo y trazable</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Estado de la página</p>
+<p>Los conceptos relacionados con Open BIM Analytical Model y TeKton3D están confirmados mediante documentación oficial. Su aplicación detallada a Revit 2026 se completará mediante documentación del exportador IFC y pruebas controladas.</p>
+</div>
+<h2 id="1-los-modelos-que-intervienen">1. Los modelos que intervienen<a class="headerlink" href="#1-los-modelos-que-intervienen" title="Permanent link">&para;</a></h2>
+<h3 id="11-modelo-arquitectonico">1.1 Modelo arquitectónico<a class="headerlink" href="#11-modelo-arquitectonico" title="Permanent link">&para;</a></h3>
+<p>Es el modelo nativo creado en Revit para representar y documentar el edificio. Contiene elementos constructivos, habitaciones, información gráfica, familias, fases, opciones, vínculos y datos de proyecto.</p>
+<p>Su lógica responde principalmente a cómo se diseña y documenta la arquitectura. Por ello puede incluir:</p>
+<ul>
+<li>Capas de acabado modeladas por separado.</li>
+<li>Elementos decorativos o auxiliares.</li>
+<li>Geometrías con un nivel de detalle superior al requerido por el cálculo.</li>
+<li>Recintos divididos por razones funcionales que podrían compartir condiciones térmicas.</li>
+<li>Espacios que no están definidos porque no eran necesarios para la documentación.</li>
+<li>Elementos que cierran visualmente un recinto, pero no lo delimitan computacionalmente.</li>
+</ul>
+<p>El modelo arquitectónico es la fuente de información, pero no debe confundirse con el modelo de cálculo.</p>
+<h3 id="12-modelo-de-intercambio-ifc">1.2 Modelo de intercambio IFC<a class="headerlink" href="#12-modelo-de-intercambio-ifc" title="Permanent link">&para;</a></h3>
+<p>Es la representación exportada desde Revit mediante un esquema IFC y una configuración concreta. Contiene geometría, estructura espacial, clases, relaciones y propiedades seleccionadas durante la exportación.</p>
+<p>El IFC cumple tres funciones en este flujo:</p>
+<ol>
+<li>Transportar la geometría arquitectónica relevante.</li>
+<li>Identificar elementos y recintos mediante entidades normalizadas.</li>
+<li>Servir como referencia estable para generar o reconstruir el modelo analítico.</li>
+</ol>
+<p>Un IFC que puede abrirse correctamente en un visor no es necesariamente apto para análisis energético. La visualización confirma que existe geometría, pero no demuestra que los espacios estén cerrados, que las superficies tengan colindancias correctas o que los huecos estén asociados al cerramiento adecuado.</p>
+<h3 id="13-modelo-analitico">1.3 Modelo analítico<a class="headerlink" href="#13-modelo-analitico" title="Permanent link">&para;</a></h3>
+<p>Es una abstracción de la geometría arquitectónica orientada a describir los intercambios térmicos y, cuando procede, acústicos. Sus entidades fundamentales son:</p>
+<ul>
+<li><strong>Espacios:</strong> volúmenes de cálculo.</li>
+<li><strong>Superficies:</strong> límites de los espacios y vectores de transferencia.</li>
+<li><strong>Huecos:</strong> partes diferenciadas dentro de superficies opacas.</li>
+<li><strong>Aristas:</strong> encuentros entre superficies.</li>
+<li><strong>Colindancias:</strong> relaciones entre límites de espacios contiguos.</li>
+<li><strong>Sombras:</strong> superficies que modifican la radiación incidente sin formar parte de la transmisión térmica del recinto.</li>
+</ul>
+<p>Open BIM Analytical Model genera estos componentes mediante el análisis de los recintos y elementos arquitectónicos contenidos en el IFC. El usuario puede editar el resultado, corregir colindancias, dividir o unir superficies y ajustar espacios.</p>
+<p>TeKton3D permite otra estrategia: importar determinadas entidades IFC como elementos nativos o vincular el IFC como referencia y construir sobre él un modelo analítico simplificado. La documentación de iMventa recomienda habitualmente esta segunda opción para que el técnico controle la simplificación.</p>
+<h3 id="14-modelo-energetico">1.4 Modelo energético<a class="headerlink" href="#14-modelo-energetico" title="Permanent link">&para;</a></h3>
+<p>Es el modelo que finalmente interpreta el motor de cálculo. Añade al modelo analítico información que no puede deducirse únicamente de la forma del edificio:</p>
+<ul>
+<li>Soluciones constructivas y propiedades térmicas.</li>
+<li>Condiciones operacionales.</li>
+<li>Zonificación térmica.</li>
+<li>Perfiles de ocupación, iluminación y equipos.</li>
+<li>Ventilación e infiltración.</li>
+<li>Sistemas de climatización y ACS.</li>
+<li>Datos climáticos.</li>
+<li>Parámetros reglamentarios y opciones de simulación.</li>
+</ul>
+<p>El modelo energético puede reorganizar los recintos arquitectónicos. Un espacio arquitectónico puede dividirse en varias zonas cuando existen condiciones diferentes; varios espacios pueden agruparse cuando comparten uso, horarios, sistema y comportamiento térmico.</p>
+<h3 id="15-resultados-y-documentacion">1.5 Resultados y documentación<a class="headerlink" href="#15-resultados-y-documentacion" title="Permanent link">&para;</a></h3>
+<p>El último nivel corresponde a los resultados calculados y a los documentos reglamentarios o de análisis: demandas, consumos, emisiones, indicadores, verificaciones, certificados y archivos de intercambio administrativo.</p>
+<p>Estos resultados solo son reproducibles si se conservan las versiones del modelo fuente, la configuración IFC, el modelo analítico, el modelo energético, el motor y sus datos de entrada.</p>
+<h2 id="2-relacion-entre-los-modelos">2. Relación entre los modelos<a class="headerlink" href="#2-relacion-entre-los-modelos" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    A["Modelo arquitectónico Revit"] --&gt;|"selección y exportación"| B["Modelo IFC"]
+    B --&gt;|"análisis o reconstrucción"| C["Modelo analítico"]
+    C --&gt;|"propiedades y condiciones"| D["Modelo energético"]
+    D --&gt;|"simulación"| E["Resultados"]
+    B -. "validación" .-&gt; A
+    C -. "incidencias geométricas" .-&gt; A
+    D -. "revisión de hipótesis" .-&gt; C</code></pre>
+<p>El flujo no es estrictamente lineal. La generación del modelo analítico suele revelar errores que deben corregirse en Revit: habitaciones abiertas, huecos ausentes, elementos duplicados, límites falsos o encuentros discontinuos. Corregir únicamente el modelo receptor puede resolver una entrega puntual, pero no elimina el problema del modelo fuente ni garantiza que la siguiente actualización sea consistente.</p>
+<h2 id="3-espacio-arquitectonico-espacio-analitico-y-zona-termica">3. Espacio arquitectónico, espacio analítico y zona térmica<a class="headerlink" href="#3-espacio-arquitectonico-espacio-analitico-y-zona-termica" title="Permanent link">&para;</a></h2>
+<h3 id="31-espacio-arquitectonico">3.1 Espacio arquitectónico<a class="headerlink" href="#31-espacio-arquitectonico" title="Permanent link">&para;</a></h3>
+<p>Representa un recinto identificado por criterios de diseño, uso o documentación. En Revit se materializa habitualmente mediante habitaciones o espacios MEP.</p>
+<h3 id="32-espacio-analitico">3.2 Espacio analítico<a class="headerlink" href="#32-espacio-analitico" title="Permanent link">&para;</a></h3>
+<p>Es un volumen cerrado limitado por superficies que el proceso de análisis puede relacionar con exterior, terreno u otros espacios. Habitualmente coincide con un recinto arquitectónico, pero no existe obligación de correspondencia uno a uno.</p>
+<h3 id="33-zona-termica">3.3 Zona térmica<a class="headerlink" href="#33-zona-termica" title="Permanent link">&para;</a></h3>
+<p>Es una unidad de simulación formada por uno o varios espacios que comparten criterios suficientes para calcularse conjuntamente. La agrupación debe considerar, como mínimo:</p>
+<ul>
+<li>Uso y condiciones operacionales.</li>
+<li>Horarios.</li>
+<li>Temperaturas de consigna.</li>
+<li>Sistema que atiende el espacio.</li>
+<li>Orientación y comportamiento de la envolvente cuando sean determinantes.</li>
+<li>Unidad de uso o alcance reglamentario.</li>
+</ul>
+<p>No debe suponerse que una habitación de Revit equivale automáticamente a una zona térmica.</p>
+<h2 id="4-superficies-y-condiciones-de-contorno">4. Superficies y condiciones de contorno<a class="headerlink" href="#4-superficies-y-condiciones-de-contorno" title="Permanent link">&para;</a></h2>
+<p>Una superficie analítica representa una porción del límite de un espacio. Para que resulte útil debe conocerse:</p>
+<ul>
+<li>El espacio al que pertenece.</li>
+<li>Si es opaca o acristalada.</li>
+<li>Si forma parte de un hueco.</li>
+<li>Su disposición, orientación e inclinación.</li>
+<li>Su área y perímetro.</li>
+<li>El medio o espacio situado al otro lado.</li>
+<li>La superficie colindante cuando separa dos espacios.</li>
+</ul>
+<p>Las condiciones de contorno habituales son:</p>
+<ul>
+<li>Aire exterior.</li>
+<li>Terreno.</li>
+<li>Otro espacio acondicionado.</li>
+<li>Otro espacio no acondicionado.</li>
+<li>Medianería o condición adiabática, cuando el procedimiento lo justifique.</li>
+</ul>
+<p>Una superficie sin condición de contorno inequívoca puede generar pérdidas, ganancias o adyacencias incorrectas aunque su posición visual parezca adecuada.</p>
+<h2 id="5-aristas-encuentros-y-puentes-termicos">5. Aristas, encuentros y puentes térmicos<a class="headerlink" href="#5-aristas-encuentros-y-puentes-termicos" title="Permanent link">&para;</a></h2>
+<p>Las aristas describen la convergencia entre superficies. En un modelo analítico permiten relacionar encuentros de fachada con forjados, cubiertas, huecos y otros elementos.</p>
+<p>Su utilidad depende del programa receptor. Open BIM Analytical Model puede generar y relacionar aristas para que aplicaciones posteriores interpreten uniones y transmisiones laterales. TeKton3D detecta determinados puentes térmicos a partir de la geometría, los cerramientos próximos y las soluciones constructivas asignadas.</p>
+<p>Por ello, pequeñas discontinuidades, superficies duplicadas o encuentros fragmentados pueden alterar no solo el área de la envolvente, sino también la longitud y clasificación de los puentes térmicos.</p>
+<h2 id="6-sombras">6. Sombras<a class="headerlink" href="#6-sombras" title="Permanent link">&para;</a></h2>
+<p>Los elementos de sombra influyen en la radiación solar sin ser necesariamente parte de la envolvente térmica. Deben distinguirse:</p>
+<ul>
+<li><strong>Sombras propias:</strong> aleros, vuelos, retranqueos, lamas y otros elementos del edificio.</li>
+<li><strong>Sombras remotas:</strong> edificios próximos u obstáculos exteriores.</li>
+</ul>
+<p>Exportar toda la geometría exterior puede volver el modelo innecesariamente pesado. Deben conservarse únicamente los obstáculos con influencia significativa, utilizando una representación geométrica proporcionada al análisis.</p>
+<h2 id="7-principio-de-modelo-minimo-suficiente-y-calculable">7. Principio de modelo mínimo, suficiente y calculable<a class="headerlink" href="#7-principio-de-modelo-minimo-suficiente-y-calculable" title="Permanent link">&para;</a></h2>
+<p>El modelo preparado debe cumplir simultáneamente tres condiciones:</p>
+<h3 id="minimo">Mínimo<a class="headerlink" href="#minimo" title="Permanent link">&para;</a></h3>
+<p>No incluye detalle sin influencia apreciable en el análisis ni geometría que dificulte el reconocimiento de espacios y superficies.</p>
+<h3 id="suficiente">Suficiente<a class="headerlink" href="#suficiente" title="Permanent link">&para;</a></h3>
+<p>Contiene todos los recintos, límites, huecos, sombras y referencias necesarias para reproducir el comportamiento térmico relevante.</p>
+<h3 id="calculable">Calculable<a class="headerlink" href="#calculable" title="Permanent link">&para;</a></h3>
+<p>Puede transformarse en un conjunto coherente de zonas y superficies compatible con las reglas geométricas del motor de cálculo.</p>
+<p>La simplificación no consiste en eliminar indiscriminadamente. Consiste en conservar el efecto térmico con la geometría más robusta posible.</p>
+<h2 id="8-criterios-para-decidir-donde-corregir">8. Criterios para decidir dónde corregir<a class="headerlink" href="#8-criterios-para-decidir-donde-corregir" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Incidencia</th>
+<th>Corrección preferente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Habitación abierta o sin volumen</td>
+<td>Revit</td>
+</tr>
+<tr>
+<td>Muro, forjado o cubierta duplicados</td>
+<td>Revit</td>
+</tr>
+<tr>
+<td>Hueco que no corta el cerramiento</td>
+<td>Revit o familia de Revit</td>
+</tr>
+<tr>
+<td>Clasificación IFC incorrecta y recurrente</td>
+<td>Revit o configuración IFC</td>
+</tr>
+<tr>
+<td>Simplificación específica del cálculo</td>
+<td>Modelo analítico o energético</td>
+</tr>
+<tr>
+<td>Agrupación de espacios en zonas</td>
+<td>Modelo analítico o energético, conservando trazabilidad</td>
+</tr>
+<tr>
+<td>Colindancia puntual mal deducida</td>
+<td>Revisar primero Revit; corregir en el analítico si la fuente es válida</td>
+</tr>
+<tr>
+<td>Obstáculo remoto no modelado en arquitectura</td>
+<td>Modelo analítico o energético</td>
+</tr>
+</tbody>
+</table>
+<p>La regla general es corregir en el origen aquello que representa un defecto del edificio modelado y resolver en el receptor aquello que constituye una decisión propia del cálculo.</p>
+<h2 id="9-requisitos-de-trazabilidad">9. Requisitos de trazabilidad<a class="headerlink" href="#9-requisitos-de-trazabilidad" title="Permanent link">&para;</a></h2>
+<p>Cada modelo energético aprobado debe poder vincularse con:</p>
+<ul>
+<li>Archivo y versión de Revit.</li>
+<li>Vista y fase de exportación.</li>
+<li>Versión del exportador IFC.</li>
+<li>Configuración, esquema y MVD.</li>
+<li>Archivo IFC publicado.</li>
+<li>Versión del modelo analítico.</li>
+<li>Aplicación y versión del motor.</li>
+<li>Registro de correcciones manuales.</li>
+<li>Fecha y responsable de validación.</li>
+</ul>
+<p>Esta trazabilidad permite actualizar el proyecto sin convertir cada simulación en un proceso irrepetible.</p>
+<h2 id="10-fuentes-principales">10. Fuentes principales<a class="headerlink" href="#10-fuentes-principales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CYPE, <em>Open BIM Analytical Model. Manual de uso</em> (<code>CYPE-OBAM-01</code>).</li>
+<li>CYPE, <em>Guía de interoperabilidad CYPE-Revit v2.0</em> (<code>CYPE-REVIT-20</code>).</li>
+<li>iMventa Ingenieros, <em>Manual TK-CEEP</em> (<code>IMVENTA-CEEP</code>).</li>
+<li>iMventa Ingenieros, <em>Crear modelo analítico del edificio en TeKton3D a partir de un IFC</em> (<code>IMVENTA-IFC-ANALYTICAL</code>).</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última actualización">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:21:36 UTC">11 de julio de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Creado">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:21:36 UTC">11 de julio de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY 4.0 - Versión 0.1.0 - Documento en elaboración
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
