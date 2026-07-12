@@ -602,4 +602,3 @@ Se comparará:
 - Autodesk, *Spaces*, Revit MEP 2026.
 - Autodesk, *Zones*, Revit MEP 2026.
 - CYPE, *Guía de interoperabilidad CYPE-Revit v2.0* (`CYPE-REVIT-20`).
-
