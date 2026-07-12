@@ -22,6 +22,8 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Desarrollo del capítulo "Configuraciones de exportación IFC desde Revit 2026".
 - Desarrollo del procedimiento "QA/QC de Revit e IFC para análisis energético".
 - Ampliación del registro de incidencias y del checklist operativo Revit–IFC.
+- Incorporación de validación automática IFC mediante IDS 1.0 e IfcTester.
+- Primera especificación `eem-ifc-minimo-v0.1.ids` e informes HTML/JSON en GitHub Actions.
 - Vista previa HTML automática para cada solicitud de cambios.
 - Generación automática del PDF en las versiones publicadas.
 

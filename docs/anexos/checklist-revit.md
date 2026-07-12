@@ -142,6 +142,8 @@ Esta lista resume los controles de las puertas 1 y 2. Debe utilizarse junto con 
 - [ ] Huecos están relacionados con sus anfitriones.
 - [ ] No existen elementos duplicados o muy alejados.
 - [ ] Psets EEM están presentes.
+- [ ] El IFC cumple la especificación IDS aplicable.
+- [ ] El informe HTML/JSON de IDS está archivado.
 - [ ] Unidades y tipos de propiedades son correctos.
 - [ ] Cantidades base se compararon con Revit.
 - [ ] GlobalIds son válidos y únicos.
@@ -182,4 +184,3 @@ Limitaciones:
 Revisado por:
 Fecha:
 ```
-

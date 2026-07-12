@@ -408,6 +408,8 @@ Las diferencias deben explicarse por descomposición conocida, no aceptarse solo
 
 Se comprobarán con valores inequívocos del modelo de referencia.
 
+La comprobación automática de entidades, atributos y propiedades se realizará mediante las especificaciones IDS versionadas descritas en [Validación automática de IFC mediante IDS](validacion-ids.md).
+
 ## 32. Identificadores
 
 - GlobalIds válidos y únicos.
@@ -701,4 +703,3 @@ El informe de QA/QC contendrá:
 ## 57. Fuentes metodológicas
 
 Este procedimiento consolida los criterios documentados en los capítulos de Revit, IFC, espacios, envolvente, huecos, sombras, geometrías de riesgo, parámetros y exportación. Las fuentes oficiales se mantienen en el registro estructurado y en la bibliografía del proyecto.
-

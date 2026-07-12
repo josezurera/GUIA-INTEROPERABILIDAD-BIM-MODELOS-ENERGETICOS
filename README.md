@@ -11,7 +11,7 @@ Manual técnico vivo sobre preparación geométrica en Autodesk Revit, intercamb
 
 ## Estado
 
-Versión `0.1.0` - estructura inicial en elaboración. Las páginas identifican por separado los contenidos confirmados, recomendados, pendientes de validación y obsoletos.
+Versión `0.2.0` en revisión - Revit 2026, preparación IFC y procedimiento QA/QC. Las páginas identifican por separado los contenidos confirmados, recomendados, pendientes de validación y obsoletos.
 
 ## Desarrollo local
 
@@ -21,6 +21,16 @@ Versión `0.1.0` - estructura inicial en elaboración. Las páginas identifican 
 4. Abrir la dirección local indicada por MkDocs.
 
 La fuente oficial es el contenido Markdown de `docs/`. La web y los PDF son productos derivados.
+
+## Validación IFC mediante IDS
+
+El repositorio incluye una especificación IDS 1.0 y un validador reproducible basado en IfcTester:
+
+1. Instalar `pip install -r requirements-ids.txt`.
+2. Ejecutar `python scripts/validar_ids.py --audit-only` para auditar el IDS.
+3. Ejecutar `python scripts/validar_ids.py ruta/al/modelo.ifc` para validar un IFC.
+
+Los informes HTML y JSON se guardan en `reports/ids/`. GitHub también ejecuta esta comprobación sobre los modelos no confidenciales incluidos en `tests/ifc/`.
 
 ## Lectura y revisión
 

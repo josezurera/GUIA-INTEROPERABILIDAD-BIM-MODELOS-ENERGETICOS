@@ -362,3 +362,24 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-15D37541-CEAD-4797-9B6E-5267534CC2C0.htm
     fecha_consulta: 2026-07-12
     estado: revisada
+  - id: BSI-IDS-1
+    titulo: Information Delivery Specification (IDS)
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC-VALIDATION
+    titulo: IFC Validation Service
+    entidad: buildingSMART International
+    tipo: servicio_oficial
+    url: https://www.buildingsmart.org/users/services/validation-service/
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: IFCOPENSHELL-IFCTESTER-085
+    titulo: IfcTester documentation 0.8.5
+    entidad: IfcOpenShell
+    tipo: documentacion_oficial
+    url: https://docs.ifcopenshell.org/ifctester.html
+    fecha_consulta: 2026-07-12
+    estado: revisada

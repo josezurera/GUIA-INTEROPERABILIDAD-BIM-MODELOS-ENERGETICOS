@@ -88,6 +88,7 @@ nav:
       - DesignBuilder: 04-aplicaciones/designbuilder/index.md
   - Validación:
       - Estrategia QA/QC: 05-validacion/index.md
+      - Validación IFC mediante IDS: 05-validacion/validacion-ids.md
       - Registro de incidencias: 05-validacion/incidencias.md
   - Comparativas:
       - Matriz de compatibilidad: 06-comparativas/compatibilidad.md

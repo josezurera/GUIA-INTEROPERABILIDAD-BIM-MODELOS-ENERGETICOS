@@ -56,4 +56,7 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - buildingSMART. *IFC 4.3.2 Documentation: Pset_WallCommon*.
 - buildingSMART. *IFC 4.3.2 Documentation: IfcWindow*.
 - buildingSMART. *IFC 4.3.2 Documentation: IfcDoor*.
+- buildingSMART International. *Information Delivery Specification (IDS) 1.0*.
+- buildingSMART International. *IFC Validation Service*.
+- IfcOpenShell. *IfcTester documentation*.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.
