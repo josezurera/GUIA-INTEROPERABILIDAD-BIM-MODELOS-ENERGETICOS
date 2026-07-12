@@ -24,7 +24,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Geometrías de riesgo.
 - [x] Parámetros y mapeado IFC.
 - [x] Configuraciones de exportación.
-- [ ] QA/QC de Revit e IFC.
+- [x] QA/QC de Revit e IFC.
 
 ## Versión 0.3.0 - Flujo CYPE
 
