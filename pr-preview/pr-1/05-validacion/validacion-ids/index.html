@@ -2012,7 +2012,7 @@
 
 <h1 id="validacion-automatica-de-ifc-mediante-ids">Validación automática de IFC mediante IDS<a class="headerlink" href="#validacion-automatica-de-ifc-mediante-ids" title="Permanent link">&para;</a></h1>
 <p>La guía adopta <strong>Information Delivery Specification (IDS) 1.0</strong>, estándar de buildingSMART, para expresar y comprobar requisitos de información sobre archivos IFC.</p>
-<p>La herramienta seleccionada es <strong>IfcTester 0.8.5</strong>, incluida en el ecosistema abierto IfcOpenShell. Permite validar desde línea de comandos y generar informes HTML y JSON reproducibles.</p>
+<p>La herramienta seleccionada es <strong>IfcTester 0.8.5</strong>, incluida en el ecosistema abierto IfcOpenShell. Permite validar desde línea de comandos y generar informes HTML y JSON reproducibles. El ejecutable de la guía añade una prevalidación del esquema mediante <code>ifcopenshell.validate</code>.</p>
 <h2 id="1-que-comprueba-ids">1. Qué comprueba IDS<a class="headerlink" href="#1-que-comprueba-ids" title="Permanent link">&para;</a></h2>
 <p>IDS puede exigir, entre otros:</p>
 <ul>
@@ -2030,6 +2030,16 @@
 <li>Existencia de plantas.</li>
 <li>Existencia de espacios <code>IfcSpace</code>.</li>
 <li>Nombre en muros, losas, cubiertas, ventanas y puertas cuando existan.</li>
+</ul>
+<p>El complemento <code>eem-ifc2x3-complemento-v0.1.ids</code> incorpora reglas para entidades habituales de IFC2x3, inicialmente <code>IfcWallStandardCase</code>.</p>
+<p>Antes de aplicar los IDS, la herramienta registra y comprueba:</p>
+<ul>
+<li>Esquema IFC.</li>
+<li>Conformidad de atributos, tipos y cardinalidades con el esquema.</li>
+<li>Aplicación y versión de origen.</li>
+<li>Hash SHA-256 y tamaño.</li>
+<li>Inventario exacto de entidades principales.</li>
+<li>GlobalIds ausentes, duplicados o inválidos.</li>
 </ul>
 <h2 id="2-que-no-comprueba-ids-por-si-solo">2. Qué no comprueba IDS por sí solo<a class="headerlink" href="#2-que-no-comprueba-ids-por-si-solo" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2064,6 +2074,8 @@ tests/ifc/
 <li>HTML para lectura humana.</li>
 <li>JSON para automatización.</li>
 <li><code>resumen.json</code> con el resultado global.</li>
+<li><code>resumen.html</code> con prevalidación, inventario y requisitos fallidos.</li>
+<li>Un JSON de prevalidación por IFC.</li>
 </ul>
 <p>El proceso devuelve:</p>
 <ul>
@@ -2082,8 +2094,9 @@ tests/ifc/
 <li>Marca la acción como fallida si un IFC no cumple.</li>
 </ol>
 <p>Si no existe ningún IFC público de ensayo, la acción audita únicamente la especificación y finaliza correctamente.</p>
+<p>Los IFC reales colocados en <code>tests/ifc/</code> están excluidos de Git por defecto para impedir su publicación accidental. Solo se versionará un modelo adicional mediante una decisión expresa y después de confirmar que no contiene información confidencial.</p>
 <h2 id="6-interpretacion-del-resultado">6. Interpretación del resultado<a class="headerlink" href="#6-interpretacion-del-resultado" title="Permanent link">&para;</a></h2>
-<p>Un resultado <strong>CUMPLE</strong> significa que el IFC satisface todos los requisitos expresados en esa versión del IDS. No significa que el modelo energético completo esté aprobado.</p>
+<p>Un resultado <strong>CUMPLE</strong> significa que el IFC supera la prevalidación y satisface todos los requisitos expresados en los IDS aplicados. No significa que el modelo energético completo esté aprobado.</p>
 <p>Un resultado <strong>NO CUMPLE</strong> debe convertirse en una incidencia con:</p>
 <ul>
 <li>Especificación e identificador fallidos.</li>
@@ -2153,7 +2166,7 @@ tests/ifc/
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 20:25:32 UTC">12 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 20:44:32 UTC">12 de julio de 2026</span>
   </span>
 
     
@@ -2163,7 +2176,7 @@ tests/ifc/
     <span class="md-icon" title="Creado">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 20:25:32 UTC">12 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 20:44:32 UTC">12 de julio de 2026</span>
   </span>
 
     
