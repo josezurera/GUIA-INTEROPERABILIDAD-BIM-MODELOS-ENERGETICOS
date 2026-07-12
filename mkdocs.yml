@@ -71,6 +71,7 @@ nav:
       - Estrategia de modelado: 03-revit/estrategia-modelado.md
       - Coordenadas, orientación y niveles: 03-revit/coordenadas-orientacion-niveles.md
       - Habitaciones, espacios y zonas: 03-revit/habitaciones-espacios-zonas.md
+      - Preparación de la envolvente: 03-revit/preparacion-envolvente.md
       - Exportación IFC: 03-revit/exportacion-ifc.md
   - Aplicaciones:
       - Visión general: 04-aplicaciones/index.md

@@ -18,7 +18,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Estrategia general de modelado en Revit.
 - [x] Coordenadas, orientación y niveles.
 - [x] Habitaciones, espacios y zonas térmicas.
-- [ ] Preparación de la envolvente.
+- [x] Preparación de la envolvente.
 - [ ] Huecos y elementos transparentes.
 - [ ] Sombras y geometría exterior.
 - [ ] Geometrías de riesgo.

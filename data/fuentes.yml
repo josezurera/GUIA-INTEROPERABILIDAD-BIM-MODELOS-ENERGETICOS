@@ -152,3 +152,45 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-MEPEng/files/GUID-C4115E01-4FD5-406E-B738-5AB927235240.htm
     fecha_consulta: 2026-07-12
     estado: revisada
+  - id: AUTODESK-RVT2026-PREPARE-ANALYSIS
+    titulo: Prepare a Model for Analysis
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-CarbonInsights/files/carbon_insights/ci_workflow/GUID-48704F2C-5BD5-4B70-9CA6-0FA134BC1CAC.html
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-SPACE-RESOLUTION
+    titulo: Analytical Space Resolution
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-A68ABA83-4B82-4EF7-AF6B-38EADC36794E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ATTACH-WALLS
+    titulo: Attach Walls to Other Elements
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-ED60CE62-B955-45E9-9D7D-00F1552D858C.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-LAYER-FUNCTION
+    titulo: About Applying a Function and a Priority to a Layer of a Compound Structure
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-1CCD1005-CBDA-4338-8D60-489095D4BB25.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-COMPOUND-VIDEO
+    titulo: "Video: Editing Compound Structures"
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-GetStarted/files/GUID-475CF556-2EAE-4D6E-906D-4CE6BBE578D9.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ENERGY-SETTINGS
+    titulo: Energy Settings
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-36B2F66A-E423-4D9C-B266-3ABA57573F4A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada

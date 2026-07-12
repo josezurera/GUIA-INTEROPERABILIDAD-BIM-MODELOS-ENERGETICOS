@@ -26,4 +26,10 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *Use Room Boundaries in a Linked Model*, Revit 2026.
 - Autodesk. *Spaces*, Revit MEP 2026.
 - Autodesk. *Zones*, Revit MEP 2026.
+- Autodesk. *Prepare a Model for Analysis*, Revit 2026.
+- Autodesk. *Analytical Space Resolution*, Revit 2026.
+- Autodesk. *Attach Walls to Other Elements*, Revit 2026.
+- Autodesk. *About Applying a Function and a Priority to a Layer of a Compound Structure*, Revit 2026.
+- Autodesk. *Video: Editing Compound Structures*, Revit 2026.
+- Autodesk. *Energy Settings*, Revit 2026.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.
