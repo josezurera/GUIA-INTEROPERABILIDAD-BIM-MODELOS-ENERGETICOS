@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/03-revit/estrategia-modelado/">
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/03-revit/coordenadas-orientacion-niveles/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../estrategia-modelado/">
       
       
-        <link rel="next" href="../coordenadas-orientacion-niveles/">
+        <link rel="next" href="../exportacion-ifc/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Estrategia general de modelado en Revit 2026 - Guía BIM para análisis energético</title>
+        <title>Coordenadas, orientación y niveles en Revit 2026 - Guía BIM para análisis energético</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#estrategia-general-de-modelado-en-revit-2026" class="md-skip">
+        <a href="#coordenadas-orientacion-y-niveles-en-revit-2026" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Estrategia general de modelado en Revit 2026
+              Coordenadas, orientación y niveles en Revit 2026
             
           </span>
         </div>
@@ -815,6 +815,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrategia-modelado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estrategia de modelado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -832,7 +855,7 @@
   
   
   <span class="md-ellipsis">
-    Estrategia de modelado
+    Coordenadas, orientación y niveles
     
   </span>
   
@@ -845,7 +868,7 @@
   
   
   <span class="md-ellipsis">
-    Estrategia de modelado
+    Coordenadas, orientación y niveles
     
   </span>
   
@@ -868,37 +891,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-objetivo-del-modelo-preparado" class="md-nav__link">
+  <a href="#1-por-que-importa-en-analisis-energetico" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Objetivo del modelo preparado
+      1. Por qué importa en análisis energético
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-modelo-documental-y-modelo-analizable" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Modelo documental y modelo analizable
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Modelo documental y modelo analizable">
+    <nav class="md-nav" aria-label="1. Por qué importa en análisis energético">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-modelo-documental" class="md-nav__link">
+  <a href="#11-orientacion" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Modelo documental
+      1.1 Orientación
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-modelo-analizable" class="md-nav__link">
+  <a href="#12-ubicacion" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Modelo analizable
+      1.2 Ubicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Cotas
     </span>
   </a>
   
@@ -910,55 +933,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-principio-de-fuente-unica-y-correccion-en-origen" class="md-nav__link">
+  <a href="#2-sistemas-de-referencia-en-revit" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Principio de fuente única y corrección en origen
+      2. Sistemas de referencia en Revit
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-preparacion-temprana" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Preparación temprana
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-organizacion-del-modelo" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Organización del modelo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Organización del modelo">
+    <nav class="md-nav" aria-label="2. Sistemas de referencia en Revit">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-convenciones-de-nombres" class="md-nav__link">
+  <a href="#21-origen-interno" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Convenciones de nombres
+      2.1 Origen interno
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-codigos-de-tipos-constructivos" class="md-nav__link">
+  <a href="#22-punto-base-del-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Códigos de tipos constructivos
+      2.2 Punto base del proyecto
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-parametros-compartidos-o-de-proyecto" class="md-nav__link">
+  <a href="#23-punto-topografico" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Parámetros compartidos o de proyecto
+      2.3 Punto topográfico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-coordenadas-de-proyecto-y-compartidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Coordenadas de proyecto y compartidas
     </span>
   </a>
   
@@ -970,19 +984,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-vista-3d-especifica-de-exportacion" class="md-nav__link">
+  <a href="#3-proyecto-norte-y-norte-verdadero" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Vista 3D específica de exportación
+      3. Proyecto Norte y Norte verdadero
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6. Vista 3D específica de exportación">
+    <nav class="md-nav" aria-label="3. Proyecto Norte y Norte verdadero">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-riesgo-de-confiar-solo-en-la-visibilidad" class="md-nav__link">
+  <a href="#31-regla-para-analisis-energetico" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1 Riesgo de confiar solo en la visibilidad
+      3.1 Regla para análisis energético
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-comprobaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Comprobaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-riesgos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Riesgos
     </span>
   </a>
   
@@ -994,46 +1026,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-categorias-que-normalmente-se-incluyen" class="md-nav__link">
+  <a href="#4-ubicacion-geografica" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Categorías que normalmente se incluyen
+      4. Ubicación geográfica
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-categorias-que-normalmente-se-excluyen-o-simplifican" class="md-nav__link">
+  <a href="#5-base-de-coordenadas-para-exportacion-ifc" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Categorías que normalmente se excluyen o simplifican
+      5. Base de coordenadas para exportación IFC
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-nivel-de-detalle-geometrico" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Nivel de detalle geométrico
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-elementos-delimitadores-de-habitacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Elementos delimitadores de habitación
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="10. Elementos delimitadores de habitación">
+    <nav class="md-nav" aria-label="5. Base de coordenadas para exportación IFC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#101-riesgo-de-limites-falsos" class="md-nav__link">
+  <a href="#51-modelo-aislado" class="md-nav__link">
     <span class="md-ellipsis">
-      10.1 Riesgo de límites falsos
+      5.1 Modelo aislado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-proyecto-federado" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Proyecto federado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-decision-por-flujo" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Decisión por flujo
     </span>
   </a>
   
@@ -1045,153 +1077,246 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-habitaciones-y-espacios" class="md-nav__link">
+  <a href="#6-referencia-cartografica-y-epsg" class="md-nav__link">
     <span class="md-ellipsis">
-      11. Habitaciones y espacios
+      6. Referencia cartográfica y EPSG
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-envolvente-termica" class="md-nav__link">
+  <a href="#7-precision-y-distancia-al-origen" class="md-nav__link">
     <span class="md-ellipsis">
-      12. Envolvente térmica
+      7. Precisión y distancia al origen
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-huecos" class="md-nav__link">
+  <a href="#8-vinculos-y-coordenadas-compartidas" class="md-nav__link">
     <span class="md-ellipsis">
-      13. Huecos
+      8. Vínculos y coordenadas compartidas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-coordenadas-y-orientacion" class="md-nav__link">
+  <a href="#9-niveles-de-revit" class="md-nav__link">
     <span class="md-ellipsis">
-      14. Coordenadas y orientación
+      9. Niveles de Revit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Niveles de Revit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-niveles-funcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Niveles funcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-niveles-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Niveles auxiliares
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-parametro-planta-de-edificio" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Parámetro Planta de edificio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Parámetro Planta de edificio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-regla-recomendada" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Regla recomendada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Excepciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-parametro-planta-superior" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Parámetro Planta superior
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#15-niveles" class="md-nav__link">
+  <a href="#12-cota-del-nivel-y-altura-de-planta" class="md-nav__link">
     <span class="md-ellipsis">
-      15. Niveles
+      12. Cota del nivel y altura de planta
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#16-fases" class="md-nav__link">
+  <a href="#13-altura-de-calculo-de-habitaciones" class="md-nav__link">
     <span class="md-ellipsis">
-      16. Fases
+      13. Altura de cálculo de habitaciones
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#17-opciones-de-diseno" class="md-nav__link">
+  <a href="#14-relacion-entre-habitaciones-y-niveles" class="md-nav__link">
     <span class="md-ellipsis">
-      17. Opciones de diseño
+      14. Relación entre habitaciones y niveles
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#18-modelos-vinculados" class="md-nav__link">
+  <a href="#15-edificios-con-plantas-partidas" class="md-nav__link">
     <span class="md-ellipsis">
-      18. Modelos vinculados
+      15. Edificios con plantas partidas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#19-subproyectos-y-modelo-central" class="md-nav__link">
+  <a href="#16-dobles-alturas" class="md-nav__link">
     <span class="md-ellipsis">
-      19. Subproyectos y modelo central
+      16. Dobles alturas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#20-familias-y-geometria-in-situ" class="md-nav__link">
+  <a href="#17-sotanos-y-contacto-con-terreno" class="md-nav__link">
     <span class="md-ellipsis">
-      20. Familias y geometría in situ
+      17. Sótanos y contacto con terreno
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#21-modelo-nativo-de-energia-de-revit" class="md-nav__link">
+  <a href="#18-cubiertas-y-niveles-superiores" class="md-nav__link">
     <span class="md-ellipsis">
-      21. Modelo nativo de energía de Revit
+      18. Cubiertas y niveles superiores
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#22-estrategia-de-configuraciones-ifc" class="md-nav__link">
+  <a href="#19-varios-edificios-en-un-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
-      22. Estrategia de configuraciones IFC
+      19. Varios edificios en un proyecto
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#23-vistas-y-tablas-de-control" class="md-nav__link">
+  <a href="#20-tabla-de-planificacion-de-niveles" class="md-nav__link">
     <span class="md-ellipsis">
-      23. Vistas y tablas de control
+      20. Tabla de planificación de niveles
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#24-responsabilidades" class="md-nav__link">
+  <a href="#21-vista-de-control-de-coordenadas" class="md-nav__link">
     <span class="md-ellipsis">
-      24. Responsabilidades
+      21. Vista de control de coordenadas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#25-proceso-recomendado" class="md-nav__link">
+  <a href="#22-comprobacion-en-ifc" class="md-nav__link">
     <span class="md-ellipsis">
-      25. Proceso recomendado
+      22. Comprobación en IFC
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#26-criterios-generales-de-aceptacion" class="md-nav__link">
+  <a href="#23-comprobacion-en-open-bim-analytical-model" class="md-nav__link">
     <span class="md-ellipsis">
-      26. Criterios generales de aceptación
+      23. Comprobación en Open BIM Analytical Model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#27-decisiones-pendientes-de-ensayo" class="md-nav__link">
+  <a href="#24-comprobacion-en-tekton3d" class="md-nav__link">
     <span class="md-ellipsis">
-      27. Decisiones pendientes de ensayo
+      24. Comprobación en TeKton3D
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-matriz-de-decisiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. Matriz de decisiones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-checklist-previo-a-exportacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. Checklist previo a exportación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-ensayo-propuesto-para-revit-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. Ensayo propuesto para Revit 2026
     </span>
   </a>
   
@@ -1210,29 +1335,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../coordenadas-orientacion-niveles/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Coordenadas, orientación y niveles
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1976,37 +2078,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-objetivo-del-modelo-preparado" class="md-nav__link">
+  <a href="#1-por-que-importa-en-analisis-energetico" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Objetivo del modelo preparado
+      1. Por qué importa en análisis energético
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-modelo-documental-y-modelo-analizable" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Modelo documental y modelo analizable
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Modelo documental y modelo analizable">
+    <nav class="md-nav" aria-label="1. Por qué importa en análisis energético">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-modelo-documental" class="md-nav__link">
+  <a href="#11-orientacion" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Modelo documental
+      1.1 Orientación
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-modelo-analizable" class="md-nav__link">
+  <a href="#12-ubicacion" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Modelo analizable
+      1.2 Ubicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Cotas
     </span>
   </a>
   
@@ -2018,55 +2120,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-principio-de-fuente-unica-y-correccion-en-origen" class="md-nav__link">
+  <a href="#2-sistemas-de-referencia-en-revit" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Principio de fuente única y corrección en origen
+      2. Sistemas de referencia en Revit
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-preparacion-temprana" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Preparación temprana
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-organizacion-del-modelo" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Organización del modelo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Organización del modelo">
+    <nav class="md-nav" aria-label="2. Sistemas de referencia en Revit">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-convenciones-de-nombres" class="md-nav__link">
+  <a href="#21-origen-interno" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Convenciones de nombres
+      2.1 Origen interno
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-codigos-de-tipos-constructivos" class="md-nav__link">
+  <a href="#22-punto-base-del-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Códigos de tipos constructivos
+      2.2 Punto base del proyecto
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-parametros-compartidos-o-de-proyecto" class="md-nav__link">
+  <a href="#23-punto-topografico" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Parámetros compartidos o de proyecto
+      2.3 Punto topográfico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-coordenadas-de-proyecto-y-compartidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Coordenadas de proyecto y compartidas
     </span>
   </a>
   
@@ -2078,19 +2171,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-vista-3d-especifica-de-exportacion" class="md-nav__link">
+  <a href="#3-proyecto-norte-y-norte-verdadero" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Vista 3D específica de exportación
+      3. Proyecto Norte y Norte verdadero
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6. Vista 3D específica de exportación">
+    <nav class="md-nav" aria-label="3. Proyecto Norte y Norte verdadero">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-riesgo-de-confiar-solo-en-la-visibilidad" class="md-nav__link">
+  <a href="#31-regla-para-analisis-energetico" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1 Riesgo de confiar solo en la visibilidad
+      3.1 Regla para análisis energético
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-comprobaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Comprobaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-riesgos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Riesgos
     </span>
   </a>
   
@@ -2102,46 +2213,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-categorias-que-normalmente-se-incluyen" class="md-nav__link">
+  <a href="#4-ubicacion-geografica" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Categorías que normalmente se incluyen
+      4. Ubicación geográfica
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-categorias-que-normalmente-se-excluyen-o-simplifican" class="md-nav__link">
+  <a href="#5-base-de-coordenadas-para-exportacion-ifc" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Categorías que normalmente se excluyen o simplifican
+      5. Base de coordenadas para exportación IFC
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-nivel-de-detalle-geometrico" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Nivel de detalle geométrico
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-elementos-delimitadores-de-habitacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Elementos delimitadores de habitación
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="10. Elementos delimitadores de habitación">
+    <nav class="md-nav" aria-label="5. Base de coordenadas para exportación IFC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#101-riesgo-de-limites-falsos" class="md-nav__link">
+  <a href="#51-modelo-aislado" class="md-nav__link">
     <span class="md-ellipsis">
-      10.1 Riesgo de límites falsos
+      5.1 Modelo aislado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-proyecto-federado" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Proyecto federado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-decision-por-flujo" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Decisión por flujo
     </span>
   </a>
   
@@ -2153,153 +2264,246 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-habitaciones-y-espacios" class="md-nav__link">
+  <a href="#6-referencia-cartografica-y-epsg" class="md-nav__link">
     <span class="md-ellipsis">
-      11. Habitaciones y espacios
+      6. Referencia cartográfica y EPSG
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-envolvente-termica" class="md-nav__link">
+  <a href="#7-precision-y-distancia-al-origen" class="md-nav__link">
     <span class="md-ellipsis">
-      12. Envolvente térmica
+      7. Precisión y distancia al origen
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-huecos" class="md-nav__link">
+  <a href="#8-vinculos-y-coordenadas-compartidas" class="md-nav__link">
     <span class="md-ellipsis">
-      13. Huecos
+      8. Vínculos y coordenadas compartidas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-coordenadas-y-orientacion" class="md-nav__link">
+  <a href="#9-niveles-de-revit" class="md-nav__link">
     <span class="md-ellipsis">
-      14. Coordenadas y orientación
+      9. Niveles de Revit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Niveles de Revit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-niveles-funcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Niveles funcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-niveles-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Niveles auxiliares
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-parametro-planta-de-edificio" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Parámetro Planta de edificio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Parámetro Planta de edificio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-regla-recomendada" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Regla recomendada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Excepciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-parametro-planta-superior" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Parámetro Planta superior
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#15-niveles" class="md-nav__link">
+  <a href="#12-cota-del-nivel-y-altura-de-planta" class="md-nav__link">
     <span class="md-ellipsis">
-      15. Niveles
+      12. Cota del nivel y altura de planta
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#16-fases" class="md-nav__link">
+  <a href="#13-altura-de-calculo-de-habitaciones" class="md-nav__link">
     <span class="md-ellipsis">
-      16. Fases
+      13. Altura de cálculo de habitaciones
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#17-opciones-de-diseno" class="md-nav__link">
+  <a href="#14-relacion-entre-habitaciones-y-niveles" class="md-nav__link">
     <span class="md-ellipsis">
-      17. Opciones de diseño
+      14. Relación entre habitaciones y niveles
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#18-modelos-vinculados" class="md-nav__link">
+  <a href="#15-edificios-con-plantas-partidas" class="md-nav__link">
     <span class="md-ellipsis">
-      18. Modelos vinculados
+      15. Edificios con plantas partidas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#19-subproyectos-y-modelo-central" class="md-nav__link">
+  <a href="#16-dobles-alturas" class="md-nav__link">
     <span class="md-ellipsis">
-      19. Subproyectos y modelo central
+      16. Dobles alturas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#20-familias-y-geometria-in-situ" class="md-nav__link">
+  <a href="#17-sotanos-y-contacto-con-terreno" class="md-nav__link">
     <span class="md-ellipsis">
-      20. Familias y geometría in situ
+      17. Sótanos y contacto con terreno
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#21-modelo-nativo-de-energia-de-revit" class="md-nav__link">
+  <a href="#18-cubiertas-y-niveles-superiores" class="md-nav__link">
     <span class="md-ellipsis">
-      21. Modelo nativo de energía de Revit
+      18. Cubiertas y niveles superiores
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#22-estrategia-de-configuraciones-ifc" class="md-nav__link">
+  <a href="#19-varios-edificios-en-un-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
-      22. Estrategia de configuraciones IFC
+      19. Varios edificios en un proyecto
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#23-vistas-y-tablas-de-control" class="md-nav__link">
+  <a href="#20-tabla-de-planificacion-de-niveles" class="md-nav__link">
     <span class="md-ellipsis">
-      23. Vistas y tablas de control
+      20. Tabla de planificación de niveles
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#24-responsabilidades" class="md-nav__link">
+  <a href="#21-vista-de-control-de-coordenadas" class="md-nav__link">
     <span class="md-ellipsis">
-      24. Responsabilidades
+      21. Vista de control de coordenadas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#25-proceso-recomendado" class="md-nav__link">
+  <a href="#22-comprobacion-en-ifc" class="md-nav__link">
     <span class="md-ellipsis">
-      25. Proceso recomendado
+      22. Comprobación en IFC
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#26-criterios-generales-de-aceptacion" class="md-nav__link">
+  <a href="#23-comprobacion-en-open-bim-analytical-model" class="md-nav__link">
     <span class="md-ellipsis">
-      26. Criterios generales de aceptación
+      23. Comprobación en Open BIM Analytical Model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#27-decisiones-pendientes-de-ensayo" class="md-nav__link">
+  <a href="#24-comprobacion-en-tekton3d" class="md-nav__link">
     <span class="md-ellipsis">
-      27. Decisiones pendientes de ensayo
+      24. Comprobación en TeKton3D
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-matriz-de-decisiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. Matriz de decisiones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-checklist-previo-a-exportacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. Checklist previo a exportación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-ensayo-propuesto-para-revit-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. Ensayo propuesto para Revit 2026
     </span>
   </a>
   
@@ -2333,467 +2537,495 @@
   
 
 
-<h1 id="estrategia-general-de-modelado-en-revit-2026">Estrategia general de modelado en Revit 2026<a class="headerlink" href="#estrategia-general-de-modelado-en-revit-2026" title="Permanent link">&para;</a></h1>
-<p>La preparación para análisis energético no exige crear un segundo edificio independiente dentro de Revit. Exige que el modelo arquitectónico permita obtener, mediante una exportación controlada, una representación geométrica estable y térmicamente interpretable.</p>
-<p>La estrategia debe plantearse desde el uso BIM previsto: el modelo se utilizará para generar o reconstruir un modelo analítico destinado a CYPETHERM HE Plus y TeKton3D TK-CEEP, y deberá poder ampliarse hacia otros receptores.</p>
-<div class="admonition info">
-<p class="admonition-title">Alcance del capítulo</p>
-<p>Se establecen principios generales de organización y modelado. Los valores, parámetros y configuraciones exactas se desarrollarán en capítulos posteriores y se validarán con Revit 2026.</p>
-</div>
-<h2 id="1-objetivo-del-modelo-preparado">1. Objetivo del modelo preparado<a class="headerlink" href="#1-objetivo-del-modelo-preparado" title="Permanent link">&para;</a></h2>
-<p>El modelo debe permitir:</p>
+<h1 id="coordenadas-orientacion-y-niveles-en-revit-2026">Coordenadas, orientación y niveles en Revit 2026<a class="headerlink" href="#coordenadas-orientacion-y-niveles-en-revit-2026" title="Permanent link">&para;</a></h1>
+<p>La ubicación, la orientación y la estructura vertical condicionan la radiación solar, las sombras, el contacto con terreno, la organización de espacios y la posición relativa de las aportaciones IFC. Un edificio geométricamente correcto puede producir resultados erróneos si se exporta con el norte equivocado, plantas duplicadas o una base de coordenadas diferente de la acordada.</p>
+<p>Este capítulo establece una estrategia reproducible para Revit 2026 y separa tres cuestiones que suelen confundirse:</p>
 <ol>
-<li>Identificar todos los volúmenes relevantes.</li>
-<li>Reconocer la envolvente y sus huecos.</li>
-<li>Deducir superficies interiores y exteriores.</li>
-<li>Mantener niveles, orientación y posición.</li>
-<li>Clasificar elementos de forma reproducible.</li>
-<li>Generar un IFC ligero y suficiente.</li>
-<li>Actualizar el modelo sin rehacer todas las correcciones.</li>
+<li>Posición interna del modelo.</li>
+<li>Posición real o compartida en el emplazamiento.</li>
+<li>Posición y orientación elegidas para la exportación IFC.</li>
 </ol>
-<p>No se busca una reproducción exhaustiva del detalle constructivo. Se busca una base fiable para transformar arquitectura en información de cálculo.</p>
-<h2 id="2-modelo-documental-y-modelo-analizable">2. Modelo documental y modelo analizable<a class="headerlink" href="#2-modelo-documental-y-modelo-analizable" title="Permanent link">&para;</a></h2>
-<h3 id="21-modelo-documental">2.1 Modelo documental<a class="headerlink" href="#21-modelo-documental" title="Permanent link">&para;</a></h3>
-<p>Está optimizado para:</p>
+<h2 id="1-por-que-importa-en-analisis-energetico">1. Por qué importa en análisis energético<a class="headerlink" href="#1-por-que-importa-en-analisis-energetico" title="Permanent link">&para;</a></h2>
+<h3 id="11-orientacion">1.1 Orientación<a class="headerlink" href="#11-orientacion" title="Permanent link">&para;</a></h3>
+<p>La orientación de fachadas y huecos influye directamente en:</p>
 <ul>
-<li>Planos.</li>
-<li>Detalles.</li>
-<li>Mediciones.</li>
-<li>Visualización.</li>
-<li>Coordinación.</li>
-<li>Construcción.</li>
+<li>Radiación solar incidente.</li>
+<li>Ganancias solares.</li>
+<li>Funcionamiento de protecciones.</li>
+<li>Distribución de cargas por orientaciones.</li>
+<li>Sombras propias y remotas.</li>
 </ul>
-<p>Puede contener geometría que no aporta información al balance energético o que dificulta su interpretación.</p>
-<h3 id="22-modelo-analizable">2.2 Modelo analizable<a class="headerlink" href="#22-modelo-analizable" title="Permanent link">&para;</a></h3>
-<p>Debe priorizar:</p>
+<p>Un giro de todo el edificio puede mantener intactas áreas y volúmenes, pero modificar sustancialmente el resultado energético.</p>
+<h3 id="12-ubicacion">1.2 Ubicación<a class="headerlink" href="#12-ubicacion" title="Permanent link">&para;</a></h3>
+<p>La ubicación geográfica permite seleccionar o asociar:</p>
 <ul>
-<li>Continuidad de los recintos.</li>
-<li>Claridad de la envolvente.</li>
-<li>Clasificación consistente.</li>
-<li>Huecos realmente vinculados a cerramientos.</li>
-<li>Geometría simplificable.</li>
-<li>Estructura espacial estable.</li>
+<li>Datos climáticos.</li>
+<li>Latitud y longitud.</li>
+<li>Altitud.</li>
+<li>Zona climática reglamentaria.</li>
+<li>Trayectoria solar.</li>
 </ul>
-<p>Un único archivo Revit puede atender ambos objetivos mediante vistas, parámetros, filtros y configuraciones de exportación. Sin embargo, puede ser conveniente utilizar un modelo de coordinación o una copia controlada cuando el modelo contractual no pueda modificarse sin afectar otros usos.</p>
-<h2 id="3-principio-de-fuente-unica-y-correccion-en-origen">3. Principio de fuente única y corrección en origen<a class="headerlink" href="#3-principio-de-fuente-unica-y-correccion-en-origen" title="Permanent link">&para;</a></h2>
-<p>Las incidencias que representan errores arquitectónicos deben corregirse en Revit:</p>
+<p>El programa energético puede solicitar estos datos de nuevo, pero deben ser coherentes con el modelo geométrico y con el norte exportado.</p>
+<h3 id="13-cotas">1.3 Cotas<a class="headerlink" href="#13-cotas" title="Permanent link">&para;</a></h3>
+<p>Las elevaciones afectan a:</p>
 <ul>
-<li>Habitaciones abiertas.</li>
-<li>Elementos duplicados.</li>
-<li>Huecos que no cortan el muro.</li>
-<li>Cubiertas sin continuidad.</li>
-<li>Fases incoherentes.</li>
-<li>Elementos en niveles incorrectos.</li>
-<li>Clasificaciones repetidamente erróneas.</li>
+<li>Altura de plantas y espacios.</li>
+<li>Contacto con terreno.</li>
+<li>Sombras.</li>
+<li>Superficies exteriores.</li>
+<li>Relación entre edificios y obstáculos.</li>
+<li>Estructura <code>IfcBuildingStorey</code>.</li>
 </ul>
-<p>Las decisiones propias del cálculo pueden resolverse en el modelo analítico:</p>
+<h2 id="2-sistemas-de-referencia-en-revit">2. Sistemas de referencia en Revit<a class="headerlink" href="#2-sistemas-de-referencia-en-revit" title="Permanent link">&para;</a></h2>
+<p>Revit utiliza un sistema interno y proporciona puntos de referencia para trabajar con coordenadas de proyecto y levantamiento.</p>
+<h3 id="21-origen-interno">2.1 Origen interno<a class="headerlink" href="#21-origen-interno" title="Permanent link">&para;</a></h3>
+<p>El origen interno es el punto de partida del sistema de coordenadas interno. Constituye la referencia fundamental para la geometría del modelo y no debe tratarse como un marcador que pueda reubicarse libremente.</p>
+<p>Recomendaciones:</p>
 <ul>
-<li>Agrupación térmica.</li>
-<li>Simplificación de un atrio.</li>
-<li>Obstáculo remoto no perteneciente al modelo arquitectónico.</li>
-<li>Condición equivalente admitida por el motor.</li>
+<li>Modelar el edificio cerca del origen interno.</li>
+<li>Mantener la geometría principal dentro de límites razonables.</li>
+<li>No desplazar el edificio grandes distancias para alcanzar coordenadas geográficas reales.</li>
+<li>Utilizar coordenadas compartidas o georreferenciación para relacionarlo con el mundo real.</li>
 </ul>
-<p>El criterio es evitar que una corrección manual en el receptor oculte un defecto que reaparecerá en la siguiente exportación.</p>
-<h2 id="4-preparacion-temprana">4. Preparación temprana<a class="headerlink" href="#4-preparacion-temprana" title="Permanent link">&para;</a></h2>
-<p>La interoperabilidad debe ensayarse antes de completar el detalle del proyecto. Se recomienda realizar exportaciones piloto en tres momentos:</p>
+<p>Autodesk recomienda mantener toda la geometría dentro de 10 millas o 16 km del origen interno. Para interoperabilidad analítica se buscará una extensión mucho más contenida siempre que sea posible.</p>
+<h3 id="22-punto-base-del-proyecto">2.2 Punto base del proyecto<a class="headerlink" href="#22-punto-base-del-proyecto" title="Permanent link">&para;</a></h3>
+<p>El punto base establece una referencia local útil para medir y posicionar el proyecto. Puede situarse, por ejemplo, en:</p>
+<ul>
+<li>Intersección de ejes principales.</li>
+<li>Esquina estable del edificio.</li>
+<li>Punto de replanteo acordado.</li>
+<li>Origen contractual del proyecto.</li>
+</ul>
+<p>Debe documentarse:</p>
+<ul>
+<li>Descripción del punto.</li>
+<li>Coordenadas locales.</li>
+<li>Elevación.</li>
+<li>Ángulo respecto al norte verdadero.</li>
+<li>Estado fijado o protegido.</li>
+</ul>
+<p>Mover el punto base no equivale necesariamente a mover la geometría. Debe evitarse su manipulación sin conocer el efecto sobre las coordenadas mostradas y compartidas.</p>
+<h3 id="23-punto-topografico">2.3 Punto topográfico<a class="headerlink" href="#23-punto-topografico" title="Permanent link">&para;</a></h3>
+<p>El punto topográfico relaciona el modelo con el sistema de levantamiento o coordenadas compartidas. Resulta especialmente importante cuando existen:</p>
+<ul>
+<li>Varios edificios.</li>
+<li>Topografía.</li>
+<li>Modelos de distintas disciplinas.</li>
+<li>Obstáculos remotos.</li>
+<li>Coordenadas cartográficas.</li>
+</ul>
+<p>No debe utilizarse como sustituto del origen interno. Su función es proporcionar contexto real al modelo.</p>
+<h3 id="24-coordenadas-de-proyecto-y-compartidas">2.4 Coordenadas de proyecto y compartidas<a class="headerlink" href="#24-coordenadas-de-proyecto-y-compartidas" title="Permanent link">&para;</a></h3>
+<p>Las coordenadas de proyecto permiten trabajar en un sistema local cómodo. Las coordenadas compartidas permiten mantener una posición común entre archivos.</p>
+<p>La estrategia recomendada es:</p>
 <ol>
-<li>Definición básica de niveles, recintos y envolvente.</li>
-<li>Incorporación de huecos, cubiertas y soluciones complejas.</li>
-<li>Cierre previo al cálculo definitivo.</li>
+<li>Modelar cerca del origen interno.</li>
+<li>Definir un punto base local estable.</li>
+<li>Establecer la relación con el levantamiento mediante coordenadas compartidas.</li>
+<li>Verificar la posición de vínculos.</li>
+<li>Seleccionar explícitamente la base de exportación IFC.</li>
 </ol>
-<p>Una prueba temprana permite modificar criterios de modelado cuando el coste todavía es bajo.</p>
-<h2 id="5-organizacion-del-modelo">5. Organización del modelo<a class="headerlink" href="#5-organizacion-del-modelo" title="Permanent link">&para;</a></h2>
-<h3 id="51-convenciones-de-nombres">5.1 Convenciones de nombres<a class="headerlink" href="#51-convenciones-de-nombres" title="Permanent link">&para;</a></h3>
-<p>Deben definirse nombres estables para:</p>
+<h2 id="3-proyecto-norte-y-norte-verdadero">3. Proyecto Norte y Norte verdadero<a class="headerlink" href="#3-proyecto-norte-y-norte-verdadero" title="Permanent link">&para;</a></h2>
+<p>Revit mantiene dos orientaciones:</p>
 <ul>
-<li>Niveles.</li>
-<li>Habitaciones y espacios.</li>
-<li>Tipos de muros, suelos y cubiertas.</li>
-<li>Puertas y ventanas.</li>
-<li>Vistas de exportación.</li>
-<li>Configuraciones IFC.</li>
-<li>Parámetros energéticos.</li>
+<li><strong>Proyecto Norte:</strong> orienta el edificio para facilitar el modelado y la documentación.</li>
+<li><strong>Norte verdadero:</strong> representa el norte real del emplazamiento.</li>
 </ul>
-<p>El nombre descriptivo puede cambiar; el código de identificación debe mantenerse cuando representa el mismo objeto o tipo.</p>
-<h3 id="52-codigos-de-tipos-constructivos">5.2 Códigos de tipos constructivos<a class="headerlink" href="#52-codigos-de-tipos-constructivos" title="Permanent link">&para;</a></h3>
-<p>La nomenclatura debe ayudar a distinguir función y solución. Un esquema orientativo podría utilizar prefijos como:</p>
-<table>
-<thead>
-<tr>
-<th>Prefijo</th>
-<th>Función</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>EXT_</code></td>
-<td>Cerramiento exterior.</td>
-</tr>
-<tr>
-<td><code>INT_</code></td>
-<td>Partición interior.</td>
-</tr>
-<tr>
-<td><code>MED_</code></td>
-<td>Medianería.</td>
-</tr>
-<tr>
-<td><code>SOL_</code></td>
-<td>Solera o contacto con terreno.</td>
-</tr>
-<tr>
-<td><code>CUB_</code></td>
-<td>Cubierta.</td>
-</tr>
-<tr>
-<td><code>HUE_EXT_</code></td>
-<td>Hueco exterior.</td>
-</tr>
-</tbody>
-</table>
-<p>Estos prefijos son convenciones del proyecto, no clases IFC. El mapeado debe mantenerse en una matriz separada.</p>
-<h3 id="53-parametros-compartidos-o-de-proyecto">5.3 Parámetros compartidos o de proyecto<a class="headerlink" href="#53-parametros-compartidos-o-de-proyecto" title="Permanent link">&para;</a></h3>
-<p>Los parámetros adicionales deben crearse solo cuando tengan una finalidad definida. Para cada uno se registrará:</p>
+<p>Autodesk recomienda comenzar el modelado con el eje predominante del edificio alineado según Proyecto Norte y definir el Norte verdadero cuando existan datos fiables del emplazamiento.</p>
+<h3 id="31-regla-para-analisis-energetico">3.1 Regla para análisis energético<a class="headerlink" href="#31-regla-para-analisis-energetico" title="Permanent link">&para;</a></h3>
+<p>El modelo energético debe utilizar el Norte verdadero, directa o indirectamente. La vista de trabajo puede mantenerse orientada a Proyecto Norte, pero la exportación debe conservar el ángulo real.</p>
+<h3 id="32-comprobaciones">3.2 Comprobaciones<a class="headerlink" href="#32-comprobaciones" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Nombre.</li>
-<li>Tipo de dato.</li>
-<li>Categorías.</li>
-<li>Ejemplar o tipo.</li>
-<li>Valores permitidos.</li>
-<li>Responsable.</li>
-<li>Destino IFC.</li>
-<li>Receptor que lo utiliza.</li>
+<li>Mostrar una vista de emplazamiento orientada a Norte verdadero.</li>
+<li>Colocar una flecha o referencia gráfica de comprobación.</li>
+<li>Registrar el ángulo entre ambos nortes.</li>
+<li>Comparar una fachada conocida con su orientación esperada.</li>
+<li>Verificar el resultado en el visor IFC y en el receptor.</li>
 </ul>
-<p>La proliferación de parámetros sin reglas reduce la calidad en lugar de aumentarla.</p>
-<h2 id="6-vista-3d-especifica-de-exportacion">6. Vista 3D específica de exportación<a class="headerlink" href="#6-vista-3d-especifica-de-exportacion" title="Permanent link">&para;</a></h2>
-<p>Se recomienda crear una vista 3D dedicada, por ejemplo:</p>
-<p><code>00_IFC_ENERGY_EXPORT</code></p>
-<p>Su función es controlar qué geometría participa en el intercambio. Debe disponer de:</p>
+<h3 id="33-riesgos">3.3 Riesgos<a class="headerlink" href="#33-riesgos" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Disciplina y nivel de detalle definidos.</li>
-<li>Fase y filtro de fase controlados.</li>
-<li>Opciones de diseño verificadas.</li>
-<li>Categorías visibles documentadas.</li>
-<li>Vínculos con posición y visibilidad controladas.</li>
-<li>Caja de sección desactivada en entregas completas o documentada en pruebas parciales.</li>
-<li>Plantilla de vista específica, si resulta compatible con el flujo.</li>
+<li>Girar la geometría en lugar de configurar el Norte verdadero.</li>
+<li>Girar el Norte de proyecto después de documentar.</li>
+<li>Duplicar el giro en Revit y en el programa energético.</li>
+<li>Exportar usando una base orientada a Proyecto Norte cuando el receptor espera Norte verdadero.</li>
+<li>Aplicar manualmente una rotación adicional en el receptor.</li>
 </ul>
-<p>Autodesk permite exportar únicamente los elementos visibles de la vista activa. Cuando esta opción se utiliza en una vista 3D, las habitaciones requieren activar expresamente su exportación y, si existe una caja de sección, solo se incluyen las contenidas en ella.</p>
-<h3 id="61-riesgo-de-confiar-solo-en-la-visibilidad">6.1 Riesgo de confiar solo en la visibilidad<a class="headerlink" href="#61-riesgo-de-confiar-solo-en-la-visibilidad" title="Permanent link">&para;</a></h3>
-<p>La visibilidad de Revit no equivale a participación energética. Un elemento puede estar visible y no ser delimitador; otro puede estar oculto y ser necesario para cerrar el volumen.</p>
-<p>Por ello, la vista de exportación debe combinarse con:</p>
+<h2 id="4-ubicacion-geografica">4. Ubicación geográfica<a class="headerlink" href="#4-ubicacion-geografica" title="Permanent link">&para;</a></h2>
+<p>El modelo debe registrar, al menos:</p>
 <ul>
-<li>Revisión de habitaciones.</li>
-<li>Clasificación de elementos.</li>
-<li>Control de <code>Room Bounding</code>.</li>
-<li>Tablas de planificación.</li>
-<li>Validación del IFC resultante.</li>
-</ul>
-<h2 id="7-categorias-que-normalmente-se-incluyen">7. Categorías que normalmente se incluyen<a class="headerlink" href="#7-categorias-que-normalmente-se-incluyen" title="Permanent link">&para;</a></h2>
-<p>La selección definitiva depende del receptor, pero la base arquitectónica suele incluir:</p>
-<ul>
-<li>Muros.</li>
-<li>Suelos y forjados.</li>
-<li>Cubiertas.</li>
-<li>Techos que delimitan volúmenes relevantes.</li>
-<li>Puertas.</li>
-<li>Ventanas.</li>
-<li>Lucernarios.</li>
-<li>Muros cortina, paneles y elementos necesarios.</li>
-<li>Habitaciones o espacios.</li>
-<li>Elementos de sombra significativos.</li>
-<li>Elementos vinculados que formen parte de la envolvente, mediante la estrategia acordada.</li>
-</ul>
-<h2 id="8-categorias-que-normalmente-se-excluyen-o-simplifican">8. Categorías que normalmente se excluyen o simplifican<a class="headerlink" href="#8-categorias-que-normalmente-se-excluyen-o-simplifican" title="Permanent link">&para;</a></h2>
-<p>Debe revisarse la necesidad de exportar:</p>
-<ul>
-<li>Mobiliario.</li>
-<li>Sanitarios y equipamiento sin función geométrica para este uso.</li>
-<li>Barandillas decorativas.</li>
-<li>Detalles 2D y anotaciones.</li>
-<li>Vegetación sin efecto de sombra modelado de forma controlada.</li>
-<li>DWG importados.</li>
-<li>Elementos de urbanización lejanos.</li>
-<li>Tornillería, remates y piezas pequeñas.</li>
-<li>Familias de detalle elevado.</li>
-<li>Elementos temporales o auxiliares.</li>
-</ul>
-<p>Excluir no significa borrar del modelo. Se controla su participación mediante la vista y la configuración IFC.</p>
-<h2 id="9-nivel-de-detalle-geometrico">9. Nivel de detalle geométrico<a class="headerlink" href="#9-nivel-de-detalle-geometrico" title="Permanent link">&para;</a></h2>
-<p>El detalle debe ser proporcional a su influencia energética. Se conservarán:</p>
-<ul>
-<li>Cambios relevantes de orientación.</li>
-<li>Retranqueos que alteran sombras o superficies.</li>
-<li>Diferencias de construcción.</li>
-<li>Huecos significativos.</li>
-<li>Contactos con terreno.</li>
-<li>Volúmenes que modifican la envolvente.</li>
-</ul>
-<p>Podrán simplificarse:</p>
-<ul>
-<li>Molduras.</li>
-<li>Juntas y encuentros constructivos de pequeña escala.</li>
-<li>Rebajes sin influencia apreciable.</li>
-<li>Marcos modelados con geometría excesiva cuando sus propiedades puedan representarse en el hueco.</li>
-<li>Pilares interiores que fragmentan habitaciones sin constituir límites térmicos.</li>
-</ul>
-<p>La simplificación debe documentar qué efecto se conserva y cuál se desprecia.</p>
-<h2 id="10-elementos-delimitadores-de-habitacion">10. Elementos delimitadores de habitación<a class="headerlink" href="#10-elementos-delimitadores-de-habitacion" title="Permanent link">&para;</a></h2>
-<p>Revit utiliza el parámetro <code>Room Bounding</code> para determinar qué elementos intervienen en el cálculo de áreas y volúmenes. Muros, cubiertas, suelos, techos, columnas y líneas separadoras pueden delimitar recintos.</p>
-<p>El parámetro debe activarse únicamente cuando el elemento representa un límite real para el volumen analizado.</p>
-<h3 id="101-riesgo-de-limites-falsos">10.1 Riesgo de límites falsos<a class="headerlink" href="#101-riesgo-de-limites-falsos" title="Permanent link">&para;</a></h3>
-<p>Autodesk documenta que un elemento parcial marcado como delimitador puede excluir del volumen el espacio situado sobre él. Esto es especialmente relevante en:</p>
-<ul>
-<li>Pilares que no alcanzan el techo.</li>
-<li>Muros de altura parcial.</li>
-<li>Mobiliario o familias auxiliares.</li>
-<li>Revestimientos modelados independientemente.</li>
-<li>Falsos techos.</li>
-</ul>
-<p>La revisión de <code>Room Bounding</code> debe formar parte del QA/QC, no resolverse categoría por categoría mediante una regla ciega.</p>
-<h2 id="11-habitaciones-y-espacios">11. Habitaciones y espacios<a class="headerlink" href="#11-habitaciones-y-espacios" title="Permanent link">&para;</a></h2>
-<p>El flujo basado en IFC y Open BIM Analytical Model se beneficia de recintos correctamente definidos. Se colocarán habitaciones o espacios en todos los volúmenes relevantes, incluidos:</p>
-<ul>
-<li>Estancias principales.</li>
-<li>Circulaciones interiores.</li>
-<li>Escaleras y atrios según estrategia.</li>
-<li>Patinillos y cámaras cuando influyan.</li>
-<li>Espacios técnicos.</li>
-<li>Áticos y volúmenes bajo cubierta.</li>
-<li>Zonas no habitables relevantes.</li>
-</ul>
-<p>Revit tiene desactivado por defecto el cálculo de volúmenes por su impacto en el rendimiento. Para este flujo debe activarse durante la preparación y el control.</p>
-<p>La estrategia detallada de habitaciones se desarrollará en un capítulo propio.</p>
-<h2 id="12-envolvente-termica">12. Envolvente térmica<a class="headerlink" href="#12-envolvente-termica" title="Permanent link">&para;</a></h2>
-<p>Los elementos deben permitir diferenciar:</p>
-<ul>
-<li>Fachada exterior.</li>
-<li>Partición interior.</li>
-<li>Medianería.</li>
-<li>Muro en contacto con terreno.</li>
-<li>Solera.</li>
-<li>Forjado entre espacios.</li>
-<li>Forjado sobre exterior.</li>
-<li>Cubierta.</li>
-<li>Separación con espacio no habitable.</li>
-</ul>
-<p>La categoría de Revit no basta para determinar la condición. Deben considerarse función, posición, tipo, parámetros y relaciones con espacios.</p>
-<h2 id="13-huecos">13. Huecos<a class="headerlink" href="#13-huecos" title="Permanent link">&para;</a></h2>
-<p>Las puertas, ventanas y lucernarios deben:</p>
-<ul>
-<li>Estar hospedados correctamente.</li>
-<li>Cortar realmente el cerramiento.</li>
-<li>Utilizar categorías apropiadas.</li>
-<li>Diferenciar condición interior/exterior.</li>
-<li>Evitar duplicidades de apertura.</li>
-<li>Tener dimensiones coherentes con la superficie base.</li>
-</ul>
-<p>Las puertas acristaladas requieren un criterio específico porque algunos receptores pueden tratarlas como opacas si conservan únicamente la clase de puerta.</p>
-<h2 id="14-coordenadas-y-orientacion">14. Coordenadas y orientación<a class="headerlink" href="#14-coordenadas-y-orientacion" title="Permanent link">&para;</a></h2>
-<p>El proyecto debe mantener coherentes:</p>
-<ul>
-<li>Punto interno.</li>
-<li>Punto base del proyecto.</li>
-<li>Punto topográfico.</li>
-<li>Coordenadas compartidas, si se utilizan.</li>
-<li>Ubicación geográfica.</li>
-<li>Norte de proyecto.</li>
+<li>Municipio o emplazamiento.</li>
+<li>Latitud y longitud cuando proceda.</li>
+<li>Altitud.</li>
+<li>Zona horaria.</li>
 <li>Norte verdadero.</li>
 </ul>
-<p>La estrategia de exportación elegirá una base de coordenadas explícita. Autodesk permite utilizar origen interno, punto base, punto topográfico, coordenadas compartidas y variantes orientadas al norte verdadero.</p>
-<p>Para análisis solar, una orientación incorrecta es más grave que un desplazamiento local. Para sombras remotas y modelos federados, ambos aspectos son relevantes.</p>
-<h2 id="15-niveles">15. Niveles<a class="headerlink" href="#15-niveles" title="Permanent link">&para;</a></h2>
-<p>Los niveles cumplen funciones gráficas, constructivas y espaciales. No todos deben exportarse como <code>IfcBuildingStorey</code>.</p>
-<p>Se distinguirán:</p>
+<p>La ubicación utilizada para trayectoria solar debe coincidir con la utilizada por el motor energético. Si el programa energético selecciona sus propios datos climáticos, la ubicación de Revit seguirá siendo relevante para comprobar orientación y sombras.</p>
+<h2 id="5-base-de-coordenadas-para-exportacion-ifc">5. Base de coordenadas para exportación IFC<a class="headerlink" href="#5-base-de-coordenadas-para-exportacion-ifc" title="Permanent link">&para;</a></h2>
+<p>El exportador IFC de Revit permite seleccionar diferentes bases:</p>
 <ul>
-<li>Niveles de planta relevantes.</li>
-<li>Niveles auxiliares de coronación, antepecho o estructura.</li>
-<li>Niveles asociados a edificios vinculados.</li>
-<li>Plantas parciales o cotas partidas.</li>
+<li>Coordenadas compartidas.</li>
+<li>Punto topográfico.</li>
+<li>Punto base del proyecto.</li>
+<li>Origen interno.</li>
+<li>Punto base orientado al Norte verdadero.</li>
+<li>Origen interno orientado al Norte verdadero.</li>
 </ul>
-<p>El parámetro de planta de edificio permitirá controlar qué niveles participan en la estructura espacial. La relación exacta con la exportación IFC se documentará en el capítulo de niveles.</p>
-<h2 id="16-fases">16. Fases<a class="headerlink" href="#16-fases" title="Permanent link">&para;</a></h2>
-<p>Habitaciones y elementos delimitadores deben evaluarse en una fase coherente. Los principales riesgos son:</p>
+<p>No existe una opción universal para todos los proyectos. La elección depende de si el archivo se utilizará aislado o coordinado con otras aportaciones.</p>
+<h3 id="51-modelo-aislado">5.1 Modelo aislado<a class="headerlink" href="#51-modelo-aislado" title="Permanent link">&para;</a></h3>
+<p>Para un edificio analizado sin contexto federado puede ser conveniente utilizar una base próxima al edificio y orientada al Norte verdadero. Esto reduce magnitudes de coordenadas y mantiene la orientación solar.</p>
+<h3 id="52-proyecto-federado">5.2 Proyecto federado<a class="headerlink" href="#52-proyecto-federado" title="Permanent link">&para;</a></h3>
+<p>Cuando el modelo debe coincidir con topografía, otros edificios o sombras remotas, normalmente será necesario utilizar coordenadas compartidas verificadas.</p>
+<h3 id="53-decision-por-flujo">5.3 Decisión por flujo<a class="headerlink" href="#53-decision-por-flujo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flujo</th>
+<th>Base candidata</th>
+<th>Condición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open BIM Analytical Model</td>
+<td>Compartidas o base acordada</td>
+<td>Debe coincidir con BIMserver.center y otras aportaciones.</td>
+</tr>
+<tr>
+<td>TK-IFC importación</td>
+<td>Base local próxima</td>
+<td>Debe conservar orientación y evitar coordenadas excesivas.</td>
+</tr>
+<tr>
+<td>TeKton3D vinculación</td>
+<td>Compartidas o local documentada</td>
+<td>Debe coincidir con referencias usadas para calcar.</td>
+</tr>
+</tbody>
+</table>
+<p>La tabla es una hipótesis inicial. Se cerrará mediante pruebas.</p>
+<h2 id="6-referencia-cartografica-y-epsg">6. Referencia cartográfica y EPSG<a class="headerlink" href="#6-referencia-cartografica-y-epsg" title="Permanent link">&para;</a></h2>
+<p>En exportaciones IFC4, Revit puede incluir una referencia de sistema proyectado mediante código EPSG. Esta información permite documentar:</p>
 <ul>
-<li>Habitación en fase nueva delimitada por elementos de otra fase no visibles.</li>
-<li>Elementos demolidos exportados junto con elementos nuevos.</li>
-<li>Mezcla de existente y proyecto sin una estrategia energética.</li>
-<li>Huecos o cerramientos que cambian entre fases.</li>
+<li>Sistema de referencia.</li>
+<li>Datum geodésico.</li>
+<li>Coordenadas Este y Norte.</li>
+<li>Elevación.</li>
+<li>Ángulo respecto al Norte verdadero.</li>
 </ul>
-<p>La vista de exportación y la configuración IFC deben registrar la fase seleccionada. Autodesk indica que, cuando se exportan únicamente los elementos visibles, se utiliza la fase de la vista.</p>
-<h2 id="17-opciones-de-diseno">17. Opciones de diseño<a class="headerlink" href="#17-opciones-de-diseno" title="Permanent link">&para;</a></h2>
-<p>No deben exportarse simultáneamente opciones incompatibles que ocupen el mismo espacio. Se definirá:</p>
+<p>Debe utilizarse únicamente cuando el proyecto disponga de una referencia cartográfica confirmada. No debe inventarse un EPSG para completar el campo.</p>
+<h2 id="7-precision-y-distancia-al-origen">7. Precisión y distancia al origen<a class="headerlink" href="#7-precision-y-distancia-al-origen" title="Permanent link">&para;</a></h2>
+<p>Las coordenadas de gran magnitud pueden reducir la precisión de algunas operaciones geométricas o receptores. Para minimizar riesgos:</p>
 <ul>
-<li>Opción principal utilizada para el cálculo.</li>
-<li>Vistas o modelos alternativos para comparar escenarios.</li>
-<li>Convención de nombres y versiones.</li>
+<li>Mantener la geometría de Revit cerca del origen interno.</li>
+<li>Evitar importar CAD con geometría remota.</li>
+<li>Limpiar puntos u objetos alejados.</li>
+<li>No trasladar físicamente el modelo a coordenadas UTM.</li>
+<li>Ensayar la base IFC con el receptor.</li>
 </ul>
-<p>Cada alternativa energética debe poder reproducirse sin mezclar geometrías.</p>
-<h2 id="18-modelos-vinculados">18. Modelos vinculados<a class="headerlink" href="#18-modelos-vinculados" title="Permanent link">&para;</a></h2>
-<p>Los vínculos requieren una decisión previa:</p>
+<p>El control debe medir tanto la posición del edificio como la extensión total de toda la geometría exportada.</p>
+<h2 id="8-vinculos-y-coordenadas-compartidas">8. Vínculos y coordenadas compartidas<a class="headerlink" href="#8-vinculos-y-coordenadas-compartidas" title="Permanent link">&para;</a></h2>
+<p>Todos los vínculos relevantes deben usar una estrategia coherente:</p>
+<ul>
+<li>Origen a origen durante etapas tempranas controladas.</li>
+<li>Punto base a punto base cuando exista una convención común.</li>
+<li>Coordenadas compartidas para coordinación consolidada.</li>
+</ul>
+<p>Antes de exportar se comprobará:</p>
+<ul>
+<li>Método de posicionamiento.</li>
+<li>Sitio compartido activo.</li>
+<li>Giro.</li>
+<li>Elevación.</li>
+<li>Coincidencia de ejes y niveles.</li>
+<li>Ausencia de desplazamientos manuales no registrados.</li>
+</ul>
+<p>Restablecer coordenadas compartidas rompe relaciones con modelos vinculados y devuelve el punto topográfico al origen interno. Esta operación no debe realizarse como corrección improvisada en un modelo coordinado.</p>
+<h2 id="9-niveles-de-revit">9. Niveles de Revit<a class="headerlink" href="#9-niveles-de-revit" title="Permanent link">&para;</a></h2>
+<p>Un nivel es un datum horizontal que puede representar una planta funcional o una referencia auxiliar. No todos los niveles deben convertirse en plantas IFC.</p>
+<h3 id="91-niveles-funcionales">9.1 Niveles funcionales<a class="headerlink" href="#91-niveles-funcionales" title="Permanent link">&para;</a></h3>
+<p>Representan plantas utilizables o divisiones espaciales relevantes:</p>
+<ul>
+<li>Planta baja.</li>
+<li>Plantas superiores.</li>
+<li>Sótanos.</li>
+<li>Cubierta cuando constituye una planta funcional.</li>
+<li>Entreplantas.</li>
+</ul>
+<h3 id="92-niveles-auxiliares">9.2 Niveles auxiliares<a class="headerlink" href="#92-niveles-auxiliares" title="Permanent link">&para;</a></h3>
+<p>Sirven para modelado o documentación:</p>
+<ul>
+<li>Coronación de peto.</li>
+<li>Cara inferior de forjado.</li>
+<li>Nivel de cimentación.</li>
+<li>Arranque de cubierta.</li>
+<li>Cota de falso techo.</li>
+<li>Descansillo.</li>
+<li>Nivel estructural auxiliar.</li>
+</ul>
+<p>Estos niveles no deberían generar automáticamente <code>IfcBuildingStorey</code> salvo que representen una división espacial necesaria.</p>
+<h2 id="10-parametro-planta-de-edificio">10. Parámetro Planta de edificio<a class="headerlink" href="#10-parametro-planta-de-edificio" title="Permanent link">&para;</a></h2>
+<p>El parámetro <code>Building Story</code> o Planta de edificio indica que el nivel corresponde a una planta funcional, frente a niveles como antepechos o descansillos.</p>
+<p>Autodesk indica que:</p>
+<ul>
+<li>Revit exporta los niveles con Planta de edificio activada.</li>
+<li>Si ningún nivel la tiene activada, puede exportar niveles utilizados como base de elementos.</li>
+<li>La opción de dividir muros, columnas y conductos por nivel utiliza estos niveles.</li>
+</ul>
+<h3 id="101-regla-recomendada">10.1 Regla recomendada<a class="headerlink" href="#101-regla-recomendada" title="Permanent link">&para;</a></h3>
+<p>Activar Planta de edificio únicamente en niveles que deban aparecer como <code>IfcBuildingStorey</code>.</p>
+<h3 id="102-excepciones">10.2 Excepciones<a class="headerlink" href="#102-excepciones" title="Permanent link">&para;</a></h3>
+<p>Un nivel auxiliar puede necesitar exportarse si:</p>
+<ul>
+<li>Define una planta parcial con espacios propios.</li>
+<li>Se utiliza como contenedor espacial real.</li>
+<li>El receptor necesita distinguir esa cota.</li>
+</ul>
+<p>La excepción debe documentarse.</p>
+<h2 id="11-parametro-planta-superior">11. Parámetro Planta superior<a class="headerlink" href="#11-parametro-planta-superior" title="Permanent link">&para;</a></h2>
+<p><code>Story Above</code> permite indicar cuál es la siguiente planta cuando se dividen elementos por niveles. Por defecto suele adoptar la siguiente planta de edificio superior.</p>
+<p>Debe revisarse en:</p>
+<ul>
+<li>Dobles alturas.</li>
+<li>Plantas partidas.</li>
+<li>Entreplantas.</li>
+<li>Niveles auxiliares intercalados.</li>
+<li>Edificios con sectores verticales diferentes.</li>
+</ul>
+<p>Una relación incorrecta puede producir cortes de elementos o alturas de planta inesperadas.</p>
+<h2 id="12-cota-del-nivel-y-altura-de-planta">12. Cota del nivel y altura de planta<a class="headerlink" href="#12-cota-del-nivel-y-altura-de-planta" title="Permanent link">&para;</a></h2>
+<p>La cota de un nivel no contiene por sí sola la altura de planta. Esta se deduce mediante la relación con el nivel superior o mediante los límites de los espacios.</p>
+<p>Debe diferenciarse:</p>
+<ul>
+<li>Cota de suelo acabado.</li>
+<li>Cota estructural.</li>
+<li>Cota de cara superior de forjado.</li>
+<li>Altura libre.</li>
+<li>Altura total del espacio.</li>
+</ul>
+<p>La convención de niveles debe indicar qué representa cada cota.</p>
+<h2 id="13-altura-de-calculo-de-habitaciones">13. Altura de cálculo de habitaciones<a class="headerlink" href="#13-altura-de-calculo-de-habitaciones" title="Permanent link">&para;</a></h2>
+<p>El parámetro <code>Computation Height</code> define la altura sobre el nivel a la que Revit calcula el perímetro, área y volumen de la habitación.</p>
+<p>Puede afectar a recintos con:</p>
+<ul>
+<li>Muros inclinados.</li>
+<li>Cubiertas inclinadas.</li>
+<li>Cambios de sección.</li>
+<li>Huecos o retranqueos próximos al suelo.</li>
+</ul>
+<p>No debe modificarse globalmente para resolver un caso aislado sin comprobar su impacto en todas las habitaciones del nivel.</p>
+<h2 id="14-relacion-entre-habitaciones-y-niveles">14. Relación entre habitaciones y niveles<a class="headerlink" href="#14-relacion-entre-habitaciones-y-niveles" title="Permanent link">&para;</a></h2>
+<p>Cada habitación debe revisar:</p>
+<ul>
+<li>Nivel base.</li>
+<li>Desfase de base.</li>
+<li>Límite superior.</li>
+<li>Desfase de límite.</li>
+<li>Volumen resultante.</li>
+</ul>
+<p>El límite superior no debe elegirse solo porque sea el siguiente nivel en la lista. Debe representar el cierre real del volumen térmico.</p>
+<h2 id="15-edificios-con-plantas-partidas">15. Edificios con plantas partidas<a class="headerlink" href="#15-edificios-con-plantas-partidas" title="Permanent link">&para;</a></h2>
+<p>En edificios <em>split-level</em> pueden existir varias cotas funcionales dentro de una planta general.</p>
+<p>Estrategias posibles:</p>
 <ol>
-<li>No exportarlos.</li>
-<li>Exportarlos como IFC separados.</li>
-<li>Incorporarlos al mismo proyecto IFC.</li>
-<li>Utilizarlos únicamente como referencia para comprobación.</li>
+<li>Varios niveles de planta de edificio.</li>
+<li>Un nivel principal y desfases en espacios y elementos.</li>
+<li>Plantas parciales relacionadas mediante una convención.</li>
 </ol>
-<p>La elección depende de quién es responsable de los recintos y de la envolvente. Debe evitarse que un elemento exista a la vez en el anfitrión y en el vínculo.</p>
-<p>Autodesk ofrece varias opciones para exportar archivos vinculados. La configuración específica se elegirá tras ensayar la interpretación de cada receptor.</p>
-<h2 id="19-subproyectos-y-modelo-central">19. Subproyectos y modelo central<a class="headerlink" href="#19-subproyectos-y-modelo-central" title="Permanent link">&para;</a></h2>
-<p>Los subproyectos afectan a disponibilidad y visibilidad, no deberían utilizarse como único criterio de exportación energética. Antes de publicar se comprobará:</p>
+<p>La elección debe minimizar plantas IFC innecesarias y mantener los espacios en cotas correctas. Se ensayará cuál interpreta mejor cada receptor.</p>
+<h2 id="16-dobles-alturas">16. Dobles alturas<a class="headerlink" href="#16-dobles-alturas" title="Permanent link">&para;</a></h2>
+<p>Una doble altura no debe cerrarse artificialmente mediante un nivel intermedio. Se comprobará:</p>
 <ul>
-<li>Elementos prestados o no sincronizados.</li>
-<li>Vínculos descargados.</li>
-<li>Subproyectos cerrados que oculten geometría necesaria.</li>
-<li>Copias locales desactualizadas.</li>
+<li>Habitación o espacio continuo.</li>
+<li>Límite superior real.</li>
+<li>Forjados parciales.</li>
+<li>Adyacencias verticales.</li>
+<li>Planta IFC de pertenencia.</li>
 </ul>
-<p>La exportación debe realizarse desde una versión sincronizada y registrada.</p>
-<h2 id="20-familias-y-geometria-in-situ">20. Familias y geometría in situ<a class="headerlink" href="#20-familias-y-geometria-in-situ" title="Permanent link">&para;</a></h2>
-<p>Las familias deben utilizar categorías coherentes con su función. Son situaciones de riesgo:</p>
+<p>El espacio puede pertenecer a la planta donde se sitúa su base aunque atraviese otra planta.</p>
+<h2 id="17-sotanos-y-contacto-con-terreno">17. Sótanos y contacto con terreno<a class="headerlink" href="#17-sotanos-y-contacto-con-terreno" title="Permanent link">&para;</a></h2>
+<p>Las cotas deben permitir distinguir:</p>
 <ul>
-<li>Familias genéricas utilizadas como cerramientos.</li>
-<li>Geometría in situ compleja.</li>
-<li>Vacíos que no cortan correctamente.</li>
-<li>Familias anidadas que duplican geometría.</li>
-<li>Parámetros IFC contradictorios entre tipo y ejemplar.</li>
+<li>Planta completamente enterrada.</li>
+<li>Planta semienterrada.</li>
+<li>Muros parcialmente en contacto con terreno.</li>
+<li>Solera.</li>
+<li>Superficies expuestas a exterior.</li>
 </ul>
-<p>Cuando una familia delimita un recinto o contiene un hueco, debe ensayarse expresamente su exportación.</p>
-<h2 id="21-modelo-nativo-de-energia-de-revit">21. Modelo nativo de energía de Revit<a class="headerlink" href="#21-modelo-nativo-de-energia-de-revit" title="Permanent link">&para;</a></h2>
-<p>Revit 2026 puede generar su propio modelo analítico energético a partir de elementos arquitectónicos, masas, habitaciones o espacios. Autodesk indica que el proceso admite pequeños huecos y solapes mediante resoluciones analíticas configurables.</p>
-<p>Este manual no utilizará automáticamente el modelo energético nativo de Revit como sustituto del flujo IFC. Sin embargo, puede emplearse como herramienta de diagnóstico:</p>
+<p>Un único plano de terreno global puede ser insuficiente para edificios escalonados. La condición final deberá verificarse en el modelo analítico.</p>
+<h2 id="18-cubiertas-y-niveles-superiores">18. Cubiertas y niveles superiores<a class="headerlink" href="#18-cubiertas-y-niveles-superiores" title="Permanent link">&para;</a></h2>
+<p>No siempre es necesario crear una planta IFC para cada nivel de cubierta. Se distinguirán:</p>
 <ul>
-<li>Detectar espacios analíticos inesperados.</li>
-<li>Identificar discontinuidades.</li>
-<li>Comparar zonas y superficies.</li>
-<li>Revisar sombras.</li>
+<li>Nivel de planta bajo cubierta.</li>
+<li>Arranque de cubierta.</li>
+<li>Cumbrera.</li>
+<li>Coronación.</li>
+<li>Planta técnica de cubierta.</li>
 </ul>
-<p>Debe mantenerse clara la diferencia entre:</p>
+<p>Solo los niveles que organizan espacios o elementos como una planta funcional deberían marcarse como Planta de edificio.</p>
+<h2 id="19-varios-edificios-en-un-proyecto">19. Varios edificios en un proyecto<a class="headerlink" href="#19-varios-edificios-en-un-proyecto" title="Permanent link">&para;</a></h2>
+<p>Cuando un archivo Revit contiene varios edificios, deben definirse:</p>
 <ul>
-<li>Modelo energético interno de Revit.</li>
-<li><code>IfcSpace</code> y límites exportados.</li>
-<li>Modelo generado en Open BIM Analytical Model.</li>
-<li>Modelo reconstruido en TeKton3D.</li>
+<li>Referencia común de coordenadas.</li>
+<li>Norte verdadero común.</li>
+<li>Estructura de sitios y edificios IFC.</li>
+<li>Niveles propios o compartidos.</li>
+<li>Responsabilidad de sombras entre edificios.</li>
 </ul>
-<h2 id="22-estrategia-de-configuraciones-ifc">22. Estrategia de configuraciones IFC<a class="headerlink" href="#22-estrategia-de-configuraciones-ifc" title="Permanent link">&para;</a></h2>
-<p>Se mantendrán configuraciones con nombres y objetivos diferenciados:</p>
+<p>Puede ser preferible separar los modelos o las aportaciones cuando cada edificio se calcula independientemente.</p>
+<h2 id="20-tabla-de-planificacion-de-niveles">20. Tabla de planificación de niveles<a class="headerlink" href="#20-tabla-de-planificacion-de-niveles" title="Permanent link">&para;</a></h2>
+<p>Se recomienda una tabla con:</p>
+<ul>
+<li>Nombre.</li>
+<li>Elevación.</li>
+<li>Planta de edificio.</li>
+<li>Planta superior.</li>
+<li>Estructural.</li>
+<li>Descripción o código.</li>
+<li>Uso en IFC.</li>
+<li>Observaciones.</li>
+</ul>
+<p>Debe existir una revisión explícita que identifique niveles auxiliares y funcionales.</p>
+<h2 id="21-vista-de-control-de-coordenadas">21. Vista de control de coordenadas<a class="headerlink" href="#21-vista-de-control-de-coordenadas" title="Permanent link">&para;</a></h2>
+<p>Se preparará una vista de emplazamiento o 3D que muestre:</p>
+<ul>
+<li>Origen interno.</li>
+<li>Punto base.</li>
+<li>Punto topográfico.</li>
+<li>Ejes principales.</li>
+<li>Flecha de Norte verdadero.</li>
+<li>Vínculos relevantes.</li>
+<li>Punto de control conocido.</li>
+</ul>
+<p>La vista formará parte del informe QA/QC.</p>
+<h2 id="22-comprobacion-en-ifc">22. Comprobación en IFC<a class="headerlink" href="#22-comprobacion-en-ifc" title="Permanent link">&para;</a></h2>
+<p>Después de exportar debe verificarse:</p>
+<ul>
+<li>Orientación respecto al Norte verdadero.</li>
+<li>Cotas de plantas.</li>
+<li>Número y nombre de <code>IfcBuildingStorey</code>.</li>
+<li>Contención de elementos.</li>
+<li>Posición de vínculos u obstáculos.</li>
+<li>Unidades.</li>
+<li>Coordenadas globales o locales esperadas.</li>
+<li>Ausencia de desplazamientos o giros duplicados.</li>
+</ul>
+<h2 id="23-comprobacion-en-open-bim-analytical-model">23. Comprobación en Open BIM Analytical Model<a class="headerlink" href="#23-comprobacion-en-open-bim-analytical-model" title="Permanent link">&para;</a></h2>
+<p>Se revisará:</p>
+<ul>
+<li>Coincidencia con el resto de aportaciones de BIMserver.center.</li>
+<li>Orientación de fachadas.</li>
+<li>Sombras propias y remotas.</li>
+<li>Plantas cargadas.</li>
+<li>Cotas de espacios.</li>
+<li>Contacto con terreno.</li>
+</ul>
+<h2 id="24-comprobacion-en-tekton3d">24. Comprobación en TeKton3D<a class="headerlink" href="#24-comprobacion-en-tekton3d" title="Permanent link">&para;</a></h2>
+<p>En importación:</p>
+<ul>
+<li>Plantas nativas creadas.</li>
+<li>Elevaciones y alturas.</li>
+<li>Orientación.</li>
+<li>Posición de espacios y cerramientos.</li>
+</ul>
+<p>En vinculación:</p>
+<ul>
+<li>Niveles IFC cargados como plantas cuando se usa <code>Insertar/Edificio IFC</code>.</li>
+<li>Coincidencia de cota cero por planta.</li>
+<li>Norte y posición del vínculo.</li>
+<li>Actualización sin desplazamiento.</li>
+</ul>
+<h2 id="25-matriz-de-decisiones">25. Matriz de decisiones<a class="headerlink" href="#25-matriz-de-decisiones" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Configuración</th>
-<th>Objetivo inicial</th>
+<th>Decisión</th>
+<th>Debe quedar registrada en</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>IFC_CYPE_ANALYTICAL</code></td>
-<td>Publicación hacia BIMserver.center y generación analítica.</td>
+<td>Punto base local</td>
+<td>BEP o protocolo del modelo</td>
 </tr>
 <tr>
-<td><code>IFC_TEKTON_IMPORT</code></td>
-<td>Importación IFC2x3 y conversión a entidades nativas.</td>
+<td>Sistema compartido</td>
+<td>Protocolo de coordinación</td>
 </tr>
 <tr>
-<td><code>IFC_TEKTON_LINK</code></td>
-<td>Vinculación IFC2x3 o IFC4 como referencia.</td>
+<td>Norte verdadero</td>
+<td>Información de proyecto</td>
+</tr>
+<tr>
+<td>Base de exportación IFC</td>
+<td>Configuración IFC</td>
+</tr>
+<tr>
+<td>EPSG</td>
+<td>Información geográfica</td>
+</tr>
+<tr>
+<td>Niveles de planta</td>
+<td>Matriz de niveles</td>
+</tr>
+<tr>
+<td>Niveles auxiliares</td>
+<td>Matriz de exclusión</td>
+</tr>
+<tr>
+<td>Planta superior</td>
+<td>Tabla de niveles</td>
+</tr>
+<tr>
+<td>Criterio de cota</td>
+<td>Convención de modelado</td>
 </tr>
 </tbody>
 </table>
-<p>Autodesk permite duplicar configuraciones integradas y guardarlas con el proyecto. Deben evitarse las modificaciones no documentadas de la configuración temporal de sesión.</p>
-<h2 id="23-vistas-y-tablas-de-control">23. Vistas y tablas de control<a class="headerlink" href="#23-vistas-y-tablas-de-control" title="Permanent link">&para;</a></h2>
-<p>El modelo preparado incluirá, como mínimo:</p>
-<ul>
-<li>Vista 3D de exportación.</li>
-<li>Secciones de revisión de recintos.</li>
-<li>Vista de habitaciones por planta.</li>
-<li>Tabla de habitaciones.</li>
-<li>Tabla de niveles.</li>
-<li>Tabla de muros.</li>
-<li>Tabla de suelos.</li>
-<li>Tabla de cubiertas.</li>
-<li>Tabla de puertas.</li>
-<li>Tabla de ventanas.</li>
-<li>Tabla de incidencias o parámetros IFC, cuando proceda.</li>
-</ul>
-<p>Las tablas deben permitir seleccionar y corregir elementos de forma masiva sin depender únicamente de inspección visual.</p>
-<h2 id="24-responsabilidades">24. Responsabilidades<a class="headerlink" href="#24-responsabilidades" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Rol</th>
-<th>Responsabilidad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BIM Manager</td>
-<td>Define requisitos, configuraciones, parámetros y criterios QA/QC.</td>
-</tr>
-<tr>
-<td>Equipo de arquitectura</td>
-<td>Corrige geometría, habitaciones, fases, niveles y familias.</td>
-</tr>
-<tr>
-<td>Responsable analítico</td>
-<td>Valida espacios, superficies, adyacencias y simplificaciones.</td>
-</tr>
-<tr>
-<td>Especialista energético</td>
-<td>Define zonificación, condiciones, sistemas y criterios de cálculo.</td>
-</tr>
-</tbody>
-</table>
-<p>Una incidencia debe asignarse al rol que puede corregir su origen, no necesariamente a quien la detecta.</p>
-<h2 id="25-proceso-recomendado">25. Proceso recomendado<a class="headerlink" href="#25-proceso-recomendado" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-    A["Definir uso BIM energético"] --&gt; B["Preparar vista y parámetros"]
-    B --&gt; C["Revisar habitaciones y envolvente"]
-    C --&gt; D["Exportación IFC piloto"]
-    D --&gt; E["Validación IFC"]
-    E --&gt; F["Generación o reconstrucción analítica"]
-    F --&gt; G["Registro de incidencias"]
-    G --&gt;|"Error de origen"| C
-    G --&gt;|"Decisión de cálculo"| H["Ajuste analítico"]
-    H --&gt; I["Publicación para motor energético"]</code></pre>
-<h2 id="26-criterios-generales-de-aceptacion">26. Criterios generales de aceptación<a class="headerlink" href="#26-criterios-generales-de-aceptacion" title="Permanent link">&para;</a></h2>
-<p>El modelo Revit podrá pasar a configuración detallada de exportación cuando:</p>
+<h2 id="26-checklist-previo-a-exportacion">26. Checklist previo a exportación<a class="headerlink" href="#26-checklist-previo-a-exportacion" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Existe una vista 3D específica y documentada.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La fase y la opción de diseño están definidas.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los niveles relevantes están identificados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La ubicación y el norte están verificados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los recintos relevantes tienen área y volumen.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Room Bounding</code> se ha revisado en elementos de riesgo.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La envolvente puede clasificarse.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los huecos están correctamente hospedados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No existen duplicados críticos.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los vínculos tienen una estrategia definida.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se ha realizado al menos una exportación piloto.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las incidencias encontradas tienen responsable y estado.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Geometría principal cerca del origen interno.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Punto base definido y documentado.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Punto topográfico y coordenadas compartidas verificados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ubicación geográfica confirmada.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Norte verdadero comprobado.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ángulo respecto a Proyecto Norte registrado.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Base de exportación IFC seleccionada.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> EPSG confirmado o conscientemente omitido.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vínculos posicionados mediante un método conocido.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Niveles funcionales identificados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Niveles auxiliares excluidos como plantas IFC.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Building Story</code> revisado.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Story Above</code> revisado en casos especiales.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cotas y alturas de habitaciones verificadas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sótanos, terreno y cubiertas revisados.</li>
 </ul>
-<h2 id="27-decisiones-pendientes-de-ensayo">27. Decisiones pendientes de ensayo<a class="headerlink" href="#27-decisiones-pendientes-de-ensayo" title="Permanent link">&para;</a></h2>
-<p>Los siguientes puntos no se cerrarán sin pruebas en Revit 2026:</p>
+<h2 id="27-ensayo-propuesto-para-revit-2026">27. Ensayo propuesto para Revit 2026<a class="headerlink" href="#27-ensayo-propuesto-para-revit-2026" title="Permanent link">&para;</a></h2>
+<p>Se generarán exportaciones controladas utilizando:</p>
 <ol>
-<li>Versión exacta del exportador IFC.</li>
-<li>Comportamiento de habitaciones en vistas 3D.</li>
-<li>Diferencias entre volumen calculado y extrusión 2D de límites.</li>
-<li>Límites espaciales de primer y segundo nivel.</li>
-<li>Mapeado de <code>IsExternal</code>.</li>
-<li><code>ZoneName</code> y agrupaciones.</li>
-<li>Puertas acristaladas.</li>
-<li>Revestimientos modelados por separado.</li>
-<li>Falsos techos y plénums.</li>
-<li>Vínculos y coordenadas.</li>
-<li>GUID tras reexportación.</li>
+<li>Origen interno.</li>
+<li>Origen interno orientado al Norte verdadero.</li>
+<li>Punto base del proyecto.</li>
+<li>Punto base orientado al Norte verdadero.</li>
+<li>Coordenadas compartidas.</li>
 </ol>
+<p>El modelo de prueba tendrá:</p>
+<ul>
+<li>Giro conocido de 30° respecto al Norte verdadero.</li>
+<li>Tres plantas funcionales.</li>
+<li>Dos niveles auxiliares.</li>
+<li>Un edificio vinculado.</li>
+<li>Un obstáculo remoto.</li>
+<li>Una planta semienterrada.</li>
+</ul>
+<p>Se documentará qué opción conserva correctamente posición, norte, plantas y sombras en cada receptor.</p>
 <h2 id="28-fuentes-principales">28. Fuentes principales<a class="headerlink" href="#28-fuentes-principales" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Autodesk, <em>Export a Model to IFC</em>, Revit 2026.</li>
-<li>Autodesk, <em>Customize the IFC Setup</em>, Revit 2026.</li>
-<li>Autodesk, <em>How Room Volume is Computed</em>, Revit 2026.</li>
-<li>Autodesk, <em>Situations That Can Affect Room Volume Computations</em>, Revit 2026.</li>
-<li>Autodesk, <em>About Creating Energy Analytical Models from Architectural Elements</em>, Revit 2026.</li>
+<li>Autodesk, <em>About Positioning</em>, Revit 2026.</li>
+<li>Autodesk, <em>About Project North and True North</em>, Revit 2026.</li>
+<li>Autodesk, <em>Move the Project Base Point</em>, Revit 2026.</li>
+<li>Autodesk, <em>IFC Export Setup Options</em>.</li>
+<li>Autodesk, <em>Level Instance Properties</em>.</li>
 <li>CYPE, <em>Guía de interoperabilidad CYPE-Revit v2.0</em> (<code>CYPE-REVIT-20</code>).</li>
-<li>Documentación propia de preparación de Revit para programas térmicos de CYPE.</li>
 </ul>
 
 
