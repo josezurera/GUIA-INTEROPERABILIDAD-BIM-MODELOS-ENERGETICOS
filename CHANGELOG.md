@@ -24,6 +24,8 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Ampliación del registro de incidencias y del checklist operativo Revit–IFC.
 - Incorporación de validación automática IFC mediante IDS 1.0 e IfcTester.
 - Primera especificación `eem-ifc-minimo-v0.1.ids` e informes HTML/JSON en GitHub Actions.
+- Prevalidación del esquema IFC, inventario de entidades y diagnóstico de GlobalIds.
+- Complemento IDS para entidades IFC2x3 y resumen HTML consolidado.
 - Vista previa HTML automática para cada solicitud de cambios.
 - Generación automática del PDF en las versiones publicadas.
 

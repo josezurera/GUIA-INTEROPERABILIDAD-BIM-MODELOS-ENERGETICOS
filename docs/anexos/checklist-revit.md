@@ -144,6 +144,9 @@ Esta lista resume los controles de las puertas 1 y 2. Debe utilizarse junto con 
 - [ ] Psets EEM están presentes.
 - [ ] El IFC cumple la especificación IDS aplicable.
 - [ ] El informe HTML/JSON de IDS está archivado.
+- [ ] La validación del esquema IFC no contiene incidencias.
+- [ ] Los GlobalIds son completos, únicos y válidos.
+- [ ] El inventario de entidades se ha comparado con Revit.
 - [ ] Unidades y tipos de propiedades son correctos.
 - [ ] Cantidades base se compararon con Revit.
 - [ ] GlobalIds son válidos y únicos.

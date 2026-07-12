@@ -1,20 +1,57 @@
-"""Valida archivos IFC mediante especificaciones IDS y genera informes HTML/JSON."""
+"""Prevalida IFC, comprueba IDS y genera informes HTML/JSON consolidados."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import html
 import json
 import re
 import sys
+from collections import Counter
+from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 import ifcopenshell
+import ifcopenshell.validate
 from ifctester import ids as ids_module
 from ifctester import reporter
 
 
+DEFAULT_IDS = [
+    Path("config/ids/eem-ifc-minimo-v0.1.ids"),
+    Path("config/ids/eem-ifc2x3-complemento-v0.1.ids"),
+]
+
+INVENTORY_CLASSES = [
+    "IfcProject",
+    "IfcSite",
+    "IfcBuilding",
+    "IfcBuildingStorey",
+    "IfcSpace",
+    "IfcZone",
+    "IfcWall",
+    "IfcWallStandardCase",
+    "IfcSlab",
+    "IfcRoof",
+    "IfcWindow",
+    "IfcDoor",
+    "IfcCurtainWall",
+    "IfcBuildingElementProxy",
+]
+
+
 def safe_name(path: Path) -> str:
     return re.sub(r"[^A-Za-z0-9_.-]+", "_", path.stem)
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
 
 def audit_ids(ids_paths: list[Path]) -> list[str]:
@@ -28,9 +65,107 @@ def audit_ids(ids_paths: list[Path]) -> list[str]:
     return errors
 
 
-def validate_pair(ifc_path: Path, ids_path: Path, output_dir: Path) -> dict:
-    specification = ids_module.open(str(ids_path), validate=True)
+def count_exact(ifc: ifcopenshell.file, class_name: str) -> int:
+    try:
+        return len(ifc.by_type(class_name, include_subtypes=False))
+    except (RuntimeError, TypeError):
+        try:
+            return len(ifc.by_type(class_name))
+        except RuntimeError:
+            return 0
+
+
+def header_metadata(ifc: ifcopenshell.file) -> dict[str, Any]:
+    file_name = ifc.header.file_name
+    return {
+        "name": getattr(file_name, "name", None),
+        "timestamp": getattr(file_name, "time_stamp", None),
+        "preprocessor_version": getattr(file_name, "preprocessor_version", None),
+        "originating_system": getattr(file_name, "originating_system", None),
+        "authorization": getattr(file_name, "authorization", None),
+    }
+
+
+def application_metadata(ifc: ifcopenshell.file) -> list[dict[str, Any]]:
+    applications: list[dict[str, Any]] = []
+    for app in ifc.by_type("IfcApplication"):
+        applications.append(
+            {
+                "name": getattr(app, "ApplicationFullName", None),
+                "version": getattr(app, "Version", None),
+                "identifier": getattr(app, "ApplicationIdentifier", None),
+            }
+        )
+    return applications
+
+
+def global_id_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
+    roots = ifc.by_type("IfcRoot")
+    values = [getattr(element, "GlobalId", None) for element in roots]
+    missing = [element.id() for element, value in zip(roots, values) if not value]
+    counts = Counter(value for value in values if value)
+    duplicates = sorted(value for value, count in counts.items() if count > 1)
+    invalid = sorted(
+        value
+        for value in counts
+        if ifcopenshell.validate.validate_guid(value) is not None
+    )
+    return {
+        "ifc_root_count": len(roots),
+        "missing_count": len(missing),
+        "missing_entity_ids": missing[:100],
+        "duplicate_count": len(duplicates),
+        "duplicate_values": duplicates[:100],
+        "invalid_count": len(invalid),
+        "invalid_values": invalid[:100],
+    }
+
+
+def schema_diagnostics(ifc_path: Path) -> dict[str, Any]:
+    logger = ifcopenshell.validate.json_logger()
+    ifcopenshell.validate.validate(str(ifc_path), logger, express_rules=False)
+    statements = logger.statements
+    return {
+        "status": not statements,
+        "issue_count": len(statements),
+        "issues": statements[:500],
+        "truncated": len(statements) > 500,
+    }
+
+
+def preflight(ifc_path: Path, output_dir: Path) -> tuple[ifcopenshell.file, dict[str, Any]]:
     ifc = ifcopenshell.open(str(ifc_path))
+    schema = schema_diagnostics(ifc_path)
+    global_ids = global_id_diagnostics(ifc)
+    inventory = {name: count_exact(ifc, name) for name in INVENTORY_CLASSES}
+    status = (
+        schema["status"]
+        and global_ids["missing_count"] == 0
+        and global_ids["duplicate_count"] == 0
+        and global_ids["invalid_count"] == 0
+    )
+    result = {
+        "ifc": str(ifc_path),
+        "status": status,
+        "sha256": sha256(ifc_path),
+        "size_bytes": ifc_path.stat().st_size,
+        "schema": ifc.schema,
+        "header": header_metadata(ifc),
+        "applications": application_metadata(ifc),
+        "inventory_exact": inventory,
+        "global_ids": global_ids,
+        "schema_validation": schema,
+    }
+    path = output_dir / f"{safe_name(ifc_path)}__preflight.json"
+    path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    result["json"] = str(path)
+    return ifc, result
+
+
+def validate_pair(
+    ifc: ifcopenshell.file, ifc_path: Path, ids_path: Path, output_dir: Path
+) -> dict[str, Any]:
+    specification = ids_module.open(str(ids_path), validate=True)
     specification.validate(ifc)
 
     base = f"{safe_name(ifc_path)}__{safe_name(ids_path)}"
@@ -38,53 +173,101 @@ def validate_pair(ifc_path: Path, ids_path: Path, output_dir: Path) -> dict:
     html_path = output_dir / f"{base}.html"
 
     json_reporter = reporter.Json(specification)
-    result = json_reporter.report()
+    report = json_reporter.report()
     json_reporter.to_file(str(json_path))
 
     html_reporter = reporter.Html(specification)
     html_reporter.report()
     html_reporter.to_file(str(html_path))
 
+    failed = [
+        {
+            "name": item.name,
+            "applicable": len(item.applicable_entities),
+        }
+        for item in specification.specifications
+        if not item.status and item.is_ifc_version
+    ]
     return {
         "ifc": str(ifc_path),
         "ids": str(ids_path),
         "schema": ifc.schema,
-        "status": bool(result.get("status")),
+        "status": bool(report.get("status")),
+        "failed_specifications": failed,
         "html": str(html_path),
         "json": str(json_path),
     }
 
 
+def render_summary(summary: dict[str, Any], output_path: Path) -> None:
+    rows: list[str] = []
+    for model in summary["models"]:
+        pre = model["preflight"]
+        source = ", ".join(
+            f"{item.get('name') or '?'} {item.get('version') or ''}".strip()
+            for item in pre["applications"]
+        ) or "No declarada"
+        ids_items = "".join(
+            f"<li><strong>{html.escape(Path(item['ids']).name)}</strong>: "
+            f"{'CUMPLE' if item['status'] else 'NO CUMPLE'}</li>"
+            for item in model["ids_results"]
+        )
+        failures = "".join(
+            f"<li>{html.escape(str(failure.get('name') or ''))}</li>"
+            for item in model["ids_results"]
+            for failure in item.get("failed_specifications", [])
+        ) or "<li>Ninguno</li>"
+        inventory = "".join(
+            f"<tr><td>{html.escape(name)}</td><td>{value}</td></tr>"
+            for name, value in pre["inventory_exact"].items()
+        )
+        rows.append(
+            f"<section><h2>{html.escape(Path(model['ifc']).name)}</h2>"
+            f"<p><strong>Resultado:</strong> {'CUMPLE' if model['status'] else 'NO CUMPLE'} · "
+            f"<strong>Esquema:</strong> {html.escape(pre['schema'])} · "
+            f"<strong>Origen:</strong> {html.escape(source)}</p>"
+            f"<p><strong>SHA-256:</strong> <code>{pre['sha256']}</code></p>"
+            f"<h3>Prevalidación</h3><ul>"
+            f"<li>Esquema: {'correcto' if pre['schema_validation']['status'] else 'con incidencias'}</li>"
+            f"<li>GlobalIds ausentes: {pre['global_ids']['missing_count']}</li>"
+            f"<li>GlobalIds duplicados: {pre['global_ids']['duplicate_count']}</li>"
+            f"<li>GlobalIds no válidos: {pre['global_ids']['invalid_count']}</li></ul>"
+            f"<h3>IDS</h3><ul>{ids_items}</ul><h3>Requisitos fallidos</h3><ul>{failures}</ul>"
+            f"<h3>Inventario exacto</h3><table><tr><th>Entidad</th><th>Número</th></tr>{inventory}</table>"
+            f"</section>"
+        )
+    document = f"""<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Resumen QA/QC IFC</title>
+<style>body{{font:16px Arial,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#222}}
+section{{border-top:4px solid #455a64;margin:2rem 0;padding-top:1rem}}table{{border-collapse:collapse}}
+th,td{{border:1px solid #bbb;padding:.35rem .7rem;text-align:left}}code{{word-break:break-all}}</style></head>
+<body><h1>Resumen de prevalidación IFC e IDS</h1>
+<p>Generado: {html.escape(summary['generated_at'])}</p>{''.join(rows)}</body></html>"""
+    output_path.write_text(document, encoding="utf-8")
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Audita IDS 1.0 y valida uno o varios IFC con IfcTester."
+        description="Prevalida IFC, audita IDS 1.0 y genera informes consolidados."
     )
     parser.add_argument("ifc", nargs="*", type=Path, help="Archivos IFC que se validarán.")
     parser.add_argument(
-        "--ids",
-        action="append",
-        dest="ids_files",
-        type=Path,
-        help="Especificación IDS. Puede repetirse.",
+        "--ids", action="append", dest="ids_files", type=Path,
+        help="Especificación IDS. Puede repetirse; sin esta opción se aplican todas las predeterminadas."
     )
     parser.add_argument(
-        "--output",
-        type=Path,
-        default=Path("reports/ids"),
-        help="Carpeta para informes HTML y JSON.",
+        "--output", type=Path, default=Path("reports/ids"),
+        help="Carpeta para informes HTML y JSON."
     )
     parser.add_argument(
-        "--audit-only",
-        action="store_true",
-        help="Comprueba los IDS sin validar ningún IFC.",
+        "--audit-only", action="store_true", help="Comprueba los IDS sin validar ningún IFC."
     )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    ids_paths = args.ids_files or [Path("config/ids/eem-ifc-minimo-v0.1.ids")]
-
+    ids_paths = args.ids_files or DEFAULT_IDS
     missing = [path for path in [*ids_paths, *args.ifc] if not path.is_file()]
     if missing:
         for path in missing:
@@ -96,7 +279,6 @@ def main() -> int:
         for error in audit_errors:
             print(error, file=sys.stderr)
         return 2
-
     if args.audit_only:
         return 0
     if not args.ifc:
@@ -104,27 +286,36 @@ def main() -> int:
         return 2
 
     args.output.mkdir(parents=True, exist_ok=True)
-    results: list[dict] = []
+    models: list[dict[str, Any]] = []
     for ifc_path in args.ifc:
-        for ids_path in ids_paths:
-            try:
-                result = validate_pair(ifc_path, ids_path, args.output)
-                results.append(result)
-                label = "CUMPLE" if result["status"] else "NO CUMPLE"
-                print(f"{label}: {ifc_path} / {ids_path}")
-            except Exception as exc:
-                results.append(
-                    {"ifc": str(ifc_path), "ids": str(ids_path), "status": False, "error": str(exc)}
-                )
-                print(f"ERROR: {ifc_path} / {ids_path}: {exc}", file=sys.stderr)
+        try:
+            ifc, preflight_result = preflight(ifc_path, args.output)
+            ids_results = [
+                validate_pair(ifc, ifc_path, ids_path, args.output) for ids_path in ids_paths
+            ]
+            status = preflight_result["status"] and all(item["status"] for item in ids_results)
+            models.append(
+                {"ifc": str(ifc_path), "status": status, "preflight": preflight_result,
+                 "ids_results": ids_results}
+            )
+            print(f"{'CUMPLE' if status else 'NO CUMPLE'}: {ifc_path}")
+        except Exception as exc:
+            models.append({"ifc": str(ifc_path), "status": False, "error": str(exc)})
+            print(f"ERROR: {ifc_path}: {exc}", file=sys.stderr)
 
-    summary_path = args.output / "resumen.json"
-    summary_path.write_text(
-        json.dumps({"status": all(item["status"] for item in results), "results": results}, indent=2),
-        encoding="utf-8",
-    )
-    print(f"Resumen: {summary_path}")
-    return 0 if results and all(item["status"] for item in results) else 1
+    overall = bool(models) and all(item["status"] for item in models)
+    summary = {
+        "status": overall,
+        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "models": models,
+    }
+    json_path = args.output / "resumen.json"
+    html_path = args.output / "resumen.html"
+    json_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+    render_summary(summary, html_path)
+    print(f"Resumen HTML: {html_path}")
+    print(f"Resumen JSON: {json_path}")
+    return 0 if overall else 1
 
 
 if __name__ == "__main__":

@@ -1,6 +1,8 @@
 .venv/
 site/
 reports/
+tests/ifc/*.ifc
+!tests/ifc/eem-minimo-conforme.ifc
 output/
 tmp/
 __pycache__/

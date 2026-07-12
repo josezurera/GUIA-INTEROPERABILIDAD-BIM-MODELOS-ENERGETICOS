@@ -9,7 +9,7 @@ ultima_revision: 2026-07-12
 
 La guía adopta **Information Delivery Specification (IDS) 1.0**, estándar de buildingSMART, para expresar y comprobar requisitos de información sobre archivos IFC.
 
-La herramienta seleccionada es **IfcTester 0.8.5**, incluida en el ecosistema abierto IfcOpenShell. Permite validar desde línea de comandos y generar informes HTML y JSON reproducibles.
+La herramienta seleccionada es **IfcTester 0.8.5**, incluida en el ecosistema abierto IfcOpenShell. Permite validar desde línea de comandos y generar informes HTML y JSON reproducibles. El ejecutable de la guía añade una prevalidación del esquema mediante `ifcopenshell.validate`.
 
 ## 1. Qué comprueba IDS
 
@@ -29,6 +29,17 @@ La especificación inicial `eem-ifc-minimo-v0.1.ids` comprueba:
 - Existencia de plantas.
 - Existencia de espacios `IfcSpace`.
 - Nombre en muros, losas, cubiertas, ventanas y puertas cuando existan.
+
+El complemento `eem-ifc2x3-complemento-v0.1.ids` incorpora reglas para entidades habituales de IFC2x3, inicialmente `IfcWallStandardCase`.
+
+Antes de aplicar los IDS, la herramienta registra y comprueba:
+
+- Esquema IFC.
+- Conformidad de atributos, tipos y cardinalidades con el esquema.
+- Aplicación y versión de origen.
+- Hash SHA-256 y tamaño.
+- Inventario exacto de entidades principales.
+- GlobalIds ausentes, duplicados o inválidos.
 
 ## 2. Qué no comprueba IDS por sí solo
 
@@ -77,6 +88,8 @@ Los informes se generan en `reports/ids/`:
 - HTML para lectura humana.
 - JSON para automatización.
 - `resumen.json` con el resultado global.
+- `resumen.html` con prevalidación, inventario y requisitos fallidos.
+- Un JSON de prevalidación por IFC.
 
 El proceso devuelve:
 
@@ -97,9 +110,11 @@ La acción **Validar IFC con IDS**:
 
 Si no existe ningún IFC público de ensayo, la acción audita únicamente la especificación y finaliza correctamente.
 
+Los IFC reales colocados en `tests/ifc/` están excluidos de Git por defecto para impedir su publicación accidental. Solo se versionará un modelo adicional mediante una decisión expresa y después de confirmar que no contiene información confidencial.
+
 ## 6. Interpretación del resultado
 
-Un resultado **CUMPLE** significa que el IFC satisface todos los requisitos expresados en esa versión del IDS. No significa que el modelo energético completo esté aprobado.
+Un resultado **CUMPLE** significa que el IFC supera la prevalidación y satisface todos los requisitos expresados en los IDS aplicados. No significa que el modelo energético completo esté aprobado.
 
 Un resultado **NO CUMPLE** debe convertirse en una incidencia con:
 

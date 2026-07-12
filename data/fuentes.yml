@@ -383,3 +383,10 @@ fuentes:
     url: https://docs.ifcopenshell.org/ifctester.html
     fecha_consulta: 2026-07-12
     estado: revisada
+  - id: IFCOPENSHELL-VALIDATION-085
+    titulo: Validation
+    entidad: IfcOpenShell
+    tipo: documentacion_oficial
+    url: https://docs.ifcopenshell.org/ifcopenshell-python/validation.html
+    fecha_consulta: 2026-07-12
+    estado: revisada

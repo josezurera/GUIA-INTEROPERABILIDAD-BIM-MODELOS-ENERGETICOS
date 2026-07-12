@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>EEM QA/QC complemento IFC2x3</title>
+        <copyright>CC BY 4.0</copyright>
+        <version>0.1.0</version>
+        <description>Requisitos complementarios para entidades específicas o habituales de IFC2x3.</description>
+        <author>joseazurera@gmail.com</author>
+        <date>2026-07-12</date>
+        <purpose>QA/QC</purpose>
+        <milestone>Versión 0.2</milestone>
+    </info>
+    <specifications>
+        <specification name="[EEM-IDS-2X3-001] Muros estándar IFC2x3 identificados" ifcVersion="IFC2X3" identifier="EEM-IDS-2X3-001" instructions="Todo IfcWallStandardCase debe disponer de nombre.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCWALLSTANDARDCASE</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

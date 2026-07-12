@@ -59,4 +59,5 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - buildingSMART International. *Information Delivery Specification (IDS) 1.0*.
 - buildingSMART International. *IFC Validation Service*.
 - IfcOpenShell. *IfcTester documentation*.
+- IfcOpenShell. *Validation*, documentación 0.8.5.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.
