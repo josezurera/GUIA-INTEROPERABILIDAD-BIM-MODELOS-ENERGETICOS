@@ -213,10 +213,10 @@ No se asumirá que los niveles 2 y 3 son equivalentes. En los flujos CYPE y TeKt
 
 Los tipos deben poder identificarse fuera de Revit. Se recomienda una codificación estable, por ejemplo:
 
-`ENV-MUR-EXT-01` — muro exterior principal  
-`ENV-CUB-EXT-01` — cubierta exterior  
-`ENV-SOL-TER-01` — solera en contacto con terreno  
-`ENV-PAR-NAC-01` — partición con espacio no acondicionado
+- `ENV-MUR-EXT-01`: muro exterior principal.
+- `ENV-CUB-EXT-01`: cubierta exterior.
+- `ENV-SOL-TER-01`: solera en contacto con terreno.
+- `ENV-PAR-NAC-01`: partición con espacio no acondicionado.
 
 El nombre no debe ser la única fuente de clasificación; se acompañará de parámetros compartidos en el capítulo de mapeado IFC.
 
@@ -563,4 +563,3 @@ Para cada caso se compararán:
 - Autodesk, *About Applying a Function and a Priority to a Layer of a Compound Structure*, Revit 2026.
 - Autodesk, *Video: Editing Compound Structures*, Revit 2026.
 - Autodesk, *Energy Settings*, Revit 2026.
-
