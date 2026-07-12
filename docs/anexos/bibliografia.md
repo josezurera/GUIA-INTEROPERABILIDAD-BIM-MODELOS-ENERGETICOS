@@ -32,4 +32,8 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *About Applying a Function and a Priority to a Layer of a Compound Structure*, Revit 2026.
 - Autodesk. *Video: Editing Compound Structures*, Revit 2026.
 - Autodesk. *Energy Settings*, Revit 2026.
+- Autodesk. *Window Type Properties*, Revit 2026.
+- Autodesk. *Door Type Properties*.
+- Autodesk. *Energy Analytical Model Properties*, Revit 2026.
+- Autodesk. *About Surfaces in the Energy Analytical Model*.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.

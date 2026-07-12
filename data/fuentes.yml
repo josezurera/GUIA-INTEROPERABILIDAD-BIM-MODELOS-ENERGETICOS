@@ -194,3 +194,31 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-36B2F66A-E423-4D9C-B266-3ABA57573F4A.htm
     fecha_consulta: 2026-07-12
     estado: revisada
+  - id: AUTODESK-RVT2026-WINDOW-TYPE
+    titulo: Window Type Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-1C03B7DF-89EE-48B1-B501-571745B1D513.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-DOOR-TYPE
+    titulo: Door Type Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-ArchDesign/files/GUID-29905EE0-3D7D-422E-A627-5A7A8AC34D7B.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-EAM-PROPERTIES
+    titulo: Energy Analytical Model Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-DFC1AACB-BD07-4E0F-9777-0BC2EE946F9E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-EAM-SURFACES
+    titulo: About Surfaces in the Energy Analytical Model
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-B22FC577-67B9-4922-B45A-6DA2963FD6F7.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026

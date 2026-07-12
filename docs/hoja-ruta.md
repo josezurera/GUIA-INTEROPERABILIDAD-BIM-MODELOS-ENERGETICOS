@@ -19,7 +19,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Coordenadas, orientación y niveles.
 - [x] Habitaciones, espacios y zonas térmicas.
 - [x] Preparación de la envolvente.
-- [ ] Huecos y elementos transparentes.
+- [x] Huecos y elementos transparentes.
 - [ ] Sombras y geometría exterior.
 - [ ] Geometrías de riesgo.
 - [ ] Parámetros y mapeado IFC.
