@@ -22,7 +22,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Huecos y elementos transparentes.
 - [x] Sombras y geometría exterior.
 - [x] Geometrías de riesgo.
-- [ ] Parámetros y mapeado IFC.
+- [x] Parámetros y mapeado IFC.
 - [ ] Configuraciones de exportación.
 - [ ] QA/QC de Revit e IFC.
 

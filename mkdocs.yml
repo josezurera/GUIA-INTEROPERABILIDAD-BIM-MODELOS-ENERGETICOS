@@ -75,6 +75,7 @@ nav:
       - Huecos y elementos transparentes: 03-revit/huecos-elementos-transparentes.md
       - Sombras y geometría exterior: 03-revit/sombras-geometria-exterior.md
       - Geometrías de riesgo: 03-revit/geometrias-riesgo.md
+      - Parámetros y mapeado IFC: 03-revit/parametros-mapeado-ifc.md
       - Exportación IFC: 03-revit/exportacion-ifc.md
   - Aplicaciones:
       - Visión general: 04-aplicaciones/index.md

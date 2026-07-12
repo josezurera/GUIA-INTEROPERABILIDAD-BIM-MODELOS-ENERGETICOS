@@ -45,4 +45,12 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *Energy Analytical Model Creation Failure*, Revit 2026.
 - Autodesk. *Analytical Surface Resolution*.
 - Autodesk. *Understanding the Energy Analytical Model*.
+- Autodesk. *Create Shared Project Parameters*, Revit 2026.
+- Autodesk. *Export Shared Parameters to a Shared Parameter File*, Revit 2026.
+- Autodesk. *Export User Defined Properties to IFC*.
+- Autodesk. *Supported IFC Classes*, Revit 2026.
+- buildingSMART. *IFC 4.3.2 Documentation: IfcSpace*.
+- buildingSMART. *IFC 4.3.2 Documentation: Pset_WallCommon*.
+- buildingSMART. *IFC 4.3.2 Documentation: IfcWindow*.
+- buildingSMART. *IFC 4.3.2 Documentation: IfcDoor*.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.

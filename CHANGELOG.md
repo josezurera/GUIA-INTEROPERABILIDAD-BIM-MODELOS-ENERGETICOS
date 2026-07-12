@@ -18,6 +18,7 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Desarrollo del capítulo "Huecos y elementos transparentes en Revit 2026".
 - Desarrollo del capítulo "Sombras y geometría exterior en Revit 2026".
 - Desarrollo del capítulo "Geometrías de riesgo en Revit 2026".
+- Desarrollo del capítulo "Parámetros y mapeado IFC para análisis energético".
 - Vista previa HTML automática para cada solicitud de cambios.
 - Generación automática del PDF en las versiones publicadas.
 

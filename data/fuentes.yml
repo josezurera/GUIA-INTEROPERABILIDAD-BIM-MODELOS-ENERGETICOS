@@ -285,3 +285,59 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-A261EF48-05E7-45B4-B585-77C036C18CFE.htm
     fecha_consulta: 2026-07-12
     estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-SHARED-PROJECT-PARAMS
+    titulo: Create Shared Project Parameters
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-114C68A9-FF2B-4D4C-A2DF-3AE7E1F174C8.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-EXPORT-SHARED-PARAMS
+    titulo: Export Shared Parameters to a Shared Parameter File
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-AD648C07-0C2F-478D-AD9D-4F9A5FF515E6.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-USER-PSETS
+    titulo: Export User Defined Properties to IFC
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2027/ENU/RevitLT-DocumentPresent/files/GUID-0968B3FF-832B-4155-8B36-E848ACC97B95.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_para_funcion_2026_3
+  - id: AUTODESK-RVT2026-SUPPORTED-IFC
+    titulo: Supported IFC Classes
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-EE6C0CF8-7671-4DCC-B0C7-EEA7513C90A9.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-SPACE
+    titulo: "IFC 4.3.2 Documentation: IfcSpace"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcSpace.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-WALLCOMMON
+    titulo: "IFC 4.3.2 Documentation: Pset_WallCommon"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/Pset_WallCommon.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-WINDOW
+    titulo: "IFC 4.3.2 Documentation: IfcWindow"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWindow.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-DOOR
+    titulo: "IFC 4.3.2 Documentation: IfcDoor"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcDoor.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
