@@ -222,3 +222,38 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-B22FC577-67B9-4922-B45A-6DA2963FD6F7.htm
     fecha_consulta: 2026-07-12
     estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-SUN-PATH
+    titulo: About the Sun Path
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-CA024825-3211-4354-AC06-D81751AADA1A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-SOLAR-WORKFLOW
+    titulo: "Workflow: Solar Studies"
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-413A0469-C3BD-4524-8C5F-B80B900A84C7.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-SOLAR-STUDIES
+    titulo: Solar Studies
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-F68D32C9-0391-4115-95C5-90DCD115426A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-EAM-MASSING
+    titulo: "Create the Energy Analytical Model: Massing"
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-D731CFF1-3ACC-4CA8-9802-959F4774A0B5.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-INTERACTIVE-SOLAR
+    titulo: Interactive Solar Studies
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-WhatsNew/files/GUID-8276FAD1-8650-4728-8060-42843062915E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada

@@ -73,6 +73,7 @@ nav:
       - Habitaciones, espacios y zonas: 03-revit/habitaciones-espacios-zonas.md
       - Preparación de la envolvente: 03-revit/preparacion-envolvente.md
       - Huecos y elementos transparentes: 03-revit/huecos-elementos-transparentes.md
+      - Sombras y geometría exterior: 03-revit/sombras-geometria-exterior.md
       - Exportación IFC: 03-revit/exportacion-ifc.md
   - Aplicaciones:
       - Visión general: 04-aplicaciones/index.md

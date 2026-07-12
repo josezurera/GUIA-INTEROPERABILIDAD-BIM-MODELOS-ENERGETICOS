@@ -36,4 +36,9 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *Door Type Properties*.
 - Autodesk. *Energy Analytical Model Properties*, Revit 2026.
 - Autodesk. *About Surfaces in the Energy Analytical Model*.
+- Autodesk. *About the Sun Path*, Revit 2026.
+- Autodesk. *Workflow: Solar Studies*, Revit 2026.
+- Autodesk. *Solar Studies*, Revit 2026.
+- Autodesk. *Create the Energy Analytical Model: Massing*, Revit 2026.
+- Autodesk. *Interactive Solar Studies*, Revit 2026.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.
