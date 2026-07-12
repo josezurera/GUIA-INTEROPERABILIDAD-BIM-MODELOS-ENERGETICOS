@@ -1,0 +1,3423 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Preparación de modelos Revit e IFC para motores de análisis energético">
+      
+      
+      
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/03-revit/preparacion-envolvente/">
+      
+      
+        <link rel="prev" href="../habitaciones-espacios-zonas/">
+      
+      
+        <link rel="next" href="../exportacion-ifc/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Preparación de la envolvente térmica en Revit 2026 - Guía BIM para análisis energético</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preparacion-de-la-envolvente-termica-en-revit-2026" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía BIM para análisis energético
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preparación de la envolvente térmica en Revit 2026
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../hoja-ruta/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Hoja de ruta
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-fundamentos/modelos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fundamentos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-ifc/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  IFC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Revit
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-aplicaciones/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Aplicaciones
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-validacion/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Validación
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-comparativas/compatibilidad/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Comparativas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-procedimientos/flujo-operativo/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Procedimiento
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../anexos/checklist-revit/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Anexos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../control-versiones/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Control de versiones
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guía BIM para análisis energético
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    josezurera/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hoja-ruta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hoja de ruta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fundamentos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-fundamentos/modelos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Del modelo arquitectónico al energético
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-fundamentos/requisitos-motores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos de los motores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../02-ifc/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    IFC
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            IFC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-ifc/espacios-limites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Espacios y límites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Revit
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Revit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrategia-modelado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estrategia de modelado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordenadas-orientacion-niveles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coordenadas, orientación y niveles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../habitaciones-espacios-zonas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Habitaciones, espacios y zonas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Preparación de la envolvente
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preparación de la envolvente
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objetivos-de-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Objetivos de preparación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dos-interpretaciones-que-deben-verificarse" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Dos interpretaciones que deben verificarse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dos interpretaciones que deben verificarse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-modelo-analitico-generado-por-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Modelo analítico generado por Revit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-geometria-ifc-reconstruida-por-la-aplicacion-receptora" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Geometría IFC reconstruida por la aplicación receptora
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-definicion-previa-de-la-envolvente-termica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Definición previa de la envolvente térmica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-principios-generales-de-modelado" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Principios generales de modelado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Principios generales de modelado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-un-elemento-anfitrion-reconocible" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Un elemento anfitrión reconocible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-continuidad-analitica" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Continuidad analítica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-sencillez-proporcional-al-calculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Sencillez proporcional al cálculo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-muros-exteriores" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Muros exteriores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Muros exteriores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-trazado-y-ubicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Trazado y ubicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-restricciones-verticales" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Restricciones verticales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-union-a-cubiertas-y-forjados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Unión a cubiertas y forjados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-muros-inclinados-y-curvos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Muros inclinados y curvos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-perfiles-editados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Perfiles editados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-muros-apilados-piezas-y-capas-independientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 Muros apilados, piezas y capas independientes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-muros-interiores-y-fronteras-termicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Muros interiores y fronteras térmicas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-estructuras-compuestas-y-materiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Estructuras compuestas y materiales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Estructuras compuestas y materiales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-orden-de-capas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Orden de capas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-funcion-y-prioridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Función y prioridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-propiedades-termicas-de-materiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Propiedades térmicas de materiales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-nombres-y-codigos-de-tipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Nombres y códigos de tipo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-suelos-forjados-y-soleras" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Suelos, forjados y soleras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Suelos, forjados y soleras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-funcion-energetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Función energética
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-perimetro-y-encuentros" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Perímetro y encuentros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-forjados-entre-plantas" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Forjados entre plantas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-soleras-y-terreno" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 Soleras y terreno
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cubiertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Cubiertas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Cubiertas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-categoria-y-forma" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Categoría y forma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-cubierta-sobre-espacio-habitable" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Cubierta sobre espacio habitable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-cubierta-con-camara-o-espacio-bajo-cubierta" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Cubierta con cámara o espacio bajo cubierta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-aleros-y-partes-exteriores" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Aleros y partes exteriores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-techos-falsos-techos-y-plenums" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Techos, falsos techos y plénums
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-encuentros-criticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Encuentros críticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Encuentros críticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-esquinas-de-muros" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 Esquinas de muros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-muro-forjado" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.2 Muro-forjado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-muro-cubierta" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.3 Muro-cubierta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-cambios-de-espesor" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.4 Cambios de espesor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-encuentros-con-pilares" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.5 Encuentros con pilares
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-cerramientos-parcialmente-enterrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Cerramientos parcialmente enterrados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-medianerias-y-contacto-con-otros-edificios" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Medianerías y contacto con otros edificios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-reformas-fases-y-demolicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Reformas, fases y demolición
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vinculos-y-modelos-federados" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Vínculos y modelos federados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-elementos-que-no-deben-contaminar-la-envolvente" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Elementos que no deben contaminar la envolvente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-tolerancias-y-resolucion-analitica" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Tolerancias y resolución analítica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-clasificacion-geometrica-minima" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Clasificación geométrica mínima
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-vistas-de-control-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Vistas de control en Revit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Vistas de control en Revit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191-vista-3d-qa_env_01_cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.1 Vista 3D QA_ENV_01_CIERRE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192-secciones-qa_env_sec" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.2 Secciones QA_ENV_SEC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#193-plantas-qa_env_planta" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.3 Plantas QA_ENV_PLANTA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#194-tabla-de-cerramientos" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.4 Tabla de cerramientos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-procedimiento-de-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Procedimiento de preparación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-criterios-de-aceptacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Criterios de aceptación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-checklist-de-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Checklist de entrega
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-ensayo-de-referencia-para-revit-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Ensayo de referencia para Revit 2026
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Fuentes principales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exportacion-ifc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exportación IFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../04-aplicaciones/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Aplicaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CYPE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            CYPE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/cype/open-bim-analytical-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open BIM Analytical Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/cype/cypetherm-he-plus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CYPETHERM HE Plus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../04-aplicaciones/tekton3d/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    TeKton3D
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            TeKton3D
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/tekton3d/importacion-vinculacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Importación y vinculación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-aplicaciones/designbuilder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DesignBuilder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../05-validacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Validación
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Validación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-validacion/incidencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registro de incidencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Comparativas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Comparativas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-comparativas/compatibilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Matriz de compatibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Procedimiento
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Procedimiento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-procedimientos/flujo-operativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flujo operativo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Anexos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Anexos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anexos/checklist-revit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checklist Revit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anexos/bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glosario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control-versiones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control de versiones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objetivos-de-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Objetivos de preparación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dos-interpretaciones-que-deben-verificarse" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Dos interpretaciones que deben verificarse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dos interpretaciones que deben verificarse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-modelo-analitico-generado-por-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Modelo analítico generado por Revit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-geometria-ifc-reconstruida-por-la-aplicacion-receptora" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Geometría IFC reconstruida por la aplicación receptora
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-definicion-previa-de-la-envolvente-termica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Definición previa de la envolvente térmica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-principios-generales-de-modelado" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Principios generales de modelado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Principios generales de modelado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-un-elemento-anfitrion-reconocible" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Un elemento anfitrión reconocible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-continuidad-analitica" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Continuidad analítica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-sencillez-proporcional-al-calculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Sencillez proporcional al cálculo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-muros-exteriores" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Muros exteriores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Muros exteriores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-trazado-y-ubicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Trazado y ubicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-restricciones-verticales" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Restricciones verticales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-union-a-cubiertas-y-forjados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Unión a cubiertas y forjados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-muros-inclinados-y-curvos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Muros inclinados y curvos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-perfiles-editados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Perfiles editados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-muros-apilados-piezas-y-capas-independientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 Muros apilados, piezas y capas independientes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-muros-interiores-y-fronteras-termicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Muros interiores y fronteras térmicas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-estructuras-compuestas-y-materiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Estructuras compuestas y materiales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Estructuras compuestas y materiales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-orden-de-capas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Orden de capas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-funcion-y-prioridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Función y prioridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-propiedades-termicas-de-materiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Propiedades térmicas de materiales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-nombres-y-codigos-de-tipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Nombres y códigos de tipo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-suelos-forjados-y-soleras" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Suelos, forjados y soleras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Suelos, forjados y soleras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-funcion-energetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Función energética
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-perimetro-y-encuentros" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Perímetro y encuentros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-forjados-entre-plantas" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Forjados entre plantas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-soleras-y-terreno" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 Soleras y terreno
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cubiertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Cubiertas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Cubiertas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-categoria-y-forma" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Categoría y forma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-cubierta-sobre-espacio-habitable" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Cubierta sobre espacio habitable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-cubierta-con-camara-o-espacio-bajo-cubierta" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Cubierta con cámara o espacio bajo cubierta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-aleros-y-partes-exteriores" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Aleros y partes exteriores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-techos-falsos-techos-y-plenums" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Techos, falsos techos y plénums
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-encuentros-criticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Encuentros críticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Encuentros críticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-esquinas-de-muros" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 Esquinas de muros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-muro-forjado" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.2 Muro-forjado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-muro-cubierta" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.3 Muro-cubierta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-cambios-de-espesor" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.4 Cambios de espesor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-encuentros-con-pilares" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.5 Encuentros con pilares
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-cerramientos-parcialmente-enterrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Cerramientos parcialmente enterrados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-medianerias-y-contacto-con-otros-edificios" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Medianerías y contacto con otros edificios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-reformas-fases-y-demolicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Reformas, fases y demolición
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vinculos-y-modelos-federados" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Vínculos y modelos federados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-elementos-que-no-deben-contaminar-la-envolvente" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Elementos que no deben contaminar la envolvente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-tolerancias-y-resolucion-analitica" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Tolerancias y resolución analítica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-clasificacion-geometrica-minima" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Clasificación geométrica mínima
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-vistas-de-control-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Vistas de control en Revit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Vistas de control en Revit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191-vista-3d-qa_env_01_cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.1 Vista 3D QA_ENV_01_CIERRE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192-secciones-qa_env_sec" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.2 Secciones QA_ENV_SEC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#193-plantas-qa_env_planta" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.3 Plantas QA_ENV_PLANTA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#194-tabla-de-cerramientos" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.4 Tabla de cerramientos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-procedimiento-de-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Procedimiento de preparación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-criterios-de-aceptacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Criterios de aceptación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-checklist-de-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Checklist de entrega
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-ensayo-de-referencia-para-revit-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Ensayo de referencia para Revit 2026
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Fuentes principales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="preparacion-de-la-envolvente-termica-en-revit-2026">Preparación de la envolvente térmica en Revit 2026<a class="headerlink" href="#preparacion-de-la-envolvente-termica-en-revit-2026" title="Permanent link">&para;</a></h1>
+<p>La envolvente térmica debe modelarse como un conjunto continuo de elementos que separan recintos con condiciones distintas: interior y exterior, acondicionado y no acondicionado, edificio y terreno, o dos zonas térmicas. Su misión en este flujo no es reproducir cada detalle constructivo, sino permitir que el receptor reconstruya superficies, adyacencias y construcciones sin ambigüedad.</p>
+<p>Este capítulo se ocupa de la geometría opaca: muros, suelos, cubiertas, techos y sus encuentros. Los huecos, los elementos transparentes y los muros cortina se desarrollan en el capítulo siguiente.</p>
+<div class="admonition warning">
+<p class="admonition-title">La envolvente arquitectónica no equivale automáticamente a la térmica</p>
+<p>Un cerramiento puede pertenecer a la fachada arquitectónica y no limitar un espacio acondicionado, o puede existir una frontera térmica interior que no se perciba como fachada. La clasificación debe responder al modelo energético, no solo a la apariencia del edificio.</p>
+</div>
+<h2 id="1-objetivos-de-preparacion">1. Objetivos de preparación<a class="headerlink" href="#1-objetivos-de-preparacion" title="Permanent link">&para;</a></h2>
+<p>El modelo debe permitir determinar, para cada superficie:</p>
+<ul>
+<li>Qué espacio limita a cada lado.</li>
+<li>Si la cara opuesta corresponde a exterior, terreno u otro espacio.</li>
+<li>Qué elemento constructivo la representa.</li>
+<li>Su orientación, inclinación y área.</li>
+<li>La continuidad de su perímetro.</li>
+<li>Las aberturas que contiene.</li>
+<li>La fase y alternativa de diseño a las que pertenece.</li>
+</ul>
+<p>La comprobación debe realizarse sobre el resultado exportado y no únicamente sobre las vistas de Revit.</p>
+<h2 id="2-dos-interpretaciones-que-deben-verificarse">2. Dos interpretaciones que deben verificarse<a class="headerlink" href="#2-dos-interpretaciones-que-deben-verificarse" title="Permanent link">&para;</a></h2>
+<h3 id="21-modelo-analitico-generado-por-revit">2.1 Modelo analítico generado por Revit<a class="headerlink" href="#21-modelo-analitico-generado-por-revit" title="Permanent link">&para;</a></h3>
+<p>Revit puede obtener espacios y superficies analíticas directamente de los elementos arquitectónicos. Autodesk indica que muros, suelos, cubiertas, techos y otros elementos delimitadores intervienen cuando corresponde su condición <code>Room Bounding</code>.</p>
+<p>Este proceso admite pequeños solapes y discontinuidades en función de la resolución analítica. Esa tolerancia facilita la generación, pero no convierte una geometría deficiente en un modelo fiable.</p>
+<h3 id="22-geometria-ifc-reconstruida-por-la-aplicacion-receptora">2.2 Geometría IFC reconstruida por la aplicación receptora<a class="headerlink" href="#22-geometria-ifc-reconstruida-por-la-aplicacion-receptora" title="Permanent link">&para;</a></h3>
+<p>Open BIM Analytical Model, CYPETHERM y TeKton3D pueden interpretar el IFC mediante reglas propias. La coincidencia con el modelo analítico nativo de Revit no debe suponerse.</p>
+<p>Por ello se conservarán dos controles diferenciados:</p>
+<ol>
+<li>Revisión de habitaciones, espacios y volúmenes en Revit.</li>
+<li>Revisión de superficies y adyacencias después de la importación o generación en la aplicación receptora.</li>
+</ol>
+<h2 id="3-definicion-previa-de-la-envolvente-termica">3. Definición previa de la envolvente térmica<a class="headerlink" href="#3-definicion-previa-de-la-envolvente-termica" title="Permanent link">&para;</a></h2>
+<p>Antes de corregir geometría debe prepararse un esquema por plantas y secciones que identifique:</p>
+<ul>
+<li>Recintos acondicionados.</li>
+<li>Recintos no acondicionados.</li>
+<li>Espacios exteriores.</li>
+<li>Cerramientos en contacto con el terreno.</li>
+<li>Medianerías.</li>
+<li>Particiones entre zonas térmicas.</li>
+<li>Elementos en contacto con otros edificios.</li>
+<li>Cámaras, plénums y espacios bajo cubierta.</li>
+</ul>
+<p>Sin esta decisión previa no puede establecerse si un elemento debe actuar como límite espacial ni cómo clasificarlo posteriormente.</p>
+<h2 id="4-principios-generales-de-modelado">4. Principios generales de modelado<a class="headerlink" href="#4-principios-generales-de-modelado" title="Permanent link">&para;</a></h2>
+<h3 id="41-un-elemento-anfitrion-reconocible">4.1 Un elemento anfitrión reconocible<a class="headerlink" href="#41-un-elemento-anfitrion-reconocible" title="Permanent link">&para;</a></h3>
+<p>Siempre que sea posible, cada cerramiento principal se representará mediante su categoría nativa:</p>
+<table>
+<thead>
+<tr>
+<th>Función</th>
+<th>Categoría recomendada en Revit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cerramiento vertical</td>
+<td>Muro</td>
+</tr>
+<tr>
+<td>Forjado o solera</td>
+<td>Suelo</td>
+</tr>
+<tr>
+<td>Cerramiento superior</td>
+<td>Cubierta</td>
+</tr>
+<tr>
+<td>Falso techo delimitador</td>
+<td>Techo</td>
+</tr>
+<tr>
+<td>Terreno</td>
+<td>Toposólido, con ensayo específico del receptor</td>
+</tr>
+</tbody>
+</table>
+<p>Los modelos genéricos, familias in situ y masas solo se emplearán cuando la geometría no pueda resolverse de forma estable con categorías nativas y se haya comprobado su exportación.</p>
+<h3 id="42-continuidad-analitica">4.2 Continuidad analítica<a class="headerlink" href="#42-continuidad-analitica" title="Permanent link">&para;</a></h3>
+<p>Los elementos deben encontrarse de forma inequívoca en esquinas, cambios de nivel y encuentros muro-forjado-cubierta. Se evitarán:</p>
+<ul>
+<li>Huecos visibles entre anfitriones.</li>
+<li>Solapes de gran dimensión.</li>
+<li>Cerramientos duplicados.</li>
+<li>Caras casi coplanares que compitan entre sí.</li>
+<li>Fragmentos residuales después de reformas.</li>
+<li>Elementos de fases incompatibles ocupando el mismo lugar.</li>
+</ul>
+<h3 id="43-sencillez-proporcional-al-calculo">4.3 Sencillez proporcional al cálculo<a class="headerlink" href="#43-sencillez-proporcional-al-calculo" title="Permanent link">&para;</a></h3>
+<p>Se modelará la forma que cambie áreas, orientación, volumen, sombras o adyacencias. Los detalles que no alteren estas magnitudes deben simplificarse.</p>
+<p>No suelen requerir geometría energética independiente:</p>
+<ul>
+<li>Rodapiés y molduras.</li>
+<li>Juntas y perfiles menores.</li>
+<li>Capas de acabado modeladas como piezas independientes.</li>
+<li>Pequeños resaltos decorativos.</li>
+<li>Sellados, remates y fijaciones.</li>
+</ul>
+<h2 id="5-muros-exteriores">5. Muros exteriores<a class="headerlink" href="#5-muros-exteriores" title="Permanent link">&para;</a></h2>
+<h3 id="51-trazado-y-ubicacion">5.1 Trazado y ubicación<a class="headerlink" href="#51-trazado-y-ubicacion" title="Permanent link">&para;</a></h3>
+<p>Los muros se dibujarán con una línea de ubicación coherente en todo el proyecto. Cambiar entre eje, cara de acabado y cara de núcleo sin criterio puede producir desfases en encuentros y alterar áreas netas.</p>
+<p>La elección no tiene que ser idéntica en todos los proyectos, pero debe:</p>
+<ul>
+<li>Estar documentada.</li>
+<li>Facilitar la coordinación con estructura.</li>
+<li>Mantener la continuidad de la cara que limita el espacio.</li>
+<li>Evitar reajustes improvisados durante la exportación.</li>
+</ul>
+<h3 id="52-restricciones-verticales">5.2 Restricciones verticales<a class="headerlink" href="#52-restricciones-verticales" title="Permanent link">&para;</a></h3>
+<p>Cada muro debe tener base y coronación controladas mediante niveles, desfases o unión a otros elementos. Se evitarán alturas libres arbitrarias cuando exista un nivel o una cubierta que represente el límite real.</p>
+<p>Revisar para cada tipo de cerramiento:</p>
+<ul>
+<li>Restricción de base.</li>
+<li>Desfase de base.</li>
+<li>Restricción superior o altura no conectada.</li>
+<li>Desfase superior.</li>
+<li>Unión superior o inferior a cubierta, suelo o plano de referencia.</li>
+</ul>
+<h3 id="53-union-a-cubiertas-y-forjados">5.3 Unión a cubiertas y forjados<a class="headerlink" href="#53-union-a-cubiertas-y-forjados" title="Permanent link">&para;</a></h3>
+<p>La herramienta <strong>Unir parte superior/base</strong> permite adaptar el muro a una cubierta, un suelo, un techo, un plano de referencia u otro muro compatible. Es preferible a editar manualmente el perfil cuando el límite debe responder a cambios posteriores.</p>
+<p>Después de unir se comprobará en sección:</p>
+<ul>
+<li>Que no queda una franja abierta bajo la cubierta.</li>
+<li>Que el muro no atraviesa innecesariamente el volumen superior.</li>
+<li>Que la unión cubre toda la longitud prevista.</li>
+<li>Que los extremos del muro también quedan resueltos.</li>
+</ul>
+<h3 id="54-muros-inclinados-y-curvos">5.4 Muros inclinados y curvos<a class="headerlink" href="#54-muros-inclinados-y-curvos" title="Permanent link">&para;</a></h3>
+<p>Autodesk advierte de posibles resultados inexactos con muros inclinados o elípticos en determinados procesos analíticos. No deben sustituirse automáticamente por muros verticales, pero sí ensayarse de forma explícita.</p>
+<p>Para cada caso complejo se registrará:</p>
+<ul>
+<li>Área en Revit.</li>
+<li>Teselado o subdivisión en IFC.</li>
+<li>Superficies resultantes en el receptor.</li>
+<li>Diferencia de área aceptada.</li>
+<li>Efecto sobre huecos y sombras.</li>
+</ul>
+<h3 id="55-perfiles-editados">5.5 Perfiles editados<a class="headerlink" href="#55-perfiles-editados" title="Permanent link">&para;</a></h3>
+<p>Un perfil editado puede representar correctamente una fachada escalonada o inclinada, pero su comportamiento analítico no es idéntico al de una abertura nativa. Autodesk señala que una abertura creada con herramientas de hueco puede generar una superficie analítica de apertura de aire, mientras que un perfil editado se interpreta como borde abierto.</p>
+<p>Se preferirán herramientas semánticas de abertura cuando la discontinuidad tenga esa función. Los perfiles editados se reservarán para la forma real del contorno del elemento.</p>
+<h3 id="56-muros-apilados-piezas-y-capas-independientes">5.6 Muros apilados, piezas y capas independientes<a class="headerlink" href="#56-muros-apilados-piezas-y-capas-independientes" title="Permanent link">&para;</a></h3>
+<p>Los muros apilados, las piezas y las capas modeladas por separado añaden relaciones que no todos los exportadores reconstruyen igual. Antes de incorporarlos al flujo estable se verificará:</p>
+<ul>
+<li>Categoría y tipo IFC de cada componente.</li>
+<li>Conservación del anfitrión.</li>
+<li>Ausencia de superficies térmicas duplicadas.</li>
+<li>Continuidad de los límites espaciales.</li>
+<li>Capacidad del receptor para reagrupar o simplificar.</li>
+</ul>
+<p>Si no aportan una ventaja analítica demostrable, se preferirá un muro compuesto convencional.</p>
+<h2 id="6-muros-interiores-y-fronteras-termicas">6. Muros interiores y fronteras térmicas<a class="headerlink" href="#6-muros-interiores-y-fronteras-termicas" title="Permanent link">&para;</a></h2>
+<p>No todos los tabiques necesitan convertirse en superficies de intercambio diferenciadas. Su tratamiento dependerá de la zonificación:</p>
+<ul>
+<li>Entre dos espacios de la misma zona térmica pueden simplificarse en el modelo energético, según el receptor.</li>
+<li>Entre zonas térmicas distintas deben conservar una adyacencia correcta.</li>
+<li>Entre un espacio acondicionado y otro no acondicionado forman parte de la envolvente térmica.</li>
+<li>Un tabique que no alcanza el límite superior puede no separar completamente los volúmenes.</li>
+</ul>
+<p>El parámetro <code>Room Bounding</code> se desactivará únicamente cuando se haya decidido que el elemento no debe dividir el volumen. No se usará como reparación general de habitaciones mal cerradas.</p>
+<h2 id="7-estructuras-compuestas-y-materiales">7. Estructuras compuestas y materiales<a class="headerlink" href="#7-estructuras-compuestas-y-materiales" title="Permanent link">&para;</a></h2>
+<h3 id="71-orden-de-capas">7.1 Orden de capas<a class="headerlink" href="#71-orden-de-capas" title="Permanent link">&para;</a></h3>
+<p>En Revit, las estructuras compuestas organizan las capas de exterior a interior en muros y de arriba abajo en suelos, cubiertas y techos. Cada capa dispone de material, espesor y función.</p>
+<p>Se comprobará:</p>
+<ul>
+<li>Orden correcto de las capas.</li>
+<li>Espesores no nulos salvo membranas.</li>
+<li>Material específico en cada capa relevante.</li>
+<li>Límites del núcleo coherentes.</li>
+<li>Función adecuada: estructura, sustrato, aislamiento/cámara, membrana o acabado.</li>
+</ul>
+<h3 id="72-funcion-y-prioridad">7.2 Función y prioridad<a class="headerlink" href="#72-funcion-y-prioridad" title="Permanent link">&para;</a></h3>
+<p>La función controla cómo se resuelven las uniones de capas. Una asignación incorrecta puede producir encuentros gráficos y geométricos incoherentes, aunque la suma de espesores sea correcta.</p>
+<p>La función <strong>Thermal/Air Layer</strong> identifica capas de aislamiento o control de aire dentro de la estructura de Revit, pero no sustituye la comprobación de propiedades térmicas ni garantiza el mapeado en el motor receptor.</p>
+<h3 id="73-propiedades-termicas-de-materiales">7.3 Propiedades térmicas de materiales<a class="headerlink" href="#73-propiedades-termicas-de-materiales" title="Permanent link">&para;</a></h3>
+<p>Los materiales pueden contener activos térmicos que intervienen en la resistencia y masa térmica calculadas por Revit. Deben diferenciarse tres niveles de información:</p>
+<ol>
+<li><strong>Geometría:</strong> espesor y posición de las capas.</li>
+<li><strong>Información térmica en Revit:</strong> conductividad, densidad, calor específico y propiedades derivadas.</li>
+<li><strong>Construcción en el motor de cálculo:</strong> solución constructiva finalmente asignada y validada según el procedimiento reglamentario.</li>
+</ol>
+<p>No se asumirá que los niveles 2 y 3 son equivalentes. En los flujos CYPE y TeKton3D se documentará qué propiedades se transfieren realmente y cuáles deben reasignarse.</p>
+<h3 id="74-nombres-y-codigos-de-tipo">7.4 Nombres y códigos de tipo<a class="headerlink" href="#74-nombres-y-codigos-de-tipo" title="Permanent link">&para;</a></h3>
+<p>Los tipos deben poder identificarse fuera de Revit. Se recomienda una codificación estable, por ejemplo:</p>
+<p><code>ENV-MUR-EXT-01</code> — muro exterior principal<br />
+<code>ENV-CUB-EXT-01</code> — cubierta exterior<br />
+<code>ENV-SOL-TER-01</code> — solera en contacto con terreno<br />
+<code>ENV-PAR-NAC-01</code> — partición con espacio no acondicionado</p>
+<p>El nombre no debe ser la única fuente de clasificación; se acompañará de parámetros compartidos en el capítulo de mapeado IFC.</p>
+<h2 id="8-suelos-forjados-y-soleras">8. Suelos, forjados y soleras<a class="headerlink" href="#8-suelos-forjados-y-soleras" title="Permanent link">&para;</a></h2>
+<h3 id="81-funcion-energetica">8.1 Función energética<a class="headerlink" href="#81-funcion-energetica" title="Permanent link">&para;</a></h3>
+<p>Antes de modelar un suelo debe identificarse si separa:</p>
+<ul>
+<li>Un recinto y el terreno.</li>
+<li>Un recinto y el exterior.</li>
+<li>Dos plantas acondicionadas.</li>
+<li>Un recinto acondicionado y otro no acondicionado.</li>
+<li>Dos zonas térmicas diferentes.</li>
+</ul>
+<p>La clasificación no puede deducirse únicamente del tipo constructivo.</p>
+<h3 id="82-perimetro-y-encuentros">8.2 Perímetro y encuentros<a class="headerlink" href="#82-perimetro-y-encuentros" title="Permanent link">&para;</a></h3>
+<p>El croquis del suelo debe coincidir de manera controlada con los cerramientos verticales. Se evitarán pequeños entrantes, segmentos duplicados y aristas muy cortas originadas por capturas imprecisas.</p>
+<p>En sección se comprobará si la referencia se ha tomado a:</p>
+<ul>
+<li>Cara interior del muro.</li>
+<li>Cara exterior.</li>
+<li>Eje.</li>
+<li>Límite del núcleo.</li>
+</ul>
+<p>La regla elegida debe producir una envolvente sin huecos ni solapes significativos y mantenerse en todas las plantas.</p>
+<h3 id="83-forjados-entre-plantas">8.3 Forjados entre plantas<a class="headerlink" href="#83-forjados-entre-plantas" title="Permanent link">&para;</a></h3>
+<p>Un forjado puede separar dos espacios superpuestos. Deben revisarse simultáneamente:</p>
+<ul>
+<li>Límite superior del espacio inferior.</li>
+<li>Límite inferior del espacio superior.</li>
+<li>Espesor y cota del forjado.</li>
+<li>Falsos techos y cámaras intermedias.</li>
+<li>Huecos de escalera, ascensor e instalaciones.</li>
+</ul>
+<p>No deben quedar volúmenes sin asignar por confundir la cara superior, la cara inferior o el nivel de referencia.</p>
+<h3 id="84-soleras-y-terreno">8.4 Soleras y terreno<a class="headerlink" href="#84-soleras-y-terreno" title="Permanent link">&para;</a></h3>
+<p>El contacto con el terreno requiere una clasificación específica en el motor de cálculo. La presencia de un toposólido no garantiza que el receptor deduzca correctamente el contacto.</p>
+<p>Se recomienda:</p>
+<ul>
+<li>Modelar la solera con geometría continua.</li>
+<li>Identificar su cota respecto al terreno.</li>
+<li>Evitar que el terreno atraviese el volumen interior.</li>
+<li>Registrar los tramos parcialmente enterrados.</li>
+<li>Comprobar y, si procede, reasignar la condición de contorno después de importar.</li>
+</ul>
+<h2 id="9-cubiertas">9. Cubiertas<a class="headerlink" href="#9-cubiertas" title="Permanent link">&para;</a></h2>
+<h3 id="91-categoria-y-forma">9.1 Categoría y forma<a class="headerlink" href="#91-categoria-y-forma" title="Permanent link">&para;</a></h3>
+<p>Se utilizará una cubierta nativa siempre que sea posible. Tanto las cubiertas por perímetro como las creadas por extrusión deben someterse a una prueba de exportación cuando tengan geometría compleja.</p>
+<p>Se comprobarán:</p>
+<ul>
+<li>Contorno exterior.</li>
+<li>Pendientes y limatesas.</li>
+<li>Encuentros entre faldones.</li>
+<li>Aleros.</li>
+<li>Huecos y buhardillas.</li>
+<li>Espesor y posición respecto a los muros.</li>
+</ul>
+<h3 id="92-cubierta-sobre-espacio-habitable">9.2 Cubierta sobre espacio habitable<a class="headerlink" href="#92-cubierta-sobre-espacio-habitable" title="Permanent link">&para;</a></h3>
+<p>Si la cubierta limita directamente el recinto, la habitación o espacio debe alcanzar su intradós de forma correcta. La unión de los muros a la cubierta y el cálculo de volumen deben revisarse en varias secciones.</p>
+<h3 id="93-cubierta-con-camara-o-espacio-bajo-cubierta">9.3 Cubierta con cámara o espacio bajo cubierta<a class="headerlink" href="#93-cubierta-con-camara-o-espacio-bajo-cubierta" title="Permanent link">&para;</a></h3>
+<p>Cuando existe un ático o una cámara significativa, debe decidirse si se modela como espacio independiente. La decisión depende de su tamaño, ventilación, uso y tratamiento en el motor.</p>
+<p>No debe asignarse automáticamente la cubierta al recinto inferior si entre ambos existe un volumen térmicamente relevante.</p>
+<h3 id="94-aleros-y-partes-exteriores">9.4 Aleros y partes exteriores<a class="headerlink" href="#94-aleros-y-partes-exteriores" title="Permanent link">&para;</a></h3>
+<p>La parte de la cubierta que sobresale del volumen acondicionado puede actuar como sombra. Debe conservarse si su efecto solar es relevante, pero sin convertir el volumen bajo el alero en un espacio interior.</p>
+<p>La separación entre superficie de transmisión y elemento de sombra se comprobará en el modelo analítico receptor.</p>
+<h2 id="10-techos-falsos-techos-y-plenums">10. Techos, falsos techos y plénums<a class="headerlink" href="#10-techos-falsos-techos-y-plenums" title="Permanent link">&para;</a></h2>
+<p>Los techos pueden intervenir como elementos delimitadores y generar cámaras analíticas. Autodesk relaciona su tratamiento con la condición <code>Room Bounding</code>, la profundidad del vacío y la resolución analítica.</p>
+<p>Se adoptará una de estas estrategias de forma explícita:</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Estrategia candidata</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Falso techo sin relevancia térmica propia</td>
+<td>No dividir el volumen</td>
+</tr>
+<tr>
+<td>Plénum relevante</td>
+<td>Crear y controlar un espacio independiente</td>
+</tr>
+<tr>
+<td>Techo que separa zonas con condiciones distintas</td>
+<td>Mantenerlo como frontera</td>
+</tr>
+</tbody>
+</table>
+<p>No se dejará que una configuración accidental de <code>Room Bounding</code> decida la zonificación.</p>
+<h2 id="11-encuentros-criticos">11. Encuentros críticos<a class="headerlink" href="#11-encuentros-criticos" title="Permanent link">&para;</a></h2>
+<h3 id="111-esquinas-de-muros">11.1 Esquinas de muros<a class="headerlink" href="#111-esquinas-de-muros" title="Permanent link">&para;</a></h3>
+<p>Revisar en planta y en 3D:</p>
+<ul>
+<li>Extremos coincidentes.</li>
+<li>Tipo de unión.</li>
+<li>Prioridades de capas.</li>
+<li>Ausencia de muros duplicados.</li>
+<li>Continuidad del espacio interior.</li>
+</ul>
+<h3 id="112-muro-forjado">11.2 Muro-forjado<a class="headerlink" href="#112-muro-forjado" title="Permanent link">&para;</a></h3>
+<p>Comprobar si el forjado llega al eje, al núcleo o a una cara del muro. Un solape constructivo razonable puede ser admisible; una banda abierta o una duplicación de cerramientos no lo es.</p>
+<h3 id="113-muro-cubierta">11.3 Muro-cubierta<a class="headerlink" href="#113-muro-cubierta" title="Permanent link">&para;</a></h3>
+<p>Verificar en al menos dos secciones por faldón y en los cambios de pendiente. Las vistas en planta no permiten detectar todos los huecos verticales.</p>
+<h3 id="114-cambios-de-espesor">11.4 Cambios de espesor<a class="headerlink" href="#114-cambios-de-espesor" title="Permanent link">&para;</a></h3>
+<p>Cuando dos tipos de muro se suceden, sus caras analíticas deben mantener continuidad. Se evitarán pequeños escalones involuntarios debidos a líneas de ubicación diferentes.</p>
+<h3 id="115-encuentros-con-pilares">11.5 Encuentros con pilares<a class="headerlink" href="#115-encuentros-con-pilares" title="Permanent link">&para;</a></h3>
+<p>Los pilares interiores pueden fragmentar límites o reducir volúmenes según su tamaño y configuración. Se decidirá si deben delimitar el espacio y se comprobará el resultado, en lugar de aplicar una regla general a toda la categoría.</p>
+<h2 id="12-cerramientos-parcialmente-enterrados">12. Cerramientos parcialmente enterrados<a class="headerlink" href="#12-cerramientos-parcialmente-enterrados" title="Permanent link">&para;</a></h2>
+<p>En edificios sobre ladera, un mismo muro puede tener una parte exterior y otra en contacto con terreno. Esta condición suele requerir dividir la superficie en el modelo energético.</p>
+<p>Opciones a ensayar:</p>
+<ul>
+<li>Dividir el muro en elementos por altura o tramo.</li>
+<li>Conservar un único muro y subdividir la superficie en la aplicación analítica.</li>
+<li>Asignar condiciones de contorno manualmente después de importar.</li>
+</ul>
+<p>La opción elegida debe evitar geometría redundante y permitir conservar la trazabilidad entre Revit, IFC y cálculo.</p>
+<h2 id="13-medianerias-y-contacto-con-otros-edificios">13. Medianerías y contacto con otros edificios<a class="headerlink" href="#13-medianerias-y-contacto-con-otros-edificios" title="Permanent link">&para;</a></h2>
+<p>Una medianería no se clasificará automáticamente como muro exterior. Debe identificarse si limita con:</p>
+<ul>
+<li>Otro edificio conocido.</li>
+<li>Un espacio no modelado.</li>
+<li>Exterior.</li>
+<li>Un recinto de condiciones equivalentes.</li>
+</ul>
+<p>Cuando el edificio colindante no forme parte del modelo, se documentará la condición de contorno que debe aplicarse en el motor. No es necesario modelarlo por completo salvo que sea preciso para sombras o para la geometría del contacto.</p>
+<h2 id="14-reformas-fases-y-demolicion">14. Reformas, fases y demolición<a class="headerlink" href="#14-reformas-fases-y-demolicion" title="Permanent link">&para;</a></h2>
+<p>La envolvente exportada debe pertenecer a una fase coherente. Antes de exportar se revisará:</p>
+<ul>
+<li>Fase de creación.</li>
+<li>Fase de demolición.</li>
+<li>Fase de habitaciones o espacios.</li>
+<li>Filtro de fase de la vista de exportación.</li>
+<li>Existencia simultánea de cerramientos nuevo y demolido.</li>
+</ul>
+<p>En rehabilitación conviene conservar estados de cálculo independientes para situación inicial y reformada, con exportaciones y registros diferenciados.</p>
+<h2 id="15-vinculos-y-modelos-federados">15. Vínculos y modelos federados<a class="headerlink" href="#15-vinculos-y-modelos-federados" title="Permanent link">&para;</a></h2>
+<p>Cuando la estructura o parte de la envolvente se encuentra en un vínculo:</p>
+<ul>
+<li>Activar <code>Room Bounding</code> en el vínculo solo si sus elementos deben delimitar espacios.</li>
+<li>Verificar coordenadas, fase y opción visibles.</li>
+<li>Evitar duplicar en el archivo anfitrión los elementos ya presentes en el vínculo.</li>
+<li>Comprobar si el exportador incluye el vínculo y cómo conserva los identificadores.</li>
+<li>Realizar una prueba mínima antes de adoptar el flujo para todo el proyecto.</li>
+</ul>
+<p>Una envolvente repartida entre varios archivos aumenta el riesgo de huecos y duplicidades en los encuentros.</p>
+<h2 id="16-elementos-que-no-deben-contaminar-la-envolvente">16. Elementos que no deben contaminar la envolvente<a class="headerlink" href="#16-elementos-que-no-deben-contaminar-la-envolvente" title="Permanent link">&para;</a></h2>
+<p>Debe revisarse la condición delimitadora de objetos que se modelan con categorías capaces de intervenir en el análisis pero no representan cerramientos térmicos:</p>
+<ul>
+<li>Muros de urbanización.</li>
+<li>Petos y pretiles.</li>
+<li>Pavimentos exteriores.</li>
+<li>Cubiertas decorativas.</li>
+<li>Marquesinas.</li>
+<li>Muretes interiores bajos.</li>
+<li>Piezas auxiliares y revestimientos.</li>
+<li>Elementos provisionales.</li>
+</ul>
+<p>Estos objetos pueden mantenerse para coordinación o sombras, pero deben aislarse de la generación de volúmenes cuando corresponda.</p>
+<h2 id="17-tolerancias-y-resolucion-analitica">17. Tolerancias y resolución analítica<a class="headerlink" href="#17-tolerancias-y-resolucion-analitica" title="Permanent link">&para;</a></h2>
+<p>La resolución espacial analítica de Revit define el tamaño mínimo de discontinuidad que el algoritmo puede ignorar. Autodesk documenta para 2026 un valor predeterminado de 457,2 mm, un mínimo de 152,4 mm y una zona intermedia de comportamiento no determinista hasta dos veces la resolución.</p>
+<p>Estas cifras pertenecen al generador analítico de Revit y <strong>no deben trasladarse como tolerancias universales a IFC, CYPE o TeKton3D</strong>.</p>
+<p>Reglas de uso:</p>
+<ol>
+<li>Corregir primero omisiones y huecos evidentes.</li>
+<li>Generar el modelo con valores de referencia.</li>
+<li>Revisar espacios y superficies.</li>
+<li>Reducir la resolución de forma gradual si faltan detalles relevantes.</li>
+<li>Registrar el valor utilizado y el tiempo de proceso.</li>
+<li>Repetir la comprobación en el receptor IFC.</li>
+</ol>
+<p>Una resolución menor no garantiza por sí sola un resultado mejor y puede revelar discontinuidades antes ignoradas.</p>
+<h2 id="18-clasificacion-geometrica-minima">18. Clasificación geométrica mínima<a class="headerlink" href="#18-clasificacion-geometrica-minima" title="Permanent link">&para;</a></h2>
+<p>Antes de exportar, cada tipo de elemento de envolvente debe poder asociarse con una función energética:</p>
+<table>
+<thead>
+<tr>
+<th>Código funcional</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EXT-AIR</code></td>
+<td>Cerramiento en contacto con aire exterior</td>
+</tr>
+<tr>
+<td><code>GROUND</code></td>
+<td>Cerramiento en contacto con terreno</td>
+</tr>
+<tr>
+<td><code>INT-ZONE</code></td>
+<td>Partición entre zonas térmicas</td>
+</tr>
+<tr>
+<td><code>INT-UNCOND</code></td>
+<td>Separación con recinto no acondicionado</td>
+</tr>
+<tr>
+<td><code>ADIABATIC</code></td>
+<td>Condición sin intercambio, cuando proceda</td>
+</tr>
+<tr>
+<td><code>PARTY</code></td>
+<td>Medianería o contacto con edificio colindante</td>
+</tr>
+<tr>
+<td><code>SHADE</code></td>
+<td>Elemento exterior considerado solo como sombra</td>
+</tr>
+</tbody>
+</table>
+<p>Esta tabla es una convención editorial inicial. Los nombres definitivos de parámetros y el mapeado IFC se establecerán en el capítulo correspondiente.</p>
+<h2 id="19-vistas-de-control-en-revit">19. Vistas de control en Revit<a class="headerlink" href="#19-vistas-de-control-en-revit" title="Permanent link">&para;</a></h2>
+<p>Se recomienda crear un conjunto específico de vistas:</p>
+<h3 id="191-vista-3d-qa_env_01_cierre">19.1 Vista 3D <code>QA_ENV_01_CIERRE</code><a class="headerlink" href="#191-vista-3d-qa_env_01_cierre" title="Permanent link">&para;</a></h3>
+<p>Mostrar exclusivamente:</p>
+<ul>
+<li>Muros.</li>
+<li>Suelos.</li>
+<li>Cubiertas.</li>
+<li>Techos relevantes.</li>
+<li>Habitaciones o espacios.</li>
+</ul>
+<p>Aplicar sección de caja y revisar el edificio desde exterior, interior, arriba y abajo.</p>
+<h3 id="192-secciones-qa_env_sec">19.2 Secciones <code>QA_ENV_SEC</code><a class="headerlink" href="#192-secciones-qa_env_sec" title="Permanent link">&para;</a></h3>
+<p>Crear secciones en:</p>
+<ul>
+<li>Cada tipología de cubierta.</li>
+<li>Cambios de nivel.</li>
+<li>Fachadas escalonadas.</li>
+<li>Plantas enterradas.</li>
+<li>Patios y atrios.</li>
+<li>Dobles alturas.</li>
+</ul>
+<h3 id="193-plantas-qa_env_planta">19.3 Plantas <code>QA_ENV_PLANTA</code><a class="headerlink" href="#193-plantas-qa_env_planta" title="Permanent link">&para;</a></h3>
+<p>Utilizar detalle medio o fino para comprobar capas, líneas de ubicación, encuentros y contornos de suelos.</p>
+<h3 id="194-tabla-de-cerramientos">19.4 Tabla de cerramientos<a class="headerlink" href="#194-tabla-de-cerramientos" title="Permanent link">&para;</a></h3>
+<p>Incluir al menos:</p>
+<ul>
+<li>Identificador.</li>
+<li>Categoría y tipo.</li>
+<li>Nivel.</li>
+<li>Fase.</li>
+<li><code>Room Bounding</code> cuando esté disponible.</li>
+<li>Área y volumen pertinentes.</li>
+<li>Código funcional energético.</li>
+<li>Estado de revisión.</li>
+</ul>
+<h2 id="20-procedimiento-de-preparacion">20. Procedimiento de preparación<a class="headerlink" href="#20-procedimiento-de-preparacion" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Delimitar recintos acondicionados y no acondicionados.</li>
+<li>Dibujar la envolvente térmica prevista en plantas y secciones.</li>
+<li>Identificar los elementos Revit que representan cada frontera.</li>
+<li>Corregir categorías impropias y duplicidades.</li>
+<li>Revisar restricciones, uniones y perfiles.</li>
+<li>Comprobar capas, materiales y nomenclatura.</li>
+<li>Revisar habitaciones o espacios con cálculo de volumen activo.</li>
+<li>Inspeccionar vistas 3D, plantas y secciones de control.</li>
+<li>Generar el modelo analítico de Revit como diagnóstico auxiliar.</li>
+<li>Exportar un IFC de prueba.</li>
+<li>Revisar superficies y adyacencias en el receptor.</li>
+<li>Registrar incidencias y repetir hasta cumplir los criterios de aceptación.</li>
+</ol>
+<h2 id="21-criterios-de-aceptacion">21. Criterios de aceptación<a class="headerlink" href="#21-criterios-de-aceptacion" title="Permanent link">&para;</a></h2>
+<p>La envolvente estará preparada cuando:</p>
+<ul>
+<li>Todos los volúmenes de cálculo estén delimitados.</li>
+<li>No falte ningún cerramiento principal.</li>
+<li>No existan elementos duplicados que generen caras concurrentes.</li>
+<li>Los encuentros críticos estén revisados en sección.</li>
+<li>Los espacios no acondicionados relevantes estén representados.</li>
+<li>Las fronteras con terreno, exterior y otros espacios sean identificables.</li>
+<li>Las superficies del receptor mantengan adyacencias coherentes.</li>
+<li>Las diferencias de área estén dentro de la tolerancia definida para el proyecto.</li>
+<li>Las simplificaciones estén registradas.</li>
+<li>El IFC de ensayo pueda reproducirse con la misma configuración.</li>
+</ul>
+<h2 id="22-checklist-de-entrega">22. Checklist de entrega<a class="headerlink" href="#22-checklist-de-entrega" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se ha definido gráficamente la envolvente térmica.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Muros, suelos y cubiertas usan categorías nativas siempre que es viable.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No existen cerramientos principales ausentes o duplicados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los muros tienen restricciones verticales controladas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las uniones muro-forjado y muro-cubierta están revisadas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los perfiles editados y aberturas tienen una justificación.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los muros inclinados, curvos o elípticos se han ensayado.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las estructuras compuestas tienen capas, funciones y materiales coherentes.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se distinguen exterior, terreno, medianería y espacios no acondicionados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Falsos techos, cámaras y áticos siguen una estrategia explícita.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los elementos exteriores no deseados no delimitan espacios.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las fases y vínculos corresponden al estado de cálculo.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se ha revisado el modelo analítico de Revit.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se ha comprobado el IFC en la aplicación receptora.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se han registrado configuración, incidencias y tolerancias.</li>
+</ul>
+<h2 id="23-ensayo-de-referencia-para-revit-2026">23. Ensayo de referencia para Revit 2026<a class="headerlink" href="#23-ensayo-de-referencia-para-revit-2026" title="Permanent link">&para;</a></h2>
+<p>El modelo de prueba de la guía incorporará:</p>
+<ul>
+<li>Un recinto rectangular con cerramiento convencional.</li>
+<li>Una cubierta inclinada con muros unidos.</li>
+<li>Un forjado entre dos plantas.</li>
+<li>Una solera en contacto con terreno.</li>
+<li>Un muro parcialmente enterrado.</li>
+<li>Un espacio no acondicionado bajo cubierta.</li>
+<li>Un falso techo con plénum.</li>
+<li>Un muro inclinado y otro curvo.</li>
+<li>Un elemento exterior que solo produzca sombra.</li>
+<li>Un hueco vertical entre plantas.</li>
+</ul>
+<p>Para cada caso se compararán:</p>
+<ul>
+<li>Volumen y área en Revit.</li>
+<li>Entidades y geometría IFC.</li>
+<li>Superficies generadas en Open BIM Analytical Model.</li>
+<li>Interpretación en CYPETHERM HE Plus.</li>
+<li>Interpretación mediante TK-IFC/TK-CEEP.</li>
+</ul>
+<h2 id="24-fuentes-principales">24. Fuentes principales<a class="headerlink" href="#24-fuentes-principales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Autodesk, <em>About Creating Energy Analytical Models from Architectural Elements</em>, Revit 2026.</li>
+<li>Autodesk, <em>Prepare a Model for Analysis</em>, Revit 2026.</li>
+<li>Autodesk, <em>Analytical Space Resolution</em>, Revit 2026.</li>
+<li>Autodesk, <em>Attach Walls to Other Elements</em>, Revit 2026.</li>
+<li>Autodesk, <em>About Applying a Function and a Priority to a Layer of a Compound Structure</em>, Revit 2026.</li>
+<li>Autodesk, <em>Video: Editing Compound Structures</em>, Revit 2026.</li>
+<li>Autodesk, <em>Energy Settings</em>, Revit 2026.</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última actualización">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 19:34:52 UTC">12 de julio de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Creado">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 19:34:52 UTC">12 de julio de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY 4.0 - Versión 0.1.0 - Documento en elaboración
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
