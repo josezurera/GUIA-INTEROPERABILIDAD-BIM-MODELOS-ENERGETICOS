@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/03-revit/habitaciones-espacios-zonas/">
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/03-revit/sombras-geometria-exterior/">
       
       
-        <link rel="prev" href="../coordenadas-orientacion-niveles/">
+        <link rel="prev" href="../huecos-elementos-transparentes/">
       
       
-        <link rel="next" href="../preparacion-envolvente/">
+        <link rel="next" href="../exportacion-ifc/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Habitaciones, espacios y zonas térmicas en Revit 2026 - Guía BIM para análisis energético</title>
+        <title>Sombras y geometría exterior en Revit 2026 - Guía BIM para análisis energético</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#habitaciones-espacios-y-zonas-termicas-en-revit-2026" class="md-skip">
+        <a href="#sombras-y-geometria-exterior-en-revit-2026" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Habitaciones, espacios y zonas térmicas en Revit 2026
+              Sombras y geometría exterior en Revit 2026
             
           </span>
         </div>
@@ -869,32 +869,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Habitaciones, espacios y zonas
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../habitaciones-espacios-zonas/" class="md-nav__link">
         
   
   
@@ -905,539 +883,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-habitaciones-y-espacios-mep" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Habitaciones y espacios MEP
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Habitaciones y espacios MEP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-habitaciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 Habitaciones
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-espacios-mep" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 Espacios MEP
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-eleccion-de-la-fuente" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 Elección de la fuente
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-cobertura-completa-del-edificio" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Cobertura completa del edificio
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-activacion-del-calculo-de-volumenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Activación del cálculo de volúmenes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-estados-de-las-habitaciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Estados de las habitaciones
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Estados de las habitaciones">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-no-colocada" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 No colocada
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-no-cerrada" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 No cerrada
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-redundante" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 Redundante
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44-regla-de-aceptacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 Regla de aceptación
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-limite-inferior" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Límite inferior
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-limite-superior" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Límite superior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Límite superior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-regla" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.1 Regla
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-altura-de-calculo" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Altura de cálculo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-elementos-delimitadores" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Elementos delimitadores
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-uso-correcto-de-room-bounding" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Uso correcto de Room Bounding
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9. Uso correcto de Room Bounding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#91-activar" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.1 Activar
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#92-desactivar-o-revisar" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2 Desactivar o revisar
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#93-no-aplicar-reglas-ciegas" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3 No aplicar reglas ciegas
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-lineas-de-separacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Líneas de separación
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-muros-de-altura-parcial-y-pilares" class="md-nav__link">
-    <span class="md-ellipsis">
-      11. Muros de altura parcial y pilares
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-suelos-y-forjados" class="md-nav__link">
-    <span class="md-ellipsis">
-      12. Suelos y forjados
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-techos-y-plenums" class="md-nav__link">
-    <span class="md-ellipsis">
-      13. Techos y plénums
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="13. Techos y plénums">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#131-techo-no-delimitador" class="md-nav__link">
-    <span class="md-ellipsis">
-      13.1 Techo no delimitador
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#132-plenum-independiente" class="md-nav__link">
-    <span class="md-ellipsis">
-      13.2 Plénum independiente
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#133-decision-necesaria" class="md-nav__link">
-    <span class="md-ellipsis">
-      13.3 Decisión necesaria
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-cubiertas-y-espacios-bajo-cubierta" class="md-nav__link">
-    <span class="md-ellipsis">
-      14. Cubiertas y espacios bajo cubierta
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#15-dobles-alturas" class="md-nav__link">
-    <span class="md-ellipsis">
-      15. Dobles alturas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#16-escaleras" class="md-nav__link">
-    <span class="md-ellipsis">
-      16. Escaleras
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#17-patinillos-y-huecos-verticales" class="md-nav__link">
-    <span class="md-ellipsis">
-      17. Patinillos y huecos verticales
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#18-atrios" class="md-nav__link">
-    <span class="md-ellipsis">
-      18. Atrios
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#19-patios-interiores" class="md-nav__link">
-    <span class="md-ellipsis">
-      19. Patios interiores
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20-terrazas-balcones-y-galerias" class="md-nav__link">
-    <span class="md-ellipsis">
-      20. Terrazas, balcones y galerías
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#21-espacios-no-habitables" class="md-nav__link">
-    <span class="md-ellipsis">
-      21. Espacios no habitables
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-geometrias-anulares-o-tipo-donut" class="md-nav__link">
-    <span class="md-ellipsis">
-      22. Geometrías anulares o tipo donut
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#23-modelos-vinculados" class="md-nav__link">
-    <span class="md-ellipsis">
-      23. Modelos vinculados
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#24-fases" class="md-nav__link">
-    <span class="md-ellipsis">
-      24. Fases
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#25-opciones-de-diseno" class="md-nav__link">
-    <span class="md-ellipsis">
-      25. Opciones de diseño
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#26-nomenclatura" class="md-nav__link">
-    <span class="md-ellipsis">
-      26. Nomenclatura
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#27-agrupacion-mediante-zonas" class="md-nav__link">
-    <span class="md-ellipsis">
-      27. Agrupación mediante zonas
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="27. Agrupación mediante zonas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#271-zonas-nativas-de-revit" class="md-nav__link">
-    <span class="md-ellipsis">
-      27.1 Zonas nativas de Revit
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#272-zonename" class="md-nav__link">
-    <span class="md-ellipsis">
-      27.2 ZoneName
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#273-modelo-analitico" class="md-nav__link">
-    <span class="md-ellipsis">
-      27.3 Modelo analítico
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#28-criterios-de-zonificacion-termica" class="md-nav__link">
-    <span class="md-ellipsis">
-      28. Criterios de zonificación térmica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#29-tabla-de-planificacion-de-habitaciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      29. Tabla de planificación de habitaciones
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#30-tabla-de-espacios-mep" class="md-nav__link">
-    <span class="md-ellipsis">
-      30. Tabla de espacios MEP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#31-vistas-de-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      31. Vistas de control
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#32-incidencias-frecuentes" class="md-nav__link">
-    <span class="md-ellipsis">
-      32. Incidencias frecuentes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#33-matriz-de-decisiones" class="md-nav__link">
-    <span class="md-ellipsis">
-      33. Matriz de decisiones
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#34-checklist-previo-a-ifc" class="md-nav__link">
-    <span class="md-ellipsis">
-      34. Checklist previo a IFC
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#35-ensayo-para-revit-2026" class="md-nav__link">
-    <span class="md-ellipsis">
-      35. Ensayo para Revit 2026
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#36-fuentes-principales" class="md-nav__link">
-    <span class="md-ellipsis">
-      36. Fuentes principales
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1493,10 +938,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sombras-geometria-exterior/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Sombras y geometría exterior
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1507,6 +974,515 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-alcance" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Alcance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Requisitos previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-clasificacion-de-la-geometria-exterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Clasificación de la geometría exterior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-interpreta-revit-las-sombras-analiticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cómo interpreta Revit las sombras analíticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-principio-de-relevancia-solar" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Principio de relevancia solar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nivel-de-simplificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Nivel de simplificación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Nivel de simplificación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-conservar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Conservar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-simplificar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Simplificar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-excluir" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Excluir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-voladizos-y-aleros" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Voladizos y aleros
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Voladizos y aleros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-geometria-minima" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Geometría mínima
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-relacion-con-el-cerramiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Relación con el cerramiento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-aleros-de-cubierta" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Aleros de cubierta
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-balcones-y-terrazas" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Balcones y terrazas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-retranqueos-jambas-y-dinteles" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Retranqueos, jambas y dinteles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-lamas-fijas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Lamas fijas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Lamas fijas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-datos-esenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Datos esenciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-representacion-explicita" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Representación explícita
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-plano-equivalente" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 Plano equivalente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-ensayo-de-equivalencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.4 Ensayo de equivalencia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-protecciones-moviles" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Protecciones móviles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-toldos-y-elementos-estacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Toldos y elementos estacionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-petos-pretiles-y-muretes" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Petos, pretiles y muretes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-pilares-vigas-y-estructura-exterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Pilares, vigas y estructura exterior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-edificios-colindantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Edificios colindantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Edificios colindantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-informacion-necesaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      15.1 Información necesaria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-masas-de-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      15.2 Masas de contexto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-alcance-del-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      15.3 Alcance del contexto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-medianerias-y-patios" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Medianerías y patios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-vegetacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Vegetación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-topografia-y-horizonte" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Topografía y horizonte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-geometria-importada" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Geometría importada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-categorias-y-familias-recomendadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Categorías y familias recomendadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-parametros-minimos" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Parámetros mínimos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-orientacion-y-estudio-solar-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Orientación y estudio solar en Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-fechas-y-horas-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Fechas y horas de control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-vistas-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Vistas de control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="24. Vistas de control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-vista-qa_shd_01_modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.1 Vista QA_SHD_01_MODELO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-vista-qa_shd_02_contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.2 Vista QA_SHD_02_CONTEXTO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-vistas-solares" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.3 Vistas solares
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244-vista-analitica" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.4 Vista analítica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-control-de-complejidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. Control de complejidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-verificacion-en-ifc" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. Verificación en IFC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-verificacion-en-aplicaciones-receptoras" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. Verificación en aplicaciones receptoras
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-ensayo-con-y-sin-sombra" class="md-nav__link">
+    <span class="md-ellipsis">
+      28. Ensayo con y sin sombra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      29. Errores frecuentes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-procedimiento-de-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      30. Procedimiento de preparación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-criterios-de-aceptacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      31. Criterios de aceptación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-checklist-de-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      32. Checklist de entrega
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-ensayo-de-referencia-para-revit-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      33. Ensayo de referencia para Revit 2026
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      34. Fuentes principales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2250,37 +2226,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-habitaciones-y-espacios-mep" class="md-nav__link">
+  <a href="#1-alcance" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Habitaciones y espacios MEP
+      1. Alcance
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Habitaciones y espacios MEP">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Requisitos previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-clasificacion-de-la-geometria-exterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Clasificación de la geometría exterior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-interpreta-revit-las-sombras-analiticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cómo interpreta Revit las sombras analíticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-principio-de-relevancia-solar" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Principio de relevancia solar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nivel-de-simplificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Nivel de simplificación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Nivel de simplificación">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-habitaciones" class="md-nav__link">
+  <a href="#61-conservar" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 Habitaciones
+      6.1 Conservar
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-espacios-mep" class="md-nav__link">
+  <a href="#62-simplificar" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 Espacios MEP
+      6.2 Simplificar
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-eleccion-de-la-fuente" class="md-nav__link">
+  <a href="#63-excluir" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3 Elección de la fuente
+      6.3 Excluir
     </span>
   </a>
   
@@ -2292,64 +2313,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-cobertura-completa-del-edificio" class="md-nav__link">
+  <a href="#7-voladizos-y-aleros" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Cobertura completa del edificio
+      7. Voladizos y aleros
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-activacion-del-calculo-de-volumenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Activación del cálculo de volúmenes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-estados-de-las-habitaciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Estados de las habitaciones
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Estados de las habitaciones">
+    <nav class="md-nav" aria-label="7. Voladizos y aleros">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-no-colocada" class="md-nav__link">
+  <a href="#71-geometria-minima" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 No colocada
+      7.1 Geometría mínima
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-no-cerrada" class="md-nav__link">
+  <a href="#72-relacion-con-el-cerramiento" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 No cerrada
+      7.2 Relación con el cerramiento
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#43-redundante" class="md-nav__link">
+  <a href="#73-aleros-de-cubierta" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 Redundante
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44-regla-de-aceptacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 Regla de aceptación
+      7.3 Aleros de cubierta
     </span>
   </a>
   
@@ -2361,28 +2355,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-limite-inferior" class="md-nav__link">
+  <a href="#8-balcones-y-terrazas" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Límite inferior
+      8. Balcones y terrazas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-limite-superior" class="md-nav__link">
+  <a href="#9-retranqueos-jambas-y-dinteles" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Límite superior
+      9. Retranqueos, jambas y dinteles
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6. Límite superior">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-lamas-fijas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Lamas fijas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Lamas fijas">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-regla" class="md-nav__link">
+  <a href="#101-datos-esenciales" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1 Regla
+      10.1 Datos esenciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-representacion-explicita" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Representación explícita
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-plano-equivalente" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 Plano equivalente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-ensayo-de-equivalencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.4 Ensayo de equivalencia
     </span>
   </a>
   
@@ -2394,55 +2424,73 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-altura-de-calculo" class="md-nav__link">
+  <a href="#11-protecciones-moviles" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Altura de cálculo
+      11. Protecciones móviles
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-elementos-delimitadores" class="md-nav__link">
+  <a href="#12-toldos-y-elementos-estacionales" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Elementos delimitadores
+      12. Toldos y elementos estacionales
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-uso-correcto-de-room-bounding" class="md-nav__link">
+  <a href="#13-petos-pretiles-y-muretes" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Uso correcto de Room Bounding
+      13. Petos, pretiles y muretes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="9. Uso correcto de Room Bounding">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-pilares-vigas-y-estructura-exterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Pilares, vigas y estructura exterior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-edificios-colindantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Edificios colindantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Edificios colindantes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#91-activar" class="md-nav__link">
+  <a href="#151-informacion-necesaria" class="md-nav__link">
     <span class="md-ellipsis">
-      9.1 Activar
+      15.1 Información necesaria
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#92-desactivar-o-revisar" class="md-nav__link">
+  <a href="#152-masas-de-contexto" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2 Desactivar o revisar
+      15.2 Masas de contexto
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#93-no-aplicar-reglas-ciegas" class="md-nav__link">
+  <a href="#153-alcance-del-contexto" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3 No aplicar reglas ciegas
+      15.3 Alcance del contexto
     </span>
   </a>
   
@@ -2454,64 +2502,118 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-lineas-de-separacion" class="md-nav__link">
+  <a href="#16-medianerias-y-patios" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Líneas de separación
+      16. Medianerías y patios
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-muros-de-altura-parcial-y-pilares" class="md-nav__link">
+  <a href="#17-vegetacion" class="md-nav__link">
     <span class="md-ellipsis">
-      11. Muros de altura parcial y pilares
+      17. Vegetación
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-suelos-y-forjados" class="md-nav__link">
+  <a href="#18-topografia-y-horizonte" class="md-nav__link">
     <span class="md-ellipsis">
-      12. Suelos y forjados
+      18. Topografía y horizonte
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-techos-y-plenums" class="md-nav__link">
+  <a href="#19-geometria-importada" class="md-nav__link">
     <span class="md-ellipsis">
-      13. Techos y plénums
+      19. Geometría importada
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="13. Techos y plénums">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-categorias-y-familias-recomendadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Categorías y familias recomendadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-parametros-minimos" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Parámetros mínimos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-orientacion-y-estudio-solar-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Orientación y estudio solar en Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-fechas-y-horas-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Fechas y horas de control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-vistas-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Vistas de control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="24. Vistas de control">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#131-techo-no-delimitador" class="md-nav__link">
+  <a href="#241-vista-qa_shd_01_modelo" class="md-nav__link">
     <span class="md-ellipsis">
-      13.1 Techo no delimitador
+      24.1 Vista QA_SHD_01_MODELO
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#132-plenum-independiente" class="md-nav__link">
+  <a href="#242-vista-qa_shd_02_contexto" class="md-nav__link">
     <span class="md-ellipsis">
-      13.2 Plénum independiente
+      24.2 Vista QA_SHD_02_CONTEXTO
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#133-decision-necesaria" class="md-nav__link">
+  <a href="#243-vistas-solares" class="md-nav__link">
     <span class="md-ellipsis">
-      13.3 Decisión necesaria
+      24.3 Vistas solares
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244-vista-analitica" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.4 Vista analítica
     </span>
   </a>
   
@@ -2523,240 +2625,90 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-cubiertas-y-espacios-bajo-cubierta" class="md-nav__link">
+  <a href="#25-control-de-complejidad" class="md-nav__link">
     <span class="md-ellipsis">
-      14. Cubiertas y espacios bajo cubierta
+      25. Control de complejidad
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#15-dobles-alturas" class="md-nav__link">
+  <a href="#26-verificacion-en-ifc" class="md-nav__link">
     <span class="md-ellipsis">
-      15. Dobles alturas
+      26. Verificación en IFC
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#16-escaleras" class="md-nav__link">
+  <a href="#27-verificacion-en-aplicaciones-receptoras" class="md-nav__link">
     <span class="md-ellipsis">
-      16. Escaleras
+      27. Verificación en aplicaciones receptoras
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#17-patinillos-y-huecos-verticales" class="md-nav__link">
+  <a href="#28-ensayo-con-y-sin-sombra" class="md-nav__link">
     <span class="md-ellipsis">
-      17. Patinillos y huecos verticales
+      28. Ensayo con y sin sombra
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#18-atrios" class="md-nav__link">
+  <a href="#29-errores-frecuentes" class="md-nav__link">
     <span class="md-ellipsis">
-      18. Atrios
+      29. Errores frecuentes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#19-patios-interiores" class="md-nav__link">
+  <a href="#30-procedimiento-de-preparacion" class="md-nav__link">
     <span class="md-ellipsis">
-      19. Patios interiores
+      30. Procedimiento de preparación
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#20-terrazas-balcones-y-galerias" class="md-nav__link">
+  <a href="#31-criterios-de-aceptacion" class="md-nav__link">
     <span class="md-ellipsis">
-      20. Terrazas, balcones y galerías
+      31. Criterios de aceptación
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#21-espacios-no-habitables" class="md-nav__link">
+  <a href="#32-checklist-de-entrega" class="md-nav__link">
     <span class="md-ellipsis">
-      21. Espacios no habitables
+      32. Checklist de entrega
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#22-geometrias-anulares-o-tipo-donut" class="md-nav__link">
+  <a href="#33-ensayo-de-referencia-para-revit-2026" class="md-nav__link">
     <span class="md-ellipsis">
-      22. Geometrías anulares o tipo donut
+      33. Ensayo de referencia para Revit 2026
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#23-modelos-vinculados" class="md-nav__link">
+  <a href="#34-fuentes-principales" class="md-nav__link">
     <span class="md-ellipsis">
-      23. Modelos vinculados
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#24-fases" class="md-nav__link">
-    <span class="md-ellipsis">
-      24. Fases
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#25-opciones-de-diseno" class="md-nav__link">
-    <span class="md-ellipsis">
-      25. Opciones de diseño
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#26-nomenclatura" class="md-nav__link">
-    <span class="md-ellipsis">
-      26. Nomenclatura
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#27-agrupacion-mediante-zonas" class="md-nav__link">
-    <span class="md-ellipsis">
-      27. Agrupación mediante zonas
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="27. Agrupación mediante zonas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#271-zonas-nativas-de-revit" class="md-nav__link">
-    <span class="md-ellipsis">
-      27.1 Zonas nativas de Revit
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#272-zonename" class="md-nav__link">
-    <span class="md-ellipsis">
-      27.2 ZoneName
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#273-modelo-analitico" class="md-nav__link">
-    <span class="md-ellipsis">
-      27.3 Modelo analítico
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#28-criterios-de-zonificacion-termica" class="md-nav__link">
-    <span class="md-ellipsis">
-      28. Criterios de zonificación térmica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#29-tabla-de-planificacion-de-habitaciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      29. Tabla de planificación de habitaciones
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#30-tabla-de-espacios-mep" class="md-nav__link">
-    <span class="md-ellipsis">
-      30. Tabla de espacios MEP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#31-vistas-de-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      31. Vistas de control
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#32-incidencias-frecuentes" class="md-nav__link">
-    <span class="md-ellipsis">
-      32. Incidencias frecuentes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#33-matriz-de-decisiones" class="md-nav__link">
-    <span class="md-ellipsis">
-      33. Matriz de decisiones
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#34-checklist-previo-a-ifc" class="md-nav__link">
-    <span class="md-ellipsis">
-      34. Checklist previo a IFC
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#35-ensayo-para-revit-2026" class="md-nav__link">
-    <span class="md-ellipsis">
-      35. Ensayo para Revit 2026
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#36-fuentes-principales" class="md-nav__link">
-    <span class="md-ellipsis">
-      36. Fuentes principales
+      34. Fuentes principales
     </span>
   </a>
   
@@ -2781,596 +2733,562 @@
   
 
 
-<h1 id="habitaciones-espacios-y-zonas-termicas-en-revit-2026">Habitaciones, espacios y zonas térmicas en Revit 2026<a class="headerlink" href="#habitaciones-espacios-y-zonas-termicas-en-revit-2026" title="Permanent link">&para;</a></h1>
-<p>Las habitaciones y los espacios permiten convertir la geometría arquitectónica en volúmenes identificables. En el flujo estudiado son la principal referencia para generar <code>IfcSpace</code>, reconstruir superficies analíticas y organizar posteriormente las zonas térmicas.</p>
-<p>La estrategia debe garantizar que se representa todo el volumen relevante del edificio, no solo las estancias que aparecen en los planos arquitectónicos.</p>
+<h1 id="sombras-y-geometria-exterior-en-revit-2026">Sombras y geometría exterior en Revit 2026<a class="headerlink" href="#sombras-y-geometria-exterior-en-revit-2026" title="Permanent link">&para;</a></h1>
+<p>Las sombras modifican la radiación solar incidente sobre huecos y cerramientos. Una representación insuficiente puede sobreestimar ganancias solares; una representación excesivamente detallada puede generar miles de superficies, errores geométricos o falsos recintos.</p>
+<p>El objetivo es conservar únicamente la geometría exterior que produzca un efecto solar relevante y transformarla en superficies de sombra reconocibles por el flujo analítico.</p>
 <div class="admonition warning">
-<p class="admonition-title">Habitación no equivale automáticamente a zona térmica</p>
-<p>Una habitación de Revit es una unidad arquitectónica. Una zona térmica puede agrupar varias habitaciones o exigir dividir un recinto, según uso, horarios, orientación y sistema.</p>
+<p class="admonition-title">Visible no significa calculable</p>
+<p>Que un elemento proyecte sombra en una vista de Revit no demuestra que se exporte a IFC ni que CYPE o TeKton3D lo utilicen. La comprobación debe realizarse en el modelo receptor y, cuando sea posible, mediante un caso con y sin sombra.</p>
 </div>
-<h2 id="1-habitaciones-y-espacios-mep">1. Habitaciones y espacios MEP<a class="headerlink" href="#1-habitaciones-y-espacios-mep" title="Permanent link">&para;</a></h2>
-<h3 id="11-habitaciones">1.1 Habitaciones<a class="headerlink" href="#11-habitaciones" title="Permanent link">&para;</a></h3>
-<p>Las habitaciones pertenecen al modelo arquitectónico y almacenan información como:</p>
+<h2 id="1-alcance">1. Alcance<a class="headerlink" href="#1-alcance" title="Permanent link">&para;</a></h2>
+<p>Este capítulo incluye:</p>
 <ul>
-<li>Número.</li>
-<li>Nombre.</li>
-<li>Nivel.</li>
-<li>Área y perímetro.</li>
-<li>Volumen, cuando se activa su cálculo.</li>
-<li>Fase.</li>
-<li>Ocupación y departamento.</li>
-<li>Límites superior e inferior.</li>
+<li>Voladizos y aleros.</li>
+<li>Balcones y terrazas superiores.</li>
+<li>Jambas, dinteles y retranqueos.</li>
+<li>Lamas y parasoles fijos.</li>
+<li>Elementos móviles representados mediante escenarios.</li>
+<li>Petos y cuerpos salientes.</li>
+<li>Vegetación y obstáculos.</li>
+<li>Edificios colindantes.</li>
+<li>Relieve próximo cuando produzca obstrucción relevante.</li>
 </ul>
-<p>Son la referencia inicial recomendada cuando el modelo fuente es arquitectónico y se exporta desde ese mismo archivo.</p>
-<h3 id="12-espacios-mep">1.2 Espacios MEP<a class="headerlink" href="#12-espacios-mep" title="Permanent link">&para;</a></h3>
-<p>Los espacios se utilizan en Revit MEP para análisis de sistemas, cargas y zonas. También se basan en elementos delimitadores y deben ocupar todo el volumen que interviene en el análisis.</p>
-<p>Pueden resultar adecuados cuando:</p>
+<p>No desarrolla los algoritmos solares internos de cada motor, que se documentarán en sus capítulos específicos.</p>
+<h2 id="2-requisitos-previos">2. Requisitos previos<a class="headerlink" href="#2-requisitos-previos" title="Permanent link">&para;</a></h2>
+<p>Antes de estudiar sombras deben estar fijados:</p>
 <ul>
-<li>El modelo energético se gestiona en un archivo MEP independiente.</li>
-<li>La arquitectura está vinculada.</li>
-<li>Se necesitan propiedades específicas de sistemas.</li>
-<li>El flujo receptor está configurado para exportar espacios en lugar de habitaciones.</li>
+<li>Ubicación geográfica.</li>
+<li>Norte verdadero.</li>
+<li>Cotas y niveles.</li>
+<li>Geometría de huecos.</li>
+<li>Fase y opción de diseño.</li>
+<li>Estado de cálculo.</li>
 </ul>
-<h3 id="13-eleccion-de-la-fuente">1.3 Elección de la fuente<a class="headerlink" href="#13-eleccion-de-la-fuente" title="Permanent link">&para;</a></h3>
-<p>Debe elegirse una fuente principal para evitar duplicidades:</p>
+<p>Una sombra geométricamente correcta sobre un modelo mal orientado produce un resultado incorrecto.</p>
+<h2 id="3-clasificacion-de-la-geometria-exterior">3. Clasificación de la geometría exterior<a class="headerlink" href="#3-clasificacion-de-la-geometria-exterior" title="Permanent link">&para;</a></h2>
+<p>Cada elemento se asignará a una de estas clases:</p>
 <table>
 <thead>
 <tr>
-<th>Situación</th>
-<th>Fuente candidata</th>
+<th>Clase</th>
+<th>Función analítica</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Arquitectura y exportación en el mismo archivo</td>
-<td>Habitaciones</td>
+<td>Envolvente</td>
+<td>Transmite calor y puede recibir sombra</td>
 </tr>
 <tr>
-<td>Modelo MEP separado con arquitectura vinculada</td>
-<td>Espacios</td>
+<td>Hueco</td>
+<td>Transmite calor y radiación solar</td>
 </tr>
 <tr>
-<td>Receptor exige una categoría concreta</td>
-<td>La categoría verificada en ensayo</td>
+<td>Sombra propia</td>
+<td>Obstruye radiación sin cerrar un espacio</td>
+</tr>
+<tr>
+<td>Sombra remota</td>
+<td>Obstáculo exterior o edificio próximo</td>
+</tr>
+<tr>
+<td>Terreno</td>
+<td>Condición de contorno y posible obstrucción</td>
+</tr>
+<tr>
+<td>Contexto gráfico</td>
+<td>No interviene en el análisis</td>
 </tr>
 </tbody>
 </table>
-<p>No se exportarán habitaciones y espacios superpuestos sin confirmar cómo los interpreta el receptor.</p>
-<h2 id="2-cobertura-completa-del-edificio">2. Cobertura completa del edificio<a class="headerlink" href="#2-cobertura-completa-del-edificio" title="Permanent link">&para;</a></h2>
-<p>Autodesk indica que un análisis eficaz requiere incluir todo el volumen del edificio. Además de las estancias habituales deben considerarse:</p>
+<p>La clasificación se registrará con un parámetro funcional y no dependerá únicamente de categoría, material o subcategoría gráfica.</p>
+<h2 id="4-como-interpreta-revit-las-sombras-analiticas">4. Cómo interpreta Revit las sombras analíticas<a class="headerlink" href="#4-como-interpreta-revit-las-sombras-analiticas" title="Permanent link">&para;</a></h2>
+<p>Autodesk indica que Revit no dispone de una categoría arquitectónica específica para sombras. Las superficies analíticas de tipo <code>Shade</code> se generan, entre otros casos, a partir de:</p>
 <ul>
-<li>Pasillos.</li>
-<li>Vestíbulos.</li>
-<li>Escaleras.</li>
-<li>Atrios.</li>
-<li>Patinillos.</li>
-<li>Cámaras.</li>
-<li>Áticos.</li>
-<li>Plénums.</li>
-<li>Espacios bajo cubierta.</li>
-<li>Aparcamientos.</li>
-<li>Cuartos técnicos.</li>
-<li>Espacios no habitables.</li>
+<li>Partes de elementos arquitectónicos situadas fuera del edificio.</li>
+<li>Masas conceptuales sin plantas de masa.</li>
 </ul>
-<p>La ausencia de uno de estos volúmenes puede convertir sus cerramientos adyacentes en superficies exteriores o generar huecos en el modelo analítico.</p>
-<h2 id="3-activacion-del-calculo-de-volumenes">3. Activación del cálculo de volúmenes<a class="headerlink" href="#3-activacion-del-calculo-de-volumenes" title="Permanent link">&para;</a></h2>
-<p>Revit no calcula por defecto los volúmenes de las habitaciones debido al impacto en el rendimiento.</p>
-<p>Para preparar el modelo:</p>
-<ol>
-<li>Activar el cálculo de áreas y volúmenes durante la revisión.</li>
-<li>Regenerar tablas y vistas.</li>
-<li>Comprobar que todas las habitaciones relevantes muestran volumen.</li>
-<li>Mantenerlo activo durante las exportaciones de ensayo.</li>
-</ol>
-<p>La activación no garantiza que el volumen sea correcto. Solo permite calcularlo según los límites existentes.</p>
-<h2 id="4-estados-de-las-habitaciones">4. Estados de las habitaciones<a class="headerlink" href="#4-estados-de-las-habitaciones" title="Permanent link">&para;</a></h2>
-<p>La tabla de control debe distinguir:</p>
-<ul>
-<li>Colocada y cerrada.</li>
-<li>No colocada.</li>
-<li>No cerrada.</li>
-<li>Redundante.</li>
-<li>Área cero.</li>
-<li>Volumen no calculado.</li>
-<li>Volumen cero o anómalo.</li>
-</ul>
-<h3 id="41-no-colocada">4.1 No colocada<a class="headerlink" href="#41-no-colocada" title="Permanent link">&para;</a></h3>
-<p>Existe en la tabla, pero no tiene posición en el modelo. No debe exportarse como recinto calculable.</p>
-<h3 id="42-no-cerrada">4.2 No cerrada<a class="headerlink" href="#42-no-cerrada" title="Permanent link">&para;</a></h3>
-<p>Está colocada en una región sin cierre completo. Debe localizarse la discontinuidad, la fase incorrecta o el elemento que no delimita.</p>
-<h3 id="43-redundante">4.3 Redundante<a class="headerlink" href="#43-redundante" title="Permanent link">&para;</a></h3>
-<p>Existen dos habitaciones en la misma región cerrada. Debe eliminarse o recolocarse la duplicada.</p>
-<h3 id="44-regla-de-aceptacion">4.4 Regla de aceptación<a class="headerlink" href="#44-regla-de-aceptacion" title="Permanent link">&para;</a></h3>
-<p>No se aceptará ninguna habitación relevante con estado no colocado, no cerrado, redundante, área cero o volumen no calculado.</p>
-<h2 id="5-limite-inferior">5. Límite inferior<a class="headerlink" href="#5-limite-inferior" title="Permanent link">&para;</a></h2>
-<p>El límite inferior depende de:</p>
-<ul>
-<li>Nivel base.</li>
-<li>Desfase de base.</li>
-<li>Elementos delimitadores existentes.</li>
-</ul>
-<p>El desfase permite elevar o bajar el inicio del volumen respecto al nivel, pero debe utilizarse con una intención documentada.</p>
-<p>Casos de revisión:</p>
-<ul>
-<li>Suelos elevados.</li>
-<li>Forjados con acabados independientes.</li>
-<li>Rampas.</li>
-<li>Plantas escalonadas.</li>
-<li>Recintos parcialmente enterrados.</li>
-</ul>
-<h2 id="6-limite-superior">6. Límite superior<a class="headerlink" href="#6-limite-superior" title="Permanent link">&para;</a></h2>
-<p>El límite superior se define mediante:</p>
-<ul>
-<li>Nivel de límite superior.</li>
-<li>Desfase de límite.</li>
-</ul>
-<p>La altura no delimitada es la máxima altura potencial derivada de estos parámetros. El volumen real puede quedar recortado por cubiertas, suelos o techos delimitadores intermedios.</p>
-<h3 id="61-regla">6.1 Regla<a class="headerlink" href="#61-regla" title="Permanent link">&para;</a></h3>
-<p>El límite superior debe situarse por encima del cerramiento que realmente cierra el recinto cuando se desea que Revit utilice la geometría inclinada o irregular de dicho elemento.</p>
-<p>Autodesk recomienda, por ejemplo, que una habitación bajo cubierta tenga un límite superior mayor que la cubierta para que esta recorte el volumen según su pendiente.</p>
-<h2 id="7-altura-de-calculo">7. Altura de cálculo<a class="headerlink" href="#7-altura-de-calculo" title="Permanent link">&para;</a></h2>
-<p>La altura de cálculo del nivel determina la cota a la que Revit mide el perímetro para obtener el área. Puede afectar a:</p>
-<ul>
-<li>Muros inclinados.</li>
-<li>Espacios bajo escaleras.</li>
-<li>Cubiertas bajas.</li>
-<li>Cambios de sección.</li>
-<li>Nichos y huecos próximos al suelo.</li>
-</ul>
-<p>Debe revisarse en sección antes de modificarla. Un ajuste que corrige una habitación puede alterar el perímetro de todas las habitaciones asociadas al nivel.</p>
-<h2 id="8-elementos-delimitadores">8. Elementos delimitadores<a class="headerlink" href="#8-elementos-delimitadores" title="Permanent link">&para;</a></h2>
-<p>Pueden intervenir como límites:</p>
-<ul>
-<li>Muros.</li>
-<li>Suelos.</li>
-<li>Cubiertas.</li>
-<li>Techos.</li>
-<li>Columnas.</li>
-<li>Muros cortina.</li>
-<li>Líneas de separación.</li>
-<li>Elementos de vínculos cuando el vínculo se marca como delimitador.</li>
-</ul>
-<p>La condición depende del parámetro <code>Room Bounding</code> y de la geometría efectiva.</p>
-<h2 id="9-uso-correcto-de-room-bounding">9. Uso correcto de <code>Room Bounding</code><a class="headerlink" href="#9-uso-correcto-de-room-bounding" title="Permanent link">&para;</a></h2>
-<h3 id="91-activar">9.1 Activar<a class="headerlink" href="#91-activar" title="Permanent link">&para;</a></h3>
-<p>Debe estar activo cuando el elemento representa una frontera real del volumen:</p>
-<ul>
-<li>Muro que separa recintos.</li>
-<li>Forjado entre plantas.</li>
-<li>Cubierta que cierra un espacio.</li>
-<li>Cerramiento exterior.</li>
-<li>Línea de separación que materializa una división analítica intencionada.</li>
-</ul>
-<h3 id="92-desactivar-o-revisar">9.2 Desactivar o revisar<a class="headerlink" href="#92-desactivar-o-revisar" title="Permanent link">&para;</a></h3>
-<p>Debe revisarse en:</p>
-<ul>
-<li>Pilares interiores.</li>
-<li>Muros de altura parcial.</li>
-<li>Mobiliario fijo.</li>
-<li>Revestimientos independientes.</li>
-<li>Falsos techos.</li>
-<li>Elementos decorativos.</li>
-<li>Masas o familias auxiliares.</li>
-<li>Elementos exteriores que no deben crear recintos.</li>
-</ul>
-<p>Autodesk documenta que una columna o muro parcial delimitador puede excluir del volumen el espacio situado sobre él.</p>
-<h3 id="93-no-aplicar-reglas-ciegas">9.3 No aplicar reglas ciegas<a class="headerlink" href="#93-no-aplicar-reglas-ciegas" title="Permanent link">&para;</a></h3>
-<p>No se desactivará <code>Room Bounding</code> en toda una categoría sin comprobar casos particulares. Un techo puede ser irrelevante en una estancia y representar el límite real de un plénum en otra.</p>
-<h2 id="10-lineas-de-separacion">10. Líneas de separación<a class="headerlink" href="#10-lineas-de-separacion" title="Permanent link">&para;</a></h2>
-<p>Las líneas de separación permiten dividir un área sin muro físico. Son útiles para:</p>
-<ul>
-<li>Separar usos dentro de un espacio abierto.</li>
-<li>Resolver límites virtuales.</li>
-<li>Dividir una geometría anular.</li>
-<li>Crear recintos analíticos simplificados.</li>
-</ul>
-<p>Riesgos:</p>
-<ul>
-<li>Líneas duplicadas.</li>
-<li>Segmentos abiertos.</li>
-<li>Límites que atraviesan huecos o muros.</li>
-<li>Divisiones funcionales sin sentido térmico.</li>
-<li>Regiones estrechas o residuales.</li>
-</ul>
-<p>Cada línea utilizada para el flujo energético debe tener una finalidad documentada.</p>
-<h2 id="11-muros-de-altura-parcial-y-pilares">11. Muros de altura parcial y pilares<a class="headerlink" href="#11-muros-de-altura-parcial-y-pilares" title="Permanent link">&para;</a></h2>
-<p>Un elemento vertical que no alcanza el límite superior puede dividir el volumen de forma no deseada si actúa como delimitador.</p>
-<p>Se comprobarán en sección:</p>
-<ul>
-<li>Altura real.</li>
-<li>Unión con techo o cubierta.</li>
-<li>Espacio situado sobre el elemento.</li>
-<li>Necesidad de separar térmicamente.</li>
-</ul>
-<p>Los pilares interiores normalmente no deben fragmentar el espacio analítico.</p>
-<h2 id="12-suelos-y-forjados">12. Suelos y forjados<a class="headerlink" href="#12-suelos-y-forjados" title="Permanent link">&para;</a></h2>
-<p>Los suelos pueden definir el límite inferior o superior de las habitaciones. Deben revisarse:</p>
-<ul>
-<li>Suelos de acabado independientes.</li>
-<li>Forjados estructurales.</li>
-<li>Suelos elevados.</li>
-<li>Elementos superpuestos.</li>
-<li>Desfases.</li>
-</ul>
-<p>Autodesk advierte que un suelo situado por encima de la altura de cálculo puede interpretarse como límite superior en lugar de inferior y producir un volumen incorrecto.</p>
-<h2 id="13-techos-y-plenums">13. Techos y plénums<a class="headerlink" href="#13-techos-y-plenums" title="Permanent link">&para;</a></h2>
-<h3 id="131-techo-no-delimitador">13.1 Techo no delimitador<a class="headerlink" href="#131-techo-no-delimitador" title="Permanent link">&para;</a></h3>
-<p>Si el plénum forma parte del mismo volumen térmico y no se calcula por separado, el falso techo puede dejar de delimitar la habitación para que el volumen alcance el forjado superior.</p>
-<h3 id="132-plenum-independiente">13.2 Plénum independiente<a class="headerlink" href="#132-plenum-independiente" title="Permanent link">&para;</a></h3>
-<p>Si tiene comportamiento diferenciado, puede modelarse como espacio propio con:</p>
-<ul>
-<li>Límite inferior en el falso techo.</li>
-<li>Límite superior en el forjado.</li>
-<li>Condición de ventilación.</li>
-<li>Construcciones y adyacencias.</li>
-</ul>
-<h3 id="133-decision-necesaria">13.3 Decisión necesaria<a class="headerlink" href="#133-decision-necesaria" title="Permanent link">&para;</a></h3>
-<p>No existe una regla única. Se decidirá según ventilación, sistemas, uso y capacidad del receptor.</p>
-<h2 id="14-cubiertas-y-espacios-bajo-cubierta">14. Cubiertas y espacios bajo cubierta<a class="headerlink" href="#14-cubiertas-y-espacios-bajo-cubierta" title="Permanent link">&para;</a></h2>
-<p>Las habitaciones bajo cubierta deben:</p>
-<ul>
-<li>Extenderse por encima de la cubierta mediante el límite superior.</li>
-<li>Ser recortadas por una cubierta correctamente delimitadora.</li>
-<li>Evitar pequeños huecos en encuentros de muros y cubierta.</li>
-<li>Incluir cámaras o áticos según estrategia.</li>
-</ul>
-<p>Se revisará el volumen en sección y 3D.</p>
-<h2 id="15-dobles-alturas">15. Dobles alturas<a class="headerlink" href="#15-dobles-alturas" title="Permanent link">&para;</a></h2>
-<p>Opciones:</p>
-<ol>
-<li>Una habitación continua desde la planta inferior.</li>
-<li>Varias habitaciones vinculadas a una zona térmica común.</li>
-<li>División analítica específica en el receptor.</li>
-</ol>
-<p>Debe evitarse colocar una habitación en la planta superior dentro del vacío si se solapa con la habitación inferior.</p>
-<p>Se comprobarán:</p>
-<ul>
-<li>Forjados parciales.</li>
-<li>Barandillas no delimitadoras.</li>
-<li>Volumen sobre pasarelas.</li>
-<li>Límites verticales.</li>
-<li>Colindancias con plantas adyacentes.</li>
-</ul>
-<h2 id="16-escaleras">16. Escaleras<a class="headerlink" href="#16-escaleras" title="Permanent link">&para;</a></h2>
-<p>Las escaleras abiertas pueden conectar varias plantas. Estrategias posibles:</p>
-<ul>
-<li>Integrarlas en un espacio de circulación continuo.</li>
-<li>Separar espacios por planta y agruparlos térmicamente.</li>
-<li>Crear un espacio vertical específico.</li>
-</ul>
-<p>La elección dependerá del movimiento de aire considerado, compartimentación y motor.</p>
-<p>No deben utilizarse los peldaños y barandillas como límites térmicos detallados.</p>
-<h2 id="17-patinillos-y-huecos-verticales">17. Patinillos y huecos verticales<a class="headerlink" href="#17-patinillos-y-huecos-verticales" title="Permanent link">&para;</a></h2>
-<p>Un patinillo puede:</p>
-<ul>
-<li>Formar parte de un espacio adyacente.</li>
-<li>Ser un espacio independiente.</li>
-<li>Representarse como un único volumen vertical.</li>
-<li>Simplificarse mediante una condición equivalente.</li>
-</ul>
-<p>La documentación propia recomienda evitar un espacio independiente por planta cuando el hueco funciona como un volumen vertical continuo, salvo que el receptor o el análisis requieran segmentarlo.</p>
-<h2 id="18-atrios">18. Atrios<a class="headerlink" href="#18-atrios" title="Permanent link">&para;</a></h2>
-<p>Los atrios combinan dobles alturas, cubiertas, pasarelas y fachadas interiores. Deben definirse:</p>
-<ul>
-<li>Volumen principal.</li>
-<li>Plantas conectadas.</li>
-<li>Espacios perimetrales.</li>
-<li>Superficies interiores.</li>
-<li>Sistema que los acondiciona.</li>
-<li>Estrategia de zonificación.</li>
-</ul>
-<p>Un atrio es candidato a ensayo específico antes de generalizar reglas.</p>
-<h2 id="19-patios-interiores">19. Patios interiores<a class="headerlink" href="#19-patios-interiores" title="Permanent link">&para;</a></h2>
-<p>Un patio abierto es exterior, aunque esté rodeado por el edificio. Las habitaciones o espacios del patio no deben exportarse como zonas interiores acondicionadas.</p>
-<p>Debe verificarse:</p>
-<ul>
-<li>Apertura superior.</li>
-<li>Fachadas hacia el patio.</li>
-<li>Huecos.</li>
-<li>Sombras.</li>
-<li>Condición exterior.</li>
-</ul>
-<p>Un patio cubierto puede requerir un espacio interior o semiacondicionado distinto.</p>
-<h2 id="20-terrazas-balcones-y-galerias">20. Terrazas, balcones y galerías<a class="headerlink" href="#20-terrazas-balcones-y-galerias" title="Permanent link">&para;</a></h2>
-<p>Normalmente son espacios exteriores y no deben exportarse como <code>IfcSpace</code> interior. Sin embargo, sus elementos pueden influir como sombras.</p>
-<p>Se utilizará un parámetro de exportación o una regla de selección para evitar convertirlos en recintos calculables sin eliminar su geometría relevante.</p>
-<h2 id="21-espacios-no-habitables">21. Espacios no habitables<a class="headerlink" href="#21-espacios-no-habitables" title="Permanent link">&para;</a></h2>
-<p>Se incluirán cuando afecten a la envolvente:</p>
-<ul>
-<li>Trasteros.</li>
-<li>Aparcamientos.</li>
-<li>Cuartos técnicos.</li>
-<li>Cámaras sanitarias.</li>
-<li>Áticos.</li>
-<li>Zonas comunes no acondicionadas.</li>
-</ul>
-<p>Cada uno debe clasificarse y relacionarse con las zonas habitables. Omitirlos puede transformar particiones interiores en cerramientos exteriores.</p>
-<h2 id="22-geometrias-anulares-o-tipo-donut">22. Geometrías anulares o tipo <em>donut</em><a class="headerlink" href="#22-geometrias-anulares-o-tipo-donut" title="Permanent link">&para;</a></h2>
-<p>Una habitación que rodea completamente a otra puede generar contornos complejos. Cuando el exportador o receptor presenta problemas, puede dividirse mediante líneas de separación en formas más simples.</p>
-<p>La división debe:</p>
-<ul>
-<li>Mantener el área y volumen total.</li>
-<li>Evitar espacios residuales.</li>
-<li>Conservar una agrupación térmica común cuando corresponda.</li>
-<li>Ser estable en sucesivas exportaciones.</li>
-</ul>
-<h2 id="23-modelos-vinculados">23. Modelos vinculados<a class="headerlink" href="#23-modelos-vinculados" title="Permanent link">&para;</a></h2>
-<p>Un vínculo Revit o IFC puede proporcionar límites si su propiedad <code>Room Bounding</code> está activada. Autodesk indica que esta propiedad está desactivada por defecto en los vínculos.</p>
-<p>Riesgos:</p>
-<ul>
-<li>Vínculo descargado.</li>
-<li>Fase no compatible.</li>
-<li>Posición incorrecta.</li>
-<li>Cambio de geometría sin actualizar habitaciones.</li>
-<li>Elementos de vínculo duplicados en el anfitrión.</li>
-<li>Muros cortina IFC que no delimitan habitaciones en Revit.</li>
-</ul>
-<p>Debe decidirse qué archivo contiene las habitaciones y cuál contiene la geometría delimitadora.</p>
-<h2 id="24-fases">24. Fases<a class="headerlink" href="#24-fases" title="Permanent link">&para;</a></h2>
-<p>Las habitaciones son específicas de fase. Sus límites también se evalúan según la fase de la vista.</p>
-<p>Se comprobará:</p>
-<ul>
-<li>Habitación y cerramientos en fase compatible.</li>
-<li>Estado existente, demolido o nuevo.</li>
-<li>Huecos creados o cerrados por fase.</li>
-<li>Copias de habitaciones entre fases.</li>
-<li>Tabla filtrada por la fase de exportación.</li>
-</ul>
-<p>No debe exportarse una mezcla involuntaria de recintos de fases diferentes.</p>
-<h2 id="25-opciones-de-diseno">25. Opciones de diseño<a class="headerlink" href="#25-opciones-de-diseno" title="Permanent link">&para;</a></h2>
-<p>Las habitaciones pueden variar entre opciones. Cada escenario debe exportarse por separado, con:</p>
-<ul>
-<li>Opción activa identificada.</li>
-<li>Habitaciones propias de la opción.</li>
-<li>Límites correspondientes.</li>
-<li>Nombre de escenario.</li>
-</ul>
-<p>No se combinarán habitaciones solapadas de varias alternativas.</p>
-<h2 id="26-nomenclatura">26. Nomenclatura<a class="headerlink" href="#26-nomenclatura" title="Permanent link">&para;</a></h2>
-<p>Se recomienda separar:</p>
-<ul>
-<li>Código estable.</li>
-<li>Nombre descriptivo.</li>
-<li>Uso energético.</li>
-<li>Unidad de uso.</li>
-<li>Estado habitable/no habitable.</li>
-<li>Zona térmica propuesta.</li>
-</ul>
-<p>Ejemplo orientativo:</p>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Ejemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Número</td>
-<td><code>P01-023</code></td>
-</tr>
-<tr>
-<td>Nombre</td>
-<td><code>Dormitorio 2</code></td>
-</tr>
-<tr>
-<td>Uso energético</td>
-<td><code>Residencial privado</code></td>
-</tr>
-<tr>
-<td>Unidad de uso</td>
-<td><code>Vivienda 01</code></td>
-</tr>
-<tr>
-<td>Condición</td>
-<td><code>Habitable acondicionado</code></td>
-</tr>
-<tr>
-<td>Zona propuesta</td>
-<td><code>ZT-V01-DIA</code></td>
-</tr>
-</tbody>
-</table>
-<p>Los valores reales deberán adaptarse al proyecto.</p>
-<h2 id="27-agrupacion-mediante-zonas">27. Agrupación mediante zonas<a class="headerlink" href="#27-agrupacion-mediante-zonas" title="Permanent link">&para;</a></h2>
-<h3 id="271-zonas-nativas-de-revit">27.1 Zonas nativas de Revit<a class="headerlink" href="#271-zonas-nativas-de-revit" title="Permanent link">&para;</a></h3>
-<p>Revit 2026 ha cambiado las herramientas y flujos de zonas respecto a versiones anteriores. No se asumirá que las zonas MEP heredadas se exportan o funcionan igual que en Revit 2025.</p>
-<h3 id="272-zonename">27.2 <code>ZoneName</code><a class="headerlink" href="#272-zonename" title="Permanent link">&para;</a></h3>
-<p>Puede emplearse un parámetro controlado para transmitir una propuesta de agrupación, siempre que se compruebe el mapeado y el receptor.</p>
-<h3 id="273-modelo-analitico">27.3 Modelo analítico<a class="headerlink" href="#273-modelo-analitico" title="Permanent link">&para;</a></h3>
-<p>Open BIM Analytical Model permite crear varias agrupaciones de espacios. Puede ser preferible mantener recintos elementales en IFC y realizar allí la agrupación térmica definitiva.</p>
-<h2 id="28-criterios-de-zonificacion-termica">28. Criterios de zonificación térmica<a class="headerlink" href="#28-criterios-de-zonificacion-termica" title="Permanent link">&para;</a></h2>
+<p>Estas superficies no se crean manualmente como elementos analíticos. Por tanto, la geometría física y la configuración de generación determinan si aparecen.</p>
+<p>Este comportamiento es útil como diagnóstico, pero no garantiza que la misma clasificación se conserve en IFC ni en los receptores del manual.</p>
+<h2 id="5-principio-de-relevancia-solar">5. Principio de relevancia solar<a class="headerlink" href="#5-principio-de-relevancia-solar" title="Permanent link">&para;</a></h2>
+<p>Un elemento se conservará si puede modificar de forma apreciable la radiación sobre una superficie de interés durante el periodo de cálculo.</p>
 <p>Se considerarán:</p>
 <ul>
-<li>Uso.</li>
-<li>Horarios.</li>
-<li>Consignas.</li>
-<li>Sistema.</li>
+<li>Tamaño angular visto desde el hueco.</li>
+<li>Distancia al hueco.</li>
+<li>Orientación de la fachada.</li>
+<li>Altura solar estacional.</li>
+<li>Horas de ocupación.</li>
+<li>Repetición del elemento.</li>
+<li>Sensibilidad del uso a ganancias solares.</li>
+</ul>
+<p>No existe una dimensión mínima universal. El umbral debe definirse mediante ensayo y sensibilidad.</p>
+<h2 id="6-nivel-de-simplificacion">6. Nivel de simplificación<a class="headerlink" href="#6-nivel-de-simplificacion" title="Permanent link">&para;</a></h2>
+<h3 id="61-conservar">6.1 Conservar<a class="headerlink" href="#61-conservar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Contorno exterior que produce la sombra.</li>
+<li>Posición, cota y orientación.</li>
+<li>Profundidad del voladizo.</li>
+<li>Separación respecto al hueco.</li>
+<li>Inclinación de lamas relevantes.</li>
+<li>Silueta de edificios vecinos.</li>
+</ul>
+<h3 id="62-simplificar">6.2 Simplificar<a class="headerlink" href="#62-simplificar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Espesores que no cambian la máscara solar.</li>
+<li>Redondeos y chaflanes pequeños.</li>
+<li>Herrajes y fijaciones.</li>
+<li>Perfiles complejos sustituidos por planos equivalentes.</li>
+<li>Juntas y subdivisiones decorativas.</li>
+</ul>
+<h3 id="63-excluir">6.3 Excluir<a class="headerlink" href="#63-excluir" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mobiliario exterior temporal sin escenario definido.</li>
+<li>Elementos ocultos para todo el recorrido solar relevante.</li>
+<li>Detalles de escala muy inferior a la resolución del receptor.</li>
+<li>Contexto lejano sin obstrucción del horizonte.</li>
+<li>Geometría importada duplicada.</li>
+</ul>
+<h2 id="7-voladizos-y-aleros">7. Voladizos y aleros<a class="headerlink" href="#7-voladizos-y-aleros" title="Permanent link">&para;</a></h2>
+<h3 id="71-geometria-minima">7.1 Geometría mínima<a class="headerlink" href="#71-geometria-minima" title="Permanent link">&para;</a></h3>
+<p>Un voladizo puede representarse mediante un plano o sólido simple que conserve:</p>
+<ul>
+<li>Anchura.</li>
+<li>Profundidad.</li>
+<li>Cota inferior.</li>
+<li>Desfase horizontal respecto al hueco.</li>
+<li>Inclinación, si existe.</li>
+</ul>
+<p>El espesor solo se conservará cuando sus caras produzcan diferencias significativas o el receptor necesite un sólido cerrado.</p>
+<h3 id="72-relacion-con-el-cerramiento">7.2 Relación con el cerramiento<a class="headerlink" href="#72-relacion-con-el-cerramiento" title="Permanent link">&para;</a></h3>
+<p>El voladizo no debe:</p>
+<ul>
+<li>Delimitar una habitación exterior ficticia.</li>
+<li>Cortar el cerramiento anfitrión.</li>
+<li>Convertirse en cubierta térmica del espacio inferior si solo actúa como sombra.</li>
+<li>Duplicarse como parte de una cubierta y como familia independiente.</li>
+</ul>
+<h3 id="73-aleros-de-cubierta">7.3 Aleros de cubierta<a class="headerlink" href="#73-aleros-de-cubierta" title="Permanent link">&para;</a></h3>
+<p>La parte de cubierta que sobresale del volumen puede generar sombra automáticamente en el modelo analítico de Revit. Se comprobará que la parte interior continúa actuando como cerramiento y la exterior como sombra, sin perder la continuidad del borde.</p>
+<h2 id="8-balcones-y-terrazas">8. Balcones y terrazas<a class="headerlink" href="#8-balcones-y-terrazas" title="Permanent link">&para;</a></h2>
+<p>Un balcón puede desempeñar simultáneamente varias funciones:</p>
+<ul>
+<li>Forjado exterior de sombra para el hueco inferior.</li>
+<li>Puente geométrico con el forjado interior.</li>
+<li>Suelo de un espacio exterior.</li>
+<li>Soporte de petos o barandillas.</li>
+</ul>
+<p>Para el modelo energético se separarán conceptualmente la parte transmisora y la parte que solo obstruye radiación.</p>
+<p>Se comprobará:</p>
+<ul>
+<li>Proyección del canto.</li>
+<li>Profundidad de la losa.</li>
+<li>Posición respecto a los huecos inferiores.</li>
+<li>Laterales que actúan como aletas.</li>
+<li>Petos opacos.</li>
+<li>Balcones repetidos en altura.</li>
+</ul>
+<p>Las barandillas transparentes o de barrotes no se modelarán como planos opacos salvo que el método de cálculo permita asignar una transmitancia solar equivalente.</p>
+<h2 id="9-retranqueos-jambas-y-dinteles">9. Retranqueos, jambas y dinteles<a class="headerlink" href="#9-retranqueos-jambas-y-dinteles" title="Permanent link">&para;</a></h2>
+<p>El retranqueo del vidrio genera autosombreamiento. Puede representarse mediante la geometría real del hueco o mediante protecciones equivalentes en el receptor.</p>
+<p>Se medirán:</p>
+<ul>
+<li>Profundidad desde la cara exterior hasta el vidrio.</li>
+<li>Anchura de jambas.</li>
+<li>Altura del dintel.</li>
+<li>Antepecho exterior.</li>
+<li>Inclinación de derrames.</li>
+</ul>
+<p>Cuando el receptor coloca el hueco sobre el plano del cerramiento, debe documentarse si pierde estas sombras y cómo se compensan.</p>
+<p>No conviene exportar molduras o recercados pequeños si generan polígonos problemáticos sin efecto solar relevante.</p>
+<h2 id="10-lamas-fijas">10. Lamas fijas<a class="headerlink" href="#10-lamas-fijas" title="Permanent link">&para;</a></h2>
+<h3 id="101-datos-esenciales">10.1 Datos esenciales<a class="headerlink" href="#101-datos-esenciales" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Orientación.</li>
-<li>Relación con exterior.</li>
-<li>Unidad de uso.</li>
-<li>Requisitos reglamentarios.</li>
+<li>Ángulo de inclinación.</li>
+<li>Anchura de lama.</li>
+<li>Separación entre lamas.</li>
+<li>Distancia al vidrio.</li>
+<li>Extensión lateral y vertical.</li>
+<li>Opacidad o transmitancia solar, cuando el motor la admita.</li>
 </ul>
-<p>La simplificación debe equilibrar precisión y número de zonas. No se agruparán espacios únicamente para reducir trabajo si presentan comportamientos claramente distintos.</p>
-<h2 id="29-tabla-de-planificacion-de-habitaciones">29. Tabla de planificación de habitaciones<a class="headerlink" href="#29-tabla-de-planificacion-de-habitaciones" title="Permanent link">&para;</a></h2>
-<p>Campos mínimos:</p>
+<h3 id="102-representacion-explicita">10.2 Representación explícita<a class="headerlink" href="#102-representacion-explicita" title="Permanent link">&para;</a></h3>
+<p>Modelar cada lama puede ser adecuado cuando son pocas, grandes y el receptor conserva su geometría. Debe evitarse si produce una cantidad desproporcionada de superficies.</p>
+<h3 id="103-plano-equivalente">10.3 Plano equivalente<a class="headerlink" href="#103-plano-equivalente" title="Permanent link">&para;</a></h3>
+<p>Para celosías repetitivas puede utilizarse una superficie equivalente si el motor permite definir porosidad, factor de sombra o propiedades solares. El porcentaje de huecos no debe sustituirse sin más por transparencia gráfica.</p>
+<h3 id="104-ensayo-de-equivalencia">10.4 Ensayo de equivalencia<a class="headerlink" href="#104-ensayo-de-equivalencia" title="Permanent link">&para;</a></h3>
+<p>Comparar:</p>
+<ol>
+<li>Modelo detallado.</li>
+<li>Plano o dispositivo equivalente.</li>
+<li>Caso sin protección.</li>
+</ol>
+<p>La simplificación se aceptará si reproduce el efecto sobre ganancias solares dentro de la tolerancia establecida y reduce de forma apreciable la complejidad.</p>
+<h2 id="11-protecciones-moviles">11. Protecciones móviles<a class="headerlink" href="#11-protecciones-moviles" title="Permanent link">&para;</a></h2>
+<p>Persianas, estores y lamas móviles no se describen adecuadamente mediante una única posición geométrica.</p>
+<p>Se tratarán mediante:</p>
 <ul>
-<li>Número.</li>
-<li>Nombre.</li>
-<li>Nivel.</li>
-<li>Fase.</li>
-<li>Área.</li>
-<li>Volumen.</li>
-<li>Límite superior.</li>
-<li>Desfase de límite.</li>
-<li>Desfase de base.</li>
-<li>Altura no delimitada.</li>
-<li>Condición habitable.</li>
-<li>Unidad de uso.</li>
-<li>Zona propuesta.</li>
-<li>Exportable a IFC.</li>
+<li>Propiedad específica del motor.</li>
+<li>Factor reductor reglamentario.</li>
+<li>Horario o control de operación.</li>
+<li>Escenarios independientes de posición.</li>
 </ul>
-<p>Debe mostrarse también lo no colocado o no cerrado durante el QA/QC.</p>
-<h2 id="30-tabla-de-espacios-mep">30. Tabla de espacios MEP<a class="headerlink" href="#30-tabla-de-espacios-mep" title="Permanent link">&para;</a></h2>
-<p>Cuando se utilicen espacios:</p>
+<p>La geometría de Revit puede documentar una posición de referencia, pero no debe interpretarse como funcionamiento anual.</p>
+<p>En el modelo de intercambio se evitará exportar simultáneamente varias posiciones superpuestas.</p>
+<h2 id="12-toldos-y-elementos-estacionales">12. Toldos y elementos estacionales<a class="headerlink" href="#12-toldos-y-elementos-estacionales" title="Permanent link">&para;</a></h2>
+<p>Se registrarán como sistemas móviles o estacionales. Si el receptor no admite control, se definirán escenarios:</p>
 <ul>
-<li>Número y nombre.</li>
-<li>Nivel y fase.</li>
-<li>Área y volumen.</li>
-<li>Tipo de espacio.</li>
-<li>Zona.</li>
-<li>Ocupación.</li>
-<li>Condiciones.</li>
-<li>Correspondencia con habitación arquitectónica.</li>
+<li>Sin toldo.</li>
+<li>Toldo desplegado.</li>
+<li>Condición equivalente según el procedimiento de cálculo.</li>
 </ul>
-<p>La herramienta de nombres de espacios puede copiar nombres y números de habitaciones vinculadas, pero debe verificarse la unicidad y actualización.</p>
-<h2 id="31-vistas-de-control">31. Vistas de control<a class="headerlink" href="#31-vistas-de-control" title="Permanent link">&para;</a></h2>
-<p>Se crearán:</p>
+<p>La comparación debe utilizar idénticas condiciones climáticas y de ocupación.</p>
+<h2 id="13-petos-pretiles-y-muretes">13. Petos, pretiles y muretes<a class="headerlink" href="#13-petos-pretiles-y-muretes" title="Permanent link">&para;</a></h2>
+<p>Los petos pueden sombrear cubiertas, terrazas o lucernarios, pero no deben generar espacios analíticos falsos.</p>
+<p>Revisar:</p>
 <ul>
-<li>Plantas coloreadas por habitación.</li>
-<li>Secciones con relleno de volumen.</li>
-<li>Vista 3D de espacios, cuando sea posible.</li>
-<li>Filtros para no habitables.</li>
-<li>Filtros para no exportables.</li>
-<li>Vistas de dobles alturas y cubiertas.</li>
+<li>Condición <code>Room Bounding</code>.</li>
+<li>Altura real.</li>
+<li>Continuidad alrededor de la cubierta.</li>
+<li>Distancia a lucernarios.</li>
+<li>Clasificación como sombra en el receptor.</li>
 </ul>
-<p>La revisión en planta no basta para validar el volumen tridimensional.</p>
-<h2 id="32-incidencias-frecuentes">32. Incidencias frecuentes<a class="headerlink" href="#32-incidencias-frecuentes" title="Permanent link">&para;</a></h2>
+<p>Un peto modelado como muro no debe incorporarse automáticamente a la envolvente térmica por compartir categoría.</p>
+<h2 id="14-pilares-vigas-y-estructura-exterior">14. Pilares, vigas y estructura exterior<a class="headerlink" href="#14-pilares-vigas-y-estructura-exterior" title="Permanent link">&para;</a></h2>
+<p>Los elementos estructurales exteriores se conservarán si producen sombras relevantes. Su sección puede simplificarse manteniendo silueta y posición.</p>
+<p>Los pilares adosados a fachada requieren especial atención: una parte puede afectar a la envolvente y otra actuar como aleta de sombra. Se verificará que no fragmenten espacios ni creen superficies térmicas duplicadas.</p>
+<h2 id="15-edificios-colindantes">15. Edificios colindantes<a class="headerlink" href="#15-edificios-colindantes" title="Permanent link">&para;</a></h2>
+<h3 id="151-informacion-necesaria">15.1 Información necesaria<a class="headerlink" href="#151-informacion-necesaria" title="Permanent link">&para;</a></h3>
+<p>Para obstrucción solar normalmente basta con:</p>
+<ul>
+<li>Planta simplificada.</li>
+<li>Altura.</li>
+<li>Cota respecto al proyecto.</li>
+<li>Distancia.</li>
+<li>Orientación.</li>
+<li>Silueta de cubiertas relevante.</li>
+</ul>
+<p>No se necesitan distribuciones interiores, huecos ni detalles constructivos.</p>
+<h3 id="152-masas-de-contexto">15.2 Masas de contexto<a class="headerlink" href="#152-masas-de-contexto" title="Permanent link">&para;</a></h3>
+<p>Autodesk propone utilizar masas sin plantas para representar edificios circundantes que producen sombra en estudios de masa. Este criterio permite diferenciarlas del edificio analizado.</p>
+<p>Debe ensayarse si estas masas:</p>
+<ul>
+<li>Aparecen como superficies de sombra en Revit.</li>
+<li>Se incluyen en la exportación IFC prevista.</li>
+<li>Son reconocidas por Open BIM Analytical Model y TeKton3D.</li>
+</ul>
+<p>Si el flujo IFC no conserva su función, se recrearán como obstáculos en la aplicación receptora.</p>
+<h3 id="153-alcance-del-contexto">15.3 Alcance del contexto<a class="headerlink" href="#153-alcance-del-contexto" title="Permanent link">&para;</a></h3>
+<p>Se incluirán los edificios que intercepten una parte significativa del cielo visto desde las fachadas estudiadas. La distancia por sí sola no es criterio suficiente: un edificio alto y lejano puede ser más relevante que uno bajo y próximo.</p>
+<h2 id="16-medianerias-y-patios">16. Medianerías y patios<a class="headerlink" href="#16-medianerias-y-patios" title="Permanent link">&para;</a></h2>
+<p>En patios estrechos, los cerramientos opuestos producen sombras mutuas y no son simples obstáculos remotos. Deben conservarse como parte del edificio y mantener sus huecos y orientaciones.</p>
+<p>En medianerías se distinguirá entre:</p>
+<ul>
+<li>Superficie en contacto con otro edificio.</li>
+<li>Parte expuesta por encima del colindante.</li>
+<li>Volumen vecino que solo produce sombra.</li>
+</ul>
+<p>Puede ser necesario dividir el cerramiento o corregir su condición de contorno en el receptor.</p>
+<h2 id="17-vegetacion">17. Vegetación<a class="headerlink" href="#17-vegetacion" title="Permanent link">&para;</a></h2>
+<p>La vegetación es variable, permeable y estacional. Un árbol modelado como sólido opaco suele sobreestimar la sombra.</p>
+<p>Opciones:</p>
+<ul>
+<li>Excluirla del modelo reglamentario si el procedimiento no la contempla.</li>
+<li>Representar una copa simplificada con transmitancia equivalente.</li>
+<li>Utilizar escenarios con y sin follaje.</li>
+<li>Definir obstáculos específicos en el motor.</li>
+</ul>
+<p>Se documentarán especie o tipología, altura, diámetro de copa, caducidad y escenario. Los RPC y componentes de aspecto no deben suponerse exportables como geometría analítica.</p>
+<h2 id="18-topografia-y-horizonte">18. Topografía y horizonte<a class="headerlink" href="#18-topografia-y-horizonte" title="Permanent link">&para;</a></h2>
+<p>El relieve cercano puede obstruir el sol en emplazamientos con pendientes, desmontes o montañas. El toposólido completo puede resultar demasiado pesado para IFC.</p>
+<p>Se preferirá:</p>
+<ul>
+<li>Conservar taludes próximos que oculten directamente fachadas bajas.</li>
+<li>Simplificar el relieve lejano mediante perfil de horizonte si el motor lo admite.</li>
+<li>Eliminar triangulación que no cambie la silueta.</li>
+<li>No permitir que el terreno invada el volumen del edificio.</li>
+</ul>
+<p>La condición de contacto con terreno y la obstrucción solar son funciones diferentes y deben revisarse por separado.</p>
+<h2 id="19-geometria-importada">19. Geometría importada<a class="headerlink" href="#19-geometria-importada" title="Permanent link">&para;</a></h2>
+<p>Los archivos DWG, SAT, 3DM o nubes de puntos pueden servir como referencia, pero no son automáticamente geometría energética válida.</p>
+<p>Antes de utilizarlos:</p>
+<ul>
+<li>Confirmar unidades y coordenadas.</li>
+<li>Eliminar capas innecesarias.</li>
+<li>Simplificar mallas.</li>
+<li>Asignar una categoría controlada.</li>
+<li>Comprobar si se exportan a IFC.</li>
+<li>Evitar duplicar el contexto ya modelado.</li>
+</ul>
+<p>Una nube de puntos no debe exportarse como obstáculo solar. Se extraerá de ella una envolvente simplificada.</p>
+<h2 id="20-categorias-y-familias-recomendadas">20. Categorías y familias recomendadas<a class="headerlink" href="#20-categorias-y-familias-recomendadas" title="Permanent link">&para;</a></h2>
+<p>No existe una única categoría nativa de sombra. La elección dependerá del elemento y del exportador:</p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Representación candidata</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alero integrado</td>
+<td>Parte exterior de cubierta</td>
+</tr>
+<tr>
+<td>Voladizo o balcón</td>
+<td>Suelo simplificado o familia controlada</td>
+</tr>
+<tr>
+<td>Lama fija</td>
+<td>Familia de modelo genérico simplificada</td>
+</tr>
+<tr>
+<td>Edificio vecino</td>
+<td>Masa sin plantas o volumen simplificado</td>
+</tr>
+<tr>
+<td>Perfil de horizonte</td>
+<td>Objeto específico del receptor</td>
+</tr>
+<tr>
+<td>Vegetación</td>
+<td>Escenario o volumen equivalente</td>
+</tr>
+</tbody>
+</table>
+<p>Cada categoría candidata deberá superar una prueba de exportación. No se propondrá una categoría universal sin evidencia en los flujos previstos.</p>
+<h2 id="21-parametros-minimos">21. Parámetros mínimos<a class="headerlink" href="#21-parametros-minimos" title="Permanent link">&para;</a></h2>
+<p>Se recomienda registrar:</p>
+<ul>
+<li><code>ENERGY_ROLE</code>: <code>SHADE_SELF</code>, <code>SHADE_REMOTE</code> o <code>CONTEXT_ONLY</code>.</li>
+<li>Código de tipo.</li>
+<li>Fijo o móvil.</li>
+<li>Escenario de operación.</li>
+<li>Opacidad o factor equivalente, si procede.</li>
+<li>Fuente geométrica.</li>
+<li>Estado de revisión.</li>
+<li>Aplicaciones en las que se ha validado.</li>
+</ul>
+<p>El nombre definitivo y su mapeado IFC se fijarán en el capítulo de parámetros.</p>
+<h2 id="22-orientacion-y-estudio-solar-en-revit">22. Orientación y estudio solar en Revit<a class="headerlink" href="#22-orientacion-y-estudio-solar-en-revit" title="Permanent link">&para;</a></h2>
+<p>Autodesk documenta que la trayectoria solar utiliza la ubicación del proyecto y muestra la orientación respecto al norte verdadero. Antes del ensayo:</p>
+<ol>
+<li>Confirmar ubicación y zona horaria.</li>
+<li>Mostrar norte verdadero.</li>
+<li>Activar trayectoria solar y sombras.</li>
+<li>Preparar vistas 3D y alzados adecuados.</li>
+<li>Crear estudios estáticos y de un día.</li>
+<li>Revisar fechas y horas críticas.</li>
+</ol>
+<p>Los estudios solares de Revit son una herramienta de inspección visual. No sustituyen el cálculo anual del motor energético ni validan la transferencia IFC.</p>
+<h2 id="23-fechas-y-horas-de-control">23. Fechas y horas de control<a class="headerlink" href="#23-fechas-y-horas-de-control" title="Permanent link">&para;</a></h2>
+<p>El protocolo incluirá, como mínimo:</p>
+<ul>
+<li>Solsticio de invierno.</li>
+<li>Equinoccio.</li>
+<li>Solsticio de verano.</li>
+<li>Mañana, mediodía solar y tarde.</li>
+<li>Horas críticas de ocupación.</li>
+</ul>
+<p>En fachadas este y oeste se prestará especial atención a alturas solares bajas. En fachadas sur serán relevantes profundidad y separación de protecciones horizontales. La fachada norte también puede recibir radiación directa según latitud, estación y orientación exacta.</p>
+<h2 id="24-vistas-de-control">24. Vistas de control<a class="headerlink" href="#24-vistas-de-control" title="Permanent link">&para;</a></h2>
+<h3 id="241-vista-qa_shd_01_modelo">24.1 Vista <code>QA_SHD_01_MODELO</code><a class="headerlink" href="#241-vista-qa_shd_01_modelo" title="Permanent link">&para;</a></h3>
+<p>Mostrar únicamente envolvente, huecos y sombras aprobadas. Colorear por función analítica.</p>
+<h3 id="242-vista-qa_shd_02_contexto">24.2 Vista <code>QA_SHD_02_CONTEXTO</code><a class="headerlink" href="#242-vista-qa_shd_02_contexto" title="Permanent link">&para;</a></h3>
+<p>Mostrar edificio y obstáculos remotos, con coordenadas y norte verdadero visibles.</p>
+<h3 id="243-vistas-solares">24.3 Vistas solares<a class="headerlink" href="#243-vistas-solares" title="Permanent link">&para;</a></h3>
+<p>Guardar presets con ubicación, fecha, hora y orientación. El nombre debe permitir reproducir el estudio.</p>
+<h3 id="244-vista-analitica">24.4 Vista analítica<a class="headerlink" href="#244-vista-analitica" title="Permanent link">&para;</a></h3>
+<p>Revisar la categoría <strong>Analytical Surfaces: Shades</strong> y comprobar:</p>
+<ul>
+<li>Presencia de elementos esperados.</li>
+<li>Ausencia de contexto gráfico irrelevante.</li>
+<li>Posición respecto a los huecos.</li>
+<li>Fragmentación de superficies.</li>
+</ul>
+<h2 id="25-control-de-complejidad">25. Control de complejidad<a class="headerlink" href="#25-control-de-complejidad" title="Permanent link">&para;</a></h2>
+<p>Se registrarán antes y después de simplificar:</p>
+<ul>
+<li>Número de elementos de sombra.</li>
+<li>Número de caras o polígonos.</li>
+<li>Tamaño del IFC.</li>
+<li>Tiempo de exportación.</li>
+<li>Tiempo de importación.</li>
+<li>Tiempo de cálculo.</li>
+<li>Diferencia en ganancias solares o demanda.</li>
+</ul>
+<p>Una simplificación es adecuada cuando reduce el coste de proceso sin alterar materialmente los resultados.</p>
+<h2 id="26-verificacion-en-ifc">26. Verificación en IFC<a class="headerlink" href="#26-verificacion-en-ifc" title="Permanent link">&para;</a></h2>
+<p>La inspección debe confirmar:</p>
+<ul>
+<li>Que la geometría se exporta.</li>
+<li>Que su posición y unidades son correctas.</li>
+<li>Que no se clasifica como espacio o cerramiento térmico por error.</li>
+<li>Que no corta ni duplica la envolvente.</li>
+<li>Que conserva una geometría utilizable.</li>
+<li>Que puede relacionarse con su elemento Revit.</li>
+</ul>
+<p>La mera presencia visual en un visor IFC no demuestra que el receptor energético la use como sombra.</p>
+<h2 id="27-verificacion-en-aplicaciones-receptoras">27. Verificación en aplicaciones receptoras<a class="headerlink" href="#27-verificacion-en-aplicaciones-receptoras" title="Permanent link">&para;</a></h2>
+<p>Para Open BIM Analytical Model y TeKton3D se comprobará:</p>
+<ul>
+<li>Superficies de sombra creadas.</li>
+<li>Huecos afectados.</li>
+<li>Posición relativa.</li>
+<li>Capacidad de edición o recreación.</li>
+<li>Conservación después de actualizar el IFC.</li>
+<li>Tratamiento de protecciones móviles.</li>
+<li>Efecto en resultados mediante ensayo comparativo.</li>
+</ul>
+<p>CYPETHERM HE Plus se revisará después de generar el modelo analítico, confirmando que las sombras transferidas corresponden al escenario previsto.</p>
+<h2 id="28-ensayo-con-y-sin-sombra">28. Ensayo con y sin sombra<a class="headerlink" href="#28-ensayo-con-y-sin-sombra" title="Permanent link">&para;</a></h2>
+<p>La validación mínima utilizará dos variantes idénticas:</p>
+<ol>
+<li>Caso base sin dispositivo de sombra.</li>
+<li>Caso con el dispositivo activado.</li>
+</ol>
+<p>Se mantendrán constantes clima, orientación, construcciones, horarios y sistemas. Se compararán:</p>
+<ul>
+<li>Radiación o ganancias solares, si están disponibles.</li>
+<li>Cargas de refrigeración.</li>
+<li>Demanda de refrigeración.</li>
+<li>Demanda de calefacción.</li>
+<li>Horas de sobrecalentamiento, cuando proceda.</li>
+</ul>
+<p>Si no cambia ninguna magnitud sensible, debe investigarse si la sombra se ha ignorado o si realmente no es relevante.</p>
+<h2 id="29-errores-frecuentes">29. Errores frecuentes<a class="headerlink" href="#29-errores-frecuentes" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Síntoma</th>
 <th>Causa probable</th>
+<th>Revisión inicial</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>No cerrada</td>
-<td>Hueco, elemento no delimitador, fase o vínculo.</td>
+<td>El voladizo aparece como cubierta térmica</td>
+<td>Categoría o relación espacial incorrecta</td>
+<td>Clasificación y límites de espacios</td>
 </tr>
 <tr>
-<td>Volumen demasiado bajo</td>
-<td>Falso techo, suelo o elemento parcial delimitador.</td>
+<td>El edificio vecino crea un recinto</td>
+<td>Masa con plantas o elemento delimitador</td>
+<td>Tipo de masa y <code>Room Bounding</code></td>
 </tr>
 <tr>
-<td>Volumen demasiado alto</td>
-<td>Límite superior excesivo sin cubierta delimitadora.</td>
+<td>Las lamas desaparecen</td>
+<td>Dimensión inferior a tolerancia o categoría omitida</td>
+<td>Simplificación y exportación IFC</td>
 </tr>
 <tr>
-<td>Dos espacios en la misma región</td>
-<td>Habitación redundante.</td>
+<td>El IFC es excesivamente pesado</td>
+<td>Geometría repetitiva demasiado detallada</td>
+<td>Plano equivalente o reducción de malla</td>
 </tr>
 <tr>
-<td>Superficie exterior inesperada</td>
-<td>Falta el espacio adyacente.</td>
+<td>No varían las ganancias solares</td>
+<td>La sombra no llega al motor</td>
+<td>Entidades receptoras y ensayo A/B</td>
 </tr>
 <tr>
-<td>Recinto dividido en fragmentos</td>
-<td>Pilares, revestimientos o líneas separadoras.</td>
+<td>La sombra cae en dirección incorrecta</td>
+<td>Norte o ubicación erróneos</td>
+<td>Coordenadas, norte verdadero y zona horaria</td>
 </tr>
 <tr>
-<td>Hueco vertical cerrado por planta</td>
-<td>Forjado o límites superiores incorrectos.</td>
+<td>Vegetación produce sombra total</td>
+<td>Copa modelada como sólido opaco</td>
+<td>Escenario o transmitancia equivalente</td>
+</tr>
+<tr>
+<td>Un balcón duplica el forjado</td>
+<td>Elementos interior y exterior superpuestos</td>
+<td>Límites y clasificación funcional</td>
+</tr>
+<tr>
+<td>El hueco queda sombreado todo el año</td>
+<td>Posición o escala incorrectas</td>
+<td>Unidades, cotas y retranqueos</td>
 </tr>
 </tbody>
 </table>
-<h2 id="33-matriz-de-decisiones">33. Matriz de decisiones<a class="headerlink" href="#33-matriz-de-decisiones" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Caso</th>
-<th>Estrategia inicial</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Estancia normal</td>
-<td>Una habitación cerrada.</td>
-</tr>
-<tr>
-<td>Pasillo</td>
-<td>Habitación independiente o agrupada después.</td>
-</tr>
-<tr>
-<td>Doble altura</td>
-<td>Espacio continuo o varios espacios agrupados.</td>
-</tr>
-<tr>
-<td>Plénum relevante</td>
-<td>Espacio independiente.</td>
-</tr>
-<tr>
-<td>Plénum irrelevante</td>
-<td>Integrado en el recinto, techo no delimitador.</td>
-</tr>
-<tr>
-<td>Patio abierto</td>
-<td>Exterior, no exportar como recinto interior.</td>
-</tr>
-<tr>
-<td>Patinillo continuo</td>
-<td>Espacio vertical o simplificación documentada.</td>
-</tr>
-<tr>
-<td>Terraza</td>
-<td>No exportar como espacio interior; conservar sombras.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="34-checklist-previo-a-ifc">34. Checklist previo a IFC<a class="headerlink" href="#34-checklist-previo-a-ifc" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Fuente elegida: habitaciones o espacios.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cálculo de volúmenes activado.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Todos los volúmenes relevantes representados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sin habitaciones no cerradas, redundantes o con área cero.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nivel base y límite superior revisados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Desfases documentados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Room Bounding</code> revisado.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Líneas separadoras justificadas.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dobles alturas comprobadas en sección.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Plénums y falsos techos con estrategia definida.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Espacios no habitables incluidos o representados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Patios y terrazas clasificados como exterior.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Fase y opción de diseño verificadas.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vínculos delimitadores actualizados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nombres y códigos únicos.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Zona térmica propuesta documentada.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Parámetro de exportación IFC comprobado.</li>
-</ul>
-<h2 id="35-ensayo-para-revit-2026">35. Ensayo para Revit 2026<a class="headerlink" href="#35-ensayo-para-revit-2026" title="Permanent link">&para;</a></h2>
-<p>El modelo de prueba incluirá:</p>
+<h2 id="30-procedimiento-de-preparacion">30. Procedimiento de preparación<a class="headerlink" href="#30-procedimiento-de-preparacion" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Habitación rectangular convencional.</li>
-<li>Dos habitaciones adyacentes.</li>
-<li>Línea de separación sin muro.</li>
-<li>Pilar interior parcial.</li>
-<li>Falso techo y plénum.</li>
-<li>Cubierta inclinada.</li>
-<li>Doble altura.</li>
-<li>Escalera abierta.</li>
-<li>Patinillo vertical.</li>
-<li>Patio exterior.</li>
-<li>Habitación en vínculo.</li>
-<li>Dos fases.</li>
+<li>Confirmar ubicación y norte verdadero.</li>
+<li>Inventariar elementos exteriores.</li>
+<li>Clasificarlos por función analítica.</li>
+<li>Excluir el contexto sin relevancia.</li>
+<li>Simplificar geometrías repetitivas o complejas.</li>
+<li>Revisar sombras en fechas y horas críticas.</li>
+<li>Generar el modelo analítico de Revit.</li>
+<li>Comprobar superficies <code>Shade</code>.</li>
+<li>Exportar el IFC de ensayo.</li>
+<li>Inspeccionar posición, categoría y complejidad.</li>
+<li>Importar en los receptores.</li>
+<li>Ejecutar comparación con y sin sombra.</li>
+<li>Registrar diferencias y limitaciones.</li>
+<li>Aprobar la representación o recrearla en el receptor.</li>
 </ol>
-<p>Se comparará:</p>
+<h2 id="31-criterios-de-aceptacion">31. Criterios de aceptación<a class="headerlink" href="#31-criterios-de-aceptacion" title="Permanent link">&para;</a></h2>
+<p>El modelo de sombras estará preparado cuando:</p>
 <ul>
-<li>Geometría y cantidades de <code>IfcSpace</code>.</li>
-<li>Nombres y números.</li>
-<li>Condición exterior.</li>
-<li>Límites espaciales.</li>
-<li>Resultado en Open BIM Analytical Model.</li>
-<li>Resultado de importación y vinculación en TeKton3D.</li>
+<li>La ubicación y orientación estén verificadas.</li>
+<li>Cada elemento exterior tenga una función definida.</li>
+<li>No existan falsos recintos ni cerramientos duplicados.</li>
+<li>Voladizos, balcones y retranqueos relevantes conserven posición y tamaño.</li>
+<li>Las protecciones móviles se traten mediante escenarios o controles.</li>
+<li>El contexto remoto esté suficientemente simplificado.</li>
+<li>El IFC mantenga una geometría manejable y trazable.</li>
+<li>El receptor reconozca o permita reconstruir las sombras necesarias.</li>
+<li>El ensayo con y sin sombra produzca un efecto coherente.</li>
+<li>Las simplificaciones y exclusiones estén documentadas.</li>
 </ul>
-<h2 id="36-fuentes-principales">36. Fuentes principales<a class="headerlink" href="#36-fuentes-principales" title="Permanent link">&para;</a></h2>
+<h2 id="32-checklist-de-entrega">32. Checklist de entrega<a class="headerlink" href="#32-checklist-de-entrega" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ubicación, zona horaria y norte verdadero están comprobados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se ha inventariado la geometría exterior.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cada objeto está clasificado como envolvente, sombra o contexto.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los elementos de sombra no delimitan espacios por error.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Voladizos y aleros conservan sus dimensiones esenciales.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Balcones y petos no duplican cerramientos.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Retranqueos relevantes están representados o compensados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las lamas siguen una estrategia explícita o equivalente.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las protecciones móviles tienen escenario de operación.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Los edificios vecinos están simplificados y correctamente situados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vegetación y topografía siguen criterios documentados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se han revisado fechas y horas solares críticas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> El modelo analítico muestra las sombras esperadas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> El IFC no contiene geometría exterior innecesaria.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Open BIM Analytical Model y TeKton3D han sido comprobados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se ha realizado un ensayo con y sin sombra.</li>
+</ul>
+<h2 id="33-ensayo-de-referencia-para-revit-2026">33. Ensayo de referencia para Revit 2026<a class="headerlink" href="#33-ensayo-de-referencia-para-revit-2026" title="Permanent link">&para;</a></h2>
+<p>El modelo de prueba incorporará:</p>
 <ul>
-<li>Autodesk, <em>About Room Volume</em>, Revit 2026.</li>
-<li>Autodesk, <em>About Room Area</em>, Revit 2026.</li>
-<li>Autodesk, <em>About Ceilings and Floors in Room Volume Computations</em>, Revit 2026.</li>
-<li>Autodesk, <em>Use Room Boundaries in a Linked Model</em>, Revit 2026.</li>
-<li>Autodesk, <em>Spaces</em>, Revit MEP 2026.</li>
-<li>Autodesk, <em>Zones</em>, Revit MEP 2026.</li>
-<li>CYPE, <em>Guía de interoperabilidad CYPE-Revit v2.0</em> (<code>CYPE-REVIT-20</code>).</li>
+<li>Voladizo horizontal sobre una ventana sur.</li>
+<li>Aleta vertical en una fachada oeste.</li>
+<li>Hueco retranqueado.</li>
+<li>Balcón con peto.</li>
+<li>Conjunto de lamas fijas.</li>
+<li>Protección móvil mediante dos escenarios.</li>
+<li>Lucernario próximo a un peto.</li>
+<li>Patio con sombras mutuas.</li>
+<li>Edificio vecino como masa sin plantas.</li>
+<li>Árbol o copa equivalente.</li>
+<li>Talud simplificado.</li>
+<li>Elemento exterior irrelevante que deba excluirse.</li>
+</ul>
+<p>Se compararán geometría, número de superficies, tamaño del archivo, tiempo de proceso y efecto energético en Revit, Open BIM Analytical Model, CYPETHERM HE Plus y TK-IFC/TK-CEEP.</p>
+<h2 id="34-fuentes-principales">34. Fuentes principales<a class="headerlink" href="#34-fuentes-principales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Autodesk, <em>About Creating Energy Analytical Models from Architectural Elements</em>, Revit 2026.</li>
+<li>Autodesk, <em>About the Sun Path</em>, Revit 2026.</li>
+<li>Autodesk, <em>Workflow: Solar Studies</em>, Revit 2026.</li>
+<li>Autodesk, <em>Solar Studies</em>, Revit 2026.</li>
+<li>Autodesk, <em>Create the Energy Analytical Model: Massing</em>, Revit 2026.</li>
+<li>Autodesk, <em>Interactive Solar Studies</em>, Revit 2026.</li>
 </ul>
 
 
