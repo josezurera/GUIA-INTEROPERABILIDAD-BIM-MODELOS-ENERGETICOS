@@ -32,7 +32,7 @@ jobs:
         run: pip install -r requirements-ids.txt
 
       - name: Auditar especificación IDS
-        run: python scripts/validar_ids.py --audit-only
+        run: python scripts/validar_ids.py --profile energy --audit-only
 
       - name: Localizar IFC de ensayo
         id: models
@@ -52,7 +52,7 @@ jobs:
         shell: bash
         run: |
           mapfile -d '' files < ifc-files.list
-          python scripts/validar_ids.py --output reports/ids "${files[@]}"
+          python scripts/validar_ids.py --profile minimum --output reports/ids "${files[@]}"
 
       - name: Publicar informes
         if: always() && steps.models.outputs.found == 'true'

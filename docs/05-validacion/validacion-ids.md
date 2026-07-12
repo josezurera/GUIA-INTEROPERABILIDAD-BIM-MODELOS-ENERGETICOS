@@ -32,6 +32,23 @@ La especificación inicial `eem-ifc-minimo-v0.1.ids` comprueba:
 
 El complemento `eem-ifc2x3-complemento-v0.1.ids` incorpora reglas para entidades habituales de IFC2x3, inicialmente `IfcWallStandardCase`.
 
+La especificación `eem-energia-semantica-v0.1.ids` añade controles funcionales:
+
+- Referencia de espacios.
+- Clasificación interior/exterior de cerramientos y huecos.
+- Transmitancia térmica de elementos clasificados como exteriores.
+
+## 2. Perfiles de validación
+
+La herramienta ofrece dos perfiles:
+
+| Perfil | Uso | Especificaciones |
+|---|---|---|
+| `minimum` | Intercambio básico y regresión | IDS mínimo y complemento IFC2x3 |
+| `energy` | Preparación del modelo energético | Perfil mínimo más semántica energética |
+
+El perfil energético es deliberadamente más exigente y puede fallar en IFC válidos para coordinación general.
+
 Antes de aplicar los IDS, la herramienta registra y comprueba:
 
 - Esquema IFC.
@@ -41,7 +58,7 @@ Antes de aplicar los IDS, la herramienta registra y comprueba:
 - Inventario exacto de entidades principales.
 - GlobalIds ausentes, duplicados o inválidos.
 
-## 2. Qué no comprueba IDS por sí solo
+## 3. Qué no comprueba IDS por sí solo
 
 - Calidad de la geometría BRep o teselada.
 - Cierre de todos los volúmenes.
@@ -53,17 +70,19 @@ Antes de aplicar los IDS, la herramienta registra y comprueba:
 
 Por eso IDS se integra en la Puerta 2, pero no sustituye las otras comprobaciones QA/QC.
 
-## 3. Archivos incorporados
+## 4. Archivos incorporados
 
 ```text
 config/ids/eem-ifc-minimo-v0.1.ids
+config/ids/eem-ifc2x3-complemento-v0.1.ids
+config/ids/eem-energia-semantica-v0.1.ids
 scripts/validar_ids.py
 requirements-ids.txt
 .github/workflows/validate-ifc-ids.yml
 tests/ifc/
 ```
 
-## 4. Ejecución local
+## 5. Ejecución local
 
 Instalar una vez las dependencias:
 
@@ -74,13 +93,19 @@ python -m pip install -r requirements-ids.txt
 Auditar el propio IDS:
 
 ```powershell
-python scripts/validar_ids.py --audit-only
+python scripts/validar_ids.py --profile energy --audit-only
 ```
 
 Validar un IFC:
 
 ```powershell
 python scripts/validar_ids.py "C:\ruta\modelo.ifc"
+```
+
+Validación energética ampliada:
+
+```powershell
+python scripts/validar_ids.py --profile energy "C:\ruta\modelo.ifc"
 ```
 
 Los informes se generan en `reports/ids/`:
@@ -97,7 +122,7 @@ El proceso devuelve:
 - `1`: incumple algún requisito.
 - `2`: error de uso, archivo o IDS.
 
-## 5. Ejecución en GitHub
+## 6. Ejecución en GitHub
 
 La acción **Validar IFC con IDS**:
 
@@ -112,7 +137,7 @@ Si no existe ningún IFC público de ensayo, la acción audita únicamente la es
 
 Los IFC reales colocados en `tests/ifc/` están excluidos de Git por defecto para impedir su publicación accidental. Solo se versionará un modelo adicional mediante una decisión expresa y después de confirmar que no contiene información confidencial.
 
-## 6. Interpretación del resultado
+## 7. Interpretación del resultado
 
 Un resultado **CUMPLE** significa que el IFC supera la prevalidación y satisface todos los requisitos expresados en los IDS aplicados. No significa que el modelo energético completo esté aprobado.
 
@@ -124,7 +149,7 @@ Un resultado **NO CUMPLE** debe convertirse en una incidencia con:
 - Revit y configuración de exportación.
 - Corrección en origen o excepción justificada.
 
-## 7. Versionado del IDS
+## 8. Versionado del IDS
 
 Los IDS se tratan como configuración de proyecto:
 
@@ -136,7 +161,20 @@ Los IDS se tratan como configuración de proyecto:
 
 Una entrega debe registrar el nombre y hash del IDS utilizado.
 
-## 8. Evolución prevista
+## 9. Diagnóstico energético complementario
+
+El resumen calcula, incluso cuando no se activa el perfil energético:
+
+- Número de `IfcRelSpaceBoundary`.
+- Relaciones de materiales.
+- Cobertura de `IsExternal`.
+- Cobertura de `ThermalTransmittance`.
+- Espacios con cantidades de área.
+- Espacios con cantidades de volumen.
+
+Estas métricas no sustituyen a IDS: ayudan a identificar si una carencia afecta a un elemento aislado o a toda una categoría.
+
+## 10. Evolución prevista
 
 Después de probar el mapeado `EEM_EnergyExchange`, se añadirá una segunda especificación para exigir:
 
@@ -151,7 +189,7 @@ Después de probar el mapeado `EEM_EnergyExchange`, se añadirá una segunda esp
 
 No se activarán estos requisitos como bloqueantes hasta verificar su exportación en IFC2x3 e IFC4 y su compatibilidad con los receptores.
 
-## 9. Validación complementaria
+## 11. Validación complementaria
 
 IDS debe combinarse con:
 
@@ -162,7 +200,7 @@ IDS debe combinarse con:
 - Ensayos de actualización.
 - Ensayos de sensibilidad del cálculo.
 
-## 10. Fuentes
+## 12. Fuentes
 
 - buildingSMART International, *Information Delivery Specification (IDS)*.
 - buildingSMART International, *IFC Validation Service*.

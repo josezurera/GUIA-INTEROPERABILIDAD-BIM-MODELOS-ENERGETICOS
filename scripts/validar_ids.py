@@ -15,14 +15,22 @@ from typing import Any
 
 import ifcopenshell
 import ifcopenshell.validate
+from ifcopenshell.util.element import get_psets
 from ifctester import ids as ids_module
 from ifctester import reporter
 
 
-DEFAULT_IDS = [
-    Path("config/ids/eem-ifc-minimo-v0.1.ids"),
-    Path("config/ids/eem-ifc2x3-complemento-v0.1.ids"),
-]
+PROFILES = {
+    "minimum": [
+        Path("config/ids/eem-ifc-minimo-v0.1.ids"),
+        Path("config/ids/eem-ifc2x3-complemento-v0.1.ids"),
+    ],
+    "energy": [
+        Path("config/ids/eem-ifc-minimo-v0.1.ids"),
+        Path("config/ids/eem-ifc2x3-complemento-v0.1.ids"),
+        Path("config/ids/eem-energia-semantica-v0.1.ids"),
+    ],
+}
 
 INVENTORY_CLASSES = [
     "IfcProject",
@@ -133,6 +141,94 @@ def schema_diagnostics(ifc_path: Path) -> dict[str, Any]:
     }
 
 
+def property_coverage(
+    ifc: ifcopenshell.file, class_names: list[str], pset_name: str, property_name: str
+) -> dict[str, Any]:
+    elements = []
+    for class_name in class_names:
+        try:
+            elements.extend(ifc.by_type(class_name, include_subtypes=False))
+        except (RuntimeError, TypeError):
+            continue
+    passed = 0
+    for element in elements:
+        values = get_psets(element, psets_only=False, qtos_only=False).get(pset_name, {})
+        if property_name in values and values[property_name] is not None:
+            passed += 1
+    total = len(elements)
+    return {
+        "classes": class_names,
+        "pset": pset_name,
+        "property": property_name,
+        "total": total,
+        "present": passed,
+        "missing": total - passed,
+        "percent": round(100 * passed / total, 2) if total else None,
+    }
+
+
+def quantity_coverage(ifc: ifcopenshell.file) -> dict[str, Any]:
+    quantity_names = {
+        "GrossFloorArea", "NetFloorArea", "GrossVolume", "NetVolume", "Area", "Volume"
+    }
+    spaces = ifc.by_type("IfcSpace", include_subtypes=False)
+    with_area = 0
+    with_volume = 0
+    for space in spaces:
+        psets = get_psets(space, psets_only=False, qtos_only=False)
+        keys = {
+            key
+            for set_name, values in psets.items()
+            if set_name.startswith("Qto_") or set_name == "BaseQuantities"
+            for key in values
+            if key != "id"
+        }
+        with_area += int(bool(keys & {"GrossFloorArea", "NetFloorArea", "Area"}))
+        with_volume += int(bool(keys & {"GrossVolume", "NetVolume", "Volume"}))
+    total = len(spaces)
+    return {
+        "space_total": total,
+        "with_area_quantity": with_area,
+        "with_volume_quantity": with_volume,
+        "area_percent": round(100 * with_area / total, 2) if total else None,
+        "volume_percent": round(100 * with_volume / total, 2) if total else None,
+        "recognized_names": sorted(quantity_names),
+    }
+
+
+def energy_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
+    coverage = [
+        property_coverage(ifc, ["IfcSpace"], "Pset_SpaceCommon", "Reference"),
+        property_coverage(ifc, ["IfcWall", "IfcWallStandardCase"], "Pset_WallCommon", "IsExternal"),
+        property_coverage(ifc, ["IfcWall", "IfcWallStandardCase"], "Pset_WallCommon", "ThermalTransmittance"),
+        property_coverage(ifc, ["IfcSlab"], "Pset_SlabCommon", "IsExternal"),
+        property_coverage(ifc, ["IfcSlab"], "Pset_SlabCommon", "ThermalTransmittance"),
+        property_coverage(ifc, ["IfcRoof"], "Pset_RoofCommon", "IsExternal"),
+        property_coverage(ifc, ["IfcRoof"], "Pset_RoofCommon", "ThermalTransmittance"),
+        property_coverage(ifc, ["IfcWindow"], "Pset_WindowCommon", "IsExternal"),
+        property_coverage(ifc, ["IfcWindow"], "Pset_WindowCommon", "ThermalTransmittance"),
+        property_coverage(ifc, ["IfcDoor"], "Pset_DoorCommon", "IsExternal"),
+        property_coverage(ifc, ["IfcDoor"], "Pset_DoorCommon", "ThermalTransmittance"),
+    ]
+    boundaries = len(ifc.by_type("IfcRelSpaceBoundary"))
+    materials = len(ifc.by_type("IfcRelAssociatesMaterial"))
+    quantities = quantity_coverage(ifc)
+    warnings = []
+    if quantities["space_total"] and boundaries == 0:
+        warnings.append("Existen espacios, pero no se han exportado IfcRelSpaceBoundary.")
+    if quantities["space_total"] and quantities["with_area_quantity"] < quantities["space_total"]:
+        warnings.append("No todos los espacios tienen una cantidad de área reconocida.")
+    if quantities["space_total"] and quantities["with_volume_quantity"] < quantities["space_total"]:
+        warnings.append("No todos los espacios tienen una cantidad de volumen reconocida.")
+    return {
+        "space_boundaries": boundaries,
+        "material_relationships": materials,
+        "space_quantities": quantities,
+        "property_coverage": coverage,
+        "warnings": warnings,
+    }
+
+
 def preflight(ifc_path: Path, output_dir: Path) -> tuple[ifcopenshell.file, dict[str, Any]]:
     ifc = ifcopenshell.open(str(ifc_path))
     schema = schema_diagnostics(ifc_path)
@@ -155,6 +251,7 @@ def preflight(ifc_path: Path, output_dir: Path) -> tuple[ifcopenshell.file, dict
         "inventory_exact": inventory,
         "global_ids": global_ids,
         "schema_validation": schema,
+        "energy_diagnostics": energy_diagnostics(ifc),
     }
     path = output_dir / f"{safe_name(ifc_path)}__preflight.json"
     path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -221,6 +318,13 @@ def render_summary(summary: dict[str, Any], output_path: Path) -> None:
             f"<tr><td>{html.escape(name)}</td><td>{value}</td></tr>"
             for name, value in pre["inventory_exact"].items()
         )
+        energy = pre["energy_diagnostics"]
+        coverage = "".join(
+            f"<tr><td>{html.escape(item['pset'])}.{html.escape(item['property'])}</td>"
+            f"<td>{item['present']}/{item['total']}</td><td>{item['percent'] if item['percent'] is not None else 'N/A'}%</td></tr>"
+            for item in energy["property_coverage"]
+        )
+        warnings = "".join(f"<li>{html.escape(item)}</li>" for item in energy["warnings"]) or "<li>Ninguna</li>"
         rows.append(
             f"<section><h2>{html.escape(Path(model['ifc']).name)}</h2>"
             f"<p><strong>Resultado:</strong> {'CUMPLE' if model['status'] else 'NO CUMPLE'} · "
@@ -233,6 +337,13 @@ def render_summary(summary: dict[str, Any], output_path: Path) -> None:
             f"<li>GlobalIds duplicados: {pre['global_ids']['duplicate_count']}</li>"
             f"<li>GlobalIds no válidos: {pre['global_ids']['invalid_count']}</li></ul>"
             f"<h3>IDS</h3><ul>{ids_items}</ul><h3>Requisitos fallidos</h3><ul>{failures}</ul>"
+            f"<h3>Diagnóstico energético</h3><ul>"
+            f"<li>Límites espaciales: {energy['space_boundaries']}</li>"
+            f"<li>Relaciones de materiales: {energy['material_relationships']}</li>"
+            f"<li>Espacios con área: {energy['space_quantities']['with_area_quantity']}/{energy['space_quantities']['space_total']}</li>"
+            f"<li>Espacios con volumen: {energy['space_quantities']['with_volume_quantity']}/{energy['space_quantities']['space_total']}</li></ul>"
+            f"<table><tr><th>Propiedad</th><th>Cobertura</th><th>Porcentaje</th></tr>{coverage}</table>"
+            f"<h4>Advertencias energéticas</h4><ul>{warnings}</ul>"
             f"<h3>Inventario exacto</h3><table><tr><th>Entidad</th><th>Número</th></tr>{inventory}</table>"
             f"</section>"
         )
@@ -256,6 +367,10 @@ def parse_args() -> argparse.Namespace:
         help="Especificación IDS. Puede repetirse; sin esta opción se aplican todas las predeterminadas."
     )
     parser.add_argument(
+        "--profile", choices=sorted(PROFILES), default="minimum",
+        help="Perfil IDS: minimum para intercambio básico; energy añade requisitos semánticos energéticos."
+    )
+    parser.add_argument(
         "--output", type=Path, default=Path("reports/ids"),
         help="Carpeta para informes HTML y JSON."
     )
@@ -267,7 +382,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    ids_paths = args.ids_files or DEFAULT_IDS
+    ids_paths = args.ids_files or PROFILES[args.profile]
     missing = [path for path in [*ids_paths, *args.ifc] if not path.is_file()]
     if missing:
         for path in missing:
@@ -307,6 +422,7 @@ def main() -> int:
     summary = {
         "status": overall,
         "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "profile": args.profile,
         "models": models,
     }
     json_path = args.output / "resumen.json"

@@ -29,6 +29,7 @@ El repositorio incluye una especificación IDS 1.0 y un validador reproducible b
 1. Instalar `pip install -r requirements-ids.txt`.
 2. Ejecutar `python scripts/validar_ids.py --audit-only` para auditar el IDS.
 3. Ejecutar `python scripts/validar_ids.py ruta/al/modelo.ifc` para validar un IFC.
+4. Añadir `--profile energy` para comprobar propiedades energéticas.
 
 Los informes HTML y JSON se guardan en `reports/ids/`. GitHub también ejecuta esta comprobación sobre los modelos no confidenciales incluidos en `tests/ifc/`.
 
