@@ -41,4 +41,8 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *Solar Studies*, Revit 2026.
 - Autodesk. *Create the Energy Analytical Model: Massing*, Revit 2026.
 - Autodesk. *Interactive Solar Studies*, Revit 2026.
+- Autodesk. *Energy Analytical Model Contains Gaps and Jagged Edges*, Revit 2026.
+- Autodesk. *Energy Analytical Model Creation Failure*, Revit 2026.
+- Autodesk. *Analytical Surface Resolution*.
+- Autodesk. *Understanding the Energy Analytical Model*.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.

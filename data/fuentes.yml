@@ -257,3 +257,31 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-WhatsNew/files/GUID-8276FAD1-8650-4728-8060-42843062915E.htm
     fecha_consulta: 2026-07-12
     estado: revisada
+  - id: AUTODESK-RVT2026-EAM-GAPS
+    titulo: Energy Analytical Model Contains Gaps and Jagged Edges
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Troubleshooting/files/GUID-3BB183C2-8F74-4016-8094-D7046C3EC683.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-EAM-FAILURE
+    titulo: Energy Analytical Model Creation Failure
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Troubleshooting/files/GUID-88E7F647-07CE-4B2C-BB3A-F1EC7F7E3628.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-SURFACE-RESOLUTION
+    titulo: Analytical Surface Resolution
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-3FAD7687-575C-43B4-B21A-D6085DF72912.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT-UNDERSTAND-EAM
+    titulo: Understanding the Energy Analytical Model
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-A261EF48-05E7-45B4-B585-77C036C18CFE.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026

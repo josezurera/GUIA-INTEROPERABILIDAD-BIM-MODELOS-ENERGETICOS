@@ -21,7 +21,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Preparación de la envolvente.
 - [x] Huecos y elementos transparentes.
 - [x] Sombras y geometría exterior.
-- [ ] Geometrías de riesgo.
+- [x] Geometrías de riesgo.
 - [ ] Parámetros y mapeado IFC.
 - [ ] Configuraciones de exportación.
 - [ ] QA/QC de Revit e IFC.
