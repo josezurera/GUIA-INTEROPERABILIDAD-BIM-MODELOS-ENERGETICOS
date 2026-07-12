@@ -16,4 +16,8 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *Customize the IFC Setup*, Revit 2026.
 - Autodesk. *How Room Volume is Computed*, Revit 2026.
 - Autodesk. *About Creating Energy Analytical Models from Architectural Elements*, Revit 2026.
+- Autodesk. *About Positioning*, Revit 2026.
+- Autodesk. *About Project North and True North*, Revit 2026.
+- Autodesk. *Move the Project Base Point*, Revit 2026.
+- Autodesk. *Level Instance Properties*.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.

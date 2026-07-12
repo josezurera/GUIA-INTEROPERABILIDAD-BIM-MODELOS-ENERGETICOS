@@ -16,7 +16,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] IFC para análisis energético.
 - [x] Espacios, zonas y límites espaciales.
 - [x] Estrategia general de modelado en Revit.
-- [ ] Coordenadas, orientación y niveles.
+- [x] Coordenadas, orientación y niveles.
 - [ ] Habitaciones, espacios y zonas térmicas.
 - [ ] Preparación de la envolvente.
 - [ ] Huecos y elementos transparentes.

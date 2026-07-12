@@ -82,3 +82,31 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-9DB01490-A0A1-4DA2-A9A9-4F766958017A.htm
     fecha_consulta: 2026-07-11
     estado: revisada
+  - id: AUTODESK-RVT2026-POSITIONING
+    titulo: About Positioning
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-9DD9DCDB-F80F-4FCE-BA87-FE49B66936CF.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-NORTH
+    titulo: About Project North and True North
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-ED5BC6E5-0B9D-477C-8F08-692A44E28646.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-PBP
+    titulo: Move the Project Base Point
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-A973AC69-7095-4C09-BD7E-E3B6EAF36ABB.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-LEVEL-PROPERTIES
+    titulo: Level Instance Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Model/files/GUID-5F22D076-345B-4539-9362-483CF898A77E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
