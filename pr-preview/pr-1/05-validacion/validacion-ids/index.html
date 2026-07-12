@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/04-aplicaciones/">
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/05-validacion/validacion-ids/">
       
       
-        <link rel="prev" href="../03-revit/exportacion-ifc/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="cype/open-bim-analytical-model/">
+        <link rel="next" href="../incidencias/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Visión general - Guía BIM para análisis energético</title>
+        <title>Validación automática de IFC mediante IDS - Guía BIM para análisis energético</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,14 +50,14 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +66,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aplicaciones-de-analisis" class="md-skip">
+        <a href="#validacion-automatica-de-ifc-mediante-ids" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -99,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href=".." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+    <a href="../.." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visión general
+              Validación automática de IFC mediante IDS
             
           </span>
         </div>
@@ -232,7 +232,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -251,7 +251,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../hoja-ruta/" class="md-tabs__link">
+      <a href="../../hoja-ruta/" class="md-tabs__link">
         
   
   
@@ -272,7 +272,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../01-fundamentos/modelos/" class="md-tabs__link">
+        <a href="../../01-fundamentos/modelos/" class="md-tabs__link">
           
   
   
@@ -294,7 +294,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../02-ifc/" class="md-tabs__link">
+        <a href="../../02-ifc/" class="md-tabs__link">
           
   
   
@@ -316,7 +316,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../03-revit/" class="md-tabs__link">
+        <a href="../../03-revit/" class="md-tabs__link">
           
   
   
@@ -334,13 +334,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../04-aplicaciones/" class="md-tabs__link">
           
   
   
@@ -358,11 +356,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../05-validacion/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -384,7 +384,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../06-comparativas/compatibilidad/" class="md-tabs__link">
+        <a href="../../06-comparativas/compatibilidad/" class="md-tabs__link">
           
   
   
@@ -406,7 +406,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../07-procedimientos/flujo-operativo/" class="md-tabs__link">
+        <a href="../../07-procedimientos/flujo-operativo/" class="md-tabs__link">
           
   
   
@@ -428,7 +428,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../anexos/checklist-revit/" class="md-tabs__link">
+        <a href="../../anexos/checklist-revit/" class="md-tabs__link">
           
   
   
@@ -448,7 +448,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../control-versiones/" class="md-tabs__link">
+      <a href="../../control-versiones/" class="md-tabs__link">
         
   
   
@@ -483,7 +483,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+    <a href="../.." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -513,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -535,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hoja-ruta/" class="md-nav__link">
+      <a href="../../hoja-ruta/" class="md-nav__link">
         
   
   
@@ -606,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-fundamentos/modelos/" class="md-nav__link">
+      <a href="../../01-fundamentos/modelos/" class="md-nav__link">
         
   
   
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-fundamentos/requisitos-motores/" class="md-nav__link">
+      <a href="../../01-fundamentos/requisitos-motores/" class="md-nav__link">
         
   
   
@@ -684,7 +684,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../02-ifc/" class="md-nav__link ">
+            <a href="../../02-ifc/" class="md-nav__link ">
               
   
   
@@ -719,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-ifc/espacios-limites/" class="md-nav__link">
+      <a href="../../02-ifc/espacios-limites/" class="md-nav__link">
         
   
   
@@ -790,7 +790,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../03-revit/" class="md-nav__link ">
+            <a href="../../03-revit/" class="md-nav__link ">
               
   
   
@@ -825,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/estrategia-modelado/" class="md-nav__link">
+      <a href="../../03-revit/estrategia-modelado/" class="md-nav__link">
         
   
   
@@ -848,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/coordenadas-orientacion-niveles/" class="md-nav__link">
+      <a href="../../03-revit/coordenadas-orientacion-niveles/" class="md-nav__link">
         
   
   
@@ -871,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/habitaciones-espacios-zonas/" class="md-nav__link">
+      <a href="../../03-revit/habitaciones-espacios-zonas/" class="md-nav__link">
         
   
   
@@ -894,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/preparacion-envolvente/" class="md-nav__link">
+      <a href="../../03-revit/preparacion-envolvente/" class="md-nav__link">
         
   
   
@@ -917,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/huecos-elementos-transparentes/" class="md-nav__link">
+      <a href="../../03-revit/huecos-elementos-transparentes/" class="md-nav__link">
         
   
   
@@ -940,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/sombras-geometria-exterior/" class="md-nav__link">
+      <a href="../../03-revit/sombras-geometria-exterior/" class="md-nav__link">
         
   
   
@@ -963,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/geometrias-riesgo/" class="md-nav__link">
+      <a href="../../03-revit/geometrias-riesgo/" class="md-nav__link">
         
   
   
@@ -986,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/parametros-mapeado-ifc/" class="md-nav__link">
+      <a href="../../03-revit/parametros-mapeado-ifc/" class="md-nav__link">
         
   
   
@@ -1009,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/exportacion-ifc/" class="md-nav__link">
+      <a href="../../03-revit/exportacion-ifc/" class="md-nav__link">
         
   
   
@@ -1036,8 +1036,6 @@
       
   
   
-    
-  
   
   
     
@@ -1057,23 +1055,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../04-aplicaciones/" class="md-nav__link ">
               
   
   
@@ -1086,13 +1081,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_6" id="__nav_6_label" tabindex="">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Aplicaciones
@@ -1120,20 +1115,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
             
   
   
@@ -1160,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cype/open-bim-analytical-model/" class="md-nav__link">
+      <a href="../../04-aplicaciones/cype/open-bim-analytical-model/" class="md-nav__link">
         
   
   
@@ -1183,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cype/cypetherm-he-plus/" class="md-nav__link">
+      <a href="../../04-aplicaciones/cype/cypetherm-he-plus/" class="md-nav__link">
         
   
   
@@ -1228,13 +1220,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1242,7 +1231,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="tekton3d/" class="md-nav__link ">
+            <a href="../../04-aplicaciones/tekton3d/" class="md-nav__link ">
               
   
   
@@ -1255,7 +1244,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1277,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tekton3d/importacion-vinculacion/" class="md-nav__link">
+      <a href="../../04-aplicaciones/tekton3d/importacion-vinculacion/" class="md-nav__link">
         
   
   
@@ -1308,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="designbuilder/" class="md-nav__link">
+      <a href="../../04-aplicaciones/designbuilder/" class="md-nav__link">
         
   
   
@@ -1335,6 +1324,8 @@
       
   
   
+    
+  
   
   
     
@@ -1352,20 +1343,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../05-validacion/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1378,13 +1372,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Validación
@@ -1397,10 +1391,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../05-validacion/validacion-ids/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Validación IFC mediante IDS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1411,6 +1427,116 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-comprueba-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Qué comprueba IDS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-no-comprueba-ids-por-si-solo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Qué no comprueba IDS por sí solo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-archivos-incorporados" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Archivos incorporados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ejecucion-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ejecución local
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ejecucion-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ejecución en GitHub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-interpretacion-del-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Interpretación del resultado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-versionado-del-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Versionado del IDS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-evolucion-prevista" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Evolución prevista
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-validacion-complementaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Validación complementaria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Fuentes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1423,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-validacion/incidencias/" class="md-nav__link">
+      <a href="../incidencias/" class="md-nav__link">
         
   
   
@@ -1500,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-comparativas/compatibilidad/" class="md-nav__link">
+      <a href="../../06-comparativas/compatibilidad/" class="md-nav__link">
         
   
   
@@ -1577,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-procedimientos/flujo-operativo/" class="md-nav__link">
+      <a href="../../07-procedimientos/flujo-operativo/" class="md-nav__link">
         
   
   
@@ -1658,7 +1784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anexos/checklist-revit/" class="md-nav__link">
+      <a href="../../anexos/checklist-revit/" class="md-nav__link">
         
   
   
@@ -1681,7 +1807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anexos/bibliografia/" class="md-nav__link">
+      <a href="../../anexos/bibliografia/" class="md-nav__link">
         
   
   
@@ -1704,7 +1830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glosario/" class="md-nav__link">
+      <a href="../../glosario/" class="md-nav__link">
         
   
   
@@ -1734,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../control-versiones/" class="md-nav__link">
+      <a href="../../control-versiones/" class="md-nav__link">
         
   
   
@@ -1769,6 +1895,104 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-comprueba-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Qué comprueba IDS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-no-comprueba-ids-por-si-solo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Qué no comprueba IDS por sí solo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-archivos-incorporados" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Archivos incorporados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ejecucion-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ejecución local
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ejecucion-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ejecución en GitHub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-interpretacion-del-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Interpretación del resultado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-versionado-del-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Versionado del IDS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-evolucion-prevista" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Evolución prevista
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-validacion-complementaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Validación complementaria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Fuentes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1786,8 +2010,127 @@
   
 
 
-<h1 id="aplicaciones-de-analisis">Aplicaciones de análisis<a class="headerlink" href="#aplicaciones-de-analisis" title="Permanent link">&para;</a></h1>
-<p>Cada módulo documentará formatos admitidos, proceso de importación, información reconocida, simplificaciones, actualización, limitaciones y checklist de validación.</p>
+<h1 id="validacion-automatica-de-ifc-mediante-ids">Validación automática de IFC mediante IDS<a class="headerlink" href="#validacion-automatica-de-ifc-mediante-ids" title="Permanent link">&para;</a></h1>
+<p>La guía adopta <strong>Information Delivery Specification (IDS) 1.0</strong>, estándar de buildingSMART, para expresar y comprobar requisitos de información sobre archivos IFC.</p>
+<p>La herramienta seleccionada es <strong>IfcTester 0.8.5</strong>, incluida en el ecosistema abierto IfcOpenShell. Permite validar desde línea de comandos y generar informes HTML y JSON reproducibles.</p>
+<h2 id="1-que-comprueba-ids">1. Qué comprueba IDS<a class="headerlink" href="#1-que-comprueba-ids" title="Permanent link">&para;</a></h2>
+<p>IDS puede exigir, entre otros:</p>
+<ul>
+<li>Existencia de entidades.</li>
+<li>Tipo predefinido.</li>
+<li>Atributos.</li>
+<li>Propiedades y valores.</li>
+<li>Clasificaciones.</li>
+<li>Materiales.</li>
+<li>Relaciones de pertenencia.</li>
+</ul>
+<p>La especificación inicial <code>eem-ifc-minimo-v0.1.ids</code> comprueba:</p>
+<ul>
+<li>Proyecto, emplazamiento y edificio identificados.</li>
+<li>Existencia de plantas.</li>
+<li>Existencia de espacios <code>IfcSpace</code>.</li>
+<li>Nombre en muros, losas, cubiertas, ventanas y puertas cuando existan.</li>
+</ul>
+<h2 id="2-que-no-comprueba-ids-por-si-solo">2. Qué no comprueba IDS por sí solo<a class="headerlink" href="#2-que-no-comprueba-ids-por-si-solo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Calidad de la geometría BRep o teselada.</li>
+<li>Cierre de todos los volúmenes.</li>
+<li>Coincidencia de áreas y volúmenes con Revit.</li>
+<li>Orientación solar correcta.</li>
+<li>Adyacencias reconstruidas por el receptor.</li>
+<li>Uso efectivo de una propiedad en CYPE o TeKton3D.</li>
+<li>Coherencia física de resultados.</li>
+</ul>
+<p>Por eso IDS se integra en la Puerta 2, pero no sustituye las otras comprobaciones QA/QC.</p>
+<h2 id="3-archivos-incorporados">3. Archivos incorporados<a class="headerlink" href="#3-archivos-incorporados" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>config/ids/eem-ifc-minimo-v0.1.ids
+scripts/validar_ids.py
+requirements-ids.txt
+.github/workflows/validate-ifc-ids.yml
+tests/ifc/
+</code></pre></div>
+<h2 id="4-ejecucion-local">4. Ejecución local<a class="headerlink" href="#4-ejecucion-local" title="Permanent link">&para;</a></h2>
+<p>Instalar una vez las dependencias:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements-ids</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div>
+<p>Auditar el propio IDS:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">validar_ids</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-audit-only</span>
+</code></pre></div>
+<p>Validar un IFC:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">validar_ids</span><span class="p">.</span><span class="n">py</span> <span class="s2">&quot;C:\ruta\modelo.ifc&quot;</span>
+</code></pre></div>
+<p>Los informes se generan en <code>reports/ids/</code>:</p>
+<ul>
+<li>HTML para lectura humana.</li>
+<li>JSON para automatización.</li>
+<li><code>resumen.json</code> con el resultado global.</li>
+</ul>
+<p>El proceso devuelve:</p>
+<ul>
+<li><code>0</code>: cumple.</li>
+<li><code>1</code>: incumple algún requisito.</li>
+<li><code>2</code>: error de uso, archivo o IDS.</li>
+</ul>
+<h2 id="5-ejecucion-en-github">5. Ejecución en GitHub<a class="headerlink" href="#5-ejecucion-en-github" title="Permanent link">&para;</a></h2>
+<p>La acción <strong>Validar IFC con IDS</strong>:</p>
+<ol>
+<li>Instala versiones fijadas de IfcOpenShell e IfcTester.</li>
+<li>Audita la sintaxis del IDS.</li>
+<li>Busca archivos en <code>tests/ifc/</code>.</li>
+<li>Valida cada IFC encontrado.</li>
+<li>Publica informes HTML y JSON como artefactos durante 30 días.</li>
+<li>Marca la acción como fallida si un IFC no cumple.</li>
+</ol>
+<p>Si no existe ningún IFC público de ensayo, la acción audita únicamente la especificación y finaliza correctamente.</p>
+<h2 id="6-interpretacion-del-resultado">6. Interpretación del resultado<a class="headerlink" href="#6-interpretacion-del-resultado" title="Permanent link">&para;</a></h2>
+<p>Un resultado <strong>CUMPLE</strong> significa que el IFC satisface todos los requisitos expresados en esa versión del IDS. No significa que el modelo energético completo esté aprobado.</p>
+<p>Un resultado <strong>NO CUMPLE</strong> debe convertirse en una incidencia con:</p>
+<ul>
+<li>Especificación e identificador fallidos.</li>
+<li>GlobalId o entidad afectada.</li>
+<li>Archivo y hash.</li>
+<li>Revit y configuración de exportación.</li>
+<li>Corrección en origen o excepción justificada.</li>
+</ul>
+<h2 id="7-versionado-del-ids">7. Versionado del IDS<a class="headerlink" href="#7-versionado-del-ids" title="Permanent link">&para;</a></h2>
+<p>Los IDS se tratan como configuración de proyecto:</p>
+<ul>
+<li>Nombre con versión.</li>
+<li>Historial en Git.</li>
+<li>Auditoría de sintaxis.</li>
+<li>Prueba contra modelos conformes y no conformes.</li>
+<li>Cambio de versión cuando se añaden o modifican requisitos.</li>
+</ul>
+<p>Una entrega debe registrar el nombre y hash del IDS utilizado.</p>
+<h2 id="8-evolucion-prevista">8. Evolución prevista<a class="headerlink" href="#8-evolucion-prevista" title="Permanent link">&para;</a></h2>
+<p>Después de probar el mapeado <code>EEM_EnergyExchange</code>, se añadirá una segunda especificación para exigir:</p>
+<ul>
+<li><code>ElementCode</code>.</li>
+<li><code>ConstructionCode</code>.</li>
+<li><code>BoundaryType</code>.</li>
+<li><code>EnergyRole</code>.</li>
+<li><code>ThermalZoneCode</code>.</li>
+<li><code>Conditioning</code>.</li>
+<li><code>ExportStatus</code>.</li>
+<li><code>QAStatus</code>.</li>
+</ul>
+<p>No se activarán estos requisitos como bloqueantes hasta verificar su exportación en IFC2x3 e IFC4 y su compatibilidad con los receptores.</p>
+<h2 id="9-validacion-complementaria">9. Validación complementaria<a class="headerlink" href="#9-validacion-complementaria" title="Permanent link">&para;</a></h2>
+<p>IDS debe combinarse con:</p>
+<ul>
+<li>Validación del esquema IFC.</li>
+<li>Comparación cuantitativa Revit–IFC.</li>
+<li>Inspección geométrica.</li>
+<li>Revisión del modelo analítico.</li>
+<li>Ensayos de actualización.</li>
+<li>Ensayos de sensibilidad del cálculo.</li>
+</ul>
+<h2 id="10-fuentes">10. Fuentes<a class="headerlink" href="#10-fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>buildingSMART International, <em>Information Delivery Specification (IDS)</em>.</li>
+<li>buildingSMART International, <em>IFC Validation Service</em>.</li>
+<li>IfcOpenShell, <em>IfcTester documentation</em>.</li>
+</ul>
 
 
 
@@ -1878,10 +2221,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
