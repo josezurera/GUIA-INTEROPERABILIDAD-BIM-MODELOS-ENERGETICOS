@@ -20,4 +20,10 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *About Project North and True North*, Revit 2026.
 - Autodesk. *Move the Project Base Point*, Revit 2026.
 - Autodesk. *Level Instance Properties*.
+- Autodesk. *About Room Volume*, Revit 2026.
+- Autodesk. *About Room Area*, Revit 2026.
+- Autodesk. *About Ceilings and Floors in Room Volume Computations*, Revit 2026.
+- Autodesk. *Use Room Boundaries in a Linked Model*, Revit 2026.
+- Autodesk. *Spaces*, Revit MEP 2026.
+- Autodesk. *Zones*, Revit MEP 2026.
 - Documentación propia de preparación de arquitectura en Revit para programas térmicos de CYPE.

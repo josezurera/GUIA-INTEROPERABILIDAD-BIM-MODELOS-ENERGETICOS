@@ -110,3 +110,45 @@ fuentes:
     url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Model/files/GUID-5F22D076-345B-4539-9362-483CF898A77E.htm
     fecha_consulta: 2026-07-12
     estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-ROOM-VOLUME-ABOUT
+    titulo: About Room Volume
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-FA3F3769-F8C7-4C7F-8DB1-79EE6BFF8496.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ROOM-AREA
+    titulo: About Room Area
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-9348929C-18CA-40AC-BB64-71D01CC52F2B.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ROOM-CEILINGS
+    titulo: About Ceilings and Floors in Room Volume Computations
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-5BD1C889-6351-4AB8-BAB1-D9257E28C62A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-LINK-ROOM-BOUNDING
+    titulo: Use Room Boundaries in a Linked Model
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-64AF3A48-C121-4F26-B0BF-CDF93B389F75.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-MEP-SPACES
+    titulo: Spaces
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-MEPEng/files/GUID-48509199-F248-4B61-9DC6-CEFBE2E302F2.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-MEP-ZONES
+    titulo: Zones
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-MEPEng/files/GUID-C4115E01-4FD5-406E-B738-5AB927235240.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
