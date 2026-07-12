@@ -49,6 +49,9 @@ El registro estructurado se mantiene en `data/fuentes.yml`.
 - Autodesk. *Export Shared Parameters to a Shared Parameter File*, Revit 2026.
 - Autodesk. *Export User Defined Properties to IFC*.
 - Autodesk. *Supported IFC Classes*, Revit 2026.
+- Autodesk. *Exporting to Industry Foundation Classes (IFC)*, Revit 2026.
+- Autodesk. *About Revit and IFC*, Revit 2026.
+- Autodesk. *Manage IFC Export Mapping Settings*, Revit 2026.
 - buildingSMART. *IFC 4.3.2 Documentation: IfcSpace*.
 - buildingSMART. *IFC 4.3.2 Documentation: Pset_WallCommon*.
 - buildingSMART. *IFC 4.3.2 Documentation: IfcWindow*.

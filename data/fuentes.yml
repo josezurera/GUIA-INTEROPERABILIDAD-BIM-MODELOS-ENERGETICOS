@@ -341,3 +341,24 @@ fuentes:
     url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcDoor.htm
     fecha_consulta: 2026-07-12
     estado: revisada
+  - id: AUTODESK-RVT2026-IFC-OVERVIEW
+    titulo: Exporting to Industry Foundation Classes (IFC)
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-6EB68CEC-6C17-4B16-A509-30537F666C1F.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ABOUT-IFC
+    titulo: About Revit and IFC
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-6708CFD6-0AD7-461F-ADE8-6527423EC895.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-IFC-MAPPING
+    titulo: Manage IFC Export Mapping Settings
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-15D37541-CEAD-4797-9B6E-5267534CC2C0.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada

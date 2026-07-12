@@ -23,7 +23,7 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 - [x] Sombras y geometría exterior.
 - [x] Geometrías de riesgo.
 - [x] Parámetros y mapeado IFC.
-- [ ] Configuraciones de exportación.
+- [x] Configuraciones de exportación.
 - [ ] QA/QC de Revit e IFC.
 
 ## Versión 0.3.0 - Flujo CYPE
