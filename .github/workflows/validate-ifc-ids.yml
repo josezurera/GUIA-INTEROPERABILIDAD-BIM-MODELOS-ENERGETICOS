@@ -34,6 +34,9 @@ jobs:
       - name: Auditar especificación IDS
         run: python scripts/validar_ids.py --profile energy --audit-only
 
+      - name: Probar reglas QA/QC complementarias
+        run: python -m unittest discover -s tests -p "test_*.py"
+
       - name: Localizar IFC de ensayo
         id: models
         shell: bash

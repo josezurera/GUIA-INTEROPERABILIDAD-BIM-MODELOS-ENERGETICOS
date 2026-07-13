@@ -197,6 +197,37 @@ En el perfil `energy`, tanto **FAIL** como **NOT_EVALUABLE** impiden declarar co
 
 Autodesk indica que los pilares pueden tener activada por defecto la delimitación de habitación y recomienda desactivarla cuando provoque volúmenes incorrectos o innecesariamente fragmentados. Véanse [About Room Area — Revit 2026](https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-9348929C-18CA-40AC-BB64-71D01CC52F2B.htm) y [Situations That Can Affect Room Volume Computations — Revit 2026](https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-052DFFB9-5076-4CE6-BC8B-420C8D03ACF0.htm).
 
+### 9.2 EEM-GEO-001 — Intersección entre espacios
+
+Dos `IfcSpace` destinados al modelo energético no deben ocupar simultáneamente el mismo volumen. Un solape puede duplicar superficies, generar recintos residuales y producir una zonificación distinta en cada aplicación receptora.
+
+La regla `EEM-GEO-001` procesa la geometría triangulada y cerrada en coordenadas globales y aplica tres comprobaciones consecutivas:
+
+1. Descarta las parejas cuyas cajas envolventes no tienen penetración tridimensional superior a la tolerancia.
+2. Comprueba cruces entre las superficies trianguladas de las parejas candidatas.
+3. Busca muestras interiores para detectar espacios coincidentes o contenidos, casos que una comprobación exclusiva de superficies puede omitir.
+
+El valor predeterminado es **2 mm**. Puede modificarse para un ensayo concreto:
+
+```powershell
+python scripts/validar_ids.py --profile energy --space-overlap-tolerance-mm 5 "C:\ruta\modelo.ifc"
+```
+
+La tolerancia representa la penetración mínima que debe existir en los tres ejes de la caja común. No debe confundirse con las resoluciones del modelo analítico de Revit ni adoptarse automáticamente como tolerancia contractual.
+
+Resultados posibles:
+
+- **PASS**: todas las geometrías se han procesado y no se detectan solapes superiores a la tolerancia.
+- **FAIL**: se detecta al menos una intersección volumétrica.
+- **NOT_EVALUABLE**: uno o más espacios carecen de una geometría triangulada procesable.
+- **NOT_APPLICABLE**: el modelo contiene menos de dos espacios.
+
+Para cada incidencia, el informe registra los dos espacios, sus nombres y `GlobalId`, las plantas, el método de detección y las dimensiones XYZ de la caja común. También presenta el volumen de esa caja como **cota superior**, no como volumen exacto de intersección. En geometrías irregulares, ambos valores pueden diferir considerablemente.
+
+Los contactos entre caras, aristas o vértices no se consideran intersecciones si no existe penetración mayor que la tolerancia. En el perfil `energy`, **FAIL** y **NOT_EVALUABLE** son bloqueantes.
+
+Esta regla es una comprobación geométrica complementaria y no una faceta IDS 1.0. La implementación utiliza el [procesamiento geométrico](https://docs.ifcopenshell.org/ifcopenshell-python/geometry_processing.html) y el [árbol de detección de colisiones](https://docs.ifcopenshell.org/autoapi/ifcopenshell/geom/main/index.html) de IfcOpenShell 0.8.5.
+
 ## 10. Evolución prevista
 
 Después de probar el mapeado `EEM_EnergyExchange`, se añadirá una segunda especificación para exigir:

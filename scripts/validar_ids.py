@@ -14,7 +14,9 @@ from pathlib import Path
 from typing import Any
 
 import ifcopenshell
+import ifcopenshell.geom
 import ifcopenshell.validate
+import numpy as np
 from ifcopenshell.util.element import get_psets
 from ifctester import ids as ids_module
 from ifctester import reporter
@@ -276,7 +278,193 @@ def column_room_boundary_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
     }
 
 
-def energy_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
+def point_inside_mesh(
+    point: np.ndarray, vertices: np.ndarray, faces: np.ndarray, tolerance: float
+) -> bool:
+    """Return whether a point is inside a closed triangulated mesh using ray casting."""
+    triangles = vertices[faces]
+    origins = triangles[:, 0]
+    edge_1 = triangles[:, 1] - origins
+    edge_2 = triangles[:, 2] - origins
+    direction = np.array([1.0, 0.37139068, 0.52911383], dtype=float)
+    direction /= np.linalg.norm(direction)
+    h = np.cross(np.broadcast_to(direction, edge_2.shape), edge_2)
+    determinant = np.einsum("ij,ij->i", edge_1, h)
+    valid = np.abs(determinant) > 1e-12
+    inverse = np.zeros_like(determinant)
+    inverse[valid] = 1.0 / determinant[valid]
+    delta = point - origins
+    u = inverse * np.einsum("ij,ij->i", delta, h)
+    q = np.cross(delta, edge_1)
+    v = inverse * np.einsum("j,ij->i", direction, q)
+    distances = inverse * np.einsum("ij,ij->i", edge_2, q)
+    hits = distances[
+        valid
+        & (u >= -1e-10)
+        & (v >= -1e-10)
+        & ((u + v) <= 1.0 + 1e-10)
+        & (distances > max(tolerance * 0.1, 1e-9))
+    ]
+    if not len(hits):
+        return False
+    hits.sort()
+    merge_tolerance = max(tolerance * 0.1, 1e-8)
+    unique_count = 1 + int(np.count_nonzero(np.diff(hits) > merge_tolerance))
+    return unique_count % 2 == 1
+
+
+def mesh_has_internal_sample(
+    source: dict[str, Any], target: dict[str, Any], tolerance: float
+) -> bool:
+    """Test vertices, face centroids and centroid from one mesh inside another."""
+    vertices = source["vertices"]
+    faces = source["faces"]
+    samples = [vertices]
+    if len(faces):
+        samples.append(vertices[faces].mean(axis=1))
+    samples.append(vertices.mean(axis=0, keepdims=True))
+    candidates = np.vstack(samples)
+    target_min = target["bbox_min"] + tolerance
+    target_max = target["bbox_max"] - tolerance
+    candidates = candidates[np.all((candidates > target_min) & (candidates < target_max), axis=1)]
+    return any(
+        point_inside_mesh(point, target["vertices"], target["faces"], tolerance)
+        for point in candidates
+    )
+
+
+def mesh_is_closed(faces: np.ndarray) -> bool:
+    """A closed triangular manifold has exactly two faces incident to every edge."""
+    edge_counts: Counter[tuple[int, int]] = Counter()
+    for first, second, third in faces:
+        edge_counts.update(
+            tuple(sorted(edge))
+            for edge in ((first, second), (second, third), (third, first))
+        )
+    return bool(edge_counts) and all(count == 2 for count in edge_counts.values())
+
+
+def space_intersection_diagnostics(
+    ifc: ifcopenshell.file, tolerance_m: float = 0.002
+) -> dict[str, Any]:
+    """Detect volumetric intersections between IfcSpace geometries."""
+    spaces = ifc.by_type("IfcSpace", include_subtypes=False)
+    base = {
+        "rule": "EEM-GEO-001",
+        "title": "Los espacios no deben intersectar",
+        "tolerance_m": tolerance_m,
+        "space_count": len(spaces),
+    }
+    if len(spaces) < 2:
+        return {
+            **base,
+            "result": "NOT_APPLICABLE",
+            "status": True,
+            "explanation": "Se necesitan al menos dos IfcSpace para comprobar intersecciones.",
+            "spaces_with_geometry": 0,
+            "geometry_error_count": 0,
+            "geometry_errors": [],
+            "candidate_pair_count": 0,
+            "incident_count": 0,
+            "incidents": [],
+            "truncated": False,
+        }
+
+    settings = ifcopenshell.geom.settings()
+    settings.set("use-world-coords", True)
+    iterator = ifcopenshell.geom.iterator(settings, ifc, 1, include=spaces)
+    tree = ifcopenshell.geom.tree()
+    meshes: dict[int, dict[str, Any]] = {}
+    if iterator.initialize():
+        while True:
+            shape = iterator.get()
+            vertices = np.asarray(shape.geometry.verts, dtype=float).reshape((-1, 3))
+            faces = np.asarray(shape.geometry.faces, dtype=int).reshape((-1, 3))
+            if len(vertices) and len(faces) and mesh_is_closed(faces):
+                tree.add_element(shape)
+                meshes[shape.id] = {
+                    "element": ifc.by_id(shape.id),
+                    "vertices": vertices,
+                    "faces": faces,
+                    "bbox_min": vertices.min(axis=0),
+                    "bbox_max": vertices.max(axis=0),
+                }
+            if not iterator.next():
+                break
+
+    geometry_errors = []
+    for space in spaces:
+        if space.id() not in meshes:
+            geometry_errors.append(
+                {
+                    **entity_reference(space),
+                    "reason": "No se obtuvo una malla triangulada cerrada y procesable.",
+                }
+            )
+    candidates = 0
+    incidents: list[dict[str, Any]] = []
+    ordered = [meshes[space.id()] for space in spaces if space.id() in meshes]
+    for index, first in enumerate(ordered):
+        for second in ordered[index + 1:]:
+            overlap = np.minimum(first["bbox_max"], second["bbox_max"]) - np.maximum(
+                first["bbox_min"], second["bbox_min"]
+            )
+            if np.any(overlap <= tolerance_m):
+                continue
+            candidates += 1
+            collision = bool(
+                tree.clash_collision_many(
+                    [first["element"]], [second["element"]], allow_touching=False
+                )
+            )
+            contained = (
+                mesh_has_internal_sample(first, second, tolerance_m)
+                or mesh_has_internal_sample(second, first, tolerance_m)
+            )
+            if not collision and not contained:
+                continue
+            incidents.append(
+                {
+                    "space_a": entity_reference(first["element"]),
+                    "space_b": entity_reference(second["element"]),
+                    "storey_a": containing_storey_name(first["element"]),
+                    "storey_b": containing_storey_name(second["element"]),
+                    "detection": {
+                        "surface_collision": collision,
+                        "containment_sample": contained,
+                    },
+                    "bbox_overlap_dimensions_m": [round(float(value), 6) for value in overlap],
+                    "bbox_overlap_volume_upper_bound_m3": round(float(np.prod(overlap)), 6),
+                }
+            )
+
+    if geometry_errors:
+        result = "NOT_EVALUABLE"
+        explanation = "No pudo procesarse la geometría de todos los IfcSpace."
+    elif incidents:
+        result = "FAIL"
+        explanation = "Se han detectado intersecciones volumétricas entre espacios."
+    else:
+        result = "PASS"
+        explanation = "No se han detectado intersecciones superiores a la tolerancia."
+    return {
+        **base,
+        "result": result,
+        "status": result in {"PASS", "NOT_APPLICABLE"},
+        "explanation": explanation,
+        "spaces_with_geometry": len(meshes),
+        "geometry_error_count": len(geometry_errors),
+        "geometry_errors": geometry_errors[:500],
+        "candidate_pair_count": candidates,
+        "incident_count": len(incidents),
+        "incidents": incidents[:500],
+        "truncated": len(incidents) > 500 or len(geometry_errors) > 500,
+    }
+
+
+def energy_diagnostics(
+    ifc: ifcopenshell.file, overlap_tolerance_m: float = 0.002
+) -> dict[str, Any]:
     coverage = [
         property_coverage(ifc, ["IfcSpace"], "Pset_SpaceCommon", "Reference"),
         property_coverage(ifc, ["IfcWall", "IfcWallStandardCase"], "Pset_WallCommon", "IsExternal"),
@@ -294,6 +482,7 @@ def energy_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
     materials = len(ifc.by_type("IfcRelAssociatesMaterial"))
     quantities = quantity_coverage(ifc)
     column_boundaries = column_room_boundary_diagnostics(ifc)
+    space_intersections = space_intersection_diagnostics(ifc, overlap_tolerance_m)
     warnings = []
     if quantities["space_total"] and boundaries == 0:
         warnings.append("Existen espacios, pero no se han exportado IfcRelSpaceBoundary.")
@@ -307,17 +496,26 @@ def energy_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
         )
     elif column_boundaries["result"] == "NOT_EVALUABLE":
         warnings.append(f"EEM-SPA-001: {column_boundaries['explanation']}")
+    if space_intersections["result"] == "FAIL":
+        warnings.append(
+            f"EEM-GEO-001: {space_intersections['incident_count']} pares de espacios intersectan."
+        )
+    elif space_intersections["result"] == "NOT_EVALUABLE":
+        warnings.append(f"EEM-GEO-001: {space_intersections['explanation']}")
     return {
         "space_boundaries": boundaries,
         "material_relationships": materials,
         "space_quantities": quantities,
         "column_room_boundaries": column_boundaries,
+        "space_intersections": space_intersections,
         "property_coverage": coverage,
         "warnings": warnings,
     }
 
 
-def preflight(ifc_path: Path, output_dir: Path) -> tuple[ifcopenshell.file, dict[str, Any]]:
+def preflight(
+    ifc_path: Path, output_dir: Path, overlap_tolerance_m: float = 0.002
+) -> tuple[ifcopenshell.file, dict[str, Any]]:
     ifc = ifcopenshell.open(str(ifc_path))
     schema = schema_diagnostics(ifc_path)
     global_ids = global_id_diagnostics(ifc)
@@ -339,7 +537,7 @@ def preflight(ifc_path: Path, output_dir: Path) -> tuple[ifcopenshell.file, dict
         "inventory_exact": inventory,
         "global_ids": global_ids,
         "schema_validation": schema,
-        "energy_diagnostics": energy_diagnostics(ifc),
+        "energy_diagnostics": energy_diagnostics(ifc, overlap_tolerance_m),
     }
     path = output_dir / f"{safe_name(ifc_path)}__preflight.json"
     path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -424,6 +622,18 @@ def render_summary(summary: dict[str, Any], output_path: Path) -> None:
             "</tr>"
             for item in column_rule["incidents"]
         ) or "<tr><td colspan='5'>Ninguna</td></tr>"
+        intersection_rule = energy["space_intersections"]
+        intersection_incidents = "".join(
+            "<tr>"
+            f"<td>{html.escape(str(item['space_a'].get('global_id') or ''))}</td>"
+            f"<td>{html.escape(str(item['space_a'].get('name') or ''))}</td>"
+            f"<td>{html.escape(str(item['space_b'].get('global_id') or ''))}</td>"
+            f"<td>{html.escape(str(item['space_b'].get('name') or ''))}</td>"
+            f"<td>{html.escape(' × '.join(str(value) for value in item['bbox_overlap_dimensions_m']))}</td>"
+            f"<td>{item['bbox_overlap_volume_upper_bound_m3']}</td>"
+            "</tr>"
+            for item in intersection_rule["incidents"]
+        ) or "<tr><td colspan='6'>Ninguna</td></tr>"
         rows.append(
             f"<section><h2>{html.escape(Path(model['ifc']).name)}</h2>"
             f"<p><strong>Resultado:</strong> {'CUMPLE' if model['status'] else 'NO CUMPLE'} · "
@@ -445,6 +655,14 @@ def render_summary(summary: dict[str, Any], output_path: Path) -> None:
             f"<p><strong>Resultado:</strong> {html.escape(column_rule['result'])}. "
             f"{html.escape(column_rule['explanation'])}</p>"
             f"<table><tr><th>GlobalId espacio</th><th>Espacio</th><th>GlobalId pilar</th><th>Pilar</th><th>Planta</th></tr>{column_incidents}</table>"
+            f"<h4>{html.escape(intersection_rule['rule'])} — Intersecciones de espacios</h4>"
+            f"<p><strong>Resultado:</strong> {html.escape(intersection_rule['result'])}. "
+            f"{html.escape(intersection_rule['explanation'])} "
+            f"Tolerancia: {intersection_rule['tolerance_m'] * 1000:g} mm.</p>"
+            f"<p>Espacios procesados: {intersection_rule['spaces_with_geometry']}/{intersection_rule['space_count']}. "
+            f"Pares candidatos: {intersection_rule['candidate_pair_count']}. "
+            f"Incidencias: {intersection_rule['incident_count']}.</p>"
+            f"<table><tr><th>GlobalId A</th><th>Espacio A</th><th>GlobalId B</th><th>Espacio B</th><th>Solape XYZ (m)</th><th>Cota superior (m³)</th></tr>{intersection_incidents}</table>"
             f"<table><tr><th>Propiedad</th><th>Cobertura</th><th>Porcentaje</th></tr>{coverage}</table>"
             f"<h4>Advertencias energéticas</h4><ul>{warnings}</ul>"
             f"<h3>Inventario exacto</h3><table><tr><th>Entidad</th><th>Número</th></tr>{inventory}</table>"
@@ -480,11 +698,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--audit-only", action="store_true", help="Comprueba los IDS sin validar ningún IFC."
     )
+    parser.add_argument(
+        "--space-overlap-tolerance-mm", type=float, default=2.0,
+        help="Penetración mínima para EEM-GEO-001, expresada en milímetros (predeterminado: 2)."
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    if args.space_overlap_tolerance_mm < 0:
+        print("La tolerancia de solape no puede ser negativa.", file=sys.stderr)
+        return 2
     ids_paths = args.ids_files or PROFILES[args.profile]
     missing = [path for path in [*ids_paths, *args.ifc] if not path.is_file()]
     if missing:
@@ -507,13 +732,18 @@ def main() -> int:
     models: list[dict[str, Any]] = []
     for ifc_path in args.ifc:
         try:
-            ifc, preflight_result = preflight(ifc_path, args.output)
+            ifc, preflight_result = preflight(
+                ifc_path, args.output, args.space_overlap_tolerance_mm / 1000.0
+            )
             ids_results = [
                 validate_pair(ifc, ifc_path, ids_path, args.output) for ids_path in ids_paths
             ]
             energy_rule_status = (
                 args.profile != "energy"
-                or preflight_result["energy_diagnostics"]["column_room_boundaries"]["status"]
+                or (
+                    preflight_result["energy_diagnostics"]["column_room_boundaries"]["status"]
+                    and preflight_result["energy_diagnostics"]["space_intersections"]["status"]
+                )
             )
             status = (
                 preflight_result["status"]
