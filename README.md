@@ -7,11 +7,16 @@ Manual técnico vivo sobre preparación geométrica en Autodesk Revit, intercamb
 - Autodesk Revit 2026 y posteriores.
 - Open BIM Analytical Model y CYPETHERM HE Plus.
 - TeKton3D TK-IFC y TK-CEEP.
-- Arquitectura preparada para incorporar DesignBuilder y otras aplicaciones.
+- OpenStudio y EnergyPlus como siguiente ampliación prioritaria.
+- Arquitectura preparada para incorporar DesignBuilder y otras aplicaciones en el futuro.
 
 ## Estado
 
-Versión `0.2.0` en revisión - Revit 2026, preparación IFC y procedimiento QA/QC. Las páginas identifican por separado los contenidos confirmados, recomendados, pendientes de validación y obsoletos.
+Versión `0.3.0` en revisión - Revit 2026, preparación IFC, aplicaciones receptoras y procedimiento QA/QC. Las páginas identifican por separado los contenidos confirmados, recomendados, pendientes de validación y obsoletos.
+
+## Continuidad del trabajo
+
+Consulta [MEMORIA-CONTINUIDAD.md](MEMORIA-CONTINUIDAD.md) para retomar el proyecto en otro equipo. Contiene las decisiones vigentes, el estado real de cada capítulo, los ensayos pendientes y las instrucciones de preparación del entorno.
 
 ## Desarrollo local
 
