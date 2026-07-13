@@ -29,8 +29,8 @@ Esta página convierte el índice general en entregas versionadas. El orden resp
 ## Versión 0.3.0 - Flujo CYPE
 
 - [x] BIMserver.center y Plugin Open BIM-Revit.
-- [ ] Generación en Open BIM Analytical Model.
-- [ ] Validación de espacios, superficies, aristas y sombras.
+- [x] Generación en Open BIM Analytical Model.
+- [x] Validación de espacios, superficies, aristas y sombras.
 - [ ] Transferencia a CYPETHERM HE Plus.
 - [ ] Actualización y sincronización.
 - [ ] Checklist y errores frecuentes.
