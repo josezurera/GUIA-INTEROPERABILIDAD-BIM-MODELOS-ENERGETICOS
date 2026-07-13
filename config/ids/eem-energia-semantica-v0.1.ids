@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>EEM requisitos semánticos energéticos</title>
+        <copyright>CC BY 4.0</copyright>
+        <version>0.1.0</version>
+        <description>Propiedades necesarias o recomendadas para interpretar el IFC como modelo energético.</description>
+        <author>joseazurera@gmail.com</author>
+        <date>2026-07-12</date>
+        <purpose>QA/QC energético</purpose>
+        <milestone>Versión 0.2</milestone>
+    </info>
+    <specifications>
+        <specification name="[EEM-ENE-001] Espacios con referencia" ifcVersion="IFC2X3 IFC4" instructions="IfcSpace debe incluir Pset_SpaceCommon.Reference.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCSPACE</simpleValue></name></entity></applicability>
+            <requirements><property cardinality="required"><propertySet><simpleValue>Pset_SpaceCommon</simpleValue></propertySet><baseName><simpleValue>Reference</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-002] Muros clasificados interior/exterior" ifcVersion="IFC2X3 IFC4" instructions="IfcWall debe incluir Pset_WallCommon.IsExternal.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCWALL</simpleValue></name></entity></applicability>
+            <requirements><property dataType="IFCBOOLEAN" cardinality="required"><propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-003] Muros estándar IFC2x3 clasificados interior/exterior" ifcVersion="IFC2X3" instructions="IfcWallStandardCase debe incluir Pset_WallCommon.IsExternal.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCWALLSTANDARDCASE</simpleValue></name></entity></applicability>
+            <requirements><property dataType="IFCBOOLEAN" cardinality="required"><propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-004] Losas clasificadas interior/exterior" ifcVersion="IFC2X3 IFC4" instructions="IfcSlab debe incluir Pset_SlabCommon.IsExternal.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCSLAB</simpleValue></name></entity></applicability>
+            <requirements><property dataType="IFCBOOLEAN" cardinality="required"><propertySet><simpleValue>Pset_SlabCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-005] Cubiertas clasificadas interior/exterior" ifcVersion="IFC2X3 IFC4" instructions="IfcRoof debe incluir Pset_RoofCommon.IsExternal.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCROOF</simpleValue></name></entity></applicability>
+            <requirements><property dataType="IFCBOOLEAN" cardinality="required"><propertySet><simpleValue>Pset_RoofCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-006] Ventanas clasificadas interior/exterior" ifcVersion="IFC2X3 IFC4" instructions="IfcWindow debe incluir Pset_WindowCommon.IsExternal.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCWINDOW</simpleValue></name></entity></applicability>
+            <requirements><property dataType="IFCBOOLEAN" cardinality="required"><propertySet><simpleValue>Pset_WindowCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-007] Puertas clasificadas interior/exterior" ifcVersion="IFC2X3 IFC4" instructions="IfcDoor debe incluir Pset_DoorCommon.IsExternal.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCDOOR</simpleValue></name></entity></applicability>
+            <requirements><property dataType="IFCBOOLEAN" cardinality="required"><propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-008] Muros con transmitancia" ifcVersion="IFC2X3 IFC4" instructions="IfcWall debe incluir Pset_WallCommon.ThermalTransmittance.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCWALL</simpleValue></name></entity><property dataType="IFCBOOLEAN"><propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName><value><simpleValue>True</simpleValue></value></property></applicability>
+            <requirements><property dataType="IFCTHERMALTRANSMITTANCEMEASURE" cardinality="required"><propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet><baseName><simpleValue>ThermalTransmittance</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-009] Muros estándar IFC2x3 con transmitancia" ifcVersion="IFC2X3" instructions="IfcWallStandardCase debe incluir Pset_WallCommon.ThermalTransmittance.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCWALLSTANDARDCASE</simpleValue></name></entity><property dataType="IFCBOOLEAN"><propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName><value><simpleValue>True</simpleValue></value></property></applicability>
+            <requirements><property dataType="IFCTHERMALTRANSMITTANCEMEASURE" cardinality="required"><propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet><baseName><simpleValue>ThermalTransmittance</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-010] Losas con transmitancia" ifcVersion="IFC2X3 IFC4" instructions="IfcSlab debe incluir Pset_SlabCommon.ThermalTransmittance.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCSLAB</simpleValue></name></entity><property dataType="IFCBOOLEAN"><propertySet><simpleValue>Pset_SlabCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName><value><simpleValue>True</simpleValue></value></property></applicability>
+            <requirements><property dataType="IFCTHERMALTRANSMITTANCEMEASURE" cardinality="required"><propertySet><simpleValue>Pset_SlabCommon</simpleValue></propertySet><baseName><simpleValue>ThermalTransmittance</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-011] Cubiertas con transmitancia" ifcVersion="IFC2X3 IFC4" instructions="IfcRoof debe incluir Pset_RoofCommon.ThermalTransmittance.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCROOF</simpleValue></name></entity><property dataType="IFCBOOLEAN"><propertySet><simpleValue>Pset_RoofCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName><value><simpleValue>True</simpleValue></value></property></applicability>
+            <requirements><property dataType="IFCTHERMALTRANSMITTANCEMEASURE" cardinality="required"><propertySet><simpleValue>Pset_RoofCommon</simpleValue></propertySet><baseName><simpleValue>ThermalTransmittance</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-012] Ventanas con transmitancia" ifcVersion="IFC2X3 IFC4" instructions="IfcWindow debe incluir Pset_WindowCommon.ThermalTransmittance.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCWINDOW</simpleValue></name></entity><property dataType="IFCBOOLEAN"><propertySet><simpleValue>Pset_WindowCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName><value><simpleValue>True</simpleValue></value></property></applicability>
+            <requirements><property dataType="IFCTHERMALTRANSMITTANCEMEASURE" cardinality="required"><propertySet><simpleValue>Pset_WindowCommon</simpleValue></propertySet><baseName><simpleValue>ThermalTransmittance</simpleValue></baseName></property></requirements>
+        </specification>
+        <specification name="[EEM-ENE-013] Puertas con transmitancia" ifcVersion="IFC2X3 IFC4" instructions="IfcDoor debe incluir Pset_DoorCommon.ThermalTransmittance.">
+            <applicability minOccurs="0" maxOccurs="unbounded"><entity><name><simpleValue>IFCDOOR</simpleValue></name></entity><property dataType="IFCBOOLEAN"><propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet><baseName><simpleValue>IsExternal</simpleValue></baseName><value><simpleValue>True</simpleValue></value></property></applicability>
+            <requirements><property dataType="IFCTHERMALTRANSMITTANCEMEASURE" cardinality="required"><propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet><baseName><simpleValue>ThermalTransmittance</simpleValue></baseName></property></requirements>
+        </specification>
+    </specifications>
+</ids>

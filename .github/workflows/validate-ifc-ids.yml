@@ -1,0 +1,67 @@
+name: Validar IFC con IDS
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/ids/**"
+      - "scripts/validar_ids.py"
+      - "tests/ifc/**/*.ifc"
+      - "requirements-ids.txt"
+  pull_request:
+    paths:
+      - "config/ids/**"
+      - "scripts/validar_ids.py"
+      - "tests/ifc/**/*.ifc"
+      - "requirements-ids.txt"
+
+jobs:
+  ids:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar validador
+        run: pip install -r requirements-ids.txt
+
+      - name: Auditar especificación IDS
+        run: python scripts/validar_ids.py --profile energy --audit-only
+
+      - name: Probar reglas QA/QC complementarias
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Localizar IFC de ensayo
+        id: models
+        shell: bash
+        run: |
+          mapfile -d '' files < <(find tests/ifc -type f -iname '*.ifc' -print0 2>/dev/null || true)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "No hay IFC en tests/ifc; se ha auditado únicamente el IDS."
+          else
+            printf '%s\0' "${files[@]}" > ifc-files.list
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validar IFC
+        if: steps.models.outputs.found == 'true'
+        shell: bash
+        run: |
+          mapfile -d '' files < ifc-files.list
+          python scripts/validar_ids.py --profile minimum --output reports/ids "${files[@]}"
+
+      - name: Publicar informes
+        if: always() && steps.models.outputs.found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: informes-validacion-ids
+          path: reports/ids
+          if-no-files-found: error
+          retention-days: 30

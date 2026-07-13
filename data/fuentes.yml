@@ -26,4 +26,367 @@ fuentes:
     url: https://www.imventa.com/modelo-analitico-tekton3d-desde-ifc
     fecha_consulta: 2026-07-11
     estado: revisada
-
+  - id: ENERGYPLUS-ESSENTIALS
+    titulo: EnergyPlus Essentials - Thermal Zones and Surfaces
+    entidad: EnergyPlus
+    tipo: documentacion_oficial
+    url: https://energyplus.readthedocs.io/en/stable/essentials/essentials.html
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: ENERGYPLUS-IOR-25.1
+    titulo: EnergyPlus 25.1 Input Output Reference
+    entidad: EnergyPlus
+    tipo: referencia_oficial
+    url: https://energyplus.net/assets/nrel_custom/pdfs/pdfs_v25.1.0/InputOutputReference.pdf
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: BUILDINGSMART-IFC4.3
+    titulo: IFC 4.3.2 Documentation
+    entidad: buildingSMART International
+    tipo: estandar_oficial
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: BUILDINGSMART-MVD
+    titulo: Model View Definitions
+    entidad: buildingSMART International
+    tipo: documentacion_oficial
+    url: https://technical.buildingsmart.org/standards/ifc/mvd/
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: AUTODESK-RVT2026-IFC-EXPORT
+    titulo: Export a Model to IFC
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/view/RVT/2026/ENU/?guid=GUID-14037C31-EBAD-41A8-9099-E6DD65BB626E
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: AUTODESK-RVT2026-IFC-SETUP
+    titulo: Customize the IFC Setup
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-587E3CB5-CA76-4F06-B8E6-08F0C71945F6.htm
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: AUTODESK-RVT2026-ROOM-VOLUME
+    titulo: How Room Volume is Computed
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-06B6BB18-C968-4A7E-9147-65C294288F64.htm
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: AUTODESK-RVT2026-ANALYTICAL
+    titulo: About Creating Energy Analytical Models from Architectural Elements
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-9DB01490-A0A1-4DA2-A9A9-4F766958017A.htm
+    fecha_consulta: 2026-07-11
+    estado: revisada
+  - id: AUTODESK-RVT2026-POSITIONING
+    titulo: About Positioning
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-9DD9DCDB-F80F-4FCE-BA87-FE49B66936CF.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-NORTH
+    titulo: About Project North and True North
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-ED5BC6E5-0B9D-477C-8F08-692A44E28646.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-PBP
+    titulo: Move the Project Base Point
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-A973AC69-7095-4C09-BD7E-E3B6EAF36ABB.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-LEVEL-PROPERTIES
+    titulo: Level Instance Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Model/files/GUID-5F22D076-345B-4539-9362-483CF898A77E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-ROOM-VOLUME-ABOUT
+    titulo: About Room Volume
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-FA3F3769-F8C7-4C7F-8DB1-79EE6BFF8496.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ROOM-AREA
+    titulo: About Room Area
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-9348929C-18CA-40AC-BB64-71D01CC52F2B.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ROOM-CEILINGS
+    titulo: About Ceilings and Floors in Room Volume Computations
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-5BD1C889-6351-4AB8-BAB1-D9257E28C62A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-LINK-ROOM-BOUNDING
+    titulo: Use Room Boundaries in a Linked Model
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-64AF3A48-C121-4F26-B0BF-CDF93B389F75.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-MEP-SPACES
+    titulo: Spaces
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-MEPEng/files/GUID-48509199-F248-4B61-9DC6-CEFBE2E302F2.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-MEP-ZONES
+    titulo: Zones
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-MEPEng/files/GUID-C4115E01-4FD5-406E-B738-5AB927235240.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-PREPARE-ANALYSIS
+    titulo: Prepare a Model for Analysis
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-CarbonInsights/files/carbon_insights/ci_workflow/GUID-48704F2C-5BD5-4B70-9CA6-0FA134BC1CAC.html
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-SPACE-RESOLUTION
+    titulo: Analytical Space Resolution
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-A68ABA83-4B82-4EF7-AF6B-38EADC36794E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ATTACH-WALLS
+    titulo: Attach Walls to Other Elements
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-ED60CE62-B955-45E9-9D7D-00F1552D858C.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-LAYER-FUNCTION
+    titulo: About Applying a Function and a Priority to a Layer of a Compound Structure
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-1CCD1005-CBDA-4338-8D60-489095D4BB25.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-COMPOUND-VIDEO
+    titulo: "Video: Editing Compound Structures"
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-GetStarted/files/GUID-475CF556-2EAE-4D6E-906D-4CE6BBE578D9.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ENERGY-SETTINGS
+    titulo: Energy Settings
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-36B2F66A-E423-4D9C-B266-3ABA57573F4A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-WINDOW-TYPE
+    titulo: Window Type Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-1C03B7DF-89EE-48B1-B501-571745B1D513.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-DOOR-TYPE
+    titulo: Door Type Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-ArchDesign/files/GUID-29905EE0-3D7D-422E-A627-5A7A8AC34D7B.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-EAM-PROPERTIES
+    titulo: Energy Analytical Model Properties
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-DFC1AACB-BD07-4E0F-9777-0BC2EE946F9E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-EAM-SURFACES
+    titulo: About Surfaces in the Energy Analytical Model
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-B22FC577-67B9-4922-B45A-6DA2963FD6F7.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-SUN-PATH
+    titulo: About the Sun Path
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-CA024825-3211-4354-AC06-D81751AADA1A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-SOLAR-WORKFLOW
+    titulo: "Workflow: Solar Studies"
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-413A0469-C3BD-4524-8C5F-B80B900A84C7.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-SOLAR-STUDIES
+    titulo: Solar Studies
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-F68D32C9-0391-4115-95C5-90DCD115426A.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-EAM-MASSING
+    titulo: "Create the Energy Analytical Model: Massing"
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Analyze/files/GUID-D731CFF1-3ACC-4CA8-9802-959F4774A0B5.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-INTERACTIVE-SOLAR
+    titulo: Interactive Solar Studies
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-WhatsNew/files/GUID-8276FAD1-8650-4728-8060-42843062915E.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-EAM-GAPS
+    titulo: Energy Analytical Model Contains Gaps and Jagged Edges
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Troubleshooting/files/GUID-3BB183C2-8F74-4016-8094-D7046C3EC683.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-EAM-FAILURE
+    titulo: Energy Analytical Model Creation Failure
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Troubleshooting/files/GUID-88E7F647-07CE-4B2C-BB3A-F1EC7F7E3628.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT-SURFACE-RESOLUTION
+    titulo: Analytical Surface Resolution
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-3FAD7687-575C-43B4-B21A-D6085DF72912.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT-UNDERSTAND-EAM
+    titulo: Understanding the Energy Analytical Model
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Analyze/files/GUID-A261EF48-05E7-45B4-B585-77C036C18CFE.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_pendiente_equivalente_2026
+  - id: AUTODESK-RVT2026-SHARED-PROJECT-PARAMS
+    titulo: Create Shared Project Parameters
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-114C68A9-FF2B-4D4C-A2DF-3AE7E1F174C8.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-EXPORT-SHARED-PARAMS
+    titulo: Export Shared Parameters to a Shared Parameter File
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-AD648C07-0C2F-478D-AD9D-4F9A5FF515E6.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-USER-PSETS
+    titulo: Export User Defined Properties to IFC
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2027/ENU/RevitLT-DocumentPresent/files/GUID-0968B3FF-832B-4155-8B36-E848ACC97B95.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada_para_funcion_2026_3
+  - id: AUTODESK-RVT2026-SUPPORTED-IFC
+    titulo: Supported IFC Classes
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-EE6C0CF8-7671-4DCC-B0C7-EEA7513C90A9.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-SPACE
+    titulo: "IFC 4.3.2 Documentation: IfcSpace"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcSpace.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-WALLCOMMON
+    titulo: "IFC 4.3.2 Documentation: Pset_WallCommon"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/Pset_WallCommon.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-WINDOW
+    titulo: "IFC 4.3.2 Documentation: IfcWindow"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWindow.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC432-DOOR
+    titulo: "IFC 4.3.2 Documentation: IfcDoor"
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcDoor.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-IFC-OVERVIEW
+    titulo: Exporting to Industry Foundation Classes (IFC)
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-6EB68CEC-6C17-4B16-A509-30537F666C1F.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-ABOUT-IFC
+    titulo: About Revit and IFC
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-6708CFD6-0AD7-461F-ADE8-6527423EC895.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: AUTODESK-RVT2026-IFC-MAPPING
+    titulo: Manage IFC Export Mapping Settings
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ENU/Revit-DocumentPresent/files/GUID-15D37541-CEAD-4797-9B6E-5267534CC2C0.htm
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IDS-1
+    titulo: Information Delivery Specification (IDS)
+    entidad: buildingSMART International
+    tipo: estandar
+    url: https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: BSI-IFC-VALIDATION
+    titulo: IFC Validation Service
+    entidad: buildingSMART International
+    tipo: servicio_oficial
+    url: https://www.buildingsmart.org/users/services/validation-service/
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: IFCOPENSHELL-IFCTESTER-085
+    titulo: IfcTester documentation 0.8.5
+    entidad: IfcOpenShell
+    tipo: documentacion_oficial
+    url: https://docs.ifcopenshell.org/ifctester.html
+    fecha_consulta: 2026-07-12
+    estado: revisada
+  - id: IFCOPENSHELL-VALIDATION-085
+    titulo: Validation
+    entidad: IfcOpenShell
+    tipo: documentacion_oficial
+    url: https://docs.ifcopenshell.org/ifcopenshell-python/validation.html
+    fecha_consulta: 2026-07-12
+    estado: revisada

@@ -1,0 +1,46 @@
+name: Publicar versión y PDF
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar generadores
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 libffi-dev shared-mime-info
+          pip install -r requirements.txt -r requirements-pdf.txt
+
+      - name: Generar manual PDF
+        env:
+          ENABLE_PDF_EXPORT: "1"
+        run: mkdocs build --strict -f mkdocs-pdf.yml
+
+      - name: Publicar GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: site/pdf/guia-interoperabilidad-bim-modelos-energeticos.pdf
+
+      - name: Guardar PDF de prueba
+        uses: actions/upload-artifact@v4
+        with:
+          name: manual-pdf-${{ github.ref_name }}
+          path: site/pdf/guia-interoperabilidad-bim-modelos-energeticos.pdf

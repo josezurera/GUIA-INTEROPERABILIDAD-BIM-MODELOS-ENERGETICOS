@@ -59,6 +59,7 @@ markdown_extensions:
 
 nav:
   - Inicio: index.md
+  - Hoja de ruta: hoja-ruta.md
   - Fundamentos:
       - Del modelo arquitectónico al energético: 01-fundamentos/modelos.md
       - Requisitos de los motores: 01-fundamentos/requisitos-motores.md
@@ -68,18 +69,29 @@ nav:
   - Revit:
       - Alcance y versiones: 03-revit/index.md
       - Estrategia de modelado: 03-revit/estrategia-modelado.md
+      - Coordenadas, orientación y niveles: 03-revit/coordenadas-orientacion-niveles.md
+      - Habitaciones, espacios y zonas: 03-revit/habitaciones-espacios-zonas.md
+      - Preparación de la envolvente: 03-revit/preparacion-envolvente.md
+      - Huecos y elementos transparentes: 03-revit/huecos-elementos-transparentes.md
+      - Sombras y geometría exterior: 03-revit/sombras-geometria-exterior.md
+      - Geometrías de riesgo: 03-revit/geometrias-riesgo.md
+      - Parámetros y mapeado IFC: 03-revit/parametros-mapeado-ifc.md
       - Exportación IFC: 03-revit/exportacion-ifc.md
+      - Ensayo Revit 2026–IFC–MVD: 03-revit/ensayo-revit-2026-mvd.md
   - Aplicaciones:
       - Visión general: 04-aplicaciones/index.md
       - CYPE:
+          - BIMserver.center y Plugin Open BIM - Revit: 04-aplicaciones/cype/bimserver-plugin-revit.md
           - Open BIM Analytical Model: 04-aplicaciones/cype/open-bim-analytical-model.md
           - CYPETHERM HE Plus: 04-aplicaciones/cype/cypetherm-he-plus.md
       - TeKton3D:
           - TK-IFC y TK-CEEP: 04-aplicaciones/tekton3d/index.md
           - Importación y vinculación: 04-aplicaciones/tekton3d/importacion-vinculacion.md
+      - OpenStudio: 04-aplicaciones/openstudio/index.md
       - DesignBuilder: 04-aplicaciones/designbuilder/index.md
   - Validación:
       - Estrategia QA/QC: 05-validacion/index.md
+      - Validación IFC mediante IDS: 05-validacion/validacion-ids.md
       - Registro de incidencias: 05-validacion/incidencias.md
   - Comparativas:
       - Matriz de compatibilidad: 06-comparativas/compatibilidad.md

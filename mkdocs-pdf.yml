@@ -1,0 +1,20 @@
+INHERIT: mkdocs.yml
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      locale: es
+      fallback_to_build_date: true
+  - glightbox
+  - to-pdf:
+      author: Jose A. Zurera
+      copyright: CC BY 4.0
+      cover: true
+      toc_title: Índice
+      toc_level: 3
+      ordered_chapter_level: 3
+      output_path: pdf/guia-interoperabilidad-bim-modelos-energeticos.pdf
+      enabled_if_env: ENABLE_PDF_EXPORT
+

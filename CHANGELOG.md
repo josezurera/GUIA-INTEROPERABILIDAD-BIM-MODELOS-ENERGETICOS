@@ -6,14 +6,37 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 
 ### Añadido
 
-- Estructura inicial del manual.
-- Separación entre reglas comunes y módulos por aplicación.
-- Registro de fuentes, compatibilidad y requisitos.
-- Configuración de MkDocs Material y GitHub Pages.
+- Hoja de ruta editorial para las versiones 0.2.0 a 1.0.0.
+- Desarrollo del capítulo "Del modelo arquitectónico al modelo energético".
+- Desarrollo del capítulo "Requisitos comunes de los motores de cálculo".
+- Desarrollo del capítulo "IFC aplicado al análisis energético".
+- Desarrollo del capítulo "Espacios, zonas y límites espaciales".
+- Desarrollo del capítulo "Estrategia general de modelado en Revit 2026".
+- Desarrollo del capítulo "Coordenadas, orientación y niveles en Revit 2026".
+- Desarrollo del capítulo "Habitaciones, espacios y zonas térmicas en Revit 2026".
+- Desarrollo del capítulo "Preparación de la envolvente térmica en Revit 2026".
+- Desarrollo del capítulo "Huecos y elementos transparentes en Revit 2026".
+- Desarrollo del capítulo "Sombras y geometría exterior en Revit 2026".
+- Desarrollo del capítulo "Geometrías de riesgo en Revit 2026".
+- Desarrollo del capítulo "Parámetros y mapeado IFC para análisis energético".
+- Desarrollo del capítulo "Configuraciones de exportación IFC desde Revit 2026".
+- Desarrollo del procedimiento "QA/QC de Revit e IFC para análisis energético".
+- Ampliación del registro de incidencias y del checklist operativo Revit–IFC.
+- Incorporación de validación automática IFC mediante IDS 1.0 e IfcTester.
+- Primera especificación `eem-ifc-minimo-v0.1.ids` e informes HTML/JSON en GitHub Actions.
+- Prevalidación del esquema IFC, inventario de entidades y diagnóstico de GlobalIds.
+- Complemento IDS para entidades IFC2x3 y resumen HTML consolidado.
+- Perfil IDS energético para espacios, clasificación exterior y transmitancias.
+- Métricas de límites espaciales, materiales, cantidades y cobertura de propiedades.
+- Vista previa HTML automática para cada solicitud de cambios.
+- Generación automática del PDF en las versiones publicadas.
+
+### Cambiado
+
+- El capítulo conceptual incorpora modelos, superficies, aristas, sombras, criterios de simplificación y trazabilidad.
 
 ## [0.1.0] - 2026-07-11
 
 ### Añadido
 
 - Inicio formal del repositorio documental.
-

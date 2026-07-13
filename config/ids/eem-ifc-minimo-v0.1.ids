@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>EEM QA/QC IFC mínimo</title>
+        <copyright>CC BY 4.0</copyright>
+        <version>0.1.0</version>
+        <description>Requisitos mínimos de identidad y estructura para IFC destinado a análisis energético.</description>
+        <author>joseazurera@gmail.com</author>
+        <date>2026-07-12</date>
+        <purpose>QA/QC</purpose>
+        <milestone>Versión 0.2</milestone>
+    </info>
+    <specifications>
+        <specification name="[EEM-IDS-001] Proyecto identificado" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-001" instructions="El IFC debe contener un proyecto con nombre.">
+            <applicability minOccurs="1" maxOccurs="1">
+                <entity><name><simpleValue>IFCPROJECT</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-002] Emplazamiento identificado" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-002" instructions="El IFC debe contener un emplazamiento con nombre.">
+            <applicability minOccurs="1" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCSITE</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-003] Edificio identificado" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-003" instructions="El IFC debe contener al menos un edificio con nombre.">
+            <applicability minOccurs="1" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCBUILDING</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-004] Plantas identificadas" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-004" instructions="Cada planta IFC debe disponer de nombre.">
+            <applicability minOccurs="1" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCBUILDINGSTOREY</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-005] Espacios identificados" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-005" instructions="El modelo energético debe incluir espacios IFC con nombre.">
+            <applicability minOccurs="1" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCSPACE</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-006] Muros identificados cuando existan" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-006" instructions="Todo muro exportado debe disponer de nombre.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCWALL</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-007] Losas identificadas cuando existan" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-007" instructions="Toda losa exportada debe disponer de nombre.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCSLAB</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-008] Cubiertas identificadas cuando existan" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-008" instructions="Toda cubierta exportada debe disponer de nombre.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCROOF</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-009] Ventanas identificadas cuando existan" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-009" instructions="Toda ventana exportada debe disponer de nombre.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCWINDOW</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+        <specification name="[EEM-IDS-010] Puertas identificadas cuando existan" ifcVersion="IFC2X3 IFC4" identifier="EEM-IDS-010" instructions="Toda puerta exportada debe disponer de nombre.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity><name><simpleValue>IFCDOOR</simpleValue></name></entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required"><name><simpleValue>Name</simpleValue></name></attribute>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>
