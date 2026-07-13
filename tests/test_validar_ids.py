@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import unittest
 from pathlib import Path
 
@@ -76,6 +77,19 @@ class SpaceIntersectionTests(unittest.TestCase):
         result = VALIDATOR.space_intersection_diagnostics(model, 0.002)
         self.assertEqual(result["result"], "NOT_EVALUABLE")
         self.assertEqual(result["geometry_error_count"], 1)
+
+
+class JsonDiagnosticsTests(unittest.TestCase):
+    def test_ifc_entity_is_converted_to_stable_reference(self):
+        model = ifcopenshell.api.run("project.create_file", version="IFC4")
+        project = ifcopenshell.api.run(
+            "root.create_entity", model, ifc_class="IfcProject", name="Ensayo"
+        )
+        result = VALIDATOR.json_safe({"instance": project})
+
+        json.dumps(result)
+        self.assertEqual(result["instance"]["ifc_class"], "IfcProject")
+        self.assertEqual(result["instance"]["global_id"], project.GlobalId)
 
 
 if __name__ == "__main__":

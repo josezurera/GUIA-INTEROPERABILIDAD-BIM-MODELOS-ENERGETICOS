@@ -77,6 +77,7 @@ nav:
       - Geometrías de riesgo: 03-revit/geometrias-riesgo.md
       - Parámetros y mapeado IFC: 03-revit/parametros-mapeado-ifc.md
       - Exportación IFC: 03-revit/exportacion-ifc.md
+      - Ensayo Revit 2026–IFC–MVD: 03-revit/ensayo-revit-2026-mvd.md
   - Aplicaciones:
       - Visión general: 04-aplicaciones/index.md
       - CYPE:

@@ -57,6 +57,21 @@ def safe_name(path: Path) -> str:
     return re.sub(r"[^A-Za-z0-9_.-]+", "_", path.stem)
 
 
+def json_safe(value: Any) -> Any:
+    """Convert IfcOpenShell diagnostics into JSON-safe report values."""
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    if isinstance(value, dict):
+        return {str(key): json_safe(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple, set)):
+        return [json_safe(item) for item in value]
+    if hasattr(value, "id") and hasattr(value, "is_a"):
+        return entity_reference(value)
+    if isinstance(value, np.generic):
+        return value.item()
+    return str(value)
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
@@ -139,7 +154,7 @@ def schema_diagnostics(ifc_path: Path) -> dict[str, Any]:
     return {
         "status": not statements,
         "issue_count": len(statements),
-        "issues": statements[:500],
+        "issues": json_safe(statements[:500]),
         "truncated": len(statements) > 500,
     }
 
@@ -585,6 +600,14 @@ def validate_pair(
 def render_summary(summary: dict[str, Any], output_path: Path) -> None:
     rows: list[str] = []
     for model in summary["models"]:
+        if "preflight" not in model:
+            rows.append(
+                f"<section><h2>{html.escape(Path(model['ifc']).name)}</h2>"
+                "<p><strong>Resultado:</strong> ERROR DE VALIDACION</p>"
+                f"<pre>{html.escape(str(model.get('error') or 'Error no especificado'))}</pre>"
+                "</section>"
+            )
+            continue
         pre = model["preflight"]
         source = ", ".join(
             f"{item.get('name') or '?'} {item.get('version') or ''}".strip()

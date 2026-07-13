@@ -126,7 +126,7 @@ Página de vista previa:
 
 ## 4. Estado de las normas de modelado y del MVD
 
-No debe afirmarse todavía que el bloque Revit–IFC–MVD está terminado.
+La matriz técnica del exportador se ejecutó el 13 de julio de 2026. El bloque no debe declararse terminado hasta aprobar la importación y la actualización en cada receptor.
 
 ### 4.1 Parte redactada
 
@@ -143,54 +143,62 @@ Las normas de modelado cubren prácticamente todos los temas previstos:
 - Parámetros y mapeado.
 - Exportación y QA/QC.
 
-### 4.2 Parte pendiente de aprobación
+### 4.2 Ensayo ejecutado
 
-Falta ejecutar y documentar el ensayo definitivo con Revit 2026 o posterior para aprobar:
+Entorno registrado:
 
-1. Versión exacta de Revit y compilación.
-2. Versión exacta del exportador IFC.
-3. MVD recomendado para Open BIM Analytical Model.
-4. MVD para importación en TK-IFC.
-5. MVD para vinculación en TeKton3D.
-6. MVD o ruta de intercambio para OpenStudio.
-7. Exportación de habitaciones o espacios.
-8. Límites espaciales de primer y segundo nivel.
-9. Mapeado de `IsExternal`.
-10. Cantidades de área y volumen.
-11. Materiales, capas y propiedades térmicas.
-12. Puertas acristaladas, muros cortina y huecos especiales.
-13. Vínculos, coordenadas y Norte verdadero.
-14. Estabilidad de `GlobalId`.
-15. Conservación de asignaciones después de actualizar.
+- Revit 2026.2.
+- Compilación `26.2.0.20`.
+- Exportador integrado `Revit.IFC.Export.dll` `26.2.0.20`.
+- Siete exportaciones: IFC2x3 CV2 e IFC4 RV con SB0/SB1/SB2, más IFC4 DTV SB2.
+- Dos espacios, envolvente, partición, puerta, ventana y pilar no delimitador.
 
-### 4.3 Perfiles que deben cerrarse
+Resultados principales:
+
+- SB0 es conforme al esquema, pero no contiene `IfcRelSpaceBoundary`.
+- SB1 contiene 13 relaciones y cuatro incidencias `IfcCurveBoundedPlane.InnerBoundaries`.
+- SB2 no añade relaciones en IFC2x3 CV2 o IFC4 RV y eleva las incidencias a doce.
+- IFC4 exporta área y volumen de los dos espacios.
+- IFC2x3 exporta área, pero no una cantidad de volumen reconocida.
+- Psets comunes, referencias y `IsExternal` se conservan al configurar la plantilla de parámetros del exportador.
+- Falta mapear la transmitancia térmica de los muros exteriores.
+- No hay intersecciones de espacios y el pilar no participa en límites con SB1/SB2.
+
+Documentación: `docs/03-revit/ensayo-revit-2026-mvd.md`.
+
+### 4.3 Parte pendiente de aprobación
+
+1. Importación en Open BIM Analytical Model.
+2. Importación y conversión en TK-IFC.
+3. Vinculación y actualización en TeKton3D.
+4. Conversión del modelo intermedio a OpenStudio.
+5. Mapeado de transmitancias y nueva validación IDS energética.
+6. Puertas acristaladas, muros cortina y huecos especiales.
+7. Vínculos, coordenadas y Norte verdadero.
+8. Persistencia de `GlobalId` y asignaciones después de actualizar.
+9. Repetición con un exportador IFC 2026 posterior por la incidencia `InnerBoundaries`.
+
+### 4.4 Perfiles que deben cerrarse
 
 | Perfil | Destino | Estado |
 |---|---|---|
-| `EEM_CYPE_ANALYTICAL` | BIMserver.center/Open BIM Analytical Model | Pendiente de matriz por versión |
-| `EEM_TEKTON_IMPORT` | Importación TK-IFC | Pendiente de ensayo IFC2x3/IFC4 |
-| `EEM_TEKTON_LINK` | Vinculación TeKton3D | Pendiente de persistencia |
-| `EEM_OPENSTUDIO` | OpenStudio | Pendiente de crear y comparar rutas |
+| `EEM_CYPE_ANALYTICAL` | BIMserver.center/Open BIM Analytical Model | Candidato IFC4 RV SB1; receptor pendiente |
+| `EEM_TEKTON_IMPORT` | Importación TK-IFC | Comparar IFC2x3 CV2 SB0/SB1 |
+| `EEM_TEKTON_LINK` | Vinculación TeKton3D | Comparar IFC4 RV SB0/SB1 y persistencia |
+| `EEM_OPENSTUDIO` | OpenStudio | Candidato IFC4 RV SB1 hacia modelo intermedio |
 
 ## 5. Próxima prioridad recomendada
 
-Antes de seguir profundizando en OpenStudio, cerrar experimentalmente el bloque Revit–IFC–MVD:
+La próxima prioridad es cerrar los receptores usando los IFC ya generados:
 
-1. Crear el modelo mínimo de interoperabilidad en Revit 2026.
-2. Registrar Revit, compilación y exportador.
-3. Preparar perfiles candidatos:
-   - IFC2x3 Coordination View 2.0.
-   - IFC4 Reference View.
-   - IFC4 Design Transfer View, cuando esté disponible y tenga sentido.
-4. Exportar exactamente el mismo modelo con cada perfil.
-5. Ejecutar el validador IDS y las reglas geométricas.
-6. Comparar entidades, espacios, áreas, volúmenes, límites, huecos, materiales y coordenadas.
-7. Probar las exportaciones en Open BIM Analytical Model, TeKton3D y OpenStudio.
-8. Modificar controladamente el modelo y repetir la exportación.
-9. Medir persistencia de identificadores y asignaciones.
-10. Aprobar un perfil por receptor.
-11. Guardar las configuraciones y evidencias.
-12. Cambiar el estado documental solo cuando el ensayo esté aprobado.
+1. Probar IFC2x3 CV2 SB0/SB1 en TK-IFC.
+2. Probar IFC4 RV SB0/SB1 como vínculos de TeKton3D.
+3. Registrar espacios, contornos, huecos y reparaciones.
+4. Repetir una actualización y medir persistencia.
+5. Probar IFC4 RV SB1 en Open BIM Analytical Model.
+6. Mapear transmitancias y repetir el perfil IDS energético.
+7. Aprobar o rechazar explícitamente cada perfil.
+8. Continuar con la conversión hacia OpenStudio.
 
 ## 6. Herramienta de validación IFC
 

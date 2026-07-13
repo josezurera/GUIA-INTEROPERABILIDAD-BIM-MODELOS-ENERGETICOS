@@ -67,17 +67,21 @@ Fecha: AAAA-MM-DD
 
 Una actualización del exportador obliga a repetir, al menos, el modelo mínimo de regresión antes de adoptarla.
 
+El ensayo del 13 de julio de 2026 registró Revit 2026.2, compilación `26.2.0.20`, y el exportador integrado `Revit.IFC.Export.dll` `26.2.0.20`. Los resultados completos se recogen en [Ensayo Revit 2026–IFC–MVD](ensayo-revit-2026-mvd.md).
+
 ## 4. Configuraciones candidatas
 
 Se mantendrán tres perfiles independientes:
 
 | Nombre propuesto | Destino | Estado inicial |
 |---|---|---|
-| `EEM_CYPE_ANALYTICAL` | BIMserver.center y Open BIM Analytical Model | Pendiente de matriz por versión |
-| `EEM_TEKTON_IMPORT` | Importación en TK-IFC | Pendiente de ensayo IFC2x3/IFC4 |
-| `EEM_TEKTON_LINK` | Vinculación y actualización en TK-IFC | Pendiente de ensayo de persistencia |
+| `EEM_CYPE_ANALYTICAL` | BIMserver.center y Open BIM Analytical Model | IFC4 RV SB1, candidato pendiente del receptor |
+| `EEM_TEKTON_IMPORT` | Importación en TK-IFC | Comparar IFC2x3 CV2 SB0 y SB1 |
+| `EEM_TEKTON_LINK` | Vinculación y actualización en TK-IFC | Comparar IFC4 RV SB0 y SB1 |
 
 Los nombres son convenciones del manual. No implican una certificación por parte de CYPE o iMventa.
+
+La exportación técnica de estos candidatos ya se ha reproducido. La palabra **candidato** significa que el IFC supera o caracteriza el control previo, pero aún no ha sido aprobado dentro de la aplicación receptora.
 
 ## 5. Selección del esquema IFC
 
@@ -581,7 +585,7 @@ Los siguientes valores son una **hipótesis de ensayo**, no una receta aprobada:
 | Vínculos | Preferentemente separados | Según proyecto | Según estrategia de vínculo |
 | Detalle | Bajo/medio inicial | Bajo/medio inicial | Bajo/medio inicial |
 
-La matriz se cerrará en las versiones 0.3 y 0.4 del manual.
+La primera matriz del exportador quedó ejecutada con Revit 2026.2. En el modelo mínimo, SB2 no aportó más relaciones espaciales que SB1 en IFC2x3 CV2 o IFC4 RV y elevó de cuatro a doce las incidencias de esquema. Por ello no se adopta SB2 como ajuste general para el exportador `26.2.0.20`. La matriz por receptor se cerrará después de las importaciones en Open BIM Analytical Model y TeKton3D.
 
 ## 31. Procedimiento de exportación
 
