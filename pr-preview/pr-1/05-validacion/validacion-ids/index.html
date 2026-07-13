@@ -1534,6 +1534,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#92-eem-geo-001-interseccion-entre-espacios" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 EEM-GEO-001 — Intersección entre espacios
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2025,6 +2034,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#92-eem-geo-001-interseccion-entre-espacios" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 EEM-GEO-001 — Intersección entre espacios
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2246,6 +2264,28 @@ tests/ifc/
 </ul>
 <p>En el perfil <code>energy</code>, tanto <strong>FAIL</strong> como <strong>NOT_EVALUABLE</strong> impiden declarar conforme el modelo. Esta comprobación no puede formularse únicamente con IDS 1.0 y se ejecuta como regla QA/QC complementaria. Tampoco permite conocer directamente el valor original del parámetro de Revit: comprueba su consecuencia en las relaciones exportadas.</p>
 <p>Autodesk indica que los pilares pueden tener activada por defecto la delimitación de habitación y recomienda desactivarla cuando provoque volúmenes incorrectos o innecesariamente fragmentados. Véanse <a href="https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-9348929C-18CA-40AC-BB64-71D01CC52F2B.htm">About Room Area — Revit 2026</a> y <a href="https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-052DFFB9-5076-4CE6-BC8B-420C8D03ACF0.htm">Situations That Can Affect Room Volume Computations — Revit 2026</a>.</p>
+<h3 id="92-eem-geo-001-interseccion-entre-espacios">9.2 EEM-GEO-001 — Intersección entre espacios<a class="headerlink" href="#92-eem-geo-001-interseccion-entre-espacios" title="Permanent link">&para;</a></h3>
+<p>Dos <code>IfcSpace</code> destinados al modelo energético no deben ocupar simultáneamente el mismo volumen. Un solape puede duplicar superficies, generar recintos residuales y producir una zonificación distinta en cada aplicación receptora.</p>
+<p>La regla <code>EEM-GEO-001</code> procesa la geometría triangulada y cerrada en coordenadas globales y aplica tres comprobaciones consecutivas:</p>
+<ol>
+<li>Descarta las parejas cuyas cajas envolventes no tienen penetración tridimensional superior a la tolerancia.</li>
+<li>Comprueba cruces entre las superficies trianguladas de las parejas candidatas.</li>
+<li>Busca muestras interiores para detectar espacios coincidentes o contenidos, casos que una comprobación exclusiva de superficies puede omitir.</li>
+</ol>
+<p>El valor predeterminado es <strong>2 mm</strong>. Puede modificarse para un ensayo concreto:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">validar_ids</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-profile</span> <span class="n">energy</span> <span class="p">-</span><span class="n">-space-overlap-tolerance-mm</span> <span class="n">5</span> <span class="s2">&quot;C:\ruta\modelo.ifc&quot;</span>
+</code></pre></div>
+<p>La tolerancia representa la penetración mínima que debe existir en los tres ejes de la caja común. No debe confundirse con las resoluciones del modelo analítico de Revit ni adoptarse automáticamente como tolerancia contractual.</p>
+<p>Resultados posibles:</p>
+<ul>
+<li><strong>PASS</strong>: todas las geometrías se han procesado y no se detectan solapes superiores a la tolerancia.</li>
+<li><strong>FAIL</strong>: se detecta al menos una intersección volumétrica.</li>
+<li><strong>NOT_EVALUABLE</strong>: uno o más espacios carecen de una geometría triangulada procesable.</li>
+<li><strong>NOT_APPLICABLE</strong>: el modelo contiene menos de dos espacios.</li>
+</ul>
+<p>Para cada incidencia, el informe registra los dos espacios, sus nombres y <code>GlobalId</code>, las plantas, el método de detección y las dimensiones XYZ de la caja común. También presenta el volumen de esa caja como <strong>cota superior</strong>, no como volumen exacto de intersección. En geometrías irregulares, ambos valores pueden diferir considerablemente.</p>
+<p>Los contactos entre caras, aristas o vértices no se consideran intersecciones si no existe penetración mayor que la tolerancia. En el perfil <code>energy</code>, <strong>FAIL</strong> y <strong>NOT_EVALUABLE</strong> son bloqueantes.</p>
+<p>Esta regla es una comprobación geométrica complementaria y no una faceta IDS 1.0. La implementación utiliza el <a href="https://docs.ifcopenshell.org/ifcopenshell-python/geometry_processing.html">procesamiento geométrico</a> y el <a href="https://docs.ifcopenshell.org/autoapi/ifcopenshell/geom/main/index.html">árbol de detección de colisiones</a> de IfcOpenShell 0.8.5.</p>
 <h2 id="10-evolucion-prevista">10. Evolución prevista<a class="headerlink" href="#10-evolucion-prevista" title="Permanent link">&para;</a></h2>
 <p>Después de probar el mapeado <code>EEM_EnergyExchange</code>, se añadirá una segunda especificación para exigir:</p>
 <ul>
@@ -2297,7 +2337,7 @@ tests/ifc/
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 de julio de 2026 06:13:36 UTC">13 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 de julio de 2026 06:24:19 UTC">13 de julio de 2026</span>
   </span>
 
     
@@ -2307,7 +2347,7 @@ tests/ifc/
     <span class="md-icon" title="Creado">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 de julio de 2026 06:13:36 UTC">13 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 de julio de 2026 06:24:19 UTC">13 de julio de 2026</span>
   </span>
 
     
