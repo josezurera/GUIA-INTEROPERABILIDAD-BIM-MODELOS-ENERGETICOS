@@ -86,6 +86,7 @@ nav:
       - TeKton3D:
           - TK-IFC y TK-CEEP: 04-aplicaciones/tekton3d/index.md
           - Importación y vinculación: 04-aplicaciones/tekton3d/importacion-vinculacion.md
+      - OpenStudio: 04-aplicaciones/openstudio/index.md
       - DesignBuilder: 04-aplicaciones/designbuilder/index.md
   - Validación:
       - Estrategia QA/QC: 05-validacion/index.md
