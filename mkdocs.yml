@@ -80,6 +80,7 @@ nav:
   - Aplicaciones:
       - Visión general: 04-aplicaciones/index.md
       - CYPE:
+          - BIMserver.center y Plugin Open BIM - Revit: 04-aplicaciones/cype/bimserver-plugin-revit.md
           - Open BIM Analytical Model: 04-aplicaciones/cype/open-bim-analytical-model.md
           - CYPETHERM HE Plus: 04-aplicaciones/cype/cypetherm-he-plus.md
       - TeKton3D:
