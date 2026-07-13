@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/04-aplicaciones/cype/cypetherm-he-plus/">
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/04-aplicaciones/cype/bimserver-plugin-revit/">
       
       
-        <link rel="prev" href="../open-bim-analytical-model/">
+        <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../../tekton3d/">
+        <link rel="next" href="../open-bim-analytical-model/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>CYPETHERM HE Plus - Guía BIM para análisis energético</title>
+        <title>BIMserver.center y Plugin Open BIM - Revit - Guía BIM para análisis energético</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cypetherm-he-plus" class="md-skip">
+        <a href="#bimservercenter-y-plugin-open-bim-revit" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CYPETHERM HE Plus
+              BIMserver.center y Plugin Open BIM - Revit
             
           </span>
         </div>
@@ -1161,10 +1161,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../bimserver-plugin-revit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    BIMserver.center y Plugin Open BIM - Revit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1175,6 +1197,212 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-funcion-de-cada-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Función de cada componente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-compatibilidad-e-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Compatibilidad e instalación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Requisitos previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-organizacion-del-proyecto-en-bimservercenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Organización del proyecto en BIMserver.center
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vinculacion-desde-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Vinculación desde Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-opciones-ifc-del-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Opciones IFC del plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Opciones IFC del plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-regla-de-esta-guia" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Regla de esta guía
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-perfiles-candidatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Perfiles candidatos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-compartir-el-modelo-de-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Compartir el modelo de Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-control-del-ifc-publicado" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Control del IFC publicado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-importacion-de-aportaciones-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Importación de aportaciones en Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ifc-original-e-ifc-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. IFC original e IFC local
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-coordenadas-y-orientacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Coordenadas y orientación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-consulta-y-actualizacion-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Consulta y actualización del proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-cancelacion-de-la-colaboracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Cancelación de la colaboración
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-estados-del-flujo" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Estados del flujo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Errores frecuentes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-ensayo-obligatorio-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Ensayo obligatorio de referencia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-checklist-de-publicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Checklist de publicación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Fuentes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1207,19 +1435,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cypetherm-he-plus/" class="md-nav__link">
         
   
   
@@ -1230,7 +1449,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1806,6 +2024,200 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-funcion-de-cada-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Función de cada componente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-compatibilidad-e-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Compatibilidad e instalación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Requisitos previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-organizacion-del-proyecto-en-bimservercenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Organización del proyecto en BIMserver.center
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vinculacion-desde-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Vinculación desde Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-opciones-ifc-del-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Opciones IFC del plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Opciones IFC del plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-regla-de-esta-guia" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Regla de esta guía
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-perfiles-candidatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Perfiles candidatos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-compartir-el-modelo-de-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Compartir el modelo de Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-control-del-ifc-publicado" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Control del IFC publicado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-importacion-de-aportaciones-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Importación de aportaciones en Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ifc-original-e-ifc-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. IFC original e IFC local
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-coordenadas-y-orientacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Coordenadas y orientación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-consulta-y-actualizacion-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Consulta y actualización del proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-cancelacion-de-la-colaboracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Cancelación de la colaboración
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-estados-del-flujo" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Estados del flujo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Errores frecuentes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-ensayo-obligatorio-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Ensayo obligatorio de referencia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-checklist-de-publicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Checklist de publicación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Fuentes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1823,8 +2235,401 @@
   
 
 
-<h1 id="cypetherm-he-plus">CYPETHERM HE Plus<a class="headerlink" href="#cypetherm-he-plus" title="Permanent link">&para;</a></h1>
-<p>Esta página documentará qué información recibe desde Open BIM Analytical Model, qué datos deben completarse en CYPETHERM y cómo se gestionan las actualizaciones del proyecto de BIMserver.center.</p>
+<h1 id="bimservercenter-y-plugin-open-bim-revit">BIMserver.center y Plugin Open BIM - Revit<a class="headerlink" href="#bimservercenter-y-plugin-open-bim-revit" title="Permanent link">&para;</a></h1>
+<p>Este capítulo establece el primer tramo del flujo entre Revit 2026, BIMserver.center y Open BIM Analytical Model. Su objetivo no es describir todas las funciones colaborativas del plugin, sino asegurar que la aportación arquitectónica utilizada para generar el modelo analítico sea identificable, reproducible y validable.</p>
+<div class="admonition warning">
+<p class="admonition-title">Publicar no equivale a validar</p>
+<p>Que el modelo aparezca correctamente en BIMserver.center no demuestra que sus espacios, límites, propiedades o coordenadas sean adecuados para el análisis energético. El IFC exacto de la aportación debe superar el procedimiento QA/QC de esta guía.</p>
+</div>
+<h2 id="1-funcion-de-cada-componente">1. Función de cada componente<a class="headerlink" href="#1-funcion-de-cada-componente" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Función en este flujo</th>
+<th>No debe utilizarse como</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revit</td>
+<td>Fuente del modelo arquitectónico y de los recintos</td>
+<td>Modelo energético final</td>
+</tr>
+<tr>
+<td>Plugin Open BIM - Revit</td>
+<td>Vinculación, publicación IFC y consulta de actualizaciones</td>
+<td>Validador geométrico o energético</td>
+</tr>
+<tr>
+<td>BIMserver.center</td>
+<td>Contenedor del proyecto y de sus aportaciones versionadas</td>
+<td>Sustituto del archivo fuente o del registro QA/QC</td>
+</tr>
+<tr>
+<td>Open BIM Analytical Model</td>
+<td>Generación y edición del modelo geométrico analítico</td>
+<td>Copia literal e incuestionable del IFC</td>
+</tr>
+<tr>
+<td>CYPETHERM HE Plus</td>
+<td>Definición y cálculo del modelo energético reglamentario</td>
+<td>Herramienta de reparación del modelo arquitectónico</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    RVT["Revit 2026&lt;br&gt;modelo fuente"] --&gt; PLG["Plugin Open BIM - Revit"]
+    PLG --&gt;|"publica IFC"| BSC["BIMserver.center&lt;br&gt;aportación arquitectónica"]
+    BSC --&gt; OBA["Open BIM Analytical Model"]
+    OBA --&gt;|"publica modelo analítico"| BSC
+    BSC --&gt; CTH["CYPETHERM HE Plus"]
+    IFCQA["QA/QC IFC + IDS&lt;br&gt;y reglas geométricas"] -. verifica .-&gt; BSC</code></pre>
+<p>El intercambio se realiza mediante archivos y aportaciones. Aunque la documentación comercial emplee expresiones como colaboración bidireccional o en tiempo real, para efectos de trazabilidad se considerará un proceso de <strong>publicación, consulta y actualización de versiones</strong>, no una base de datos única modificada simultáneamente por todas las aplicaciones.</p>
+<h2 id="2-compatibilidad-e-instalacion">2. Compatibilidad e instalación<a class="headerlink" href="#2-compatibilidad-e-instalacion" title="Permanent link">&para;</a></h2>
+<p>La documentación oficial consultada el 13 de julio de 2026 indica:</p>
+<ul>
+<li>La parte común del plugin es compatible con Revit 2016–2027.</li>
+<li>Las funciones relacionadas con generación de elementos nativos son compatibles con Revit 2022–2027.</li>
+<li>Revit LT no permite instalar complementos.</li>
+<li>El plugin puede instalarse desde CYPE Menu o desde la Store de BIMserver.center.</li>
+<li>Para actualizarlo debe cerrarse Revit antes de ejecutar la instalación.</li>
+</ul>
+<p>Nuestro flujo utiliza Revit 2026 o posterior, pero cada ensayo debe registrar:</p>
+<ul>
+<li>Versión completa de Revit.</li>
+<li>Compilación o <em>build</em> de Revit.</li>
+<li>Versión del exportador IFC de Autodesk.</li>
+<li>Versión del Plugin Open BIM - Revit.</li>
+<li>Fecha de instalación o actualización.</li>
+<li>Usuario y ámbito de instalación.</li>
+</ul>
+<p>No se dará por compatible una versión futura únicamente porque el instalador la reconozca. Debe repetirse el modelo de ensayo cuando cambie Revit, el exportador o el plugin.</p>
+<h2 id="3-requisitos-previos">3. Requisitos previos<a class="headerlink" href="#3-requisitos-previos" title="Permanent link">&para;</a></h2>
+<p>Antes de vincular o publicar:</p>
+<ol>
+<li>El modelo Revit debe superar el checklist previo a exportación.</li>
+<li>La vista y la fase de exportación deben estar aprobadas.</li>
+<li>Habitaciones o espacios deben tener área y volumen válidos.</li>
+<li>Los pilares interiores no deben delimitar los recintos energéticos.</li>
+<li>No deben existir habitaciones o espacios solapados.</li>
+<li>Coordenadas, Norte verdadero y niveles deben estar documentados.</li>
+<li>Debe conocerse quién es responsable de la aportación arquitectónica.</li>
+<li>El proyecto de BIMserver.center de destino debe estar identificado inequívocamente.</li>
+</ol>
+<p>No se publicará una prueba en el proyecto productivo sin distinguirla en el nombre, descripción y registro de incidencias.</p>
+<h2 id="4-organizacion-del-proyecto-en-bimservercenter">4. Organización del proyecto en BIMserver.center<a class="headerlink" href="#4-organizacion-del-proyecto-en-bimservercenter" title="Permanent link">&para;</a></h2>
+<p>El proyecto debe disponer, como mínimo, de responsables para:</p>
+<ul>
+<li>Administración del proyecto.</li>
+<li>Publicación del modelo arquitectónico.</li>
+<li>Revisión del IFC.</li>
+<li>Generación del modelo analítico.</li>
+<li>Revisión energética.</li>
+<li>Aprobación de actualizaciones.</li>
+</ul>
+<p>Cada aportación relevante debe registrar:</p>
+<table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código de proyecto</td>
+<td><code>PRJ-ENERGIA-001</code></td>
+</tr>
+<tr>
+<td>Disciplina</td>
+<td>Arquitectura</td>
+</tr>
+<tr>
+<td>Aplicación de origen</td>
+<td>Revit 2026</td>
+</tr>
+<tr>
+<td>Autor de la aportación</td>
+<td>Responsable designado</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Prueba, candidato o aprobado</td>
+</tr>
+<tr>
+<td>Revisión</td>
+<td><code>R01</code></td>
+</tr>
+<tr>
+<td>Fecha</td>
+<td>Fecha ISO 8601</td>
+</tr>
+<tr>
+<td>Configuración IFC</td>
+<td>Perfil y versión</td>
+</tr>
+<tr>
+<td>Hash del IFC</td>
+<td>SHA-256</td>
+</tr>
+</tbody>
+</table>
+<p>El nombre visible de la aportación no sustituye al hash ni al registro de la configuración.</p>
+<h2 id="5-vinculacion-desde-revit">5. Vinculación desde Revit<a class="headerlink" href="#5-vinculacion-desde-revit" title="Permanent link">&para;</a></h2>
+<p>La herramienta <strong>Vincular a proyecto Open BIM</strong> permite seleccionar el proyecto de BIMserver.center y las aportaciones que se incorporarán como referencia.</p>
+<p>Procedimiento controlado:</p>
+<ol>
+<li>Iniciar sesión con la cuenta autorizada.</li>
+<li>Abrir el RVT correcto y comprobar su revisión.</li>
+<li>Seleccionar el proyecto de BIMserver.center por código y nombre.</li>
+<li>Revisar participantes y aportaciones existentes.</li>
+<li>Seleccionar únicamente los modelos necesarios para coordinación.</li>
+<li>Comprobar la posición de los vínculos recibidos.</li>
+<li>Guardar y registrar la vinculación.</li>
+</ol>
+<p>Antes de aceptar debe verificarse que no se está conectando el RVT de producción a un proyecto de pruebas o a una duplicación del proyecto con nombre parecido.</p>
+<h2 id="6-opciones-ifc-del-plugin">6. Opciones IFC del plugin<a class="headerlink" href="#6-opciones-ifc-del-plugin" title="Permanent link">&para;</a></h2>
+<p>La herramienta <strong>Opciones IFC</strong> complementa la configuración accesible desde <code>Archivo &gt; Exportar &gt; IFC &gt; Modificar configuración</code> en Revit. CYPE indica expresamente que puede sobrescribir opciones de importación y exportación.</p>
+<p>El plugin permite seleccionar, entre otras posibilidades:</p>
+<ul>
+<li>Configuración <code>Revit</code>, que utiliza el fichero de configuración de Revit.</li>
+<li>Configuración <code>Open BIM</code>, con un mapeado propuesto para las herramientas de CYPE.</li>
+<li>Modificación de clases IFC asociadas a categorías Revit.</li>
+<li>Opciones de importación y posicionamiento de vínculos IFC.</li>
+</ul>
+<h3 id="61-regla-de-esta-guia">6.1 Regla de esta guía<a class="headerlink" href="#61-regla-de-esta-guia" title="Permanent link">&para;</a></h3>
+<p>No se asumirá que el IFC generado mediante <strong>Compartir el modelo de Revit</strong> coincide con un IFC obtenido manualmente usando un perfil de Revit del mismo nombre.</p>
+<p>Se registrará:</p>
+<ul>
+<li>Modo seleccionado: <code>Revit</code> u <code>Open BIM</code>.</li>
+<li>Archivo o configuración de origen.</li>
+<li>Sobrescrituras realizadas por el plugin.</li>
+<li>Clases IFC modificadas.</li>
+<li>Esquema IFC resultante.</li>
+<li>Vista, fase y coordenadas utilizadas.</li>
+</ul>
+<h3 id="62-perfiles-candidatos">6.2 Perfiles candidatos<a class="headerlink" href="#62-perfiles-candidatos" title="Permanent link">&para;</a></h3>
+<p>Se ensayarán al menos dos publicaciones del modelo de referencia:</p>
+<ol>
+<li><strong>Perfil Revit controlado:</strong> reutiliza la configuración energética aprobada en Revit.</li>
+<li><strong>Perfil Open BIM:</strong> emplea el mapeado propuesto por CYPE.</li>
+</ol>
+<p>La elección final se realizará por evidencia. Se compararán espacios, límites, cerramientos, huecos, coordenadas, propiedades y resultado en Open BIM Analytical Model.</p>
+<h2 id="7-compartir-el-modelo-de-revit">7. Compartir el modelo de Revit<a class="headerlink" href="#7-compartir-el-modelo-de-revit" title="Permanent link">&para;</a></h2>
+<p>La opción <strong>Compartir el modelo de Revit</strong> genera un IFC y lo incorpora al proyecto vinculado.</p>
+<p>Procedimiento:</p>
+<ol>
+<li>Sincronizar el modelo central y comprobar que no existen cambios pendientes.</li>
+<li>Abrir la vista de exportación energética aprobada.</li>
+<li>Confirmar fase, opción de diseño y vínculos visibles.</li>
+<li>Confirmar las Opciones IFC del plugin.</li>
+<li>Introducir una descripción que identifique objetivo, revisión y perfil.</li>
+<li>Generar y publicar la aportación.</li>
+<li>Registrar fecha, usuario y versión de software.</li>
+<li>Obtener el IFC exacto asociado a la aportación.</li>
+<li>Calcular su hash SHA-256.</li>
+<li>Ejecutar la prevalidación IFC, el perfil IDS energético y las reglas geométricas.</li>
+</ol>
+<p>Si el IFC validado no es exactamente el publicado, el control carece de trazabilidad.</p>
+<h2 id="8-control-del-ifc-publicado">8. Control del IFC publicado<a class="headerlink" href="#8-control-del-ifc-publicado" title="Permanent link">&para;</a></h2>
+<p>El archivo de la aportación debe comprobarse independientemente de Revit y del visor de la plataforma.</p>
+<p>Controles mínimos:</p>
+<ul>
+<li>El archivo abre y cumple el esquema declarado.</li>
+<li>El encabezado identifica aplicación y versión.</li>
+<li>Existe una estructura espacial coherente.</li>
+<li>Edificio y plantas tienen nombres válidos.</li>
+<li>Existen los <code>IfcSpace</code> previstos.</li>
+<li>Los espacios tienen geometría cerrada, área y volumen.</li>
+<li>No existen intersecciones entre espacios superiores a la tolerancia.</li>
+<li>Los pilares no participan como límites espaciales.</li>
+<li>Cerramientos y huecos están correctamente clasificados.</li>
+<li>Coordenadas y orientación coinciden con el modelo fuente.</li>
+<li>El hash coincide con el registro de la aportación.</li>
+</ul>
+<p>El informe consolidado de nuestra herramienta QA/QC se conservará con la revisión del modelo.</p>
+<h2 id="9-importacion-de-aportaciones-en-revit">9. Importación de aportaciones en Revit<a class="headerlink" href="#9-importacion-de-aportaciones-en-revit" title="Permanent link">&para;</a></h2>
+<p>El plugin puede incorporar vínculos IFC, extraerlos como <code>DirectShape</code> o, con módulos y categorías compatibles, convertir determinados contenidos en elementos nativos mediante asignación de familias.</p>
+<p>Estas funciones no son necesarias para transferir el modelo arquitectónico hacia Open BIM Analytical Model. En este flujo:</p>
+<ul>
+<li>Los IFC recibidos se usarán preferentemente como referencia de coordinación.</li>
+<li>No se convertirán a elementos nativos sin un objetivo independiente y documentado.</li>
+<li>No se duplicará en Revit un elemento ya existente en el modelo fuente.</li>
+<li>No se utilizará un <code>DirectShape</code> importado para reparar la envolvente energética.</li>
+</ul>
+<p>La conversión de elementos nativos constituye otro flujo y requiere sus propias pruebas de identidad, categorías, parámetros y actualización.</p>
+<h2 id="10-ifc-original-e-ifc-local">10. IFC original e IFC local<a class="headerlink" href="#10-ifc-original-e-ifc-local" title="Permanent link">&para;</a></h2>
+<p>La documentación de aprendizaje del plugin distingue entre ficheros IFC originales y locales asociados a los vínculos. Esta diferencia debe considerarse al investigar una incidencia:</p>
+<ul>
+<li>El <strong>original</strong> representa la aportación recibida.</li>
+<li>El <strong>local</strong> puede incorporar el tratamiento necesario para su uso dentro del entorno Revit.</li>
+</ul>
+<p>No se compararán hashes ni geometrías sin identificar cuál de los dos archivos se está revisando. Para validar la aportación publicada se utilizará el archivo original correspondiente a esa versión; el archivo local se revisará cuando el problema afecte a su representación o posicionamiento en Revit.</p>
+<p>Esta interpretación deberá confirmarse visualmente en el ensayo con la versión instalada del plugin.</p>
+<h2 id="11-coordenadas-y-orientacion">11. Coordenadas y orientación<a class="headerlink" href="#11-coordenadas-y-orientacion" title="Permanent link">&para;</a></h2>
+<p>La importación y publicación deben respetar el protocolo de coordenadas de la guía.</p>
+<p>Se comprobarán:</p>
+<ul>
+<li>Origen interno de Revit.</li>
+<li>Punto base del proyecto.</li>
+<li>Punto topográfico y coordenadas compartidas.</li>
+<li>Base de exportación IFC.</li>
+<li>Rotación entre Proyecto Norte y Norte verdadero.</li>
+<li>Elevación de plantas.</li>
+<li>Posición de los vínculos recibidos.</li>
+</ul>
+<p>El panel del plugin puede ofrecer herramientas para ajustar vínculos a puntos de referencia. Cualquier desplazamiento debe registrarse. No se corregirá manualmente un vínculo para que “parezca coincidir” sin determinar antes qué sistema de coordenadas utiliza.</p>
+<h2 id="12-consulta-y-actualizacion-del-proyecto">12. Consulta y actualización del proyecto<a class="headerlink" href="#12-consulta-y-actualizacion-del-proyecto" title="Permanent link">&para;</a></h2>
+<p><strong>Consultar estado del proyecto</strong> permite detectar cambios en las aportaciones y decidir qué vínculos se actualizan. La actualización no debe aceptarse de forma automática en una revisión energética aprobada.</p>
+<p>Ciclo recomendado:</p>
+<ol>
+<li>Consultar cambios disponibles.</li>
+<li>Identificar autor, aplicación y revisión de cada aportación.</li>
+<li>Descargar o actualizar en una copia de trabajo.</li>
+<li>Revisar posición y contenido.</li>
+<li>Regenerar el modelo analítico cuando el cambio afecte a geometría o recintos.</li>
+<li>Comparar espacios, superficies y colindancias antes y después.</li>
+<li>Aceptar la nueva revisión o volver a la anterior.</li>
+<li>Registrar las incidencias resueltas y pendientes.</li>
+</ol>
+<p>Una actualización arquitectónica puede invalidar correcciones manuales realizadas en Open BIM Analytical Model. La estrategia de regeneración se desarrollará en el capítulo siguiente.</p>
+<h2 id="13-cancelacion-de-la-colaboracion">13. Cancelación de la colaboración<a class="headerlink" href="#13-cancelacion-de-la-colaboracion" title="Permanent link">&para;</a></h2>
+<p>La opción <strong>Cancelar colaboración en proyecto Open BIM</strong> desactiva los mensajes de colaboración y puede eliminar vínculos IFC.</p>
+<p>Antes de utilizarla:</p>
+<ul>
+<li>Confirmar que se está trabajando sobre el RVT correcto.</li>
+<li>Registrar el motivo.</li>
+<li>Conservar los IFC e informes necesarios para reproducir la revisión.</li>
+<li>Decidir conscientemente si deben eliminarse los vínculos.</li>
+<li>Comprobar que no se pierde una referencia utilizada en documentación o coordinación.</li>
+</ul>
+<p>No se utilizará como método rutinario para corregir una vinculación mal configurada.</p>
+<h2 id="14-estados-del-flujo">14. Estados del flujo<a class="headerlink" href="#14-estados-del-flujo" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Condición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RVT_PREPARADO</code></td>
+<td>Modelo fuente revisado antes de compartir</td>
+</tr>
+<tr>
+<td><code>IFC_PUBLICADO</code></td>
+<td>Aportación disponible, aún no validada</td>
+</tr>
+<tr>
+<td><code>IFC_CANDIDATO</code></td>
+<td>IFC descargado, identificado y sometido a QA/QC</td>
+</tr>
+<tr>
+<td><code>IFC_APROBADO</code></td>
+<td>Cumple los requisitos para generar el analítico</td>
+</tr>
+<tr>
+<td><code>ANALITICO_GENERADO</code></td>
+<td>Open BIM Analytical Model ha generado un resultado</td>
+</tr>
+<tr>
+<td><code>ANALITICO_APROBADO</code></td>
+<td>Espacios, superficies, aristas y sombras revisados</td>
+</tr>
+</tbody>
+</table>
+<p>El cambio de estado debe quedar asociado a un responsable y a evidencias.</p>
+<h2 id="15-errores-frecuentes">15. Errores frecuentes<a class="headerlink" href="#15-errores-frecuentes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Síntoma</th>
+<th>Causa probable</th>
+<th>Acción inicial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El proyecto correcto no aparece</td>
+<td>Cuenta o permisos incorrectos</td>
+<td>Revisar usuario y participantes</td>
+</tr>
+<tr>
+<td>Se publica un IFC distinto del ensayo manual</td>
+<td>Opciones IFC del plugin sobrescriben Revit</td>
+<td>Comparar configuraciones y entidades</td>
+</tr>
+<tr>
+<td>Faltan espacios</td>
+<td>Vista, fase o exportación de recintos incorrecta</td>
+<td>Revisar vista y opciones IFC</td>
+</tr>
+<tr>
+<td>El edificio aparece girado</td>
+<td>Base o Norte verdadero incoherentes</td>
+<td>Comparar orientación conocida</td>
+</tr>
+<tr>
+<td>El modelo aparece desplazado</td>
+<td>Sistemas de coordenadas diferentes</td>
+<td>Revisar origen y punto de inserción</td>
+</tr>
+<tr>
+<td>Aparecen elementos duplicados</td>
+<td>Anfitrión y vínculo contienen lo mismo</td>
+<td>Definir autoría y retirar duplicado</td>
+</tr>
+<tr>
+<td>Una actualización rompe el analítico</td>
+<td>Cambio de geometría o identificadores</td>
+<td>Comparar revisiones y regenerar controladamente</td>
+</tr>
+<tr>
+<td>El visor parece correcto, pero el analítico falla</td>
+<td>IFC insuficiente o geometría no calculable</td>
+<td>Ejecutar QA/QC y revisar espacios</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16-ensayo-obligatorio-de-referencia">16. Ensayo obligatorio de referencia<a class="headerlink" href="#16-ensayo-obligatorio-de-referencia" title="Permanent link">&para;</a></h2>
+<p>El ensayo se realizará con el modelo mínimo de interoperabilidad y una copia controlada de un modelo real.</p>
+<p>Se publicarán dos aportaciones, una con perfil <code>Revit</code> y otra con perfil <code>Open BIM</code>. Para cada una se registrarán:</p>
+<ul>
+<li>Número de espacios en Revit e IFC.</li>
+<li>Áreas y volúmenes.</li>
+<li>Número de límites espaciales.</li>
+<li>Entidades de cerramiento y huecos.</li>
+<li>Cobertura de propiedades energéticas.</li>
+<li>Coordenadas y Norte verdadero.</li>
+<li>Resultado del perfil IDS energético.</li>
+<li>Resultado de <code>EEM-SPA-001</code> y <code>EEM-GEO-001</code>.</li>
+<li>Capacidad de generación en Open BIM Analytical Model.</li>
+<li>Número y tipo de correcciones manuales requeridas.</li>
+</ul>
+<p>Se aprobará el perfil que produzca el modelo analítico más fiable y reproducible, no necesariamente el IFC con mayor cantidad de información.</p>
+<h2 id="17-checklist-de-publicacion">17. Checklist de publicación<a class="headerlink" href="#17-checklist-de-publicacion" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Revit, exportador y plugin están identificados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> El proyecto de BIMserver.center es el correcto.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La aportación tiene autor y descripción.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vista, fase, opción y vínculos están controlados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Las Opciones IFC del plugin están registradas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Coordenadas y Norte verdadero están verificados.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> El IFC exacto publicado se ha recuperado.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Se ha calculado y registrado su hash.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> El IFC supera esquema, IDS y reglas QA/QC.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> El informe de validación se conserva con la revisión.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La aportación está autorizada para generar el modelo analítico.</li>
+</ul>
+<h2 id="18-fuentes">18. Fuentes<a class="headerlink" href="#18-fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CYPE, <a href="https://info.cype.com/es/software/plugin-open-bim-revit/">Plugin Open BIM - Revit</a>, consulta del 13 de julio de 2026.</li>
+<li>CYPE, <a href="https://info.cype.com/es/tema/plugin-open-bim-revit-opciones-ifc/">Opciones IFC del Plugin Open BIM - Revit</a>, consulta del 13 de julio de 2026.</li>
+<li>CYPE Learning, <a href="https://learning.cype.com/es/video/plugin-open-bim-revit-interfaz-y-acceso-en-revit/">curso del Plugin Open BIM - Revit</a>, publicado entre diciembre de 2025 y enero de 2026.</li>
+<li>CYPE, <em>Open BIM Analytical Model. Manual de uso</em>, archivo <code>ob_analytical_01.pdf</code> facilitado para esta guía.</li>
+</ul>
 
 
 
