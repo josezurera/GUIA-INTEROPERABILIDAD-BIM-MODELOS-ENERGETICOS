@@ -174,6 +174,29 @@ El resumen calcula, incluso cuando no se activa el perfil energético:
 
 Estas métricas no sustituyen a IDS: ayudan a identificar si una carencia afecta a un elemento aislado o a toda una categoría.
 
+### 9.1 EEM-SPA-001 — Pilares no delimitadores
+
+Para el modelo energético, los pilares no deben subdividir el contorno de las habitaciones o espacios. Mantenerlos como delimitadores puede generar entrantes, caras muy pequeñas y geometrías analíticas innecesariamente complejas.
+
+En Revit 2026 y versiones posteriores se establece este criterio de preparación:
+
+1. Seleccionar los pilares arquitectónicos y estructurales que estén dentro del volumen térmico.
+2. Desactivar el parámetro **Delimitación de habitación** (`Room Bounding`).
+3. Regenerar y revisar las habitaciones y los espacios MEP.
+4. Comprobar áreas y volúmenes antes de exportar.
+5. Exportar los límites espaciales al IFC cuando el flujo y el MVD utilizado lo permitan.
+
+La regla complementaria `EEM-SPA-001` recorre las relaciones `IfcRelSpaceBoundary` y localiza aquellas cuyo elemento relacionado es un `IfcColumn`. Sus resultados son:
+
+- **PASS**: existen límites espaciales y ningún pilar delimita un `IfcSpace`.
+- **FAIL**: al menos un `IfcColumn` participa como límite; el informe identifica espacio, pilar, `GlobalId` y planta.
+- **NOT_EVALUABLE**: existen espacios, pero el IFC no contiene `IfcRelSpaceBoundary`.
+- **NOT_APPLICABLE**: el archivo no contiene ningún `IfcSpace`.
+
+En el perfil `energy`, tanto **FAIL** como **NOT_EVALUABLE** impiden declarar conforme el modelo. Esta comprobación no puede formularse únicamente con IDS 1.0 y se ejecuta como regla QA/QC complementaria. Tampoco permite conocer directamente el valor original del parámetro de Revit: comprueba su consecuencia en las relaciones exportadas.
+
+Autodesk indica que los pilares pueden tener activada por defecto la delimitación de habitación y recomienda desactivarla cuando provoque volúmenes incorrectos o innecesariamente fragmentados. Véanse [About Room Area — Revit 2026](https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-9348929C-18CA-40AC-BB64-71D01CC52F2B.htm) y [Situations That Can Affect Room Volume Computations — Revit 2026](https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-052DFFB9-5076-4CE6-BC8B-420C8D03ACF0.htm).
+
 ## 10. Evolución prevista
 
 Después de probar el mapeado `EEM_EnergyExchange`, se añadirá una segunda especificación para exigir:

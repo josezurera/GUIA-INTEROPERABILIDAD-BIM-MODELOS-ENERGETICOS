@@ -46,6 +46,7 @@ INVENTORY_CLASSES = [
     "IfcWindow",
     "IfcDoor",
     "IfcCurtainWall",
+    "IfcColumn",
     "IfcBuildingElementProxy",
 ]
 
@@ -196,6 +197,85 @@ def quantity_coverage(ifc: ifcopenshell.file) -> dict[str, Any]:
     }
 
 
+def entity_reference(entity: Any) -> dict[str, Any]:
+    """Return stable identifiers suitable for JSON and QA/QC reports."""
+    return {
+        "entity_id": entity.id(),
+        "ifc_class": entity.is_a(),
+        "global_id": getattr(entity, "GlobalId", None),
+        "name": getattr(entity, "Name", None),
+    }
+
+
+def containing_storey_name(element: Any) -> str | None:
+    for relation in getattr(element, "ContainedInStructure", ()) or ():
+        structure = getattr(relation, "RelatingStructure", None)
+        if structure and structure.is_a("IfcBuildingStorey"):
+            return getattr(structure, "Name", None)
+    return None
+
+
+def column_room_boundary_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
+    """Detect columns exported as physical boundaries of IFC spaces.
+
+    IDS 1.0 cannot express this relationship constraint. It is therefore a
+    custom QA/QC rule evaluated from IfcRelSpaceBoundary relationships.
+    """
+    spaces = ifc.by_type("IfcSpace", include_subtypes=False)
+    boundaries = ifc.by_type("IfcRelSpaceBoundary")
+    incidents: list[dict[str, Any]] = []
+    for boundary in boundaries:
+        space = getattr(boundary, "RelatingSpace", None)
+        element = getattr(boundary, "RelatedBuildingElement", None)
+        if not space or not space.is_a("IfcSpace"):
+            continue
+        if not element or not element.is_a("IfcColumn"):
+            continue
+        incidents.append(
+            {
+                "boundary": entity_reference(boundary),
+                "space": entity_reference(space),
+                "column": entity_reference(element),
+                "storey": containing_storey_name(element),
+                "physical_or_virtual": getattr(
+                    boundary, "PhysicalOrVirtualBoundary", None
+                ),
+                "internal_or_external": getattr(
+                    boundary, "InternalOrExternalBoundary", None
+                ),
+            }
+        )
+
+    if not spaces:
+        result = "NOT_APPLICABLE"
+        explanation = "El modelo no contiene IfcSpace."
+    elif incidents:
+        result = "FAIL"
+        explanation = "Uno o más pilares participan como límites de espacios."
+    elif not boundaries:
+        result = "NOT_EVALUABLE"
+        explanation = (
+            "El modelo contiene espacios, pero no exporta IfcRelSpaceBoundary; "
+            "no puede certificarse que los pilares no delimiten habitaciones."
+        )
+    else:
+        result = "PASS"
+        explanation = "Ningún IfcColumn participa como límite de un IfcSpace."
+
+    return {
+        "rule": "EEM-SPA-001",
+        "title": "Los pilares no deben delimitar habitaciones o espacios",
+        "result": result,
+        "status": result in {"PASS", "NOT_APPLICABLE"},
+        "explanation": explanation,
+        "space_count": len(spaces),
+        "space_boundary_count": len(boundaries),
+        "incident_count": len(incidents),
+        "incidents": incidents[:500],
+        "truncated": len(incidents) > 500,
+    }
+
+
 def energy_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
     coverage = [
         property_coverage(ifc, ["IfcSpace"], "Pset_SpaceCommon", "Reference"),
@@ -213,6 +293,7 @@ def energy_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
     boundaries = len(ifc.by_type("IfcRelSpaceBoundary"))
     materials = len(ifc.by_type("IfcRelAssociatesMaterial"))
     quantities = quantity_coverage(ifc)
+    column_boundaries = column_room_boundary_diagnostics(ifc)
     warnings = []
     if quantities["space_total"] and boundaries == 0:
         warnings.append("Existen espacios, pero no se han exportado IfcRelSpaceBoundary.")
@@ -220,10 +301,17 @@ def energy_diagnostics(ifc: ifcopenshell.file) -> dict[str, Any]:
         warnings.append("No todos los espacios tienen una cantidad de área reconocida.")
     if quantities["space_total"] and quantities["with_volume_quantity"] < quantities["space_total"]:
         warnings.append("No todos los espacios tienen una cantidad de volumen reconocida.")
+    if column_boundaries["result"] == "FAIL":
+        warnings.append(
+            f"EEM-SPA-001: {column_boundaries['incident_count']} límites espaciales usan pilares."
+        )
+    elif column_boundaries["result"] == "NOT_EVALUABLE":
+        warnings.append(f"EEM-SPA-001: {column_boundaries['explanation']}")
     return {
         "space_boundaries": boundaries,
         "material_relationships": materials,
         "space_quantities": quantities,
+        "column_room_boundaries": column_boundaries,
         "property_coverage": coverage,
         "warnings": warnings,
     }
@@ -325,6 +413,17 @@ def render_summary(summary: dict[str, Any], output_path: Path) -> None:
             for item in energy["property_coverage"]
         )
         warnings = "".join(f"<li>{html.escape(item)}</li>" for item in energy["warnings"]) or "<li>Ninguna</li>"
+        column_rule = energy["column_room_boundaries"]
+        column_incidents = "".join(
+            "<tr>"
+            f"<td>{html.escape(str(item['space'].get('global_id') or ''))}</td>"
+            f"<td>{html.escape(str(item['space'].get('name') or ''))}</td>"
+            f"<td>{html.escape(str(item['column'].get('global_id') or ''))}</td>"
+            f"<td>{html.escape(str(item['column'].get('name') or ''))}</td>"
+            f"<td>{html.escape(str(item.get('storey') or ''))}</td>"
+            "</tr>"
+            for item in column_rule["incidents"]
+        ) or "<tr><td colspan='5'>Ninguna</td></tr>"
         rows.append(
             f"<section><h2>{html.escape(Path(model['ifc']).name)}</h2>"
             f"<p><strong>Resultado:</strong> {'CUMPLE' if model['status'] else 'NO CUMPLE'} · "
@@ -342,6 +441,10 @@ def render_summary(summary: dict[str, Any], output_path: Path) -> None:
             f"<li>Relaciones de materiales: {energy['material_relationships']}</li>"
             f"<li>Espacios con área: {energy['space_quantities']['with_area_quantity']}/{energy['space_quantities']['space_total']}</li>"
             f"<li>Espacios con volumen: {energy['space_quantities']['with_volume_quantity']}/{energy['space_quantities']['space_total']}</li></ul>"
+            f"<h4>{html.escape(column_rule['rule'])} — Pilares no delimitadores</h4>"
+            f"<p><strong>Resultado:</strong> {html.escape(column_rule['result'])}. "
+            f"{html.escape(column_rule['explanation'])}</p>"
+            f"<table><tr><th>GlobalId espacio</th><th>Espacio</th><th>GlobalId pilar</th><th>Pilar</th><th>Planta</th></tr>{column_incidents}</table>"
             f"<table><tr><th>Propiedad</th><th>Cobertura</th><th>Porcentaje</th></tr>{coverage}</table>"
             f"<h4>Advertencias energéticas</h4><ul>{warnings}</ul>"
             f"<h3>Inventario exacto</h3><table><tr><th>Entidad</th><th>Número</th></tr>{inventory}</table>"
@@ -408,7 +511,15 @@ def main() -> int:
             ids_results = [
                 validate_pair(ifc, ifc_path, ids_path, args.output) for ids_path in ids_paths
             ]
-            status = preflight_result["status"] and all(item["status"] for item in ids_results)
+            energy_rule_status = (
+                args.profile != "energy"
+                or preflight_result["energy_diagnostics"]["column_room_boundaries"]["status"]
+            )
+            status = (
+                preflight_result["status"]
+                and all(item["status"] for item in ids_results)
+                and energy_rule_status
+            )
             models.append(
                 {"ifc": str(ifc_path), "status": status, "preflight": preflight_result,
                  "ids_results": ids_results}
