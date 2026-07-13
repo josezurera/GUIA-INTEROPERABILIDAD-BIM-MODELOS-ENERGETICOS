@@ -1522,6 +1522,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9. Diagnóstico energético complementario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-eem-spa-001-pilares-no-delimitadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 EEM-SPA-001 — Pilares no delimitadores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1998,6 +2013,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9. Diagnóstico energético complementario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-eem-spa-001-pilares-no-delimitadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 EEM-SPA-001 — Pilares no delimitadores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2197,6 +2227,25 @@ tests/ifc/
 <li>Espacios con cantidades de volumen.</li>
 </ul>
 <p>Estas métricas no sustituyen a IDS: ayudan a identificar si una carencia afecta a un elemento aislado o a toda una categoría.</p>
+<h3 id="91-eem-spa-001-pilares-no-delimitadores">9.1 EEM-SPA-001 — Pilares no delimitadores<a class="headerlink" href="#91-eem-spa-001-pilares-no-delimitadores" title="Permanent link">&para;</a></h3>
+<p>Para el modelo energético, los pilares no deben subdividir el contorno de las habitaciones o espacios. Mantenerlos como delimitadores puede generar entrantes, caras muy pequeñas y geometrías analíticas innecesariamente complejas.</p>
+<p>En Revit 2026 y versiones posteriores se establece este criterio de preparación:</p>
+<ol>
+<li>Seleccionar los pilares arquitectónicos y estructurales que estén dentro del volumen térmico.</li>
+<li>Desactivar el parámetro <strong>Delimitación de habitación</strong> (<code>Room Bounding</code>).</li>
+<li>Regenerar y revisar las habitaciones y los espacios MEP.</li>
+<li>Comprobar áreas y volúmenes antes de exportar.</li>
+<li>Exportar los límites espaciales al IFC cuando el flujo y el MVD utilizado lo permitan.</li>
+</ol>
+<p>La regla complementaria <code>EEM-SPA-001</code> recorre las relaciones <code>IfcRelSpaceBoundary</code> y localiza aquellas cuyo elemento relacionado es un <code>IfcColumn</code>. Sus resultados son:</p>
+<ul>
+<li><strong>PASS</strong>: existen límites espaciales y ningún pilar delimita un <code>IfcSpace</code>.</li>
+<li><strong>FAIL</strong>: al menos un <code>IfcColumn</code> participa como límite; el informe identifica espacio, pilar, <code>GlobalId</code> y planta.</li>
+<li><strong>NOT_EVALUABLE</strong>: existen espacios, pero el IFC no contiene <code>IfcRelSpaceBoundary</code>.</li>
+<li><strong>NOT_APPLICABLE</strong>: el archivo no contiene ningún <code>IfcSpace</code>.</li>
+</ul>
+<p>En el perfil <code>energy</code>, tanto <strong>FAIL</strong> como <strong>NOT_EVALUABLE</strong> impiden declarar conforme el modelo. Esta comprobación no puede formularse únicamente con IDS 1.0 y se ejecuta como regla QA/QC complementaria. Tampoco permite conocer directamente el valor original del parámetro de Revit: comprueba su consecuencia en las relaciones exportadas.</p>
+<p>Autodesk indica que los pilares pueden tener activada por defecto la delimitación de habitación y recomienda desactivarla cuando provoque volúmenes incorrectos o innecesariamente fragmentados. Véanse <a href="https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-9348929C-18CA-40AC-BB64-71D01CC52F2B.htm">About Room Area — Revit 2026</a> y <a href="https://help.autodesk.com/cloudhelp/2026/ENU/Revit-ArchDesign/files/GUID-052DFFB9-5076-4CE6-BC8B-420C8D03ACF0.htm">Situations That Can Affect Room Volume Computations — Revit 2026</a>.</p>
 <h2 id="10-evolucion-prevista">10. Evolución prevista<a class="headerlink" href="#10-evolucion-prevista" title="Permanent link">&para;</a></h2>
 <p>Después de probar el mapeado <code>EEM_EnergyExchange</code>, se añadirá una segunda especificación para exigir:</p>
 <ul>
@@ -2248,7 +2297,7 @@ tests/ifc/
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 20:54:51 UTC">12 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 de julio de 2026 06:13:36 UTC">13 de julio de 2026</span>
   </span>
 
     
@@ -2258,7 +2307,7 @@ tests/ifc/
     <span class="md-icon" title="Creado">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de julio de 2026 20:54:51 UTC">12 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 de julio de 2026 06:13:36 UTC">13 de julio de 2026</span>
   </span>
 
     
