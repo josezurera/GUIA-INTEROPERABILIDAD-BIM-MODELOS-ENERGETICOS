@@ -17,7 +17,7 @@
 ## Flujo de trabajo
 
 1. Crear una incidencia describiendo la ampliación o corrección.
-2. Crear una rama con un nombre como `feature/designbuilder` o `docs/revit-2027`.
+2. Crear una rama con un nombre como `feature/openstudio` o `docs/revit-2027`.
 3. Actualizar el contenido y, cuando proceda, `data/fuentes.yml` y `data/compatibilidad.yml`.
 4. Actualizar `CHANGELOG.md`.
 5. Abrir una solicitud de cambios para revisión.

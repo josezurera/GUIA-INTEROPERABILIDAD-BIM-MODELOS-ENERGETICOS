@@ -11,7 +11,10 @@ aplicaciones:
   - nombre: TeKton3D TK-CEEP
     version_base: por_confirmar
     rol: interfaz_energyplus_certificacion
-  - nombre: DesignBuilder
-    version_base: pendiente
-    rol: ampliacion_futura
+  - nombre: OpenStudio SDK
+    version_base: "3.11.0"
+    rol: plataforma_modelado_simulacion
+  - nombre: EnergyPlus
+    version_base: "25.2.0"
+    rol: motor_simulacion_energetica
 

@@ -18,7 +18,8 @@ flowchart LR
     O --> C["CYPETHERM HE Plus"]
     I --> T["TeKton3D TK-IFC"]
     T --> E["TK-CEEP / EnergyPlus"]
-    I -. ampliación futura .-> D["DesignBuilder"]
+    I --> OS["OpenStudio"]
+    OS --> EP["EnergyPlus"]
 ```
 
 !!! warning "Documento en elaboración"
