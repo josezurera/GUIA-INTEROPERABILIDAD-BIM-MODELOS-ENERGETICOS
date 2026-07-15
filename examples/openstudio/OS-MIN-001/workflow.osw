@@ -1,5 +1,6 @@
 {
   "description": "Traducción reproducible del caso mínimo OS-MIN-001",
+  "weather_file": "weather/ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023.epw",
   "seed_file": "model.osm",
   "steps": []
 }

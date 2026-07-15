@@ -9,6 +9,7 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se hacen explícitas las construcciones, cargas internas, horarios, infiltración, ventilación y consignas de `OS-MIN-001`.
 - Se mantiene el sistema de cargas ideales para aislar el comportamiento de la envolvente.
 - Se documentan los valores y unidades en la guía y en el registro YAML.
+- Se fija el EPW TMYx 2009–2023 de Madrid-Barajas-Suárez con descarga y verificación SHA-256 reproducibles.
 
 ### Añadido
 

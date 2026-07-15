@@ -3,6 +3,8 @@ site/
 output/
 tmp/
 examples/**/run/
+examples/**/weather/*.epw
+examples/**/weather/*.zip
 __pycache__/
 *.pyc
 .DS_Store
