@@ -54,7 +54,28 @@ Cuando exista el archivo de salida, la comparación debe comprobar como mínimo:
 - construcciones, cargas, horarios y sistema de cargas ideales;
 - diferencias de texto atribuibles al reordenamiento o serialización.
 
-La validación y el registro de pérdidas corresponden a BEM-63. Hasta completar esa comprobación, el flujo se considera **preparado**, no validado.
+## Resultado del primer ensayo
+
+El 15 de julio de 2026 se abrió la copia de `OS-MIN-001` con el complemento 1.11.0 en SketchUp 2025 y se guardó un OSM nuevo. OpenStudio CLI 3.11.0 cargó correctamente la salida y el verificador confirmó:
+
+- dos espacios y dos zonas térmicas;
+- áreas, volumen, ventanas y nombres sin cambios;
+- las dos caras de la partición interior correctamente emparejadas;
+- construcciones, cargas, horarios, infiltración, ventilación, termostatos y cargas ideales conservados.
+
+El archivo pasó de 47.756 a 50.482 bytes y su SHA-256 cambió, por lo que no es una copia textual idéntica. La comparación de tipos detectó únicamente un `OS:Facility` y cinco `OS:Rendering:Color` añadidos. Son objetos de organización y visualización; no se detectaron pérdidas en las magnitudes y relaciones verificadas.
+
+El resultado completo y sus hashes se conservan en `data/ensayo-sketchup-openstudio.yml`. El OSM generado permanece como artefacto local temporal en la carpeta de salida del ensayo.
+
+La validación puede repetirse indicando el archivo como argumento:
+
+```powershell
+C:/openstudioapplication-1.11.1/bin/openstudio.exe `
+  examples/openstudio/OS-MIN-001/verify_model.rb `
+  tmp/bem-62-sketchup-roundtrip/salida/OS-MIN-001_sketchup.osm
+```
+
+La ampliación de estas comprobaciones y el registro formal de pérdidas corresponden a BEM-63.
 
 ## Continuación en OpenStudio Application y EnergyPlus
 

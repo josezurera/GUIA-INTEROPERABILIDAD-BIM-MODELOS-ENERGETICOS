@@ -1,0 +1,38 @@
+ensayo:
+  id: BEM-62-ROUNDTRIP-001
+  fecha: 2026-07-15
+  software:
+    sketchup: "2025 (25.0.575)"
+    complemento_openstudio: "1.11.0"
+    openstudio_application: "1.11.1"
+    openstudio_cli: "3.11.0"
+  entrada:
+    modelo: examples/openstudio/OS-MIN-001/model.osm
+    sha256: EF56C5359DBA93DC0B2589429DDAA25EFDD461A6DD0690AE04938BEB4D51FB26
+    bytes: 47756
+  salida:
+    modelo_local: tmp/bem-62-sketchup-roundtrip/salida/OS-MIN-001_sketchup.osm
+    sha256: 0AE6BE9128DA506ECE618C89F6AFF29113DF23B8D436066F14E6B039D3A1A3C9
+    bytes: 50482
+    control_versiones: excluido_por_ser_artefacto_temporal
+  comprobaciones:
+    carga_openstudio_cli: superada
+    espacios: {esperado: 2, obtenido: 2}
+    zonas_termicas: {esperado: 2, obtenido: 2}
+    superficie_suelos_m2: {esperado: 80.0, obtenido: 80.0}
+    superficie_cubiertas_m2: {esperado: 80.0, obtenido: 80.0}
+    superficie_muros_exteriores_m2: {esperado: 108.0, obtenido: 108.0}
+    particion_interior_m2: {esperado: 24.0, obtenido: 24.0}
+    volumen_m3: {esperado: 240.0, obtenido: 240.0}
+    ventanas: {esperado: 2, obtenido: 2}
+    caras_particion_emparejadas: {esperado: 2, obtenido: 2}
+    nombres: conservados
+    cargas_y_horarios: conservados
+  diferencias:
+    lineas_anadidas: 94
+    lineas_eliminadas: 40
+    objetos_anadidos:
+      OS:Facility: 1
+      OS:Rendering:Color: 5
+    interpretacion: Objetos de organización y visualización; no se detectan pérdidas en las magnitudes y relaciones verificadas.
+  resultado: superado_con_diferencias_no_energeticas
