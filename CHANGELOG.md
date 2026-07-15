@@ -39,6 +39,12 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se fijan rutas de entrada y salida y se evita sobrescribir el modelo de referencia.
 - Se verifica la ida y vuelta: geometría, zonas, cargas, nombres y adyacencias conservados; solo se añaden objetos de organización y visualización.
 
+### BEM-63 — Validación mediante SketchUp
+
+- Se incorpora un comparador semántico reproducible entre dos modelos OSM.
+- Se formalizan criterios para geometría, adyacencias, huecos, zonas, nombres y objetos energéticos.
+- Se documentan las adiciones gráficas admitidas y la captura pendiente.
+
 ### Añadido
 
 - Estructura inicial del manual.

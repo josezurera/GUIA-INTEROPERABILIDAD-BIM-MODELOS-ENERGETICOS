@@ -34,5 +34,17 @@ ensayo:
     objetos_anadidos:
       OS:Facility: 1
       OS:Rendering:Color: 5
+    serializacion_geometrica: SketchUp cambia el vértice inicial de ocho contornos sin alterar sus vértices ni su orientación.
     interpretacion: Objetos de organización y visualización; no se detectan pérdidas en las magnitudes y relaciones verificadas.
+  validacion_formal:
+    comparador: examples/openstudio/OS-MIN-001/compare_models.rb
+    tolerancia_coordenadas_m: 0.000001
+    secciones_semanticas:
+      espacios: iguales
+      zonas_termicas: iguales
+      superficies: iguales
+      huecos: iguales
+      objetos_energeticos: iguales
+    diferencias_de_tipo_inesperadas: 0
+    resultado: pass
   resultado: superado_con_diferencias_no_energeticas
