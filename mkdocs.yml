@@ -96,6 +96,7 @@ nav:
       - Flujo operativo: 07-procedimientos/flujo-operativo.md
   - Producto:
       - Arquitectura del MVP: 08-producto/arquitectura-mvp.md
+      - Esquema intermedio: 08-producto/esquema-intermedio.md
   - Anexos:
       - Checklist Revit: anexos/checklist-revit.md
       - Bibliografía: anexos/bibliografia.md

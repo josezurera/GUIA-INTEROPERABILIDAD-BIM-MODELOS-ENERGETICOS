@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/schemas/bem-energy-model.schema.json",
+  "title": "BEM Energy Model",
+  "description": "Contrato intermedio entre gbXML, la aplicación web y el generador OpenStudio.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "project", "source", "units", "geometry", "energy", "audit"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "project": { "$ref": "#/$defs/project" },
+    "source": { "$ref": "#/$defs/sourceFile" },
+    "units": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["length", "area", "volume", "power", "temperature"],
+      "properties": {
+        "length": { "const": "m" },
+        "area": { "const": "m2" },
+        "volume": { "const": "m3" },
+        "power": { "const": "W" },
+        "temperature": { "const": "C" }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spaces", "surfaces", "openings"],
+      "properties": {
+        "spaces": { "type": "array", "items": { "$ref": "#/$defs/space" }, "minItems": 1 },
+        "surfaces": { "type": "array", "items": { "$ref": "#/$defs/surface" }, "minItems": 1 },
+        "openings": { "type": "array", "items": { "$ref": "#/$defs/opening" } }
+      }
+    },
+    "energy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weather", "schedules", "spaceAssignments", "hvacSystems"],
+      "properties": {
+        "weather": { "$ref": "#/$defs/weather" },
+        "schedules": { "type": "array", "items": { "$ref": "#/$defs/schedule" } },
+        "spaceAssignments": { "type": "array", "items": { "$ref": "#/$defs/spaceAssignment" }, "minItems": 1 },
+        "hvacSystems": { "type": "array", "items": { "$ref": "#/$defs/hvacSystem" }, "minItems": 1 }
+      }
+    },
+    "audit": { "$ref": "#/$defs/audit" }
+  },
+  "$defs": {
+    "identifier": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$" },
+    "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin"],
+      "properties": {
+        "origin": { "enum": ["gbxml", "revit_metadata", "template", "inferred", "user"] },
+        "reference": { "type": "string", "maxLength": 512 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "updatedBy": { "type": "string", "maxLength": 128 }
+      }
+    },
+    "sourcedNumber": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "provenance"],
+      "properties": {
+        "value": { "type": "number" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "sourcedString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "provenance"],
+      "properties": {
+        "value": { "type": "string" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "sourceFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "fileName", "sha256", "importedAt"],
+      "properties": {
+        "format": { "const": "gbXML" },
+        "version": { "type": "string" },
+        "fileName": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "importedAt": { "type": "string", "format": "date-time" },
+        "revit": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "version": { "type": "string" },
+            "documentId": { "type": "string" },
+            "exportSettings": { "type": "object" }
+          }
+        }
+      }
+    },
+    "point3d": {
+      "type": "array",
+      "prefixItems": [{ "type": "number" }, { "type": "number" }, { "type": "number" }],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sourceId", "name", "floorArea", "volume"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "sourceId": { "$ref": "#/$defs/identifier" },
+        "name": { "$ref": "#/$defs/sourcedString" },
+        "levelId": { "type": ["string", "null"] },
+        "floorArea": { "$ref": "#/$defs/sourcedNumber" },
+        "volume": { "$ref": "#/$defs/sourcedNumber" },
+        "thermalZoneId": { "type": ["string", "null"] }
+      }
+    },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sourceId", "surfaceType", "boundaryCondition", "spaceIds", "vertices"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "sourceId": { "$ref": "#/$defs/identifier" },
+        "surfaceType": { "enum": ["exterior_wall", "interior_wall", "roof", "floor", "ceiling", "underground_wall", "underground_slab", "shade", "unknown"] },
+        "boundaryCondition": { "enum": ["outdoors", "ground", "surface", "adiabatic", "unknown"] },
+        "spaceIds": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "minItems": 1, "maxItems": 2, "uniqueItems": true },
+        "constructionId": { "type": ["string", "null"] },
+        "vertices": { "type": "array", "items": { "$ref": "#/$defs/point3d" }, "minItems": 3 }
+      }
+    },
+    "opening": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sourceId", "openingType", "surfaceId", "vertices"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "sourceId": { "$ref": "#/$defs/identifier" },
+        "openingType": { "enum": ["fixed_window", "operable_window", "door", "skylight", "unknown"] },
+        "surfaceId": { "$ref": "#/$defs/identifier" },
+        "constructionId": { "type": ["string", "null"] },
+        "vertices": { "type": "array", "items": { "$ref": "#/$defs/point3d" }, "minItems": 3 }
+      }
+    },
+    "weather": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["epwFileName", "sha256", "provenance"],
+      "properties": {
+        "epwFileName": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "type", "weekdayValues", "provenance"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "name": { "type": "string", "minLength": 1 },
+        "type": { "enum": ["fraction", "temperature", "on_off"] },
+        "weekdayValues": { "type": "array", "items": { "type": "number" }, "minItems": 24, "maxItems": 24 },
+        "weekendValues": { "type": "array", "items": { "type": "number" }, "minItems": 24, "maxItems": 24 },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "spaceAssignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spaceId", "useType", "occupancyPeoplePerM2", "lightingWPerM2", "equipmentWPerM2", "infiltrationACH", "ventilationLpsPerPerson", "heatingSetpointC", "coolingSetpointC", "occupancyScheduleId"],
+      "properties": {
+        "spaceId": { "$ref": "#/$defs/identifier" },
+        "useType": { "$ref": "#/$defs/sourcedString" },
+        "occupancyPeoplePerM2": { "$ref": "#/$defs/sourcedNumber" },
+        "lightingWPerM2": { "$ref": "#/$defs/sourcedNumber" },
+        "equipmentWPerM2": { "$ref": "#/$defs/sourcedNumber" },
+        "infiltrationACH": { "$ref": "#/$defs/sourcedNumber" },
+        "ventilationLpsPerPerson": { "$ref": "#/$defs/sourcedNumber" },
+        "ventilationLpsPerM2": { "$ref": "#/$defs/sourcedNumber" },
+        "heatingSetpointC": { "$ref": "#/$defs/sourcedNumber" },
+        "coolingSetpointC": { "$ref": "#/$defs/sourcedNumber" },
+        "occupancyScheduleId": { "$ref": "#/$defs/identifier" },
+        "loadsScheduleId": { "$ref": "#/$defs/identifier" },
+        "hvacSystemId": { "$ref": "#/$defs/identifier" }
+      }
+    },
+    "hvacSystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "systemType", "servedSpaceIds", "provenance"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "name": { "type": "string", "minLength": 1 },
+        "systemType": { "enum": ["ideal_loads", "heat_pump", "boiler_chiller", "vrf", "other"] },
+        "servedSpaceIds": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "minItems": 1, "uniqueItems": true },
+        "heatingEfficiency": { "$ref": "#/$defs/sourcedNumber" },
+        "coolingCOP": { "$ref": "#/$defs/sourcedNumber" },
+        "heatRecoveryEfficiency": { "$ref": "#/$defs/sourcedNumber" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["revision", "createdAt", "status"],
+      "properties": {
+        "revision": { "type": "integer", "minimum": 1 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "status": { "enum": ["imported", "has_issues", "ready", "generated", "simulated"] },
+        "acceptedIssueIds": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true }
+      }
+    }
+  }
+}

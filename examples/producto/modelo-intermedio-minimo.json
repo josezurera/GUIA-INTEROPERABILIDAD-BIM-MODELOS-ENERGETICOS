@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "0.1.0",
+  "project": {
+    "id": "BEM-MVP-001",
+    "name": "Ejemplo mínimo del contrato intermedio",
+    "createdAt": "2026-07-15T14:30:00+02:00"
+  },
+  "source": {
+    "format": "gbXML",
+    "version": "7.03",
+    "fileName": "revit-ejemplo.xml",
+    "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "importedAt": "2026-07-15T14:30:00+02:00",
+    "revit": {
+      "version": "2025",
+      "documentId": "RVT-DEMO-001",
+      "exportSettings": { "detailLevel": "Medium" }
+    }
+  },
+  "units": {
+    "length": "m",
+    "area": "m2",
+    "volume": "m3",
+    "power": "W",
+    "temperature": "C"
+  },
+  "geometry": {
+    "spaces": [
+      {
+        "id": "space-001",
+        "sourceId": "gbxml-space-001",
+        "name": { "value": "Despacho 01", "provenance": { "origin": "gbxml", "reference": "Space[id=gbxml-space-001]" } },
+        "levelId": "level-001",
+        "floorArea": { "value": 40.0, "provenance": { "origin": "gbxml" } },
+        "volume": { "value": 120.0, "provenance": { "origin": "gbxml" } },
+        "thermalZoneId": "zone-001"
+      }
+    ],
+    "surfaces": [
+      {
+        "id": "surface-floor-001",
+        "sourceId": "gbxml-surface-001",
+        "surfaceType": "floor",
+        "boundaryCondition": "ground",
+        "spaceIds": ["space-001"],
+        "constructionId": "construction-floor-001",
+        "vertices": [[0, 0, 0], [0, 8, 0], [5, 8, 0], [5, 0, 0]]
+      }
+    ],
+    "openings": []
+  },
+  "energy": {
+    "weather": {
+      "epwFileName": "ESP_MD_Madrid-Barajas.082210_TMYx.epw",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "provenance": { "origin": "user", "updatedBy": "usuario-demo" }
+    },
+    "schedules": [
+      {
+        "id": "schedule-office-occupancy",
+        "name": "Ocupación de oficina",
+        "type": "fraction",
+        "weekdayValues": [0, 0, 0, 0, 0, 0, 0, 0.1, 0.5, 0.8, 0.9, 0.9, 0.5, 0.9, 0.9, 0.8, 0.5, 0.1, 0, 0, 0, 0, 0, 0],
+        "weekendValues": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "provenance": { "origin": "template", "reference": "office-default/0.1.0" }
+      }
+    ],
+    "spaceAssignments": [
+      {
+        "spaceId": "space-001",
+        "useType": { "value": "office", "provenance": { "origin": "user" } },
+        "occupancyPeoplePerM2": { "value": 0.1, "provenance": { "origin": "template", "reference": "office-default/0.1.0" } },
+        "lightingWPerM2": { "value": 7.5, "provenance": { "origin": "template", "reference": "office-default/0.1.0" } },
+        "equipmentWPerM2": { "value": 10.0, "provenance": { "origin": "template", "reference": "office-default/0.1.0" } },
+        "infiltrationACH": { "value": 0.35, "provenance": { "origin": "inferred", "confidence": 0.6 } },
+        "ventilationLpsPerPerson": { "value": 12.5, "provenance": { "origin": "user" } },
+        "ventilationLpsPerM2": { "value": 0.0, "provenance": { "origin": "user" } },
+        "heatingSetpointC": { "value": 20.0, "provenance": { "origin": "template", "reference": "office-default/0.1.0" } },
+        "coolingSetpointC": { "value": 25.0, "provenance": { "origin": "template", "reference": "office-default/0.1.0" } },
+        "occupancyScheduleId": "schedule-office-occupancy",
+        "loadsScheduleId": "schedule-office-occupancy",
+        "hvacSystemId": "hvac-ideal-001"
+      }
+    ],
+    "hvacSystems": [
+      {
+        "id": "hvac-ideal-001",
+        "name": "Cargas ideales del MVP",
+        "systemType": "ideal_loads",
+        "servedSpaceIds": ["space-001"],
+        "provenance": { "origin": "template", "reference": "ideal-loads/0.1.0" }
+      }
+    ]
+  },
+  "audit": {
+    "revision": 1,
+    "createdAt": "2026-07-15T14:30:00+02:00",
+    "status": "ready",
+    "acceptedIssueIds": []
+  }
+}
