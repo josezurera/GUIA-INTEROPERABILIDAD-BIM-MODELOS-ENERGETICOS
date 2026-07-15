@@ -26,4 +26,25 @@ fuentes:
     url: https://www.imventa.com/modelo-analitico-tekton3d-desde-ifc
     fecha_consulta: 2026-07-11
     estado: revisada
+  - id: OPENSTUDIO-OFFICIAL
+    titulo: OpenStudio
+    entidad: Alliance for Energy Innovation
+    tipo: sitio_oficial
+    url: https://openstudio.net/
+    fecha_consulta: 2026-07-15
+    estado: revisada
+  - id: OPENSTUDIO-REPO
+    titulo: OpenStudio SDK
+    entidad: National Laboratory of the Rockies
+    tipo: repositorio_oficial
+    url: https://github.com/NatLabRockies/OpenStudio
+    fecha_consulta: 2026-07-15
+    estado: revisada
+  - id: ENERGYPLUS-REPO
+    titulo: EnergyPlus
+    entidad: U.S. Department of Energy
+    tipo: repositorio_oficial
+    url: https://github.com/NatLabRockies/EnergyPlus
+    fecha_consulta: 2026-07-15
+    estado: revisada
 

@@ -20,6 +20,7 @@ Cada publicación estable debe incluir etiqueta Git, GitHub Release, `CHANGELOG.
 | 0.2.0 | Revit 2026 e IFC | Pendiente |
 | 0.3.0 | Open BIM Analytical Model y CYPETHERM | Pendiente |
 | 0.4.0 | TeKton3D TK-IFC y TK-CEEP | Pendiente |
-| 0.5.0 | Validación y comparativas | Pendiente |
+| 0.5.0 | OpenStudio 3.11.0 y EnergyPlus 25.2.0 | Pendiente |
+| 0.6.0 | Validación y comparativas | Pendiente |
 | 1.0.0 | Primera edición aprobada | Pendiente |
 
