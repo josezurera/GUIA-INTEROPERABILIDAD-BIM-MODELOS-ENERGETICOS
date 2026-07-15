@@ -26,6 +26,12 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se crea un registro YAML con versiones, evidencias, acciones y estados.
 - Se documentan dos errores corregidos y cinco grupos abiertos de advertencias y limitaciones.
 
+### BEM-61 — Inventario SketchUp–OpenStudio
+
+- Se registran las versiones y rutas confirmadas en la estación de trabajo.
+- Se diferencia la API Ruby instalada del complemento SketchUp todavía no confirmado.
+- Se añade un script de inventario reproducible y una matriz provisional.
+
 ### Añadido
 
 - Estructura inicial del manual.

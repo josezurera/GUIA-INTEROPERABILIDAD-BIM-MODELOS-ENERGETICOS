@@ -1,0 +1,46 @@
+inventario:
+  fecha: 2026-07-15
+  equipo: estacion_de_trabajo_local
+  sistema: Windows
+  componentes:
+    - producto: SketchUp
+      version: "2025 (25.0.575)"
+      ruta: C:/Program Files/SketchUp/SketchUp 2025/SketchUp/SketchUp.exe
+      verificacion: ejecutable
+      estado: confirmado
+    - producto: OpenStudio Application
+      version: "1.11.1+b19f3a988b"
+      ruta: C:/openstudioapplication-1.11.1/bin/OpenStudioApp.exe
+      verificacion: ejecutable
+      estado: confirmado
+    - producto: OpenStudio CLI
+      version: "3.11.0+241b8abb4d"
+      ruta: C:/openstudioapplication-1.11.1/bin/openstudio.exe
+      verificacion: comando_version
+      estado: confirmado
+    - producto: OpenStudio Ruby API
+      version: "incluida con OpenStudio Application 1.11.1"
+      ruta: C:/openstudioapplication-1.11.1/Ruby
+      verificacion: registro_instalacion
+      estado: confirmado
+    - producto: OpenStudio SketchUp Plug-in
+      version: "1.11.0"
+      ruta: C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2025/SketchUp/Plugins/openstudio.rb
+      verificacion: archivo_cargador_y_constante_de_version
+      estado: confirmado
+  cli_revit:
+    - {revit: "2024", version: "1.1.9"}
+    - {revit: "2025", version: "1.1.9"}
+    - {revit: "2026", version: "1.2.4"}
+    - {revit: "2027", version: "1.2.4"}
+  carpetas_plugins_revisadas:
+    - C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2024/SketchUp/Plugins
+    - C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2025/SketchUp/Plugins
+    - C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2026/SketchUp/Plugins
+  resultado_plugins: OpenStudio SketchUp Plug-in 1.11.0 instalado en el perfil josez para SketchUp 2025.
+  incidencias:
+    - descripcion: SketchUp se cerraba durante la apertura de la ventana de bienvenida.
+      alcance: perfil de usuario josez
+      diagnostico: SketchUp abria correctamente desde otra cuenta del mismo equipo.
+      solucion: regenerar login_session.dat conservando una copia de seguridad.
+      resultado: SketchUp inicia correctamente y permite instalar el complemento.
