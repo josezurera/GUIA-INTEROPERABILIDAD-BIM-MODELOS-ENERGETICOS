@@ -81,6 +81,7 @@ nav:
           - Alcance y versiones: 04-aplicaciones/openstudio/index.md
           - Arquitectura del flujo: 04-aplicaciones/openstudio/arquitectura.md
           - Intercambio desde Revit: 04-aplicaciones/openstudio/intercambio-revit.md
+          - Caso mínimo de referencia: 04-aplicaciones/openstudio/caso-minimo.md
   - Validación:
       - Estrategia QA/QC: 05-validacion/index.md
       - Registro de incidencias: 05-validacion/incidencias.md

@@ -1,0 +1,44 @@
+casos:
+  - id: OS-MIN-001
+    titulo: Dos espacios adyacentes
+    estado: especificado_pendiente_modelo
+    fecha_revision: 2026-07-15
+    versiones_objetivo:
+      revit: "2026"
+      openstudio: "3.11.0"
+      energyplus: "25.2.0"
+      gbxml: "7.03"
+    ubicacion:
+      referencia: Madrid-Barajas
+      archivo_epw: pendiente
+    geometria:
+      longitud_m: 10.0
+      anchura_m: 8.0
+      altura_m: 3.0
+      plantas: 1
+      espacios: 2
+      zonas_termicas: 2
+      volumen_total_m3: 240.0
+      superficie_util_total_m2: 80.0
+      cubierta_m2: 80.0
+      suelo_m2: 80.0
+      muro_exterior_bruto_m2: 108.0
+      particion_interior_m2: 24.0
+      ventanas:
+        cantidad: 2
+        superficie_unitaria_m2: 3.0
+        superficie_total_m2: 6.0
+        orientacion: sur
+    artefactos_requeridos:
+      - modelo_revit
+      - captura_modelo_analitico
+      - exportacion_gbxml
+      - flujo_osw
+      - modelo_osm
+      - modelo_idf
+      - archivo_err
+      - resultados_sql
+    criterios:
+      tolerancia_area_relativa: 0.01
+      tolerancia_volumen_relativa: 0.01
+      errores_severos_energyplus: 0
