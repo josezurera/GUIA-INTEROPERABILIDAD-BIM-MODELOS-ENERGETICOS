@@ -1904,7 +1904,7 @@
 <p>El primer caso de prueba debe ser suficientemente pequeño para localizar errores, pero debe incluir una adyacencia interior, cerramientos exteriores y huecos. Sus magnitudes se mantienen en <code>data/casos-prueba.yml</code> para permitir comprobaciones automáticas posteriores.</p>
 <div class="admonition success">
 <p class="admonition-title">Ejecución de control</p>
-<p>El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos y 7 advertencias no bloqueantes. La simulación anual continúa pendiente del archivo climático y de la configuración energética detallada.</p>
+<p>El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos. La configuración energética mínima ya es explícita; la ejecución anual continúa pendiente de incorporar un EPW verificable.</p>
 </div>
 <h2 id="geometria">Geometría<a class="headerlink" href="#geometria" title="Permanent link">&para;</a></h2>
 <p>El edificio es un prisma rectangular de <strong>10 × 8 × 3 m</strong>, dividido en dos espacios iguales por un cerramiento interior.</p>
@@ -2007,7 +2007,64 @@
 <li>sistema ideal de cargas de aire para separar la envolvente del diseño HVAC;</li>
 <li>periodo anual completo y días de dimensionado compatibles con el archivo climático.</li>
 </ul>
-<p>Los valores concretos se fijarán en la tarea de configuración del modelo y no deben introducirse de forma implícita.</p>
+<p>Los valores de referencia fijados en <code>create_model.rb</code> son:</p>
+<table>
+<thead>
+<tr>
+<th>Grupo</th>
+<th style="text-align: right;">Valor de referencia</th>
+<th>Aplicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cerramientos opacos</td>
+<td style="text-align: right;">R = 2,00 m²·K/W</td>
+<td>Todos los cerramientos opacos</td>
+</tr>
+<tr>
+<td>Huecos</td>
+<td style="text-align: right;">U = 2,00 W/m²·K; g = 0,60</td>
+<td>Dos ventanas sur</td>
+</tr>
+<tr>
+<td>Ocupación</td>
+<td style="text-align: right;">0,10 personas/m²</td>
+<td>08:00–18:00</td>
+</tr>
+<tr>
+<td>Iluminación</td>
+<td style="text-align: right;">8 W/m²</td>
+<td>08:00–18:00</td>
+</tr>
+<tr>
+<td>Equipos</td>
+<td style="text-align: right;">10 W/m²</td>
+<td>08:00–18:00</td>
+</tr>
+<tr>
+<td>Infiltración</td>
+<td style="text-align: right;">0,30 renovaciones/h</td>
+<td>Continua</td>
+</tr>
+<tr>
+<td>Aire exterior</td>
+<td style="text-align: right;">10 l/s por persona</td>
+<td>Método suma</td>
+</tr>
+<tr>
+<td>Consignas</td>
+<td style="text-align: right;">20 °C calefacción; 26 °C refrigeración</td>
+<td>Continua</td>
+</tr>
+<tr>
+<td>Sistema</td>
+<td style="text-align: right;">Cargas ideales de aire</td>
+<td>Una unidad por zona</td>
+</tr>
+</tbody>
+</table>
+<p>Estos datos son deliberadamente simples y sirven para comprobar la interoperabilidad. No representan por sí solos una solución reglamentaria ni un edificio real. Cualquier sustitución debe indicar valor, unidad, fuente, fecha y responsable.</p>
 <h2 id="artefactos-obligatorios">Artefactos obligatorios<a class="headerlink" href="#artefactos-obligatorios" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>OS-MIN-001/
 ├── source/       modelo Revit y registro de versión
@@ -2050,7 +2107,8 @@
 <li>traducción OSM–IDF completada;</li>
 <li>EnergyPlus 25.2.0 completado correctamente;</li>
 <li>0 errores severos y 7 advertencias;</li>
-<li>simulación anual pendiente de <code>BEM-57</code>.</li>
+<li>construcciones, cargas, horarios, ventilación y sistema ideal configurados en <code>BEM-57</code>;</li>
+<li>simulación anual pendiente de incorporar y verificar el EPW de Madrid-Barajas.</li>
 </ul>
 
 
@@ -2074,7 +2132,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 08:52:29 UTC">15 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 09:12:09 UTC">15 de julio de 2026</span>
   </span>
 
     
