@@ -4,6 +4,12 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 
 ## [Sin publicar]
 
+### BEM-65 — Arquitectura del MVP
+
+- Se define el producto gbXML–OpenStudio–EnergyPlus y su arquitectura web-first con integración opcional de Revit.
+- Se delimitan alcance, exclusiones, componentes, trazabilidad, estados y criterios de éxito.
+- Se vincula el desarrollo al épico BEM-64 y su backlog BEM-65–BEM-76.
+
 ### BEM-57 — Configuración energética mínima
 
 - Se hacen explícitas las construcciones, cargas internas, horarios, infiltración, ventilación y consignas de `OS-MIN-001`.
