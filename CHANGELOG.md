@@ -21,6 +21,11 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se automatiza la validación conjunta de geometría, nombres, adyacencia, diagnóstico y resultados.
 - Se incorpora una matriz de comparación que identifica como pendientes los artefactos Revit/gbXML y SketchUp.
 
+### BEM-60 — Registro de incidencias OpenStudio
+
+- Se crea un registro YAML con versiones, evidencias, acciones y estados.
+- Se documentan dos errores corregidos y cinco grupos abiertos de advertencias y limitaciones.
+
 ### Añadido
 
 - Estructura inicial del manual.

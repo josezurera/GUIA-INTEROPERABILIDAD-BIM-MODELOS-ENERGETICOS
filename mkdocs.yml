@@ -83,6 +83,7 @@ nav:
           - Intercambio desde Revit: 04-aplicaciones/openstudio/intercambio-revit.md
           - Caso mínimo de referencia: 04-aplicaciones/openstudio/caso-minimo.md
           - Resultados de la simulación: 04-aplicaciones/openstudio/resultados-simulacion.md
+          - Incidencias y limitaciones: 04-aplicaciones/openstudio/incidencias-limitaciones.md
   - Validación:
       - Estrategia QA/QC: 05-validacion/index.md
       - Registro de incidencias: 05-validacion/incidencias.md

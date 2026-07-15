@@ -12,3 +12,5 @@
 | Evidencia | Capturas, archivos o resultados. |
 | Estado | Abierta, validada o descartada. |
 
+El registro específico y las incidencias observadas en el caso OpenStudio se publican en [Incidencias y limitaciones de OpenStudio](../04-aplicaciones/openstudio/incidencias-limitaciones.md).
+
