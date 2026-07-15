@@ -1881,7 +1881,7 @@
 </tr>
 <tr>
 <td>Estado</td>
-<td>Especificado; OSM pendiente de generación</td>
+<td>OSM generado y ejecución de control superada</td>
 </tr>
 <tr>
 <td>Revit</td>
@@ -1902,9 +1902,9 @@
 </tbody>
 </table>
 <p>El primer caso de prueba debe ser suficientemente pequeño para localizar errores, pero debe incluir una adyacencia interior, cerramientos exteriores y huecos. Sus magnitudes se mantienen en <code>data/casos-prueba.yml</code> para permitir comprobaciones automáticas posteriores.</p>
-<div class="admonition warning">
-<p class="admonition-title">Modelo todavía no generado</p>
-<p>Esta página define el modelo que debe construirse. En el entorno de trabajo actual no se ha localizado OpenStudio CLI ni un archivo OSM existente. El caso no se declarará validado hasta conservar y ejecutar los artefactos indicados.</p>
+<div class="admonition success">
+<p class="admonition-title">Ejecución de control</p>
+<p>El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos y 7 advertencias no bloqueantes. La simulación anual continúa pendiente del archivo climático y de la configuración energética detallada.</p>
 </div>
 <h2 id="geometria">Geometría<a class="headerlink" href="#geometria" title="Permanent link">&para;</a></h2>
 <p>El edificio es un prisma rectangular de <strong>10 × 8 × 3 m</strong>, dividido en dos espacios iguales por un cerramiento interior.</p>
@@ -2042,7 +2042,16 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Registrar desviaciones e incidencias.</li>
 </ul>
 <h2 id="estado-de-cierre">Estado de cierre<a class="headerlink" href="#estado-de-cierre" title="Permanent link">&para;</a></h2>
-<p>La especificación documental está terminada. La tarjeta continuará abierta hasta disponer al menos del OSM, el OSW, el IDF y una ejecución sin errores severos.</p>
+<p>La geometría se genera mediante <code>create_model.rb</code> y se verifica con <code>verify_model.rb</code>. El repositorio conserva el OSM y el OSW; el IDF, los diagnósticos y la base SQL se regeneran en el directorio ignorado <code>run/</code>.</p>
+<p>Resultados de la ejecución de control:</p>
+<ul>
+<li>2 espacios y 2 zonas térmicas;</li>
+<li>12 superficies y 2 ventanas;</li>
+<li>traducción OSM–IDF completada;</li>
+<li>EnergyPlus 25.2.0 completado correctamente;</li>
+<li>0 errores severos y 7 advertencias;</li>
+<li>simulación anual pendiente de <code>BEM-57</code>.</li>
+</ul>
 
 
 
@@ -2065,7 +2074,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 08:31:16 UTC">15 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 08:52:29 UTC">15 de julio de 2026</span>
   </span>
 
     
