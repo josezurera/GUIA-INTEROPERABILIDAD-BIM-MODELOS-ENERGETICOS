@@ -11,6 +11,11 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se documentan los valores y unidades en la guía y en el registro YAML.
 - Se fija el EPW TMYx 2009–2023 de Madrid-Barajas-Suárez con descarga y verificación SHA-256 reproducibles.
 
+### BEM-58 — Resultados EnergyPlus
+
+- Se documenta la primera simulación anual de `OS-MIN-001`, sus resultados principales y los artefactos generados.
+- Se inventarían y clasifican las 11 advertencias de EnergyPlus.
+
 ### Añadido
 
 - Estructura inicial del manual.
