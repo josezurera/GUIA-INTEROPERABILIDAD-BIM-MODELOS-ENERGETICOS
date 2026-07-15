@@ -47,4 +47,18 @@ fuentes:
     url: https://github.com/NatLabRockies/EnergyPlus
     fecha_consulta: 2026-07-15
     estado: revisada
+  - id: OPENSTUDIO-MODEL-DOC
+    titulo: OpenStudio Model Class Reference
+    entidad: National Laboratory of the Rockies
+    tipo: documentacion_sdk
+    url: https://openstudio-sdk-documentation.s3.amazonaws.com/cpp/OpenStudio-3.9.0-doc/model/html/classopenstudio_1_1model_1_1_model.html
+    fecha_consulta: 2026-07-15
+    estado: revisada
+  - id: OPENSTUDIO-TRANSLATOR-DOC
+    titulo: OpenStudio EnergyPlus Translator
+    entidad: National Laboratory of the Rockies
+    tipo: documentacion_sdk
+    url: https://openstudio-sdk-documentation.s3.amazonaws.com/cpp/OpenStudio-3.6.1-doc/energyplus/html/index.html
+    fecha_consulta: 2026-07-15
+    estado: revisada
 

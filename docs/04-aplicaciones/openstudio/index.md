@@ -30,6 +30,8 @@ El módulo documentará:
 - medidas de OpenStudio y automatización reproducible;
 - controles QA/QC y comparación con los demás flujos de la guía.
 
+La secuencia de componentes, archivos y transformaciones se desarrolla en [Arquitectura del flujo](arquitectura.md).
+
 ## Fuera del alcance actual
 
 - adoptar automáticamente la versión más reciente de EnergyPlus;
