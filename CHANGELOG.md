@@ -16,6 +16,11 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se documenta la primera simulación anual de `OS-MIN-001`, sus resultados principales y los artefactos generados.
 - Se inventarían y clasifican las 11 advertencias de EnergyPlus.
 
+### BEM-59 — Línea base QA/QC
+
+- Se automatiza la validación conjunta de geometría, nombres, adyacencia, diagnóstico y resultados.
+- Se incorpora una matriz de comparación que identifica como pendientes los artefactos Revit/gbXML y SketchUp.
+
 ### Añadido
 
 - Estructura inicial del manual.
