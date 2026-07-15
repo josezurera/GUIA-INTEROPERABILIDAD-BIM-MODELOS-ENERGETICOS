@@ -188,7 +188,7 @@ model.getSurfaces.each { |surface| surface.setConstruction(opaque_construction) 
 end
 
 model.getSimulationControl.setRunSimulationforSizingPeriods(true)
-model.getSimulationControl.setRunSimulationforWeatherFileRunPeriods(false)
+model.getSimulationControl.setRunSimulationforWeatherFileRunPeriods(true)
 
 unless model.save(OpenStudio::Path.new(MODEL_PATH), true)
   raise "No se pudo guardar #{MODEL_PATH}"

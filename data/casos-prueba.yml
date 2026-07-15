@@ -10,7 +10,11 @@ casos:
       gbxml: "7.03"
     ubicacion:
       referencia: Madrid-Barajas
-      archivo_epw: pendiente
+      archivo_epw: ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023.epw
+      estacion_wmo: "082210"
+      periodo_tmyx: "2009-2023"
+      fuente: https://climate.onebuilding.org/WMO_Region_6_Europe/ESP_Spain/
+      sha256_epw: 2137be4961ebe634fe6f09f392ec3a320dfefcff34b4152c155334574bf8ba16
     configuracion_energetica:
       cerramiento_opaco_r_m2k_w: 2.0
       hueco_u_w_m2k: 2.0
@@ -58,11 +62,12 @@ casos:
     ultima_ejecucion:
       openstudio: "3.11.0+241b8abb4d"
       energyplus: "25.2.0-cf7368216c"
-      tipo: dias_diseno_configuracion_energetica
+      tipo: anual_tmyx_y_dias_diseno
       espacios: 2
       zonas_termicas: 2
       superficies: 12
       ventanas: 2
       errores_severos: 0
-      advertencias: 6
-      simulacion_anual: pendiente
+      advertencias: 11
+      simulacion_anual: completada
+      archivo_climatico: ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023.epw

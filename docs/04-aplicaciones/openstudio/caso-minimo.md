@@ -13,7 +13,7 @@
 El primer caso de prueba debe ser suficientemente pequeño para localizar errores, pero debe incluir una adyacencia interior, cerramientos exteriores y huecos. Sus magnitudes se mantienen en `data/casos-prueba.yml` para permitir comprobaciones automáticas posteriores.
 
 !!! success "Ejecución de control"
-    El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos. La configuración energética mínima ya es explícita; la ejecución anual continúa pendiente de incorporar un EPW verificable.
+    El modelo se ha generado con OpenStudio 3.11.0 y se ha ejecutado durante los días de diseño y el periodo anual con EnergyPlus 25.2.0. La ejecución TMYx termina correctamente con 0 errores severos y 11 advertencias inventariadas.
 
 ## Geometría
 
@@ -65,7 +65,7 @@ Los nombres deben mantenerse, cuando el formato lo permita, para facilitar la co
 
 La primera ejecución utilizará deliberadamente supuestos sencillos:
 
-- archivo climático de referencia para Madrid-Barajas, pendiente de seleccionar y versionar;
+- archivo climático TMYx 2009–2023 de Madrid-Barajas-Suárez, WMO 082210;
 - construcciones homogéneas claramente identificadas;
 - cargas internas y horarios idénticos en ambos espacios;
 - infiltración constante;
@@ -87,6 +87,20 @@ Los valores de referencia fijados en `create_model.rb` son:
 | Sistema | Cargas ideales de aire | Una unidad por zona |
 
 Estos datos son deliberadamente simples y sirven para comprobar la interoperabilidad. No representan por sí solos una solución reglamentaria ni un edificio real. Cualquier sustitución debe indicar valor, unidad, fuente, fecha y responsable.
+
+### Archivo climático
+
+El flujo utiliza `ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023.epw`, distribuido por [Climate.OneBuilding.Org](https://climate.onebuilding.org/WMO_Region_6_Europe/ESP_Spain/). El EPW no se almacena en Git: `weather/download_weather.ps1` descarga el paquete y valida tanto su hash como el del archivo extraído.
+
+| Dato | Valor |
+|---|---|
+| Estación | Madrid-Barajas-Suárez AP |
+| WMO | 082210 |
+| Periodo fuente | 2009–2023 |
+| Tipo | TMYx |
+| Coordenadas EPW | 40,467°; −3,556° |
+| Elevación | 609,6 m |
+| SHA-256 EPW | `2137be4961ebe634fe6f09f392ec3a320dfefcff34b4152c155334574bf8ba16` |
 
 ## Artefactos obligatorios
 
@@ -137,4 +151,5 @@ Resultados de la ejecución de control:
 - EnergyPlus 25.2.0 completado correctamente;
 - 0 errores severos y 7 advertencias;
 - construcciones, cargas, horarios, ventilación y sistema ideal configurados en `BEM-57`;
-- simulación anual pendiente de incorporar y verificar el EPW de Madrid-Barajas.
+- EPW TMYx descargado y validado mediante SHA-256;
+- simulación anual completada con 0 errores severos y 11 advertencias.
