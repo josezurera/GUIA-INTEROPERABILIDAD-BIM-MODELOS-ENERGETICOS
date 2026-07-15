@@ -12,6 +12,7 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Configuración de MkDocs Material y GitHub Pages.
 - Módulo de OpenStudio 3.11.0 y EnergyPlus 25.2.0 como flujo abierto de simulación.
 - Arquitectura del flujo OpenStudio–EnergyPlus, incluidos artefactos, medidas y puntos de control.
+- Ruta inicial Revit–OpenStudio mediante gbXML 7.03 y separación respecto a Systems Analysis.
 
 ### Cambiado
 

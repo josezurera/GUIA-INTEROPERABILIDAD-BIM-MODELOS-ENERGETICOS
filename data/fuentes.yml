@@ -61,4 +61,32 @@ fuentes:
     url: https://openstudio-sdk-documentation.s3.amazonaws.com/cpp/OpenStudio-3.6.1-doc/energyplus/html/index.html
     fecha_consulta: 2026-07-15
     estado: revisada
+  - id: AUTODESK-REVIT2026-GBXML
+    titulo: Exportación a gbXML
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ESP/Revit-DocumentPresent/files/GUID-586B9574-64DA-47BC-B8EC-DEF2D565928F.htm
+    fecha_consulta: 2026-07-15
+    estado: revisada
+  - id: AUTODESK-REVIT2026-SYSTEMS
+    titulo: Flujo de trabajo de análisis de sistemas de Revit
+    entidad: Autodesk
+    tipo: documentacion_oficial
+    url: https://help.autodesk.com/cloudhelp/2026/ESP/Revit-Analyze/files/GUID-200338BB-B394-4492-9A11-1A2A80A45AAE.htm
+    fecha_consulta: 2026-07-15
+    estado: revisada
+  - id: OPENSTUDIO-REVIT-CLI
+    titulo: OpenStudio CLI for Revit Systems Analysis
+    entidad: National Laboratory of the Rockies
+    tipo: repositorio_oficial
+    url: https://github.com/NatLabRockies/openstudio-revit-releases
+    fecha_consulta: 2026-07-15
+    estado: revisada
+  - id: OPENSTUDIO-GBXML
+    titulo: gbXML to OpenStudio
+    entidad: National Laboratory of the Rockies
+    tipo: repositorio_oficial
+    url: https://github.com/NatLabRockies/gbxml-to-openstudio
+    fecha_consulta: 2026-07-15
+    estado: revisada
 

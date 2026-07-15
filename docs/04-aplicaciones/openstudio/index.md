@@ -32,6 +32,8 @@ El módulo documentará:
 
 La secuencia de componentes, archivos y transformaciones se desarrolla en [Arquitectura del flujo](arquitectura.md).
 
+La ruta propuesta para obtener el primer modelo a partir de Revit se describe en [Intercambio desde Revit](intercambio-revit.md).
+
 ## Fuera del alcance actual
 
 - adoptar automáticamente la versión más reciente de EnergyPlus;

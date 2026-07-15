@@ -18,4 +18,12 @@ flujos:
     metodo: vinculacion
     esquema: "IFC2x3 o IFC4"
     estado: pendiente_ensayo
+  - origen: Autodesk Revit
+    version_origen: "2026"
+    receptor: OpenStudio
+    version_receptor: "3.11.0"
+    formato: gbXML
+    esquema: "7.03"
+    metodo: exportacion_modelo_analitico_e_importacion_avanzada
+    estado: recomendado_pendiente_ensayo
 
