@@ -17,7 +17,7 @@ Esta página define la validación de ida y vuelta de `OS-MIN-001` mediante Open
 
 ## Evidencia visual
 
-![OS-MIN-001 abierto en SketchUp 2025 con el complemento OpenStudio y visualización por tipo de superficie](../../../assets/images/openstudio/bem-63-sketchup-surface-types.png)
+![OS-MIN-001 abierto en SketchUp 2025 con el complemento OpenStudio y visualización por tipo de superficie](../../assets/images/openstudio/bem-63-sketchup-surface-types.png)
 
 La captura muestra los dos espacios contiguos, la separación central, los dos huecos de ventana y la codificación gráfica por tipo de superficie. También quedan visibles las barras del complemento OpenStudio, por lo que la imagen acredita tanto la carga del OSM como la disponibilidad de las herramientas de revisión.
 
