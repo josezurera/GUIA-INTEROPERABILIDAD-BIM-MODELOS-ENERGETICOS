@@ -10,6 +10,12 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se delimitan alcance, exclusiones, componentes, trazabilidad, estados y criterios de éxito.
 - Se vincula el desarrollo al épico BEM-64 y su backlog BEM-65–BEM-76.
 
+### BEM-66 — Esquema intermedio energético
+
+- Se crea un JSON Schema 2020-12 versionado para geometría y datos energéticos.
+- Se hace obligatoria la procedencia de valores importados, inferidos, de plantilla o de usuario.
+- Se añade un documento mínimo de ejemplo y un validador automatizado.
+
 ### BEM-57 — Configuración energética mínima
 
 - Se hacen explícitas las construcciones, cargas internas, horarios, infiltración, ventilación y consignas de `OS-MIN-001`.
