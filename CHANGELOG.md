@@ -32,6 +32,12 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se diferencia la API Ruby instalada del complemento SketchUp todavía no confirmado.
 - Se añade un script de inventario reproducible y una matriz provisional.
 
+### BEM-62 — Flujo SketchUp–OpenStudio–EnergyPlus
+
+- Se documenta la edición geométrica mediante el complemento y su separación del flujo Revit–gbXML.
+- Se prepara un ensayo de ida y vuelta sobre una copia temporal de `OS-MIN-001`.
+- Se fijan rutas de entrada y salida y se evita sobrescribir el modelo de referencia.
+
 ### Añadido
 
 - Estructura inicial del manual.
