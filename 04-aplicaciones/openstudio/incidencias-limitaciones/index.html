@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/03-revit/exportacion-ifc/">
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/04-aplicaciones/openstudio/incidencias-limitaciones/">
       
       
-        <link rel="prev" href="../estrategia-modelado/">
+        <link rel="prev" href="../resultados-simulacion/">
       
       
-        <link rel="next" href="../../04-aplicaciones/">
+        <link rel="next" href="../../../05-validacion/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Exportación IFC - Guía BIM para análisis energético</title>
+        <title>Incidencias y limitaciones - Guía BIM para análisis energético</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,14 +50,14 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +66,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exportacion-ifc" class="md-skip">
+        <a href="#incidencias-y-limitaciones-de-openstudio" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -99,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../.." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+    <a href="../../.." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exportación IFC
+              Incidencias y limitaciones
             
           </span>
         </div>
@@ -232,7 +232,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -253,7 +253,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../01-fundamentos/modelos/" class="md-tabs__link">
+        <a href="../../../01-fundamentos/modelos/" class="md-tabs__link">
           
   
   
@@ -275,7 +275,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../02-ifc/" class="md-tabs__link">
+        <a href="../../../02-ifc/" class="md-tabs__link">
           
   
   
@@ -293,13 +293,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../03-revit/" class="md-tabs__link">
           
   
   
@@ -317,11 +315,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../04-aplicaciones/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -343,7 +343,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../05-validacion/" class="md-tabs__link">
+        <a href="../../../05-validacion/" class="md-tabs__link">
           
   
   
@@ -365,7 +365,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../06-comparativas/compatibilidad/" class="md-tabs__link">
+        <a href="../../../06-comparativas/compatibilidad/" class="md-tabs__link">
           
   
   
@@ -387,7 +387,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../07-procedimientos/flujo-operativo/" class="md-tabs__link">
+        <a href="../../../07-procedimientos/flujo-operativo/" class="md-tabs__link">
           
   
   
@@ -409,7 +409,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../anexos/checklist-revit/" class="md-tabs__link">
+        <a href="../../../anexos/checklist-revit/" class="md-tabs__link">
           
   
   
@@ -429,7 +429,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../control-versiones/" class="md-tabs__link">
+      <a href="../../../control-versiones/" class="md-tabs__link">
         
   
   
@@ -464,7 +464,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+    <a href="../../.." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -494,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -565,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-fundamentos/modelos/" class="md-nav__link">
+      <a href="../../../01-fundamentos/modelos/" class="md-nav__link">
         
   
   
@@ -588,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-fundamentos/requisitos-motores/" class="md-nav__link">
+      <a href="../../../01-fundamentos/requisitos-motores/" class="md-nav__link">
         
   
   
@@ -643,7 +643,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../02-ifc/" class="md-nav__link ">
+            <a href="../../../02-ifc/" class="md-nav__link ">
               
   
   
@@ -678,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-ifc/espacios-limites/" class="md-nav__link">
+      <a href="../../../02-ifc/espacios-limites/" class="md-nav__link">
         
   
   
@@ -705,6 +705,121 @@
       
   
   
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../03-revit/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Revit
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Revit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-revit/estrategia-modelado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estrategia de modelado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-revit/exportacion-ifc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exportación IFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -714,6 +829,8 @@
       
         
           
+        
+      
         
       
         
@@ -736,138 +853,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Revit
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Revit
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../estrategia-modelado/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Estrategia de modelado
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Exportación IFC
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../04-aplicaciones/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -880,13 +870,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Aplicaciones
@@ -914,17 +904,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
             
   
   
@@ -951,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-aplicaciones/cype/open-bim-analytical-model/" class="md-nav__link">
+      <a href="../../cype/open-bim-analytical-model/" class="md-nav__link">
         
   
   
@@ -974,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-aplicaciones/cype/cypetherm-he-plus/" class="md-nav__link">
+      <a href="../../cype/cypetherm-he-plus/" class="md-nav__link">
         
   
   
@@ -1019,10 +1012,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1030,7 +1026,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../04-aplicaciones/tekton3d/" class="md-nav__link ">
+            <a href="../../tekton3d/" class="md-nav__link ">
               
   
   
@@ -1043,7 +1039,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1065,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-aplicaciones/tekton3d/importacion-vinculacion/" class="md-nav__link">
+      <a href="../../tekton3d/importacion-vinculacion/" class="md-nav__link">
         
   
   
@@ -1093,6 +1089,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1118,18 +1116,21 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../04-aplicaciones/openstudio/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1142,13 +1143,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4" id="__nav_5_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             OpenStudio y EnergyPlus
@@ -1164,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-aplicaciones/openstudio/arquitectura/" class="md-nav__link">
+      <a href="../arquitectura/" class="md-nav__link">
         
   
   
@@ -1187,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-aplicaciones/openstudio/intercambio-revit/" class="md-nav__link">
+      <a href="../intercambio-revit/" class="md-nav__link">
         
   
   
@@ -1210,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-aplicaciones/openstudio/caso-minimo/" class="md-nav__link">
+      <a href="../caso-minimo/" class="md-nav__link">
         
   
   
@@ -1233,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-aplicaciones/openstudio/resultados-simulacion/" class="md-nav__link">
+      <a href="../resultados-simulacion/" class="md-nav__link">
         
   
   
@@ -1253,10 +1254,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../04-aplicaciones/openstudio/incidencias-limitaciones/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Incidencias y limitaciones
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1267,6 +1290,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correcciones-verificadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correcciones verificadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Correcciones verificadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#epw-ausente" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPW ausente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-de-actividad-de-ocupantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel de actividad de ocupantes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advertencias-abiertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advertencias abiertas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglas-de-mantenimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reglas de mantenimiento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitaciones-de-alcance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitaciones de alcance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1319,7 +1431,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../05-validacion/" class="md-nav__link ">
+            <a href="../../../05-validacion/" class="md-nav__link ">
               
   
   
@@ -1354,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-validacion/incidencias/" class="md-nav__link">
+      <a href="../../../05-validacion/incidencias/" class="md-nav__link">
         
   
   
@@ -1431,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-comparativas/compatibilidad/" class="md-nav__link">
+      <a href="../../../06-comparativas/compatibilidad/" class="md-nav__link">
         
   
   
@@ -1508,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07-procedimientos/flujo-operativo/" class="md-nav__link">
+      <a href="../../../07-procedimientos/flujo-operativo/" class="md-nav__link">
         
   
   
@@ -1589,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../anexos/checklist-revit/" class="md-nav__link">
+      <a href="../../../anexos/checklist-revit/" class="md-nav__link">
         
   
   
@@ -1612,7 +1724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../anexos/bibliografia/" class="md-nav__link">
+      <a href="../../../anexos/bibliografia/" class="md-nav__link">
         
   
   
@@ -1635,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glosario/" class="md-nav__link">
+      <a href="../../../glosario/" class="md-nav__link">
         
   
   
@@ -1665,7 +1777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control-versiones/" class="md-nav__link">
+      <a href="../../../control-versiones/" class="md-nav__link">
         
   
   
@@ -1700,6 +1812,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correcciones-verificadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correcciones verificadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Correcciones verificadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#epw-ausente" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPW ausente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-de-actividad-de-ocupantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel de actividad de ocupantes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advertencias-abiertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advertencias abiertas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglas-de-mantenimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reglas de mantenimiento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitaciones-de-alcance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitaciones de alcance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1717,15 +1906,97 @@
   
 
 
-<h1 id="exportacion-ifc">Exportación IFC<a class="headerlink" href="#exportacion-ifc" title="Permanent link">&para;</a></h1>
-<p>Se mantendrán configuraciones diferenciadas según el receptor:</p>
+<h1 id="incidencias-y-limitaciones-de-openstudio">Incidencias y limitaciones de OpenStudio<a class="headerlink" href="#incidencias-y-limitaciones-de-openstudio" title="Permanent link">&para;</a></h1>
+<p>El registro distingue entre errores bloqueantes ya corregidos, advertencias pendientes y limitaciones deliberadas del caso. La fuente estructurada es <code>data/incidencias-openstudio.yml</code>; esta página ofrece su lectura técnica.</p>
+<h2 id="resumen">Resumen<a class="headerlink" href="#resumen" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Incidencia</th>
+<th>Severidad</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OS-INC-001</code></td>
+<td>EPW no disponible durante la ejecución</td>
+<td>Bloqueante</td>
+<td>Validada</td>
+</tr>
+<tr>
+<td><code>OS-INC-002</code></td>
+<td>Carga People sin nivel de actividad</td>
+<td>Bloqueante</td>
+<td>Validada</td>
+</tr>
+<tr>
+<td><code>OS-INC-003</code></td>
+<td>Modelo opaco sin masa térmica</td>
+<td>Advertencia</td>
+<td>Abierta</td>
+</tr>
+<tr>
+<td><code>OS-INC-004</code></td>
+<td>Temperaturas del terreno no definidas</td>
+<td>Advertencia</td>
+<td>Abierta</td>
+</tr>
+<tr>
+<td><code>OS-INC-005</code></td>
+<td>Medidores no aplicables</td>
+<td>Advertencia</td>
+<td>Abierta</td>
+</tr>
+<tr>
+<td><code>OS-INC-006</code></td>
+<td>Variables mensuales no disponibles</td>
+<td>Advertencia</td>
+<td>Abierta</td>
+</tr>
+<tr>
+<td><code>OS-INC-007</code></td>
+<td>Escalados económicos sin tarifa</td>
+<td>Advertencia</td>
+<td>Abierta</td>
+</tr>
+</tbody>
+</table>
+<h2 id="correcciones-verificadas">Correcciones verificadas<a class="headerlink" href="#correcciones-verificadas" title="Permanent link">&para;</a></h2>
+<h3 id="epw-ausente">EPW ausente<a class="headerlink" href="#epw-ausente" title="Permanent link">&para;</a></h3>
+<p>La ejecución anual fallaba si <code>workflow.osw</code> no podía resolver el archivo climático. La corrección fija la ruta relativa, proporciona <code>weather/download_weather.ps1</code> y valida hashes SHA-256 antes de ejecutar. Se considera validada porque el periodo anual termina con 0 errores severos.</p>
+<h3 id="nivel-de-actividad-de-ocupantes">Nivel de actividad de ocupantes<a class="headerlink" href="#nivel-de-actividad-de-ocupantes" title="Permanent link">&para;</a></h3>
+<p>EnergyPlus exige un horario de potencia metabólica para cada objeto <code>People</code>. La primera configuración de cargas omitía <code>activity_level_schedule_name</code> y produjo un error fatal. <code>create_model.rb</code> asigna ahora <code>SCH-ACTIVITY-120-W-PERSON</code> a ambos espacios; la traducción y la ejecución posteriores son correctas.</p>
+<h2 id="advertencias-abiertas">Advertencias abiertas<a class="headerlink" href="#advertencias-abiertas" title="Permanent link">&para;</a></h2>
+<p>Las 11 advertencias de la ejecución anual se agrupan en cinco incidencias. No bloquean el ensayo de interoperabilidad, pero las dos primeras afectan a la interpretación física:</p>
+<ol>
+<li><strong>Masa térmica:</strong> el cerramiento opaco se representa mediante resistencia sin capacidad térmica.</li>
+<li><strong>Terreno:</strong> no se han fijado temperaturas mensuales verificadas.</li>
+<li><strong>Medidores:</strong> la plantilla general solicita salidas energéticas que el sistema ideal no utiliza.</li>
+<li><strong>Informes mensuales:</strong> algunas variables solicitadas no existen en el modelo.</li>
+<li><strong>Economía:</strong> las escaladas estadounidenses predeterminadas carecen de tarifas asociadas y no son aplicables al caso español.</li>
+</ol>
+<h2 id="reglas-de-mantenimiento">Reglas de mantenimiento<a class="headerlink" href="#reglas-de-mantenimiento" title="Permanent link">&para;</a></h2>
+<p>Cada nueva incidencia debe registrar:</p>
 <ul>
-<li><code>IFC_CYPE_ANALYTICAL</code> para BIMserver.center y Open BIM Analytical Model.</li>
-<li><code>IFC_TEKTON_IMPORT</code> para importación IFC2x3 en TK-IFC.</li>
-<li><code>IFC_TEKTON_LINK</code> para vinculación, inicialmente orientada a IFC4.</li>
+<li>identificador estable <code>OS-INC-NNN</code>;</li>
+<li>versiones exactas afectadas;</li>
+<li>severidad y origen;</li>
+<li>síntoma observable y evidencia;</li>
+<li>acción aplicada o propuesta;</li>
+<li>estado <code>abierta</code>, <code>validada</code> o <code>descartada</code>;</li>
+<li>tarjeta Jira responsable.</li>
 </ul>
-<p>Los nombres son convenciones de este manual y deberán adaptarse al entorno de cada organización.</p>
-<p>OpenStudio no se añade a esta lista porque la ruta inicial propuesta utiliza el modelo analítico de energía de Revit exportado como <strong>gbXML 7.03</strong>, no una importación IFC directa. IFC podrá conservarse como evidencia complementaria y para controles geométricos, pero no se declarará formato de entrada de OpenStudio sin una implementación documentada y ensayada.</p>
+<p>Una incidencia solo pasa a <code>validada</code> después de repetir el caso y conservar evidencia del resultado. Las rutas dentro de <code>run/</code> son regenerables y no sustituyen el registro YAML versionado.</p>
+<h2 id="limitaciones-de-alcance">Limitaciones de alcance<a class="headerlink" href="#limitaciones-de-alcance" title="Permanent link">&para;</a></h2>
+<ul>
+<li>El sistema de cargas ideales calcula necesidades, no el consumo de un sistema HVAC real.</li>
+<li>Los resultados no constituyen una certificación energética.</li>
+<li>El modelo Revit, el gbXML y la prueba mediante SketchUp todavía no existen.</li>
+<li>La conformidad geométrica entre aplicaciones permanece pendiente en BEM-59.</li>
+<li>Las advertencias abiertas deben resolverse antes de usar el caso como referencia física calibrada.</li>
+</ul>
 
 
 
@@ -1748,7 +2019,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 08:16:56 UTC">15 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 10:07:59 UTC">15 de julio de 2026</span>
   </span>
 
     
@@ -1758,7 +2029,7 @@
     <span class="md-icon" title="Creado">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:03:40 UTC">11 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 10:07:59 UTC">15 de julio de 2026</span>
   </span>
 
     
@@ -1816,10 +2087,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
