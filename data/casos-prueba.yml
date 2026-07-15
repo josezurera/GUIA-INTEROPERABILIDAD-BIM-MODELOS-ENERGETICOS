@@ -1,7 +1,7 @@
 casos:
   - id: OS-MIN-001
     titulo: Dos espacios adyacentes
-    estado: especificado_pendiente_modelo
+    estado: modelo_generado_control_superado
     fecha_revision: 2026-07-15
     versiones_objetivo:
       revit: "2026"
@@ -42,3 +42,14 @@ casos:
       tolerancia_area_relativa: 0.01
       tolerancia_volumen_relativa: 0.01
       errores_severos_energyplus: 0
+    ultima_ejecucion:
+      openstudio: "3.11.0+241b8abb4d"
+      energyplus: "25.2.0-cf7368216c"
+      tipo: dias_diseno_referencia
+      espacios: 2
+      zonas_termicas: 2
+      superficies: 12
+      ventanas: 2
+      errores_severos: 0
+      advertencias: 7
+      simulacion_anual: pendiente

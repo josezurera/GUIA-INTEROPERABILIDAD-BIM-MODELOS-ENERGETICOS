@@ -1,0 +1,5 @@
+{
+  "description": "Traducción reproducible del caso mínimo OS-MIN-001",
+  "seed_file": "model.osm",
+  "steps": []
+}
