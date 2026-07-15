@@ -85,6 +85,7 @@ nav:
           - Resultados de la simulación: 04-aplicaciones/openstudio/resultados-simulacion.md
           - Incidencias y limitaciones: 04-aplicaciones/openstudio/incidencias-limitaciones.md
           - Compatibilidad con SketchUp: 04-aplicaciones/openstudio/compatibilidad-sketchup.md
+          - Flujo SketchUp–OpenStudio–EnergyPlus: 04-aplicaciones/openstudio/flujo-sketchup.md
   - Validación:
       - Estrategia QA/QC: 05-validacion/index.md
       - Registro de incidencias: 05-validacion/incidencias.md

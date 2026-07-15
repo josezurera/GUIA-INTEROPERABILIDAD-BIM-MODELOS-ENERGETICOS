@@ -14,6 +14,12 @@ python extract_results.py
 python validate_case.py --openstudio "C:/openstudioapplication-1.11.1/bin/openstudio.exe"
 ```
 
+El verificador acepta opcionalmente la ruta de otro OSM para comprobar copias o resultados de intercambio:
+
+```powershell
+openstudio verify_model.rb ruta/al/modelo.osm
+```
+
 `create_model.rb` es la fuente reproducible del modelo y `verify_model.rb` comprueba sus magnitudes principales. `model.osm` se conserva como resultado de referencia. El directorio `run/` generado por el flujo se excluye del control de versiones porque contiene resultados derivados, entre ellos `in.idf`, `eplusout.err` y `eplusout.sql`.
 
 ## Estado

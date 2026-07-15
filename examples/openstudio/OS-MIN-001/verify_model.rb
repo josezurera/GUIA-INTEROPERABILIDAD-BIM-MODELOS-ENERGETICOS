@@ -1,11 +1,12 @@
 require 'openstudio'
 
-MODEL_PATH = OpenStudio::Path.new(File.join(__dir__, 'model.osm'))
+model_file = ARGV[0] ? File.expand_path(ARGV[0], Dir.pwd) : File.join(__dir__, 'model.osm')
+MODEL_PATH = OpenStudio::Path.new(model_file)
 TOLERANCE = 0.01
 
 translator = OpenStudio::OSVersion::VersionTranslator.new
 optional_model = translator.loadModel(MODEL_PATH)
-raise 'No se pudo cargar model.osm' if optional_model.empty?
+raise "No se pudo cargar #{model_file}" if optional_model.empty?
 
 model = optional_model.get
 spaces = model.getSpaces
