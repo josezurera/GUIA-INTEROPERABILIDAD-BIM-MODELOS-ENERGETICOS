@@ -94,6 +94,8 @@ nav:
       - Matriz de compatibilidad: 06-comparativas/compatibilidad.md
   - Procedimiento:
       - Flujo operativo: 07-procedimientos/flujo-operativo.md
+  - Producto:
+      - Arquitectura del MVP: 08-producto/arquitectura-mvp.md
   - Anexos:
       - Checklist Revit: anexos/checklist-revit.md
       - Bibliografía: anexos/bibliografia.md
