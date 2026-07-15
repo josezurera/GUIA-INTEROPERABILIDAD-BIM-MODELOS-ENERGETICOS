@@ -2,6 +2,7 @@
 site/
 output/
 tmp/
+examples/**/run/
 __pycache__/
 *.pyc
 .DS_Store

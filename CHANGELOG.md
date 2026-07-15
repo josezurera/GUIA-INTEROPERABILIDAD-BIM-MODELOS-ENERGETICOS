@@ -14,6 +14,7 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Arquitectura del flujo OpenStudio–EnergyPlus, incluidos artefactos, medidas y puntos de control.
 - Ruta inicial Revit–OpenStudio mediante gbXML 7.03 y separación respecto a Systems Analysis.
 - Especificación cuantificada del caso mínimo de referencia para OpenStudio.
+- Modelo OSM reproducible, verificación geométrica y ejecución de control con EnergyPlus.
 
 ### Cambiado
 

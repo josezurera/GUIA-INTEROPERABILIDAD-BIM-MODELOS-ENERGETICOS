@@ -4,7 +4,7 @@
 |---|---|
 | Identificador | `OS-MIN-001` |
 | Nombre | Dos espacios adyacentes |
-| Estado | Especificado; OSM pendiente de generación |
+| Estado | OSM generado y ejecución de control superada |
 | Revit | 2026 |
 | OpenStudio | 3.11.0 |
 | EnergyPlus | 25.2.0 |
@@ -12,8 +12,8 @@
 
 El primer caso de prueba debe ser suficientemente pequeño para localizar errores, pero debe incluir una adyacencia interior, cerramientos exteriores y huecos. Sus magnitudes se mantienen en `data/casos-prueba.yml` para permitir comprobaciones automáticas posteriores.
 
-!!! warning "Modelo todavía no generado"
-    Esta página define el modelo que debe construirse. En el entorno de trabajo actual no se ha localizado OpenStudio CLI ni un archivo OSM existente. El caso no se declarará validado hasta conservar y ejecutar los artefactos indicados.
+!!! success "Ejecución de control"
+    El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos y 7 advertencias no bloqueantes. La simulación anual continúa pendiente del archivo climático y de la configuración energética detallada.
 
 ## Geometría
 
@@ -113,4 +113,13 @@ Los archivos binarios o de gran tamaño no se incorporarán automáticamente al 
 
 ## Estado de cierre
 
-La especificación documental está terminada. La tarjeta continuará abierta hasta disponer al menos del OSM, el OSW, el IDF y una ejecución sin errores severos.
+La geometría se genera mediante `create_model.rb` y se verifica con `verify_model.rb`. El repositorio conserva el OSM y el OSW; el IDF, los diagnósticos y la base SQL se regeneran en el directorio ignorado `run/`.
+
+Resultados de la ejecución de control:
+
+- 2 espacios y 2 zonas térmicas;
+- 12 superficies y 2 ventanas;
+- traducción OSM–IDF completada;
+- EnergyPlus 25.2.0 completado correctamente;
+- 0 errores severos y 7 advertencias;
+- simulación anual pendiente de `BEM-57`.
