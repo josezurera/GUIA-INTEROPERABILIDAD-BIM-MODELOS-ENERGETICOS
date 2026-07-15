@@ -11,6 +11,19 @@ casos:
     ubicacion:
       referencia: Madrid-Barajas
       archivo_epw: pendiente
+    configuracion_energetica:
+      cerramiento_opaco_r_m2k_w: 2.0
+      hueco_u_w_m2k: 2.0
+      hueco_factor_solar: 0.60
+      ocupacion_personas_m2: 0.10
+      iluminacion_w_m2: 8.0
+      equipos_w_m2: 10.0
+      infiltracion_renovaciones_h: 0.30
+      aire_exterior_l_s_persona: 10.0
+      horario_ocupado: "08:00-18:00"
+      consigna_calefaccion_c: 20.0
+      consigna_refrigeracion_c: 26.0
+      sistema: cargas_ideales_aire
     geometria:
       longitud_m: 10.0
       anchura_m: 8.0
@@ -45,11 +58,11 @@ casos:
     ultima_ejecucion:
       openstudio: "3.11.0+241b8abb4d"
       energyplus: "25.2.0-cf7368216c"
-      tipo: dias_diseno_referencia
+      tipo: dias_diseno_configuracion_energetica
       espacios: 2
       zonas_termicas: 2
       superficies: 12
       ventanas: 2
       errores_severos: 0
-      advertencias: 7
+      advertencias: 6
       simulacion_anual: pendiente

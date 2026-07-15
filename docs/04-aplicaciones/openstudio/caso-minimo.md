@@ -13,7 +13,7 @@
 El primer caso de prueba debe ser suficientemente pequeño para localizar errores, pero debe incluir una adyacencia interior, cerramientos exteriores y huecos. Sus magnitudes se mantienen en `data/casos-prueba.yml` para permitir comprobaciones automáticas posteriores.
 
 !!! success "Ejecución de control"
-    El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos y 7 advertencias no bloqueantes. La simulación anual continúa pendiente del archivo climático y de la configuración energética detallada.
+    El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos. La configuración energética mínima ya es explícita; la ejecución anual continúa pendiente de incorporar un EPW verificable.
 
 ## Geometría
 
@@ -72,7 +72,21 @@ La primera ejecución utilizará deliberadamente supuestos sencillos:
 - sistema ideal de cargas de aire para separar la envolvente del diseño HVAC;
 - periodo anual completo y días de dimensionado compatibles con el archivo climático.
 
-Los valores concretos se fijarán en la tarea de configuración del modelo y no deben introducirse de forma implícita.
+Los valores de referencia fijados en `create_model.rb` son:
+
+| Grupo | Valor de referencia | Aplicación |
+|---|---:|---|
+| Cerramientos opacos | R = 2,00 m²·K/W | Todos los cerramientos opacos |
+| Huecos | U = 2,00 W/m²·K; g = 0,60 | Dos ventanas sur |
+| Ocupación | 0,10 personas/m² | 08:00–18:00 |
+| Iluminación | 8 W/m² | 08:00–18:00 |
+| Equipos | 10 W/m² | 08:00–18:00 |
+| Infiltración | 0,30 renovaciones/h | Continua |
+| Aire exterior | 10 l/s por persona | Método suma |
+| Consignas | 20 °C calefacción; 26 °C refrigeración | Continua |
+| Sistema | Cargas ideales de aire | Una unidad por zona |
+
+Estos datos son deliberadamente simples y sirven para comprobar la interoperabilidad. No representan por sí solos una solución reglamentaria ni un edificio real. Cualquier sustitución debe indicar valor, unidad, fuente, fecha y responsable.
 
 ## Artefactos obligatorios
 
@@ -122,4 +136,5 @@ Resultados de la ejecución de control:
 - traducción OSM–IDF completada;
 - EnergyPlus 25.2.0 completado correctamente;
 - 0 errores severos y 7 advertencias;
-- simulación anual pendiente de `BEM-57`.
+- construcciones, cargas, horarios, ventilación y sistema ideal configurados en `BEM-57`;
+- simulación anual pendiente de incorporar y verificar el EPW de Madrid-Barajas.

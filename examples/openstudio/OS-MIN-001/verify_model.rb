@@ -43,4 +43,17 @@ expected.each do |key, target|
   puts "OK #{key}=#{actual.round(3)}"
 end
 
+energy_objects = {
+  people: model.getPeoples.size,
+  lights: model.getLightss.size,
+  electric_equipment: model.getElectricEquipments.size,
+  infiltration: model.getSpaceInfiltrationDesignFlowRates.size,
+  outdoor_air: model.getDesignSpecificationOutdoorAirs.size,
+  thermostats: model.getThermostatSetpointDualSetpoints.size
+}
+energy_objects.each do |name, actual|
+  raise "#{name}: esperado 2, obtenido #{actual}" unless actual == 2
+  puts "OK #{name}=#{actual}"
+end
+
 puts 'Verificación geométrica superada.'

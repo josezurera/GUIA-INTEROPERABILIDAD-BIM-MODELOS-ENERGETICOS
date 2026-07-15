@@ -4,6 +4,12 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 
 ## [Sin publicar]
 
+### BEM-57 — Configuración energética mínima
+
+- Se hacen explícitas las construcciones, cargas internas, horarios, infiltración, ventilación y consignas de `OS-MIN-001`.
+- Se mantiene el sistema de cargas ideales para aislar el comportamiento de la envolvente.
+- Se documentan los valores y unidades en la guía y en el registro YAML.
+
 ### Añadido
 
 - Estructura inicial del manual.
