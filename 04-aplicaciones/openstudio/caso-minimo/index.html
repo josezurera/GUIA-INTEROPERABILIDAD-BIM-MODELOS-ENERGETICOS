@@ -1290,6 +1290,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Condiciones mínimas de simulación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivo-climatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivo climático
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1805,6 +1820,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Condiciones mínimas de simulación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivo-climatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivo climático
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1904,7 +1934,7 @@
 <p>El primer caso de prueba debe ser suficientemente pequeño para localizar errores, pero debe incluir una adyacencia interior, cerramientos exteriores y huecos. Sus magnitudes se mantienen en <code>data/casos-prueba.yml</code> para permitir comprobaciones automáticas posteriores.</p>
 <div class="admonition success">
 <p class="admonition-title">Ejecución de control</p>
-<p>El modelo se ha generado con OpenStudio 3.11.0 y ejecutado con EnergyPlus 25.2.0 sobre dos días de diseño. El resultado contiene 0 errores severos. La configuración energética mínima ya es explícita; la ejecución anual continúa pendiente de incorporar un EPW verificable.</p>
+<p>El modelo se ha generado con OpenStudio 3.11.0 y se ha ejecutado durante los días de diseño y el periodo anual con EnergyPlus 25.2.0. La ejecución TMYx termina correctamente con 0 errores severos y 11 advertencias inventariadas.</p>
 </div>
 <h2 id="geometria">Geometría<a class="headerlink" href="#geometria" title="Permanent link">&para;</a></h2>
 <p>El edificio es un prisma rectangular de <strong>10 × 8 × 3 m</strong>, dividido en dos espacios iguales por un cerramiento interior.</p>
@@ -2000,7 +2030,7 @@
 <h2 id="condiciones-minimas-de-simulacion">Condiciones mínimas de simulación<a class="headerlink" href="#condiciones-minimas-de-simulacion" title="Permanent link">&para;</a></h2>
 <p>La primera ejecución utilizará deliberadamente supuestos sencillos:</p>
 <ul>
-<li>archivo climático de referencia para Madrid-Barajas, pendiente de seleccionar y versionar;</li>
+<li>archivo climático TMYx 2009–2023 de Madrid-Barajas-Suárez, WMO 082210;</li>
 <li>construcciones homogéneas claramente identificadas;</li>
 <li>cargas internas y horarios idénticos en ambos espacios;</li>
 <li>infiltración constante;</li>
@@ -2065,6 +2095,46 @@
 </tbody>
 </table>
 <p>Estos datos son deliberadamente simples y sirven para comprobar la interoperabilidad. No representan por sí solos una solución reglamentaria ni un edificio real. Cualquier sustitución debe indicar valor, unidad, fuente, fecha y responsable.</p>
+<h3 id="archivo-climatico">Archivo climático<a class="headerlink" href="#archivo-climatico" title="Permanent link">&para;</a></h3>
+<p>El flujo utiliza <code>ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023.epw</code>, distribuido por <a href="https://climate.onebuilding.org/WMO_Region_6_Europe/ESP_Spain/">Climate.OneBuilding.Org</a>. El EPW no se almacena en Git: <code>weather/download_weather.ps1</code> descarga el paquete y valida tanto su hash como el del archivo extraído.</p>
+<table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estación</td>
+<td>Madrid-Barajas-Suárez AP</td>
+</tr>
+<tr>
+<td>WMO</td>
+<td>082210</td>
+</tr>
+<tr>
+<td>Periodo fuente</td>
+<td>2009–2023</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>TMYx</td>
+</tr>
+<tr>
+<td>Coordenadas EPW</td>
+<td>40,467°; −3,556°</td>
+</tr>
+<tr>
+<td>Elevación</td>
+<td>609,6 m</td>
+</tr>
+<tr>
+<td>SHA-256 EPW</td>
+<td><code>2137be4961ebe634fe6f09f392ec3a320dfefcff34b4152c155334574bf8ba16</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="artefactos-obligatorios">Artefactos obligatorios<a class="headerlink" href="#artefactos-obligatorios" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>OS-MIN-001/
 ├── source/       modelo Revit y registro de versión
@@ -2108,7 +2178,8 @@
 <li>EnergyPlus 25.2.0 completado correctamente;</li>
 <li>0 errores severos y 7 advertencias;</li>
 <li>construcciones, cargas, horarios, ventilación y sistema ideal configurados en <code>BEM-57</code>;</li>
-<li>simulación anual pendiente de incorporar y verificar el EPW de Madrid-Barajas.</li>
+<li>EPW TMYx descargado y validado mediante SHA-256;</li>
+<li>simulación anual completada con 0 errores severos y 11 advertencias.</li>
 </ul>
 
 
@@ -2132,7 +2203,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 09:12:09 UTC">15 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 09:22:06 UTC">15 de julio de 2026</span>
   </span>
 
     
