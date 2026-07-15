@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/04-aplicaciones/">
+        <link rel="canonical" href="https://josezurera.github.io/GUIA-INTEROPERABILIDAD-BIM-MODELOS-ENERGETICOS/04-aplicaciones/openstudio/intercambio-revit/">
       
       
-        <link rel="prev" href="../03-revit/exportacion-ifc/">
+        <link rel="prev" href="../arquitectura/">
       
       
-        <link rel="next" href="cype/open-bim-analytical-model/">
+        <link rel="next" href="../../../05-validacion/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Visión general - Guía BIM para análisis energético</title>
+        <title>Intercambio desde Revit - Guía BIM para análisis energético</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,14 +50,14 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +66,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aplicaciones-de-analisis" class="md-skip">
+        <a href="#intercambio-desde-revit" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -99,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href=".." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+    <a href="../../.." title="Guía BIM para análisis energético" class="md-header__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visión general
+              Intercambio desde Revit
             
           </span>
         </div>
@@ -232,7 +232,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -253,7 +253,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../01-fundamentos/modelos/" class="md-tabs__link">
+        <a href="../../../01-fundamentos/modelos/" class="md-tabs__link">
           
   
   
@@ -275,7 +275,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../02-ifc/" class="md-tabs__link">
+        <a href="../../../02-ifc/" class="md-tabs__link">
           
   
   
@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../03-revit/" class="md-tabs__link">
+        <a href="../../../03-revit/" class="md-tabs__link">
           
   
   
@@ -321,7 +321,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -343,7 +343,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../05-validacion/" class="md-tabs__link">
+        <a href="../../../05-validacion/" class="md-tabs__link">
           
   
   
@@ -365,7 +365,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../06-comparativas/compatibilidad/" class="md-tabs__link">
+        <a href="../../../06-comparativas/compatibilidad/" class="md-tabs__link">
           
   
   
@@ -387,7 +387,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../07-procedimientos/flujo-operativo/" class="md-tabs__link">
+        <a href="../../../07-procedimientos/flujo-operativo/" class="md-tabs__link">
           
   
   
@@ -409,7 +409,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../anexos/checklist-revit/" class="md-tabs__link">
+        <a href="../../../anexos/checklist-revit/" class="md-tabs__link">
           
   
   
@@ -429,7 +429,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../control-versiones/" class="md-tabs__link">
+      <a href="../../../control-versiones/" class="md-tabs__link">
         
   
   
@@ -464,7 +464,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
+    <a href="../../.." title="Guía BIM para análisis energético" class="md-nav__button md-logo" aria-label="Guía BIM para análisis energético" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -494,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -565,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-fundamentos/modelos/" class="md-nav__link">
+      <a href="../../../01-fundamentos/modelos/" class="md-nav__link">
         
   
   
@@ -588,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-fundamentos/requisitos-motores/" class="md-nav__link">
+      <a href="../../../01-fundamentos/requisitos-motores/" class="md-nav__link">
         
   
   
@@ -643,7 +643,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../02-ifc/" class="md-nav__link ">
+            <a href="../../../02-ifc/" class="md-nav__link ">
               
   
   
@@ -678,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-ifc/espacios-limites/" class="md-nav__link">
+      <a href="../../../02-ifc/espacios-limites/" class="md-nav__link">
         
   
   
@@ -735,7 +735,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../03-revit/" class="md-nav__link ">
+            <a href="../../../03-revit/" class="md-nav__link ">
               
   
   
@@ -770,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/estrategia-modelado/" class="md-nav__link">
+      <a href="../../../03-revit/estrategia-modelado/" class="md-nav__link">
         
   
   
@@ -793,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-revit/exportacion-ifc/" class="md-nav__link">
+      <a href="../../../03-revit/exportacion-ifc/" class="md-nav__link">
         
   
   
@@ -857,7 +857,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -870,7 +870,7 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -944,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cype/open-bim-analytical-model/" class="md-nav__link">
+      <a href="../../cype/open-bim-analytical-model/" class="md-nav__link">
         
   
   
@@ -967,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cype/cypetherm-he-plus/" class="md-nav__link">
+      <a href="../../cype/cypetherm-he-plus/" class="md-nav__link">
         
   
   
@@ -1026,7 +1026,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="tekton3d/" class="md-nav__link ">
+            <a href="../../tekton3d/" class="md-nav__link ">
               
   
   
@@ -1061,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tekton3d/importacion-vinculacion/" class="md-nav__link">
+      <a href="../../tekton3d/importacion-vinculacion/" class="md-nav__link">
         
   
   
@@ -1089,8 +1089,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1114,15 +1116,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="openstudio/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1141,7 +1143,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             OpenStudio y EnergyPlus
@@ -1157,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="openstudio/arquitectura/" class="md-nav__link">
+      <a href="../arquitectura/" class="md-nav__link">
         
   
   
@@ -1177,10 +1179,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="openstudio/intercambio-revit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Intercambio desde Revit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1191,6 +1215,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decision-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decisión inicial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruta-a-gbxml-hacia-un-osm-reutilizable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta A — gbXML hacia un OSM reutilizable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ruta A — gbXML hacia un OSM reutilizable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparación en Revit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importacion-en-openstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación en OpenStudio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruta-b-systems-analysis-dentro-de-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta B — Systems Analysis dentro de Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#papel-de-ifc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Papel de IFC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aceptacion-del-ensayo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criterios de aceptación del ensayo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fuentes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximo-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximo paso
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1243,7 +1374,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../05-validacion/" class="md-nav__link ">
+            <a href="../../../05-validacion/" class="md-nav__link ">
               
   
   
@@ -1278,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-validacion/incidencias/" class="md-nav__link">
+      <a href="../../../05-validacion/incidencias/" class="md-nav__link">
         
   
   
@@ -1355,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-comparativas/compatibilidad/" class="md-nav__link">
+      <a href="../../../06-comparativas/compatibilidad/" class="md-nav__link">
         
   
   
@@ -1432,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-procedimientos/flujo-operativo/" class="md-nav__link">
+      <a href="../../../07-procedimientos/flujo-operativo/" class="md-nav__link">
         
   
   
@@ -1513,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anexos/checklist-revit/" class="md-nav__link">
+      <a href="../../../anexos/checklist-revit/" class="md-nav__link">
         
   
   
@@ -1536,7 +1667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anexos/bibliografia/" class="md-nav__link">
+      <a href="../../../anexos/bibliografia/" class="md-nav__link">
         
   
   
@@ -1559,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glosario/" class="md-nav__link">
+      <a href="../../../glosario/" class="md-nav__link">
         
   
   
@@ -1589,7 +1720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../control-versiones/" class="md-nav__link">
+      <a href="../../../control-versiones/" class="md-nav__link">
         
   
   
@@ -1624,6 +1755,101 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decision-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decisión inicial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruta-a-gbxml-hacia-un-osm-reutilizable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta A — gbXML hacia un OSM reutilizable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ruta A — gbXML hacia un OSM reutilizable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-en-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparación en Revit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importacion-en-openstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación en OpenStudio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruta-b-systems-analysis-dentro-de-revit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta B — Systems Analysis dentro de Revit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#papel-de-ifc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Papel de IFC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aceptacion-del-ensayo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criterios de aceptación del ensayo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fuentes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximo-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximo paso
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1641,9 +1867,158 @@
   
 
 
-<h1 id="aplicaciones-de-analisis">Aplicaciones de análisis<a class="headerlink" href="#aplicaciones-de-analisis" title="Permanent link">&para;</a></h1>
-<p>Cada módulo documentará formatos admitidos, proceso de importación, información reconocida, simplificaciones, actualización, limitaciones y checklist de validación.</p>
-<p>OpenStudio y EnergyPlus constituyen el flujo abierto de simulación energética de la guía. Se documentan como componentes relacionados pero distintos: OpenStudio prepara y automatiza el modelo y EnergyPlus ejecuta el cálculo.</p>
+<h1 id="intercambio-desde-revit">Intercambio desde Revit<a class="headerlink" href="#intercambio-desde-revit" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Origen</td>
+<td>Autodesk Revit 2026</td>
+</tr>
+<tr>
+<td>Receptor</td>
+<td>OpenStudio 3.11.0</td>
+</tr>
+<tr>
+<td>Formato propuesto</td>
+<td>gbXML 7.03</td>
+</tr>
+<tr>
+<td>Método</td>
+<td>Exportación del modelo analítico e importación avanzada</td>
+</tr>
+<tr>
+<td>Fecha de revisión</td>
+<td>2026-07-15</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Recomendado, pendiente de ensayo reproducible</td>
+</tr>
+</tbody>
+</table>
+<h2 id="decision-inicial">Decisión inicial<a class="headerlink" href="#decision-inicial" title="Permanent link">&para;</a></h2>
+<p>La guía adopta provisionalmente <strong>gbXML 7.03</strong> como formato principal para obtener un modelo OpenStudio a partir de Revit 2026.</p>
+<p>La decisión se fundamenta en dos capacidades documentadas:</p>
+<ol>
+<li>Revit 2026 exporta el modelo analítico de energía conforme al esquema gbXML 7.03.</li>
+<li>El proyecto oficial <code>gbxml-to-openstudio</code> desarrolla medidas avanzadas para convertir gbXML en OSM, ampliando la traducción incluida en el SDK.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Estado de la recomendación</p>
+<p>La existencia de exportador e importador no demuestra que un modelo concreto se transfiera correctamente. La geometría, adyacencias, propiedades y cargas deben verificarse con un caso de prueba versionado.</p>
+</div>
+<h2 id="ruta-a-gbxml-hacia-un-osm-reutilizable">Ruta A — gbXML hacia un OSM reutilizable<a class="headerlink" href="#ruta-a-gbxml-hacia-un-osm-reutilizable" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    RVT["Modelo Revit 2026"] --&gt; EAM["Modelo analítico de energía"]
+    EAM --&gt; QA1["Revisión en Revit"]
+    QA1 --&gt; GB["Exportación gbXML 7.03"]
+    GB --&gt; VAL["Validación de esquema y geometría"]
+    VAL --&gt; IMP["Medidas gbXML de OpenStudio"]
+    IMP --&gt; OSM["Modelo OpenStudio (.osm)"]
+    OSM --&gt; QA2["QA/QC en OpenStudio"]</code></pre>
+<h3 id="preparacion-en-revit">Preparación en Revit<a class="headerlink" href="#preparacion-en-revit" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Registrar la versión exacta de Revit y sus actualizaciones.</li>
+<li>Definir ubicación, norte y parámetros energéticos.</li>
+<li>Seleccionar el modo de generación del modelo analítico.</li>
+<li>Crear y revisar espacios y superficies analíticas.</li>
+<li>Resolver huecos, solapes, espacios sin cerrar y superficies anómalas.</li>
+<li>Exportar el modelo analítico a gbXML.</li>
+</ol>
+<p>Revit permite generar el modelo analítico a partir de elementos de edificación, habitaciones o espacios, y masas conceptuales combinadas con elementos. La opción elegida forma parte de la evidencia del ensayo.</p>
+<h3 id="importacion-en-openstudio">Importación en OpenStudio<a class="headerlink" href="#importacion-en-openstudio" title="Permanent link">&para;</a></h3>
+<p>El ensayo utilizará un flujo OSW que conserve:</p>
+<ul>
+<li>el gbXML original;</li>
+<li>la versión del OpenStudio CLI utilizado;</li>
+<li>las medidas de importación y sus versiones;</li>
+<li>el orden y los argumentos de las medidas;</li>
+<li>el OSM resultante;</li>
+<li>mensajes, advertencias y errores de ejecución.</li>
+</ul>
+<p>El OSM generado no se aceptará sin revisar espacios, superficies, sub-superficies, adyacencias, orientación y zonas térmicas.</p>
+<h2 id="ruta-b-systems-analysis-dentro-de-revit">Ruta B — Systems Analysis dentro de Revit<a class="headerlink" href="#ruta-b-systems-analysis-dentro-de-revit" title="Permanent link">&para;</a></h2>
+<p>Revit 2026 incluye <strong>OpenStudio CLI for Revit</strong> como componente y utiliza flujos de Systems Analysis que traducen datos de Revit, ejecutan EnergyPlus y generan informes.</p>
+<p>Esta ruta es válida para realizar los análisis previstos por Autodesk dentro de Revit, pero se documenta separadamente porque:</p>
+<ul>
+<li>su objetivo inmediato es producir una simulación y un informe;</li>
+<li>los flujos pueden utilizar medidas específicas para Revit;</li>
+<li>no debe suponerse que entregan un OSM externo adecuado para continuar el trabajo en otra interfaz;</li>
+<li>la versión exacta del CLI y los artefactos conservados deben comprobarse en la instalación utilizada.</li>
+</ul>
+<p>Systems Analysis será objeto de un ensayo complementario. No sustituye automáticamente a la ruta gbXML–OSM.</p>
+<h2 id="papel-de-ifc">Papel de IFC<a class="headerlink" href="#papel-de-ifc" title="Permanent link">&para;</a></h2>
+<p>IFC no se adopta como entrada directa a OpenStudio en esta fase. La documentación oficial revisada acredita el flujo gbXML, mientras que no se ha identificado una ruta oficial equivalente IFC–OSM para el alcance definido.</p>
+<p>El IFC puede utilizarse para:</p>
+<ul>
+<li>conservar un intercambio abierto paralelo;</li>
+<li>comparar estructura espacial y geometría;</li>
+<li>rastrear identificadores y propiedades;</li>
+<li>contrastar resultados con CYPE y TeKton3D.</li>
+</ul>
+<p>No se considerará sustituto de gbXML hasta disponer de una implementación concreta y de un ensayo reproducible.</p>
+<h2 id="criterios-de-aceptacion-del-ensayo">Criterios de aceptación del ensayo<a class="headerlink" href="#criterios-de-aceptacion-del-ensayo" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Evidencia mínima</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Versión</td>
+<td>Revit, exportador, CLI, medidas y OpenStudio registrados</td>
+</tr>
+<tr>
+<td>Esquema</td>
+<td>gbXML válido frente a 7.03</td>
+</tr>
+<tr>
+<td>Espacios</td>
+<td>Recuento y volúmenes comparados</td>
+</tr>
+<tr>
+<td>Superficies</td>
+<td>Tipos, áreas, inclinaciones y orientación comparados</td>
+</tr>
+<tr>
+<td>Adyacencias</td>
+<td>Cerramientos interiores y exteriores revisados</td>
+</tr>
+<tr>
+<td>Huecos</td>
+<td>Recuento, hospedaje y áreas comparados</td>
+</tr>
+<tr>
+<td>Propiedades</td>
+<td>Construcciones y datos térmicos inventariados</td>
+</tr>
+<tr>
+<td>OSM</td>
+<td>Traducción sin errores bloqueantes y advertencias clasificadas</td>
+</tr>
+<tr>
+<td>Reproducibilidad</td>
+<td>OSW, argumentos, entradas y salidas conservados</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://help.autodesk.com/cloudhelp/2026/ESP/Revit-DocumentPresent/files/GUID-586B9574-64DA-47BC-B8EC-DEF2D565928F.htm">Autodesk: exportación a gbXML en Revit 2026</a>.</li>
+<li><a href="https://help.autodesk.com/cloudhelp/2026/ESP/Revit-Analyze/files/GUID-200338BB-B394-4492-9A11-1A2A80A45AAE.htm">Autodesk: flujo de análisis de sistemas de Revit 2026</a>.</li>
+<li><a href="https://github.com/NatLabRockies/openstudio-revit-releases">OpenStudio CLI for Revit Systems Analysis</a>.</li>
+<li><a href="https://github.com/NatLabRockies/gbxml-to-openstudio">Conversión avanzada de gbXML a OpenStudio</a>.</li>
+</ul>
+<h2 id="proximo-paso">Próximo paso<a class="headerlink" href="#proximo-paso" title="Permanent link">&para;</a></h2>
+<p>Preparar un modelo Revit mínimo, ejecutar ambas rutas y registrar las diferencias entre el OSM, el IDF y los informes obtenidos.</p>
 
 
 
@@ -1666,7 +2041,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 07:40:55 UTC">15 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 08:16:56 UTC">15 de julio de 2026</span>
   </span>
 
     
@@ -1676,7 +2051,7 @@
     <span class="md-icon" title="Creado">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de julio de 2026 20:03:40 UTC">11 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de julio de 2026 08:16:56 UTC">15 de julio de 2026</span>
   </span>
 
     
@@ -1734,10 +2109,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
