@@ -47,13 +47,10 @@ winter_day.setSnowIndicator(false)
 winter_day.setSolarModelIndicator('ASHRAEClearSky')
 winter_day.setSkyClearness(0.0)
 
-opaque_material = OpenStudio::Model::StandardOpaqueMaterial.new(model)
+opaque_material = OpenStudio::Model::MasslessOpaqueMaterial.new(model)
 opaque_material.setName('MAT-OPAQUE-REFERENCE')
 opaque_material.setRoughness('MediumSmooth')
-opaque_material.setThickness(0.20)
-opaque_material.setConductivity(1.00)
-opaque_material.setDensity(1_000.0)
-opaque_material.setSpecificHeat(1_000.0)
+opaque_material.setThermalResistance(2.0)
 
 opaque_construction = OpenStudio::Model::Construction.new(model)
 opaque_construction.setName('CON-OPAQUE-REFERENCE')
@@ -72,6 +69,37 @@ glazing_construction.setName('CON-GLAZING-REFERENCE')
 glazing_layers = OpenStudio::Model::MaterialVector.new
 glazing_layers << glazing_material
 glazing_construction.setLayers(glazing_layers)
+
+occupancy_schedule = OpenStudio::Model::ScheduleRuleset.new(model)
+occupancy_schedule.setName('SCH-OCCUPANCY-DAILY')
+occupancy_day = occupancy_schedule.defaultDaySchedule
+occupancy_day.addValue(OpenStudio::Time.new(0, 8, 0, 0), 0.0)
+occupancy_day.addValue(OpenStudio::Time.new(0, 18, 0, 0), 1.0)
+occupancy_day.addValue(OpenStudio::Time.new(0, 24, 0, 0), 0.0)
+
+heating_schedule = OpenStudio::Model::ScheduleConstant.new(model)
+heating_schedule.setName('SCH-HEATING-SETPOINT')
+heating_schedule.setValue(20.0)
+
+cooling_schedule = OpenStudio::Model::ScheduleConstant.new(model)
+cooling_schedule.setName('SCH-COOLING-SETPOINT')
+cooling_schedule.setValue(26.0)
+
+activity_schedule = OpenStudio::Model::ScheduleConstant.new(model)
+activity_schedule.setName('SCH-ACTIVITY-120-W-PERSON')
+activity_schedule.setValue(120.0)
+
+people_definition = OpenStudio::Model::PeopleDefinition.new(model)
+people_definition.setName('LOAD-PEOPLE-0.10-PER-M2')
+people_definition.setPeopleperSpaceFloorArea(0.10)
+
+lights_definition = OpenStudio::Model::LightsDefinition.new(model)
+lights_definition.setName('LOAD-LIGHTS-8-W-M2')
+lights_definition.setWattsperSpaceFloorArea(8.0)
+
+equipment_definition = OpenStudio::Model::ElectricEquipmentDefinition.new(model)
+equipment_definition.setName('LOAD-EQUIPMENT-10-W-M2')
+equipment_definition.setWattsperSpaceFloorArea(10.0)
 
 story = OpenStudio::Model::BuildingStory.new(model)
 story.setName('LEVEL-00')
@@ -123,6 +151,40 @@ model.getSurfaces.each { |surface| surface.setConstruction(opaque_construction) 
   suffix = space.nameString.end_with?('A') ? 'A' : 'B'
   optional_window.get.setName("WIN-#{suffix}-S")
   optional_window.get.setConstruction(glazing_construction)
+
+  people = OpenStudio::Model::People.new(people_definition)
+  people.setName("PEOPLE-#{suffix}")
+  people.setSpace(space)
+  people.setNumberofPeopleSchedule(occupancy_schedule)
+  people.setActivityLevelSchedule(activity_schedule)
+
+  lights = OpenStudio::Model::Lights.new(lights_definition)
+  lights.setName("LIGHTS-#{suffix}")
+  lights.setSpace(space)
+  lights.setSchedule(occupancy_schedule)
+
+  equipment = OpenStudio::Model::ElectricEquipment.new(equipment_definition)
+  equipment.setName("EQUIPMENT-#{suffix}")
+  equipment.setSpace(space)
+  equipment.setSchedule(occupancy_schedule)
+
+  infiltration = OpenStudio::Model::SpaceInfiltrationDesignFlowRate.new(model)
+  infiltration.setName("INFILTRATION-#{suffix}-0.30-ACH")
+  infiltration.setSpace(space)
+  infiltration.setSchedule(model.alwaysOnDiscreteSchedule)
+  infiltration.setAirChangesperHour(0.30)
+
+  outdoor_air = OpenStudio::Model::DesignSpecificationOutdoorAir.new(model)
+  outdoor_air.setName("OUTDOOR-AIR-#{suffix}-10-L-S-PERSON")
+  outdoor_air.setOutdoorAirMethod('Sum')
+  outdoor_air.setOutdoorAirFlowperPerson(0.010)
+  space.setDesignSpecificationOutdoorAir(outdoor_air)
+
+  thermostat = OpenStudio::Model::ThermostatSetpointDualSetpoint.new(model)
+  thermostat.setName("THERMOSTAT-#{suffix}-20-26-C")
+  thermostat.setHeatingSetpointTemperatureSchedule(heating_schedule)
+  thermostat.setCoolingSetpointTemperatureSchedule(cooling_schedule)
+  space.thermalZone.get.setThermostatSetpointDualSetpoint(thermostat)
 end
 
 model.getSimulationControl.setRunSimulationforSizingPeriods(true)

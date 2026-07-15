@@ -18,7 +18,8 @@ openstudio run -w workflow.osw
 
 - Geometría y zonas: generadas y comprobadas mediante la API de OpenStudio 3.11.0.
 - Traducción OSM–IDF: ejecutada con OpenStudio 3.11.0.
-- Ejecución: dos días de diseño con EnergyPlus 25.2.0, 0 errores severos y 7 advertencias.
-- Simulación anual: pendiente de archivo EPW y configuración energética detallada.
+- Configuración: envolvente, cargas, horarios, infiltración, ventilación, termostatos y cargas ideales explícitos.
+- Ejecución: dos días de diseño con EnergyPlus 25.2.0, 0 errores severos y 6 advertencias.
+- Simulación anual: pendiente de incorporar un archivo EPW verificable.
 
 Los días de diseño incorporados sirven únicamente para comprobar la integridad del flujo. Sus condiciones son valores de referencia y no sustituyen datos climáticos reglamentarios o estadísticos verificados.
