@@ -1,0 +1,77 @@
+incidencias:
+  - id: OS-INC-001
+    titulo: Archivo EPW no disponible durante la ejecución
+    versiones: {openstudio: "3.11.0", energyplus: "25.2.0"}
+    severidad: bloqueante
+    origen: configuracion_osw
+    sintoma: El flujo no puede ejecutar el periodo anual porque no encuentra el EPW.
+    evidencia: run/run.log
+    accion: Fijar URL, nombre y hashes; ejecutar weather/download_weather.ps1.
+    estado: validada
+    jira: BEM-57
+
+  - id: OS-INC-002
+    titulo: People sin horario de nivel de actividad
+    versiones: {openstudio: "3.11.0", energyplus: "25.2.0"}
+    severidad: bloqueante
+    origen: modelo_osm
+    sintoma: EnergyPlus termina con un error fatal por activity_level_schedule_name ausente.
+    evidencia: eplusout.err de la ejecución de desarrollo de BEM-57
+    accion: Añadir SCH-ACTIVITY-120-W-PERSON a todas las cargas People.
+    estado: validada
+    jira: BEM-57
+
+  - id: OS-INC-003
+    titulo: Modelo opaco sin masa térmica
+    versiones: {openstudio: "3.11.0", energyplus: "25.2.0"}
+    severidad: advertencia
+    origen: supuesto_modelo
+    sintoma: EnergyPlus advierte que un edificio sin masa puede producir una solución inestable.
+    evidencia: run/eplusout.err
+    accion: Mantener como simplificación geométrica; sustituir por capas con masa antes de una evaluación física.
+    estado: abierta
+    jira: BEM-60
+
+  - id: OS-INC-004
+    titulo: Temperaturas del terreno no definidas
+    versiones: {openstudio: "3.11.0", energyplus: "25.2.0"}
+    severidad: advertencia
+    origen: supuesto_modelo
+    sintoma: Las superficies contra terreno usan valores predeterminados.
+    evidencia: run/eplusout.err
+    accion: Incorporar temperaturas mensuales con procedencia documentada.
+    estado: abierta
+    jira: BEM-60
+
+  - id: OS-INC-005
+    titulo: Solicitudes de medidores no aplicables
+    versiones: {openstudio: "3.11.0", energyplus: "25.2.0"}
+    severidad: advertencia
+    origen: informe_openstudio
+    sintoma: Tres advertencias por medidores de gas inexistentes o duplicados.
+    evidencia: run/eplusout.err
+    accion: Eliminar medidores no utilizados en una plantilla de informes específica.
+    estado: abierta
+    jira: BEM-60
+
+  - id: OS-INC-006
+    titulo: Variables mensuales no disponibles
+    versiones: {openstudio: "3.11.0", energyplus: "25.2.0"}
+    severidad: advertencia
+    origen: informe_openstudio
+    sintoma: El informe mensual solicita variables que no existen en esta simulación.
+    evidencia: run/eplusout.err
+    accion: Ajustar o desactivar las tablas mensuales no aplicables.
+    estado: abierta
+    jira: BEM-60
+
+  - id: OS-INC-007
+    titulo: Escalados económicos estadounidenses sin coste asociado
+    versiones: {openstudio: "3.11.0", energyplus: "25.2.0"}
+    severidad: advertencia
+    origen: informe_openstudio
+    sintoma: Cinco advertencias de LifeCycleCost para recursos sin tarifa.
+    evidencia: run/eplusout.err
+    accion: Excluir objetos económicos predeterminados o definir un escenario económico local explícito.
+    estado: abierta
+    jira: BEM-60
