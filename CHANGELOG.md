@@ -44,6 +44,7 @@ Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) 
 - Se incorpora un comparador semántico reproducible entre dos modelos OSM.
 - Se formalizan criterios para geometría, adyacencias, huecos, zonas, nombres y objetos energéticos.
 - Se documentan las adiciones gráficas admitidas y la captura pendiente.
+- Se incorpora la captura de los dos espacios con visualización por tipo de superficie y barras de OpenStudio.
 
 ### Añadido
 

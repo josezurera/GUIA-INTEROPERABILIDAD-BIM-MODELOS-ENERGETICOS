@@ -47,4 +47,11 @@ ensayo:
       objetos_energeticos: iguales
     diferencias_de_tipo_inesperadas: 0
     resultado: pass
+  evidencia_visual:
+    archivo: docs/assets/images/openstudio/bem-63-sketchup-surface-types.png
+    sha256: CD358D00F763C023DDD9D8D63E9B28228A233593F073311DF32273B9216A7820
+    dos_espacios_visibles: true
+    huecos_visibles: 2
+    visualizacion_por_tipo_de_superficie: true
+    barras_openstudio_visibles: true
   resultado: superado_con_diferencias_no_energeticas

@@ -13,7 +13,13 @@ Esta página define la validación de ida y vuelta de `OS-MIN-001` mediante Open
 | Huecos | Nombre, tipo, contorno, área y superficie padre | Superado |
 | Objetos energéticos | Cargas, infiltración, ventilación, termostatos y cargas ideales | Superado |
 | Tipos de objeto | Sin eliminaciones ni adiciones inesperadas | Superado con adiciones admitidas |
-| Captura | Imagen de la geometría visible en SketchUp | Pendiente |
+| Captura | Imagen de la geometría visible en SketchUp | Superado |
+
+## Evidencia visual
+
+![OS-MIN-001 abierto en SketchUp 2025 con el complemento OpenStudio y visualización por tipo de superficie](../../../assets/images/openstudio/bem-63-sketchup-surface-types.png)
+
+La captura muestra los dos espacios contiguos, la separación central, los dos huecos de ventana y la codificación gráfica por tipo de superficie. También quedan visibles las barras del complemento OpenStudio, por lo que la imagen acredita tanto la carga del OSM como la disponibilidad de las herramientas de revisión.
 
 ## Comparador reproducible
 
@@ -44,7 +50,7 @@ SketchUp también cambió el vértice inicial de ocho contornos. El comparador n
 
 - La validación se refiere a `OS-MIN-001` y a las versiones documentadas; no generaliza automáticamente a modelos mayores.
 - La igualdad geométrica y de objetos no sustituye una simulación EnergyPlus posterior.
-- La captura visual continúa pendiente y debe mostrar los dos espacios y la visualización por tipo de superficie.
+- La captura verifica la apariencia general del caso, pero no sustituye la comparación numérica de contornos y relaciones.
 - El OSM de salida es un artefacto temporal local; hashes, medidas y resultado cuantificado se conservan en el registro YAML.
 
 ## Dictamen
