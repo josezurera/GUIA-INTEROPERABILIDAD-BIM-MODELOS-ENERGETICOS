@@ -71,3 +71,13 @@ casos:
       advertencias: 11
       simulacion_anual: completada
       archivo_climatico: ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023.epw
+      resultados_anuales:
+        superficie_acondicionada_m2: 80.0
+        calefaccion_gj: 20.13
+        refrigeracion_gj: 30.39
+        iluminacion_interior_gj: 8.41
+        equipos_interiores_gj: 10.51
+        total_gj: 69.44
+        intensidad_total_kwh_m2_ano: 241.11
+        horas_fuera_consigna_calefaccion: 0.0
+        horas_fuera_consigna_refrigeracion: 0.0

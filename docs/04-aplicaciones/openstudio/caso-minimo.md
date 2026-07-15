@@ -153,3 +153,5 @@ Resultados de la ejecución de control:
 - construcciones, cargas, horarios, ventilación y sistema ideal configurados en `BEM-57`;
 - EPW TMYx descargado y validado mediante SHA-256;
 - simulación anual completada con 0 errores severos y 11 advertencias.
+
+Los consumos, intensidades y el inventario de advertencias se recogen en [Resultados de la simulación de referencia](resultados-simulacion.md).
