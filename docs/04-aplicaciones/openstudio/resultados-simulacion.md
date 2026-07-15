@@ -26,6 +26,7 @@ openstudio create_model.rb
 openstudio verify_model.rb
 openstudio run -w workflow.osw
 python extract_results.py
+python validate_case.py --openstudio "C:/openstudioapplication-1.11.1/bin/openstudio.exe"
 ```
 
 El flujo genera `run/in.idf`, `run/eplusout.err`, `run/eplusout.sql` y `run/eplustbl.htm`. La carpeta `run/` contiene resultados derivados y no se almacena en Git.
@@ -67,3 +68,17 @@ Ninguna advertencia impide comprobar el flujo geométrico y energético. Antes d
 - [x] Advertencias inventariadas y clasificadas.
 - [x] Resultados principales extraídos de `eplusout.sql`.
 - [x] Pasos y artefactos de salida documentados.
+
+## Matriz QA/QC entre etapas
+
+| Control | Ruby/OSM | EnergyPlus | Revit/gbXML | SketchUp |
+|---|---|---|---|---|
+| 2 espacios y 2 zonas | Conforme | Conforme | Pendiente | Pendiente |
+| Nombres `SPACE-A/B` y `TZ-A/B` | Conforme | Trazable en IDF | Pendiente | Pendiente |
+| 80 m² y 240 m³ | Conforme | 80 m² acondicionados | Pendiente | Pendiente |
+| Partición interior emparejada | Conforme | Traducida | Pendiente | Pendiente |
+| 2 ventanas y 6 m² | Conforme | Traducidas | Pendiente | Pendiente |
+| Cero errores severos | No aplica | Conforme | Pendiente | Pendiente |
+| Resultados dentro de tolerancia | Referencia | Conforme | Pendiente | Pendiente |
+
+`validate_case.py` contrasta automáticamente el OSM, el cierre de EnergyPlus y las cifras extraídas del SQL con `data/casos-prueba.yml`. Las columnas Revit/gbXML y SketchUp no se marcarán conformes hasta disponer de artefactos reales; esta ausencia no se sustituye por una inferencia.

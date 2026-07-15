@@ -11,6 +11,7 @@ openstudio create_model.rb
 openstudio verify_model.rb
 openstudio run -w workflow.osw
 python extract_results.py
+python validate_case.py --openstudio "C:/openstudioapplication-1.11.1/bin/openstudio.exe"
 ```
 
 `create_model.rb` es la fuente reproducible del modelo y `verify_model.rb` comprueba sus magnitudes principales. `model.osm` se conserva como resultado de referencia. El directorio `run/` generado por el flujo se excluye del control de versiones porque contiene resultados derivados, entre ellos `in.idf`, `eplusout.err` y `eplusout.sql`.

@@ -56,4 +56,25 @@ energy_objects.each do |name, actual|
   puts "OK #{name}=#{actual}"
 end
 
+expected_names = {
+  spaces: %w[SPACE-A SPACE-B],
+  thermal_zones: %w[TZ-A TZ-B],
+  windows: %w[WIN-A-S WIN-B-S]
+}
+actual_names = {
+  spaces: model.getSpaces.map(&:nameString).sort,
+  thermal_zones: model.getThermalZones.map(&:nameString).sort,
+  windows: windows.map(&:nameString).sort
+}
+expected_names.each do |group, expected_group_names|
+  raise "#{group}: nombres esperados #{expected_group_names}, obtenidos #{actual_names[group]}" unless actual_names[group] == expected_group_names
+  puts "OK #{group}_names=#{actual_names[group].join(',')}"
+end
+
+matched_partition_faces = surfaces.count do |surface|
+  surface.surfaceType == 'Wall' && surface.outsideBoundaryCondition == 'Surface' && !surface.adjacentSurface.empty?
+end
+raise "Caras de partición emparejadas: esperadas 2, obtenidas #{matched_partition_faces}" unless matched_partition_faces == 2
+puts "OK matched_partition_faces=#{matched_partition_faces}"
+
 puts 'Verificación geométrica superada.'
