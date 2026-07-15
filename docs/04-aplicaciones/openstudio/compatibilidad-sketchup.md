@@ -1,6 +1,6 @@
 # Compatibilidad de SketchUp y OpenStudio
 
-Esta página registra el inventario del equipo de ensayo. No constituye todavía una matriz oficial de compatibilidad: distingue lo comprobado mediante ejecutables de lo que requiere abrir SketchUp y revisar su Administrador de extensiones.
+Esta página registra el inventario del equipo de ensayo. Distingue la instalación comprobada de la compatibilidad funcional, que requiere completar un ensayo con un modelo OSM.
 
 ## Componentes confirmados
 
@@ -10,18 +10,25 @@ Esta página registra el inventario del equipo de ensayo. No constituye todavía
 | OpenStudio Application | 1.11.1+b19f3a988b | Propiedades de `OpenStudioApp.exe` |
 | OpenStudio CLI | 3.11.0+241b8abb4d | `openstudio --version` |
 | OpenStudio Ruby API | Incluida con Application 1.11.1 | Registro de instalación y carpeta `Ruby/` |
+| OpenStudio SketchUp Plug-in | 1.11.0 | `openstudio.rb`, constante `SKETCHUPPLUGIN_VERSION` y carpeta `openstudio/` |
 | EnergyPlus | 25.2.0-cf7368216c | Distribución incluida en OpenStudio |
 
 También constan componentes **OpenStudio CLI For Revit** para Revit 2024–2027. No deben confundirse con el complemento de SketchUp: son integraciones distintas y tienen ciclos de versión propios.
 
 ## Estado del complemento de SketchUp
 
-La inspección de las carpetas de extensiones de SketchUp 2024, 2025 y 2026 no localiza archivos o carpetas cuyo nombre contenga `OpenStudio`. Por tanto, el complemento se registra como **no confirmado**, aunque el usuario recuerde haberlo instalado.
+El complemento oficial OpenStudio SketchUp Plug-in 1.11.0 está instalado para SketchUp 2025 en el perfil `josez`. Se localizan tanto el cargador `openstudio.rb` como su carpeta de recursos `openstudio/`.
 
-!!! warning "Comprobación manual necesaria"
-    Abrir SketchUp 2025 y consultar **Ventana → Administrador de extensiones**. Registrar nombre exacto, versión, estado habilitado/deshabilitado y firma. Una captura permitirá cerrar BEM-61 sin inferencias.
+La instalación se realizó mediante el paquete RBZ oficial, separado de OpenStudio Application. La aplicación de escritorio instalada no añade automáticamente la extensión a todos los perfiles de Windows.
 
-La presencia de `Ruby/openstudio.rb` dentro de OpenStudio Application confirma la API Ruby para scripts y medidas, pero no demuestra que exista una extensión activa dentro de SketchUp.
+!!! note "Alcance de la confirmación"
+    La presencia y versión del complemento están confirmadas. Todavía falta abrir un OSM de prueba, guardarlo y validarlo para declarar compatible el flujo completo SketchUp 2025–OpenStudio.
+
+## Incidencia de arranque resuelta
+
+SketchUp se cerraba durante la apertura de la ventana de bienvenida en el perfil `josez`, aunque funcionaba desde otra cuenta del mismo equipo. Esto permitió descartar la instalación general, la GPU y el controlador como causa inmediata y acotar el fallo al perfil de usuario.
+
+Con SketchUp cerrado, se conservó una copia de `login_session.dat` y se dejó que la aplicación generase una sesión nueva. SketchUp volvió a iniciar correctamente. Este procedimiento no elimina modelos, extensiones ni preferencias; si no resolviese el problema, el siguiente nivel de diagnóstico sería aislar el perfil completo de SketchUp de forma reversible.
 
 ## Inventario reproducible
 
@@ -40,15 +47,14 @@ El resultado debe contrastarse con `data/inventario-openstudio-sketchup.yml`. La
 | Ruby API → OSM | Verificado | Genera y valida `OS-MIN-001` |
 | OpenStudio Application → OSM | Disponible | Aplicación instalada; edición gráfica pendiente de ensayo documentado |
 | OSM → EnergyPlus | Verificado | Simulación anual completada |
-| SketchUp → OSM | Pendiente | Complemento no confirmado en el Administrador de extensiones |
+| SketchUp → OSM | Preparado | Complemento 1.11.0 instalado; falta el ensayo con un OSM |
 | Revit → gbXML → OpenStudio | Pendiente | Aún no existe el modelo RVT ni el gbXML del caso |
 
 ## Criterios para confirmar compatibilidad
 
-1. Identificar el complemento y su versión exacta.
-2. Confirmar que carga sin errores en SketchUp 2025.
-3. Abrir o importar una copia de `OS-MIN-001` sin modificar el modelo de referencia.
-4. Guardar un OSM nuevo y ejecutar `verify_model.rb` sobre una copia preparada para la prueba.
-5. Registrar pérdidas, cambios de nombres y diferencias geométricas.
+1. Confirmar visualmente que el menú y las barras de OpenStudio cargan sin errores en SketchUp 2025.
+2. Abrir o importar una copia de `OS-MIN-001` sin modificar el modelo de referencia.
+3. Guardar un OSM nuevo y ejecutar `verify_model.rb` sobre una copia preparada para la prueba.
+4. Registrar pérdidas, cambios de nombres y diferencias geométricas.
 
 Hasta completar esos pasos no se declarará compatible la combinación SketchUp 2025–OpenStudio Application 1.11.1.

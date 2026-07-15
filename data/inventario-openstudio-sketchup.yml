@@ -24,10 +24,10 @@ inventario:
       verificacion: registro_instalacion
       estado: confirmado
     - producto: OpenStudio SketchUp Plug-in
-      version: pendiente
-      ruta: pendiente
-      verificacion: administrador_extensiones_sketchup
-      estado: no_confirmado
+      version: "1.11.0"
+      ruta: C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2025/SketchUp/Plugins/openstudio.rb
+      verificacion: archivo_cargador_y_constante_de_version
+      estado: confirmado
   cli_revit:
     - {revit: "2024", version: "1.1.9"}
     - {revit: "2025", version: "1.1.9"}
@@ -37,4 +37,10 @@ inventario:
     - C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2024/SketchUp/Plugins
     - C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2025/SketchUp/Plugins
     - C:/Users/josez/AppData/Roaming/SketchUp/SketchUp 2026/SketchUp/Plugins
-  resultado_plugins: No se encontraron archivos o carpetas identificados como OpenStudio.
+  resultado_plugins: OpenStudio SketchUp Plug-in 1.11.0 instalado en el perfil josez para SketchUp 2025.
+  incidencias:
+    - descripcion: SketchUp se cerraba durante la apertura de la ventana de bienvenida.
+      alcance: perfil de usuario josez
+      diagnostico: SketchUp abria correctamente desde otra cuenta del mismo equipo.
+      solucion: regenerar login_session.dat conservando una copia de seguridad.
+      resultado: SketchUp inicia correctamente y permite instalar el complemento.

@@ -23,12 +23,19 @@ $pluginRoots = Get-ChildItem -LiteralPath "$env:APPDATA\SketchUp" -Directory -Er
   Where-Object { Test-Path -LiteralPath $_ }
 
 $openStudioPlugins = foreach ($root in $pluginRoots) {
-  Get-ChildItem -LiteralPath $root -Force -ErrorAction SilentlyContinue |
-    Where-Object { $_.Name -match 'OpenStudio' } |
-    Select-Object @{Name = 'product'; Expression = { 'OpenStudio SketchUp Plug-in' }},
-      @{Name = 'version'; Expression = { 'pendiente de consultar en SketchUp' }},
-      @{Name = 'path'; Expression = { $_.FullName }},
-      @{Name = 'status'; Expression = { 'archivo localizado' }}
+  $loader = Join-Path $root 'openstudio.rb'
+  $resources = Join-Path $root 'openstudio'
+  if ((Test-Path -LiteralPath $loader) -or (Test-Path -LiteralPath $resources)) {
+    $match = if (Test-Path -LiteralPath $loader) {
+      Select-String -LiteralPath $loader -Pattern 'SKETCHUPPLUGIN_VERSION\s*=\s*"([^"]+)"' | Select-Object -First 1
+    }
+    [pscustomobject]@{
+      product = 'OpenStudio SketchUp Plug-in'
+      version = if ($match) { $match.Matches[0].Groups[1].Value } else { 'no identificada' }
+      path = if (Test-Path -LiteralPath $loader) { $loader } else { $resources }
+      status = 'archivo localizado'
+    }
+  }
 }
 
 if (-not $openStudioPlugins) {
