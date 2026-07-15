@@ -34,6 +34,8 @@ La secuencia de componentes, archivos y transformaciones se desarrolla en [Arqui
 
 La ruta propuesta para obtener el primer modelo a partir de Revit se describe en [Intercambio desde Revit](intercambio-revit.md).
 
+La geometría y los resultados esperados del ensayo común se definen en [Caso mínimo de referencia](caso-minimo.md).
+
 ## Fuera del alcance actual
 
 - adoptar automáticamente la versión más reciente de EnergyPlus;
